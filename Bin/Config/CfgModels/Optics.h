@@ -1,0 +1,1 @@
+class optic_m1911_sd : Weapon{};

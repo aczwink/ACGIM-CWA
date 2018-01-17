@@ -1,0 +1,4 @@
+class CfgDetectors
+{
+	objects[]={"EmptyDetector"};
+};
