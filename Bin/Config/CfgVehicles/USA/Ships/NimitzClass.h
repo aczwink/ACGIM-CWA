@@ -86,6 +86,7 @@ class USA_NimitzClass : Strategic //TODO
 	
 	class EventHandlers
 	{
+		Init = "[_this select 0, 178] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO
 		//init ="[(_this Select 0)] exec {\hwk_uss_Nimitz\script\build.sqs};[(_this Select 0),""radar2""] exec {\hwk_uss_Nimitz\script\radar.sqs}";
 		//killed = "(_this select 0) exec {\hwk_uss_Nimitz\script\fire.sqs}";

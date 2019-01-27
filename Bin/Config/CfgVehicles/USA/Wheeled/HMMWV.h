@@ -63,6 +63,7 @@ class USA_HMMWV : Car
 
 	class EventHandlers
 	{
+		Init = "[_this select 0, 188] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO: (also burner when killed)
 		//init="_this exec {\d4t_files\FX\scripts\vehicles\hmmwv\CBT_HMMWV_Init.sqs}; if (format [""%1"", CBT_FctLoad] == ""scalar bool array string 0xfcffffef"") then {_this exec {\d4t_files\FX\scripts\vehicles\hmmwv\CBT_init.sqs}}";
 	};
@@ -180,6 +181,7 @@ class USA_HMMWV_M2 : USA_HMMWV
 
 	class EventHandlers
 	{
+		Init = "[_this select 0, 189] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO: (also burner when killed)
 		//init="_this exec {\d4t_files\FX\scripts\vehicles\hmmwv\CBT_HMMWV_Init.sqs}; if (format [""%1"", CBT_FctLoad] == ""scalar bool array string 0xfcffffef"") then {_this exec {\d4t_files\FX\scripts\vehicles\hmmwv\CBT_init.sqs}}";
 		//fired="(_this select 0) exec format [""\d4t_files\FX\scripts\vehicles\hmmwv\mg.sqs"", _this select 1];[_this select 0] exec  ""\d4t_files\FX\scripts\vehicles\hmmwv\CBT_shot.sqs""; _this call loadFile {\d4t_files\FX\scripts\MGbullet.sqf}";
@@ -310,6 +312,7 @@ class USA_HMMWV_TOW : USA_HMMWV_M2
 	
 	class EventHandlers
 	{
+		Init = "[_this select 0, 190] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO: (also burner when killed)
 		//init="_this exec {\CBT_HMMWV\fx\CBT_HMMWV_Init.sqs}; if (format [""%1"", CBT_FctLoad] == ""scalar bool array string 0xfcffffef"") then {_this exec {\CBT_Misc\fx\CBT_init.sqs}}; [_this select 0] call (localize ""MCAR_createProxyAT""); _this select 0 exec ""\CBT_HMMWV\fx\MCAR_HMMWV_init.sqs""; _this exec ""\CBT_HMMWV\fx\CBT_TOW_Init.sqs"";";
 		//fired="deleteVehicle (nearestObject [_this select 0, _this select 4]); [_this select 0] exec (format[""%1"",localize (format[""%1_PATH"",typeOf vehicle (_this select 0)])]); _this exec ""\CBT_HMMWV\fx\CBT_TOWammo.sqs"";";
@@ -338,6 +341,7 @@ class USA_HMMWV_Ambulance : USA_HMMWV
 
 	class EventHandlers
 	{
+		Init = "[_this select 0, 191] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO: (also burner when killed)
 		//init="_this exec {\d4t_files\FX\scripts\vehicles\hmmwv\CBT_HMMWV_Init.sqs}; if (format [""%1"", CBT_FctLoad] == ""scalar bool array string 0xfcffffef"") then {_this exec {\d4t_files\FX\scripts\vehicles\hmmwv\CBT_init.sqs}}";
 	};

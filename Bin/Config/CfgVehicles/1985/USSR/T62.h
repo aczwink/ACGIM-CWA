@@ -105,6 +105,7 @@ class USSR_T62 : RussianTank
 	
 	class EventHandlers
 	{
+		Init = "[_this select 0, 51] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO
 		//init = "[_this select 0,_this select 1] exec ""\rhs_t62a\Scripts\nummern.sqs""";
 		//engine = "if (_this select 1) Then {(_this select 0) exec {\rhs_t62a\Scripts\sus.sqs}}";

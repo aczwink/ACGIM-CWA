@@ -66,6 +66,6 @@ class Russia_UAZ469 : Car
 
 	class EventHandlers
 	{
-		init = "_this exec {\SJC_Scripts\Russia\UAZ469\spz.sqs}";
+		init = "_this exec {\SJC_Scripts\Russia\UAZ469\spz.sqs};";
 	};
 };

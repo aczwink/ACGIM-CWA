@@ -91,6 +91,11 @@ class FIA_T54 : Tank
 			type="rotation";
 		};
 	};
+	
+	class EventHandlers
+	{
+		Init = "[_this select 0, 48] exec {\SJC_Scripts\vehicleTODO.sqs}";
+	};
 
 	/*class RHS_T55_StdEH//TODO
 	{

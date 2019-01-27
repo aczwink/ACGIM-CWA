@@ -61,6 +61,7 @@ class USA_M2HB : APC
 
 	class EventHandlers
 	{
+		Init = "[_this select 0, 185] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO
 		//fired="_this call loadFile {\d4t_files\FX\scripts\MGbullet.sqf}";
 	};

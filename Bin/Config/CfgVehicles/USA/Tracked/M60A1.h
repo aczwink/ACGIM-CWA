@@ -140,6 +140,7 @@ class USA_M60A1 : Tank
 	};
 	class EventHandlers
 	{
+		Init = "[_this select 0, 183] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO:
 		/*init="_this exec {\d4t_files\FX\scripts\vehicles\m60a3\init.sqs}";
 		getIn = "_this exec {\d4t_files\FX\scripts\vehicles\m60a3\RAE_driverOptics.sqs}";

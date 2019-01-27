@@ -84,4 +84,9 @@ class Su25 : Plane
 		min = -150;
 		max = 150;
 	};
+	
+	class EventHandlers
+	{
+		Init = "[_this select 0, 67] exec {\SJC_Scripts\vehicleTODO.sqs}";
+	};
 };

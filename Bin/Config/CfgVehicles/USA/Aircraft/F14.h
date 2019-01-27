@@ -302,6 +302,6 @@ class USA_F14 : USA_A10
 	class EventHandlers
 	{
 		fired = "(_this) exec {\SJC_Scripts\USA\F14\firemiss.sqs};";
-		init = "(_this select 0) exec {\SJC_Scripts\USA\F14\autogear.sqs}; (_this select 0) exec {\SJC_Scripts\USA\F14\drawmiss.sqs}; (_this select 0) exec {\SJC_Scripts\USA\F14\number.sqs}; (_this select 0) exec {\SJC_Scripts\USA\F14\swingwing.sqs}";
+		init = "[_this select 0, 99] exec {\SJC_Scripts\vehicleTODO.sqs}; (_this select 0) exec {\SJC_Scripts\USA\F14\autogear.sqs}; (_this select 0) exec {\SJC_Scripts\USA\F14\drawmiss.sqs}; (_this select 0) exec {\SJC_Scripts\USA\F14\number.sqs}; (_this select 0) exec {\SJC_Scripts\USA\F14\swingwing.sqs}";
 	};
 };

@@ -318,6 +318,11 @@ class Su17 : Plane
 		};
 	};*/
 	
+	class EventHandlers
+	{
+		Init = "[_this select 0, 66] exec {\SJC_Scripts\vehicleTODO.sqs}";
+	};
+	
 	/*class EventHandlers////TODO
 	{
 		gear = "if (_this Select 1) then {[(_this select 0)] exec {\TMD_Su17\script\geardn.sqs}} else {[(_this select 0)] exec {\TMD_Su17\script\gearup.sqs}}";

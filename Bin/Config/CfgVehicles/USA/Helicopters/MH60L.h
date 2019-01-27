@@ -505,6 +505,7 @@ class USA_MH60L : USA_UH60
 
 	class EventHandlers
 	{
+		Init = "[_this select 0, 94] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO
 		/*init="_this select 0 exec {\d4t_files\FX\scripts\vehicles\mh60l\BAS_60init.sqs}";
 		engine="if (_this select 1) then {[_this select 0] exec {\d4t_files\FX\scripts\vehicles\mh60l\BAS_global.sqs}}";

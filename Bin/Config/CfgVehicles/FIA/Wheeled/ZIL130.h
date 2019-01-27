@@ -95,6 +95,7 @@ class FIA_ZIL130Refuel : FIA_ZIL131
 
 	class EventHandlers
 	{
+		Init = "[_this select 0, 58] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO
 		/*init = [_this select 0,0,2] exec "\OWP_ZIL_Scripts\Global_Check.sqs";
 		engine= "_this exec ""\OWP_ZIL_Scripts\IsEngine.sqs""; [_this select 0,0,2] exec ""\OWP_ZIL_Scripts\Global_Check.sqs"";";
@@ -173,6 +174,7 @@ class FIA_ZIL130Repair : FIA_ZIL131
 
 	class EventHandlers
 	{
+		Init = "[_this select 0, 59] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO
 		/*init = [_this select 0,1,0] exec "\OWP_ZIL_Scripts\Global_Check.sqs";
 		engine= "_this exec ""\OWP_ZIL_Scripts\IsEngine.sqs""; [_this select 0,1,0] exec ""\OWP_ZIL_Scripts\Global_Check.sqs"";";

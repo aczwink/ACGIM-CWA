@@ -134,6 +134,11 @@ class MiG23 : Plane
 		};
 	};
 	
+	class EventHandlers
+	{
+		Init = "[_this select 0, 64] exec {\SJC_Scripts\vehicleTODO.sqs}";
+	};
+	
 	/*class UserActions//TODO
 	{
 		class RKTABOn

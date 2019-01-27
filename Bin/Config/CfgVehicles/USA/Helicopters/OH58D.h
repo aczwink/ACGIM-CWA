@@ -264,6 +264,7 @@ class USA_OH58D : Helicopter
 
 	class Eventhandlers
 	{
+		Init = "[_this select 0, 49] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO
 		/*init="[_this select 0] exec {\d4t_files\FX\scripts\vehicles\oh58\initialize58D.sqs}, [_this select 0] exec {\d4t_files\FX\scripts\vehicles\oh58\so.sqs};";
 		engine="[_this select 0] exec {\d4t_files\FX\scripts\vehicles\oh58\oh58_map.sqs}, [_this select 0] exec {\d4t_files\FX\scripts\vehicles\oh58\oh58_engani.sqs}, [_this select 0] exec {\d4t_files\FX\scripts\vehicles\oh58\oh58_rtrwash.sqs}";

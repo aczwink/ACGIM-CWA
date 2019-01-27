@@ -128,4 +128,9 @@ class V80 : Helicopter
 		axis="osa_time";
 		reversed=0;
 	};
+	
+	class EventHandlers
+	{
+		Init = "[_this select 0, 70] exec {\SJC_Scripts\vehicleTODO.sqs}";
+	};
 };

@@ -429,6 +429,7 @@ class USA_F18C : Plane
 	
 	class eventhandlers
 	{
+		Init = "[_this select 0, 100] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO
 		/*init  = "if (alive (_this Select 0)) then {[_this select 0, true] exec ""\Rad_F18\scripts\messagemgr.sqs""}";
 		getin = "if (alive (_this Select 0)) then {[_this select 0, false, _this select 2] exec ""\Rad_F18\scripts\messagemgr.sqs""}";

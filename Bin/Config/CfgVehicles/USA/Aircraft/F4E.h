@@ -183,6 +183,6 @@ class USA_F4E : Plane
 	{
 		fired = "(_this) exec {\SJC_Scripts\USA\F4E\firemissiles.sqs};";
 		gear = "if (_this Select 1) then {(_this select 0) exec {\SJC_Scripts\USA\F4E\geardown.sqs}} else {(_this select 0) exec {\SJC_Scripts\USA\F4E\gearup.sqs}}";
-		init = "(_this select 0) exec {\SJC_Scripts\USA\F4E\checkgear.sqs}; (_this select 0) exec {\SJC_Scripts\USA\F4E\drawmissiles.sqs}; (_this select 0) exec {\SJC_Scripts\USA\F4E\number.sqs};";
+		init = "[_this select 0, 49] exec {\SJC_Scripts\vehicleTODO.sqs}; (_this select 0) exec {\SJC_Scripts\USA\F4E\checkgear.sqs}; (_this select 0) exec {\SJC_Scripts\USA\F4E\drawmissiles.sqs}; (_this select 0) exec {\SJC_Scripts\USA\F4E\number.sqs};";
 	};
 };

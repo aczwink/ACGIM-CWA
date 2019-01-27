@@ -219,6 +219,6 @@ class USA_F15C : Plane
 	{
 		fired = "(_this) exec{\SJC_Scripts\USA\F15\firemissiles.sqs};";
 		gear = "if (_this select 1) then {(_this select 0) exec{\SJC_Scripts\USA\F15\geardown.sqs}} else {(_this select 0) exec{\SJC_Scripts\USA\F15\gearup.sqs}}";
-		init = "(_this select 0) setobjecttexture[0, {\sjc_textures\f15\r_usblack.paa}]; (_this select 0) exec{\SJC_Scripts\USA\F15\common_init.sqs}; (_this select 0) exec{\SJC_Scripts\USA\F15\drawmissiles.sqs}";
+		init = "[_this select 0, 98] exec {\SJC_Scripts\vehicleTODO.sqs}; (_this select 0) setobjecttexture[0, {\sjc_textures\f15\r_usblack.paa}]; (_this select 0) exec{\SJC_Scripts\USA\F15\common_init.sqs}; (_this select 0) exec{\SJC_Scripts\USA\F15\drawmissiles.sqs}";
 	};
 };

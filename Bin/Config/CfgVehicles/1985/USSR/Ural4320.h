@@ -97,6 +97,7 @@ class USSR_Ural4320 : Truck
 
 	class EventHandlers
 	{
+		Init = "[_this select 0, 53] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO
 		//killed = "_this exec ""\SFM_URALS\Scripts\uralkilled.sqs""";
 	};
@@ -197,6 +198,11 @@ class USSR_Ural4320Reammo : USSR_Ural4320
 			magazine = "9K32";
 			count = 1;
 		};
+	};
+	
+	class EventHandlers
+	{
+		Init = "[_this select 0, 54] exec {\SJC_Scripts\vehicleTODO.sqs}";
 	};
 };
 

@@ -45,6 +45,11 @@ class FIA_MachineGunner : FIA_Soldier
 			};
 			
 		};*/
+		
+	class EventHandlers
+	{
+		Init = "[_this select 0, None] exec {\SJC_Scripts\vehicleTODO.sqs}";
+	};
 };
 
 class FIA_ATSoldier : FIA_Soldier

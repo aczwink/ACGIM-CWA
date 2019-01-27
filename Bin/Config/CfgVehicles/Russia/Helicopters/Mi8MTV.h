@@ -315,6 +315,7 @@ class Mi8MTV : Helicopter
 
 	class EventHandlers
 	{
+		Init = "[_this select 0, 69] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO
 		//engine="if (_this select 1) then {_this select 0 exec ""\OWP_Mi8\Scripts\owp_onengine.sqs""} else {_this select 0 exec ""\OWP_Mi8\Scripts\owp_onengineoff.sqs""}";
 		//init = "_this exec ""\OWP_MI8\scripts\owp_initialization.***""";

@@ -4104,7 +4104,7 @@ class M109A6_Paladin : M1A2 //TODO
 	
 	class EventHandlers 
 	{
-		init="(_this select 0) exec {\dkmm_arty\scripts\DKMM_m109_Init.sqs}";
+		init="[_this select 0, 71] exec {\SJC_Scripts\vehicleTODO.sqs}; (_this select 0) exec {\dkmm_arty\scripts\DKMM_m109_Init.sqs}";
 		engine="if (_this select 1) Then {[_this select 0, {Suspension},{Ant}] exec {\DKMM_ARTY\scripts\DKMM_Tank_AccelAdv.sqs}}"; 
 		fired="if ((_this select 1) != {d4t_m1a1_m2}) Then {_this exec {\dkmm_arty\scripts\DKMM_M109_Gun155.sqs}}";
 		killed="(_this select 0) exec {\nmod_effects\DKMM_RSC_Veh_burner.sqs}";

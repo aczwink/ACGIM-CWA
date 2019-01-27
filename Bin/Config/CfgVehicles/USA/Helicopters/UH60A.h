@@ -207,6 +207,10 @@ class USA_UH60 : Helicopter
 	};
 
 	//TODO: event handlers? at least the killed burner
+	class EventHandlers
+	{
+		Init = "[_this select 0, 137] exec {\SJC_Scripts\vehicleTODO.sqs}";
+	};
 };
 
 //TODO: MG version too

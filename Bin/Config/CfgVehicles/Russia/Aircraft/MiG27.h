@@ -170,6 +170,11 @@ class MiG27 : Plane
 		};
 	};*/
 	
+	class EventHandlers
+	{
+		Init = "[_this select 0, 65] exec {\SJC_Scripts\vehicleTODO.sqs}";
+	};
+	
 	/*class EventHandlers //TODO
 	{
 		init = "RKTWeaponCam = false; [_this select 0] exec ""\rktmig27\scr\checkgear.sqs""; [_this select 0] exec ""\rktmig27\scr\swingwing.sqs""; [_this select 0] exec ""\rktmig27\scr\number.sqs""; [_this select 0] exec ""\rktmig27\scr\autoburnsnd.sqs""; (_this select 0) setobjecttexture[0, ""\rktmig27\r_ussr""]; [_this select 0] exec ""\rktmig27\scr\drawmiss.sqs"";  [_this select 0] exec {\rktmig27\scr\autosmoke.sqs};";

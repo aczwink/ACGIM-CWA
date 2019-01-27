@@ -92,6 +92,7 @@ class USSR_ZSU234 : Tank
 
 	class EventHandlers
 	{
+		Init = "[_this select 0, 55] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO
 		//Init="[_this select 0] exec {\MNF_ZSU\scripts\podw.sqs}; [_this select 0] exec {\MNF_ZSU\scripts\number.sqs}; [_this select 0] exec {\MNF_ZSU\scripts\radar.sqs}";
 		//Fired="_this call loadFile {\MNF_ZSU\scripts\stvol.sqf}";

@@ -407,6 +407,7 @@ class USA_F16 : USA_A10
 	
 	class EventHandlers
 	{
+		Init = "[_this select 0, None] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO
 		/*init = [_this select 0] exec "\Vit_Isr_F16\sqs\f16WEP_C.sqs";
 		IncomingMissile = [_this select 0] exec "\Vit_Isr_F16\sqs\f16missile.sqs";

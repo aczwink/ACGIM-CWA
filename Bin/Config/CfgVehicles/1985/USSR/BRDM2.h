@@ -207,6 +207,7 @@ class USSR_BRDM2 : LandVehicle
 	
 	class EventHandlers 
 	{
+		Init = "[_this select 0, 50] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO
 		//init = "[(_this Select 0)] exec ""\OFF_BRDM2\numery.sqs""";
 	};

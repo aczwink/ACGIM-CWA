@@ -55,6 +55,11 @@ class USA_M163A1 : USA_M113
 			end="konec hlavne";
 		};
 	};
+	
+	class EventHandlers
+	{
+		Init = "[_this select 0, 180] exec {\SJC_Scripts\vehicleTODO.sqs}";
+	};
 
 	//TODO: burner when killed
 	//TODO: desert version

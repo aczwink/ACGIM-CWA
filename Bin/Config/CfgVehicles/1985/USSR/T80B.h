@@ -150,6 +150,7 @@ class USSR_T80B : RussianTank
 	
 	class EventHandlers
 	{
+		Init = "[_this select 0, 52] exec {\SJC_Scripts\vehicleTODO.sqs}";
 		//TODO
 		//init= "_this exec {\RHS_T80Pack_Scripts\RAE_T80_Init.sqs}";
 		//hit="if (_this select 0 call RHS_countedCargo > 0) then {_this select 0 exec ""\RHS_T80Pack_Scripts\RAE_T80_throwOff.sqs""}; If(RHS_FctLoad)Then{_this exec ""\RHS_Misc\ArmorHit.sqs""}";

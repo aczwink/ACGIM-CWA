@@ -166,6 +166,11 @@ class Su24 : Plane
 		};
 	};
 	gearRetracting=1;
+	
+	class EventHandlers
+	{
+		Init = "[_this select 0, 68] exec {\SJC_Scripts\vehicleTODO.sqs}";
+	};
 	/*class EventHandlers//TODO
 	{
 		init = "[_this select 0] exec{\rktsu24\scr\common_init.sqs}; (_this select 0) setobjecttexture[0, ""\rktsu24\r_ussr""]";
