@@ -1,0 +1,37 @@
+steps:
+  - type: ImportFiles
+    source: addons
+    sources:
+      - type: Archive
+        name: FFUR/FFUR_85_Patch_1.05.exe
+        pbos:
+          - @ffsx85/addons/Noe.pbo
+          - @ffsx85/addons/SLX_Grass_CWC_Islands.pbo
+        files:
+          - Noe/noe.wrp
+          - SLX_Grass_CWC_Islands/Abel.wrp
+          - SLX_Grass_CWC_Islands/cain.wrp
+          - SLX_Grass_CWC_Islands/Eden.wrp
+
+  - type: CopyFiles
+    source: resources
+    files: Dta/*.pbo #TODO: these should be packed instead of copied
+
+  - type: PackArchive
+    source: resources
+    source_folder: Dta/sjc_files
+    target_folder: Dta
+
+  - type: CopyFiles
+    source: source
+    files: Bin #TODO: this should be rapped
+
+  - type: CopyFiles
+    source: resources
+    files: AddOns/*.pbo #TODO: check this, I think these are just copies of the original addon files but without the config.cpp/config.bin/stringtable.csv. This could be done with a unpack-delete config-repack step
+
+  - type: CopyFiles
+    source: source
+    files: [LICENSE, Start.bat, Start Windowed.bat]
+
+  - type: CreateArchive
