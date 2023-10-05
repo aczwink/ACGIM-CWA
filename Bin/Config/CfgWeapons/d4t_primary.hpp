@@ -658,7 +658,7 @@ class g36 : Riffle
 	opticsZoomMax=0.2;
 	distanceZoomMin=350;
 	distanceZoomMax=350;
-	maxLeadSpeed=55,2;
+	maxLeadSpeed=55.2;
 	displayName="HK G36";
 	drySound[]={"weapons\M16dry",0.003162,1};
 	magazines[]={g36mag};

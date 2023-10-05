@@ -141,7 +141,7 @@ class makarov_pm : Riffle
 	scopeWeapon=2;
 	scopeMagazine=0;	
 	aiRateOfFire=0.5;
-	aiRateOfFireDistance=50		
+	aiRateOfFireDistance=50;
 	model="\d4t_files\models\russia\weapons\makarov_pm.p3d";
 	modelOptics="\d4t_files\optics\opt_makarov.p3d";
 	picture="\d4t_files\pics\weapons\makarov_pm.paa";
@@ -157,9 +157,9 @@ class makarov_pm : Riffle
 	magazines[]={makarovmag};
 	recoil=d4t_handgun_recoil;
 	backgroundReload=0;
-	burst=1
-	multiplier=1
-	autoFire=0
+	burst=1;
+	multiplier=1;
+	autoFire=0;
 	initSpeed=400;
 	dispersion=0.006;
 };

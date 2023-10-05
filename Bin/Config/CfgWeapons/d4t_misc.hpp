@@ -4,7 +4,7 @@ class p2a1 : HandGunBase
 	scopeWeapon=public;
 	scopeMagazine=private;
 	aiRateOfFire=0.500000;
-	aiRateOfFireDistance=50
+	aiRateOfFireDistance=50;
 	model="\d4t_files\models\us\misc\p2a1.p3d";
 	modelOptics="\d4t_files\optics\optic_p2a1.p3d";
 	picture="\d4t_files\pics\weapons\p2a1.jpg";
@@ -21,9 +21,9 @@ class p2a1 : HandGunBase
 	magazines[]={p2a1_white_flare};
 	recoil=revolverSingle;
 	backgroundReload=0;
-	burst=1
-	multiplier=1
-	autoFire=0
+	burst=1;
+	multiplier=1;
+	autoFire=0;
 	dispersion=0.002000; 
 };
 

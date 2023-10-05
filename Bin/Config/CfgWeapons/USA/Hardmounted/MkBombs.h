@@ -28,7 +28,7 @@ class Mk83 : HellfireLauncher
 	displayNameMagazine="Mark 83 Bomb";
 	shortNameMagazine="Mk83";
 	count=10;
-	reloadTime=0.5
+	reloadTime=0.5;
 	sound[]={"\sound\weapons\AK74dry",db-50,1.0};
 	initSpeed=0;
 	canLock = CANLOCK_NO;

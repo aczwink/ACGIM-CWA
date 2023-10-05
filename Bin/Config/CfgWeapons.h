@@ -1708,22 +1708,22 @@ class XMS:M4
 //---d4t cfgweapons
 //-infantry
 //primary weapons
-#include "config\cfgweapons\d4t_primary.hpp"
+#include "Config\CfgWeapons\d4t_primary.hpp"
 //secondary
-#include "config\cfgweapons\d4t_secondary.hpp"
+#include "Config\CfgWeapons\d4t_secondary.hpp"
 //tertiary
-#include "config\cfgweapons\d4t_tertiary.hpp"
+#include "Config\CfgWeapons\d4t_tertiary.hpp"
 //misc
-#include "config\cfgweapons\d4t_misc.hpp"
+#include "Config\CfgWeapons\d4t_misc.hpp"
 //-vehicles
 //air
-#include "config\cfgweapons\d4t_air_weapons.hpp"
+#include "Config\CfgWeapons\d4t_air_weapons.hpp"
 //surface vehicles
-#include "config\cfgweapons\d4t_surface_vehicles_weapons.h"
+#include "Config\CfgWeapons\d4t_surface_vehicles_weapons.h"
 
 //magazines
 //magazines for infantry
-#include "config\cfgweapons\d4t_infantry_magazines.hpp"
+#include "Config\CfgWeapons\d4t_infantry_magazines.hpp"
 	
 	class d4t_M4SD_aimpoint : Riffle
 		{
@@ -2153,5 +2153,5 @@ class XMS:M4
 	};
 
 //d4t include bis and short classes
-#include "config\cfgweapons\short.hpp"
+#include "Config\CfgWeapons\short.hpp"
 };

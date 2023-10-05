@@ -11,7 +11,7 @@ class RocketM72LAW : LAW
 	cost = COST_ROCKET_M72LAW;
 	hit = 450;
 	indirectHit = 15;
-	indirectHitRange = 4
+	indirectHitRange = 4;
 	irLock = false;
 	soundHit[]={"\d4t_files\sounds\weapons\impacts\smaw_ground.wss",db+25,1.0};
 	soundFly[]={"\d4t_files\sounds\weapons\impacts\smaw_fly.ogg",db+0,1.0};
