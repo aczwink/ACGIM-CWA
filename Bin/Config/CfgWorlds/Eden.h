@@ -4,7 +4,7 @@ class Eden : DefaultWorld
 	plateFormat="ER$  ## - ##";
 	plateLetters="ABCDEFHIKLMOPRSTVXYZ";
 #ifdef SJC_SET_GRASS_ENABLED
-	worldName = "\sjc_files\worlds\Eden.wrp";
+	worldName = "\worlds\Eden.wrp";
 #else
 	worldName="eden.wrp";
 #endif

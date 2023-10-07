@@ -4,7 +4,7 @@ class Noe:DefaultWorld
 	description="Nogova";
 	icon="\o\misc\_nogovo.paa";
 #ifdef SJC_SET_GRASS_ENABLED
-	worldName = "\sjc_files\worlds\Noe.wrp";
+	worldName = "\worlds\Noe.wrp";
 #else
 	worldName="\Noe\Noe.wrp";
 #endif

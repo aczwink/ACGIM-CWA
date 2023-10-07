@@ -4,7 +4,7 @@ class Cain : DefaultWorld
 	plateFormat="## - KO$ - #";
 	plateLetters="ABCEHKMOPT";
 #ifdef SJC_SET_GRASS_ENABLED
-	worldName = "\sjc_files\worlds\Cain.wrp";
+	worldName = "\worlds\Cain.wrp";
 #else
 	worldName="cain.wrp";
 #endif

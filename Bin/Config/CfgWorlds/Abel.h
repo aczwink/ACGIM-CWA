@@ -4,7 +4,7 @@ class Abel:DefaultWorld
 	plateFormat="ML$ - #####";
 	plateLetters="ABCDEGHIKLMNOPRSTVXZ";
 #ifdef SJC_SET_GRASS_ENABLED
-	worldName = "\sjc_files\worlds\Abel.wrp";
+	worldName = "\worlds\Abel.wrp";
 #else
 	worldName="abel.wrp";
 #endif
