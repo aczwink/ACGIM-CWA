@@ -10,7 +10,7 @@ class ReammoBoxWest : ReammoBox
 		//Primary Magazines
 		class m_M16A2
 		{
-			magazine = "M16A2";
+			magazine = WEAPON_REFERENCE(M16A2);
 			count = 20;
 		};
 
@@ -28,7 +28,7 @@ class ReammoBoxWest : ReammoBox
 
 		class m_CAR15
 		{
-			magazine = "CAR15";
+			magazine = WEAPON_REFERENCE(CAR15);
 			count = 6;
 		};
 
@@ -159,13 +159,13 @@ class AmmoBoxOUTWW : HeavyReammoBox
 		//Primary
 		class w_M16A2
 		{
-			weapon = "M16A2";
+			weapon = WEAPON_REFERENCE(M16A2);
 			count = 3;
 		};
 
 		class w_M16A2_M203
 		{
-			weapon = "M16A2_M203";
+			weapon = WEAPON_REFERENCE(M16A2_M203);
 			count = 1;
 		};
 
@@ -183,7 +183,7 @@ class AmmoBoxOUTWW : HeavyReammoBox
 
 		class w_CAR15
 		{
-			weapon = "CAR15";
+			weapon = WEAPON_REFERENCE(CAR15);
 			count = 2;
 		};
 

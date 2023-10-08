@@ -66,8 +66,18 @@ steps:
     files: Dta/*.pbo #TODO: these should be packed instead of copied
 
   - type: PackArchive
+    source: source
+    source_folder: Scripts
+    target_folder: Dta
+
+  - type: PackArchive
     source: resources
     source_folder: Dta/sjc_files
+    target_folder: Dta
+
+  - type: PackArchive
+    source: resources
+    source_folder: Dta/SJC_Scripts
     target_folder: Dta
 
   #misc

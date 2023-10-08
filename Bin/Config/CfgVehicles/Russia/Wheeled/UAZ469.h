@@ -67,5 +67,6 @@ class Russia_UAZ469 : Car
 	class EventHandlers
 	{
 		init = "_this exec {\SJC_Scripts\Russia\UAZ469\spz.sqs};";
+		killed = "(_this select 0) exec {\Scripts\Events\DKMM_RSC_Car_Burner.sqs}";
 	};
 };

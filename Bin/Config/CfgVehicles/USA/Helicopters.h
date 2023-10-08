@@ -9,7 +9,7 @@
 #ifdef ACGIM_SCENARIO_1985
 #include "Config\CfgVehicles\USA\Helicopters\AH64A.h"
 #endif
-#ifdef ACGIM_SCENARIO_2005
+#ifdef ACGIM_SCENARIO_2007
 #include "Config\CfgVehicles\USA\Helicopters\AH64A.h"
 #endif
 
@@ -19,7 +19,7 @@
 #ifdef ACGIM_SCENARIO_1985
 #include "Config\CfgVehicles\USA\Helicopters\CH47D.h"
 #endif
-#ifdef ACGIM_SCENARIO_2005
+#ifdef ACGIM_SCENARIO_2007
 #include "Config\CfgVehicles\USA\Helicopters\CH47D.h"
 #endif
 
@@ -35,7 +35,7 @@
 #ifdef ACGIM_SCENARIO_1985
 #include "Config\CfgVehicles\USA\Helicopters\OH58D.h"
 #endif
-#ifdef ACGIM_SCENARIO_2005
+#ifdef ACGIM_SCENARIO_2007
 #include "Config\CfgVehicles\USA\Helicopters\OH58D.h"
 #endif
 
@@ -46,6 +46,6 @@
 #ifdef ACGIM_SCENARIO_1985
 #include "Config\CfgVehicles\USA\Helicopters\UH60A.h"
 #endif
-#ifdef ACGIM_SCENARIO_2005
+#ifdef ACGIM_SCENARIO_2007
 #include "Config\CfgVehicles\USA\Helicopters\UH60A.h"
 #endif

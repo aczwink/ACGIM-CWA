@@ -1,11 +1,11 @@
 class CfgCloudlets
 {
 	access = ACCESS_ADDVALUESONLY;
-#ifdef SJC_SET_SMOKEEFFECTS_LOW
+#ifdef ACGIM_SET_SMOKEEFFECTS_LOW
 	#include "Config\CfgCloudlets\Low.h"
 #endif
 
-#ifdef SJC_SET_SMOKEEFFECTS_HIGH
+#ifdef ACGIM_SET_SMOKEEFFECTS_HIGH
 	#include "Config\CfgCloudlets\High.h"
 #endif
 

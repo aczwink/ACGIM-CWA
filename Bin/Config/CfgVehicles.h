@@ -29,9 +29,6 @@ class CfgVehicles
 
 
 
-	//TODO sort all intro categories with scenario FROM HERE:	
-
-
 	//----USSR----
 	//Armored Ground Vehicles
 #include "Config\CfgVehicles\1985\USSR\BRDM2.h"
@@ -90,7 +87,7 @@ class CfgVehicles
 	
 	
 	//Modern OFP 2007
-/*#ifdef SJC_SET_SCENARIO_MODERN2007
+/*#ifdef ACGIM_SCENARIO_2007
 
 #include "config\cfgvehicles\modern2007\west.h"
 #include "config\cfgvehicles\modern2007\east.hpp"

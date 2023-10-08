@@ -9,8 +9,10 @@ class M16A2 : Riffle
 	scopeWeapon = SCOPE_PUBLIC;
 	scopeMagazine = SCOPE_PUBLIC;
 	displayName="M16A2";
-	displayNameMagazine="30 round 5.56x45mm Magazine";
-	shortNameMagazine="5.56x45mm Mag";
+	displayNameMagazine="M16A2 Magazine";
+	shortNameMagazine="M16A2 Mag";
+	//displayNameMagazine="30 round 5.56x45mm Magazine";
+	//shortNameMagazine="5.56x45mm Mag";
 	model="\d4t_files\models\us\weapons\m16\m16a2.p3d";
 	modelOptics="\d4t_files\optics\optic_m16a2.p3d";
 	reloadMagazineSound[]={"\d4t_files\sounds\weapons\handheld\reload.wss",1.000000,1};
@@ -75,7 +77,7 @@ class M16A2_M203 : M16A2
 	
 	class M16Muzzle : M16A2
 	{
-		magazines[]={"M16A2"};
+		magazines[]={WEAPON_REFERENCE(M16A2)};
 	};
 	class M203Muzzle : M203 {};
 };

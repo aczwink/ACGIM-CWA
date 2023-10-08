@@ -17,7 +17,7 @@
 #ifdef ACGIM_SCENARIO_1985
 #include "Config\CfgVehicles\Russia\Aircraft\Su24.h"
 #endif
-#ifdef ACGIM_SCENARIO_2005
+#ifdef ACGIM_SCENARIO_2007
 #include "Config\CfgVehicles\Russia\Aircraft\Su24.h"
 #endif
 
@@ -25,6 +25,6 @@
 #ifdef ACGIM_SCENARIO_1985
 #include "Config\CfgVehicles\Russia\Aircraft\Su25.h"
 #endif
-#ifdef ACGIM_SCENARIO_2005
+#ifdef ACGIM_SCENARIO_2007
 #include "Config\CfgVehicles\Russia\Aircraft\Su25.h"
 #endif

@@ -48,7 +48,7 @@ class USA_Truck5t : Truck
 	{
 		class m_M16A2
 		{
-			magazine = "M16A2";
+			magazine = WEAPON_REFERENCE(M16A2);
 			count=20;
 		};
 
@@ -148,7 +148,7 @@ class USA_Truck5tReammo : USA_Truck5t
 	{
 		class m_M16A2
 		{
-			magazine = "M16A2";
+			magazine = WEAPON_REFERENCE(M16A2);
 			count=40;
 		};
 

@@ -132,12 +132,8 @@ class USA_SF_Ranger : USA_SF_Operator
 	model = "\sjc_models\USA\ranger.p3d";
 	hiddenSelections[]={"goou", "goostu", "googu", "good", "goostd", "googd", "medic", "mic", "holster"};
 	displayName="Ranger";
-	weapons[]={"CAR15", "M1911", "Throw", "Put"};
-	magazines[]={"CAR15", "CAR15", "CAR15", "CAR15", "CAR15", "CAR15", "PipeBomb", "PipeBomb", "M1911", "M1911", "M1911", "M1911"};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
+	weapons[]={WEAPON_REFERENCE(CAR15), "M1911", "Throw", "Put"};
+	magazines[]={WEAPON_REFERENCE(CAR15), WEAPON_REFERENCE(CAR15), WEAPON_REFERENCE(CAR15), WEAPON_REFERENCE(CAR15), WEAPON_REFERENCE(CAR15), WEAPON_REFERENCE(CAR15), "PipeBomb", "PipeBomb", "M1911", "M1911", "M1911", "M1911"};
 };
 
 class USA_SF_Ranger_Spotter : USA_SF_Ranger
@@ -145,12 +141,8 @@ class USA_SF_Ranger_Spotter : USA_SF_Ranger
 	accuracy = ACCURACY_SFOPERATOR_SPOTTER;
 	cost = COST_SFOPERATOR_SPOTTER;
 	displayName = "Ranger (Spotter)";
-	weapons[] = {"CAR15", "LaserDesignator", "M1911", "Throw", "Put"};
-	magazines[] = {"CAR15", "CAR15", "CAR15", "CAR15", "LaserDesignator", "M1911", "M1911", "M1911", "M1911"};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
+	weapons[] = {WEAPON_REFERENCE(CAR15), "LaserDesignator", "M1911", "Throw", "Put"};
+	magazines[] = {WEAPON_REFERENCE(CAR15), WEAPON_REFERENCE(CAR15), WEAPON_REFERENCE(CAR15), WEAPON_REFERENCE(CAR15), "LaserDesignator", "M1911", "M1911", "M1911", "M1911"};
 };
 
 class USA_SF_Ranger_Marksman : USA_SF_Ranger

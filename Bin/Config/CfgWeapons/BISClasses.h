@@ -394,9 +394,8 @@ class Throw : GrenadeLauncher
 	enableAttack=0;
 	showEmpty=0;
 	autoReload=1;
-	//Add own Grenades
-	//magazines[]={"HandGrenade","SmokeShell","SmokeShellRed","SmokeShellGreen"};
-	magazines[]={"M67", "ANM8", "M18Red", "M18Green", "RGO", "RDG1", "RDG1Red"};
+	//magazines[]={"SmokeShell","SmokeShellRed","SmokeShellGreen"};
+	magazines[]={"M67", "ANM8", "M18Red", "M18Green", "RGO", "RDG1", "RDG1Red", "HandGrenade"}; //standard BIS grenades also listed here, because they are available as loadout in missions and they can't be really linked, because they are sideless
 	canDrop=0;
 };
 
@@ -581,7 +580,7 @@ class Binocular : Default
 	model = "dalekohled_proxy";
 	modelOptics = "optika_dalekohled";
 #endif
-#ifdef ACGIM_SCENARIO_2005
+#ifdef ACGIM_SCENARIO_2007
 	model="\d4t_files\models\us\misc\binocular.p3d"; //new model
 	modelOptics="\d4t_files\optics\optic_binoculars.p3d";
 #endif

@@ -1,8 +1,8 @@
 //scenario
 #define ACGIM_SCENARIO_1985
-//#define ACGIM_SCENARIO_2005
+//#define ACGIM_SCENARIO_2007
 
-//settings for 2005 scenario
+//settings for 2007 scenario
 //-us infantry: army or marines
 //#define ACGIM_MARINES
 //-camo
@@ -11,8 +11,8 @@
 //future: winter?
 
 //smoke effects
-//#define SJC_SET_SMOKEEFFECTS_LOW
-#define SJC_SET_SMOKEEFFECTS_HIGH
+//#define ACGIM_SET_SMOKEEFFECTS_LOW
+#define ACGIM_SET_SMOKEEFFECTS_HIGH
 
 //grass
-#define SJC_SET_GRASS_ENABLED
+#define ACGIM_SET_GRASS_ENABLED

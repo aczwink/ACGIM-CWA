@@ -1,7 +1,5 @@
 //Primary
-class M16 : M16A2{};
 class M16S : M16{};
-class M16GrenadeLauncher : M16A2_M203{};
 
 //Secondary
 class 9K32Launcher : 9K32{};

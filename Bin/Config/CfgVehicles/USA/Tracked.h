@@ -2,7 +2,7 @@
 #ifdef ACGIM_SCENARIO_1985
 #include "Config\CfgVehicles\USA\Tracked\M1A1.h"
 #endif
-#ifdef ACGIM_SCENARIO_2005
+#ifdef ACGIM_SCENARIO_2007
 #include "Config\CfgVehicles\USA\Tracked\M1A1.h" //TODO_2005: should be m1a2
 #endif
 
@@ -18,7 +18,7 @@
 #ifdef ACGIM_SCENARIO_1985
 #include "Config\CfgVehicles\USA\Tracked\M2A1.h"
 #endif
-#ifdef ACGIM_SCENARIO_2005
+#ifdef ACGIM_SCENARIO_2007
 #include "Config\CfgVehicles\USA\Tracked\M2A1.h" //TODO: This was upgraded for sure
 #endif
 

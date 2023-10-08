@@ -12,8 +12,11 @@ class CAR15 : Riffle
 	scopeWeapon = SCOPE_PUBLIC;
 	scopeMagazine = SCOPE_PUBLIC;
 	displayName = "CAR-15 Commando";
-	displayNameMagazine = "30 round 5.56x45mm Magazine";
-	shortNameMagazine = "5.56x45mm Mag";
+	//cool idea but same mags are not interchangeable (for example with M16A2) and can't be distinguished like this
+	//displayNameMagazine = "30 round 5.56x45mm Magazine";
+	//shortNameMagazine = "5.56x45mm Mag";
+	displayNameMagazine = "CAR-15 Magazine";
+	shortNameMagazine = "CAR-15 Mag";
 	model = "\sjc_models\USA\Weapons\Primary\car15.p3d";
 	modelMagazine="\d4t_files\models\us\weapons\m4\m4_mag.p3d";//ODOL Explorer 2.0 was used
 	modelOptics="\d4t_files\optics\optic_m16a2.p3d";
@@ -21,7 +24,7 @@ class CAR15 : Riffle
 	reloadMagazineSound[]={"\d4t_files\sounds\weapons\handheld\reload.wss", 1.0, 1};
 	modes[]={"Single","FullAuto"};
 	initSpeed = 838;
-	magazines[] = {"CAR15"};
+	magazines[] = {"this"};
 
 	class Single
 	{

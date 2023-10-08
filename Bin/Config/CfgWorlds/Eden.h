@@ -3,7 +3,7 @@ class Eden : DefaultWorld
 	access=3;
 	plateFormat="ER$  ## - ##";
 	plateLetters="ABCDEFHIKLMOPRSTVXYZ";
-#ifdef SJC_SET_GRASS_ENABLED
+#ifdef ACGIM_SET_GRASS_ENABLED
 	worldName = "\worlds\Eden.wrp";
 #else
 	worldName="eden.wrp";

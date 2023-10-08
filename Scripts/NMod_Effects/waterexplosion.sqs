@@ -1,0 +1,46 @@
+;Script by MP - markpalmer@hotmail.com
+;Based on script created by David Berka (David.Berka@nmi.at) respect is due
+;creates a large explosion at an object location, vehicle, infantry etc..
+;can be easily modified to accept coords, but you know that already ;-)
+_vehicle = _this select 0
+
+@ getpos _vehicle select 2 < (-1)
+
+_AmmoType = "heat125"
+_Explosion = GetPos _vehicle
+_x = _Explosion select 0
+_y = _Explosion select 1
+_z = _Explosion select 2
+_tempObj = _AmmoType camCreate[_x, _y, (_z - 5)]
+~0.01
+_tempobj = objNull
+;-----end script-------
+_sizeblast = 0
+
+#boom
+;            shape             type       time life pos               vel    rtte  w v fric size  colour
+;smoke main
+drop ["cl_water", "", "Billboard", 3, 2, [_x,_y, 0], [0, 0,0],0,2.3,1, 0,[18],[[1, 1, 1, 0.5],[1,1,1,0]],[0,1],1,1,"","",_Explosion] 
+~.01
+drop ["cl_water", "", "Billboard", 4, 3, [_x,_y,0+4],[0,0,5],0,2.275,1, 0,[12,5],[[1, 1, 1, 0.5],[1, 1, 1, 0]],[0,1],1,1,"","",_Explosion] 
+drop ["cl_water", "", "Billboard", 4, 3, [_x,_y, 0+6],[0,0,8],1,2.275,1, 0,[8,1],[[1, 1, 1, 0.5],[1, 1, 1, 0]],[0,1],1,1,"","",_Explosion] 
+;mid range
+drop ["cl_water", "", "Billboard", 1, 4,[_x,_y, 0+7],[ 4,4, 9], 0,4, 1, 0, [1,.1],[[1, 1, 1, 0.5],[1, 1, 1, 0]],[0,1],1,1,"","",_Explosion] 
+drop ["cl_water", "", "Billboard", 1, 4,[_x,_y, 0+7],[-4,-4,9], 0,4, 1, 0, [1,.1],[[1, 1, 1, 0.5],[1, 1, 1, 0]],[0,1],1,1,"","",_Explosion] 
+drop ["cl_water", "", "Billboard", 1, 4,[_x,_y, 0+7],[4,-4, 9], 0,4, 1, 0, [1,.1],[[1, 1, 1, 0.5],[1, 1, 1, 0]],[0,1],1,1,"","",_Explosion] 
+drop ["cl_water", "", "Billboard", 1, 4,[_x,_y, 0+7],[-4,4, 9], 0,4, 1, 0, [1,.1],[[1, 1, 1, 0.5],[1, 1, 1, 0]],[0,1],1,1,"","",_Explosion] 
+~.001
+;low range
+drop ["cl_water", "", "Billboard", 1, 4,[_x,_y, 0+5],[4, 4, 7], 0,4 ,1,0, [1,.1],[[1, 1, 1, 0.5],[1, 1, 1, 0]],[0,1],1,1,"","",_Explosion] 
+drop ["cl_water", "", "Billboard", 1, 4,[_x,_y, 0+5],[-4,-4,7], 0,4,1, 0, [1,.1],[[1, 1, 1, 0.5],[1, 1, 1, 0]],[0,1],1,1,"","",_Explosion] 
+drop ["cl_water", "", "Billboard", 1, 4,[_x,_y, 0+5],[4,-4, 7], 0,4,1, 0, [1,.1],[[1, 1, 1, 0.5],[1, 1, 1, 0]],[0,1],1,1,"","",_Explosion] 
+drop ["cl_water", "", "Billboard", 1, 4,[_x,_y, 0+5],[-4,4, 7], 0,4,1, 0, [1,.1],[[1, 1, 1, 0.5],[1, 1, 1, 0]],[0,1],1,1,"","",_Explosion] 
+~.001
+;low range
+drop ["cl_water", "", "Billboard", 1, 4,[_x,_y, 0],[4, 4, 6], 0,4 ,1,0, [1,.1],[[1, 1, 1, 0.5],[1, 1, 1, 0]],[0,1],1,1,"","",_Explosion] 
+drop ["cl_water", "", "Billboard", 1, 4,[_x,_y, 0],[-4,-4,6], 0,4,1, 0, [1,.1],[[1, 1, 1, 0.5],[1, 1, 1, 0]],[0,1],1,1,"","",_Explosion] 
+drop ["cl_water", "", "Billboard", 1, 4,[_x,_y, 0],[4,-4, 6], 0,4,1, 0, [1,.1],[[1, 1, 1, 0.5],[1, 1, 1, 0]],[0,1],1,1,"","",_Explosion] 
+drop ["cl_water", "", "Billboard", 1, 4,[_x,_y, 0],[-4,4, 6], 0,4,1, 0, [1,.1],[[1, 1, 1, 0.5],[1, 1, 1, 0]],[0,1],1,1,"","",_Explosion] 
+_sizeblast = _sizeblast +1
+?(_sizeblast <=3): goto "boom"
+exit

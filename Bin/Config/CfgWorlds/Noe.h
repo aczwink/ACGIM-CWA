@@ -3,7 +3,7 @@ class Noe:DefaultWorld
 	access=2;
 	description="Nogova";
 	icon="\o\misc\_nogovo.paa";
-#ifdef SJC_SET_GRASS_ENABLED
+#ifdef ACGIM_SET_GRASS_ENABLED
 	worldName = "\worlds\Noe.wrp";
 #else
 	worldName="\Noe\Noe.wrp";

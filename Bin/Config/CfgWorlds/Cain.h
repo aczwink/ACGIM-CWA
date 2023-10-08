@@ -3,7 +3,7 @@ class Cain : DefaultWorld
 	access=3;
 	plateFormat="## - KO$ - #";
 	plateLetters="ABCEHKMOPT";
-#ifdef SJC_SET_GRASS_ENABLED
+#ifdef ACGIM_SET_GRASS_ENABLED
 	worldName = "\worlds\Cain.wrp";
 #else
 	worldName="cain.wrp";

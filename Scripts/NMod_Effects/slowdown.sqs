@@ -1,0 +1,18 @@
+_vehicle = _this select 0
+_rate = 0.15
+_goal = 1
+_div = 1.3
+_speed = speed _vehicle
+
+@ (getpos _vehicle select 2 < 3)
+
+#slowdown
+_vehicle setvelocity [(velocity _vehicle select 0) / _div,(velocity _vehicle select 1) / _div,(velocity _vehicle select 2) / _div]
+~_rate
+?speed _vehicle <= _goal:goto "exit"
+goto "slowdown"
+
+
+exit
+
+

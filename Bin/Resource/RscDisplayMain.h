@@ -2,7 +2,7 @@ access=3;
 idd=0;
 movingEnable=1;
 controlsBackground[]={"Background1","Background2","Background3"};
-controls[]={"FP1", "FP2", "FP3", "CWA","Line1","Line2","Continue","Player","Game","SingleMission","Multiplayer","Custom","Options","Quit","Version","AllMissions","Copy","SJC_ModTitle", "SJC_ConfigScenario", "SJC_Copyright"};
+controls[]={"FP1", "FP2", "FP3", "CWA","Line1","Line2","Continue","Player","Game","SingleMission","Multiplayer","Custom","Options","Quit","Version","AllMissions","Copy","ACGIM_ModTitle", "ACGIM_ConfigScenario", "ACGIM_Copyright"};
 
 class copy:RscText
 {
@@ -223,7 +223,7 @@ class AllMissions:RscActiveMenu
 	text="$STR_DISP_MAIN_DESIGN";
 };
 
-class SJC_ModTitle : RscText
+class ACGIM_ModTitle : RscText
 {
 	style=2;
 	font="tahomaB24";
@@ -236,7 +236,7 @@ class SJC_ModTitle : RscText
 	colorText[]={1,1,1,0.5};
 };
 
-class SJC_ConfigScenario : RscText
+class ACGIM_ConfigScenario : RscText
 {
 	style=2;
 	font="tahomaB24";
@@ -248,13 +248,13 @@ class SJC_ConfigScenario : RscText
 #ifdef ACGIM_SCENARIO_1985
 	text="Scenario: OFP 1985";
 #endif
-#ifdef ACGIM_SCENARIO_2005
-	text = "Scenario: 2005";
+#ifdef ACGIM_SCENARIO_2007
+	text = "Scenario: 2007";
 #endif
 	colorText[]={1,1,1,0.5};
 };
 
-class SJC_Copyright : RscText
+class ACGIM_Copyright : RscText
 {
 	style="16 + 					2 + 				512";
 	lineSpacing=1.0;

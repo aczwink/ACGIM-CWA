@@ -3,7 +3,8 @@ class CfgWeapons
 	access = ACCESS_ADDVALUESONLY;
 
 	//BIS Classes
-	#include "Config\CfgWeapons\BISClasses.h"
+#include "Config\CfgWeapons\BISClasses.h"
+#include "Config\CfgWeapons\BISClassesRenames.hpp"
 	//Neutral
 	#include "Config\CfgWeapons\Horns.h"
 	//USA
@@ -52,64 +53,6 @@ class CfgWeapons
 			#include "Config\CfgWeapons\USSR\Hardmounted\KAB500L.h"
 	//Unused BIS Classes
 	#include "Config\CfgWeapons\BISClassesUnused.h"
-
-
-class M4:Riffle
-{
-	scopeWeapon=2;
-	scopeMagazine=2;
-	model="XM-177E2_proxy";
-	modelOptics="optika_m16";
-	optics=1;
-	opticsZoomMin=0.35;
-	opticsZoomMax=0.35;
-	valueWeapon=2;
-	valueMagazine=2;
-	displayName="$STR_DN_M4";
-	displayNameMagazine="$STR_MN_M4";
-	shortNameMagazine="$STR_SN_M4";
-	drySound[]={"weapons\M16Dry",0.0031623,1};
-	magazines[]={"M4","Mortar"};
-	modes[]={"Single","FullAuto"};
-
-	class Single
-	{
-		ammo="BulletSingleW";
-		multiplier=1;
-		burst=1;
-		displayName="$STR_DN_M4";
-		dispersion=0.002;
-		sound[]={"Weapons\M16Single",1.0,1};
-		soundContinuous=0;
-		reloadTime=0.07;
-		ffCount=1;
-		recoil="riffleSingle";
-		autoFire=0;
-		aiRateOfFire=5.0;
-		aiRateOfFireDistance=500;
-		useAction=0;
-		useActionTitle="";
-	};
-
-	class FullAuto
-	{
-		ammo="BulletFullAutoW";
-		multiplier=1;
-		burst=1;
-		displayName="$STR_DN_M4_AUTO";
-		dispersion=0.004;
-		sound[]={"Weapons\M16Single",1.0,1};
-		soundContinuous=0;
-		reloadTime=0.1;
-		ffCount=30;
-		recoil="riffleBurst3";
-		autoFire=1;
-		aiRateOfFire=5.0;
-		aiRateOfFireDistance=500;
-		useAction=0;
-		useActionTitle="";
-	};
-};
 
 class AK47CZ:AK47
 {

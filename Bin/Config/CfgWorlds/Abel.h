@@ -3,7 +3,7 @@ class Abel:DefaultWorld
 	access=3;
 	plateFormat="ML$ - #####";
 	plateLetters="ABCDEGHIKLMNOPRSTVXZ";
-#ifdef SJC_SET_GRASS_ENABLED
+#ifdef ACGIM_SET_GRASS_ENABLED
 	worldName = "\worlds\Abel.wrp";
 #else
 	worldName="abel.wrp";

@@ -15,5 +15,5 @@ class M203 : GrenadeLauncher
 	opticsZoomMax=0.500000;
 	recoil = "GrenadeLauncher";
 	magazineType = WEAPON_ITEM;
-	magazines[]={"M406HEFR", "Flare", "FlareGreen", "FlareRed", "FlareYellow"};
+	magazines[]={"M406HEFR", "GrenadeLauncher", "Flare", "FlareGreen", "FlareRed", "FlareYellow"}; //need to include BIS "GrenadeLauncher" because it is used in missions and is shared with BIS AK47/AK74
 };

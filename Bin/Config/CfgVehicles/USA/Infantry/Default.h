@@ -13,8 +13,8 @@ class USA_Soldier : Soldier
 #ifdef ACGIM_SCENARIO_1985
 	model = "\d4t_files\models\us\infantry\1985\usa_soldier1985.p3d";
 
-	weapons[] = {"M16A2", "Throw", "Put"};
-	magazines[] = {"M16A2", "M16A2", "M16A2", "M16A2", "M16A2", "M16A2", "M16A2", "M67", "M67", "M67"};
+	weapons[] = {WEAPON_REFERENCE(M16A2), "Throw", "Put"};
+	magazines[] = {WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "M67", "M67", "M67"};
 
 	hiddenSelections[] = {"goou", "goostu", "googu", "good", "goostd", "googd", "medic", "mic", "holster"};
 	wounds[] =
@@ -53,10 +53,6 @@ class USA_Soldier : Soldier
 		"\d4t_tex\usi85\chelT.paa", "\d4t_tex\usi85\chelTd.paa"
 	};
 #endif
-	
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_Grenadier : USA_Soldier
@@ -64,13 +60,9 @@ class USA_Grenadier : USA_Soldier
 	accuracy = ACCURACY_GRENADIER;
 	cost = COST_GRENADIER;
 	displayName="Grenadier";
-	weapons[]={"M16A2_M203", "Throw", "Put"};
-	magazines[]={"M16A2", "M16A2", "M16A2", "M16A2", "M16A2", "M16A2", "M406HEFR", "M406HEFR", "M406HEFR", "M406HEFR"};
+	weapons[]={WEAPON_REFERENCE(M16A2_M203), "Throw", "Put"};
+	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "M406HEFR", "M406HEFR", "M406HEFR", "M406HEFR"};
 	threat[]={THREAT_GRENADIER};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_Medic : USA_Soldier
@@ -82,13 +74,9 @@ class USA_Medic : USA_Soldier
 	weaponSlots="1	 + 4 * 		256	 + 	4096	 + 	2	 + 4*	32";
 	nameSound="medic";
 	attendant=1;
-	magazines[]={"M16A2", "M16A2", "M16A2", "M16A2"};
+	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2)};
 	hiddenSelections[]={"goou", "goostu", "googu", "good", "goostd", "googd", "mic", "holster"};
 	threat[]={THREAT_MEDIC};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_MachineGunner : USA_Soldier
@@ -100,10 +88,6 @@ class USA_MachineGunner : USA_Soldier
 	weapons[]={"M60", "Throw", "Put"};
 	magazines[]={"M60", "M60", "M60", "M60", "M60"};
 	threat[]={THREAT_MACHINEGUNNER};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_LightATSoldier : USA_Soldier
@@ -112,13 +96,9 @@ class USA_LightATSoldier : USA_Soldier
 	cost = COST_ATSOLDIER;
 	displayName="Light AT Soldier";
 	nameSound="missileSoldier";
-	weapons[]={"M16A2", "M72LAW", "Throw", "Put"};
-	magazines[]={"M16A2", "M16A2", "M16A2", "M16A2", "M16A2", "M16A2", "M72LAW", "M72LAW"};
+	weapons[]={WEAPON_REFERENCE(M16A2), "M72LAW", "Throw", "Put"};
+	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "M72LAW", "M72LAW"};
 	threat[]={THREAT_ATSOLDIER};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_ATSoldier : USA_LightATSoldier
@@ -126,13 +106,9 @@ class USA_ATSoldier : USA_LightATSoldier
 	accuracy = ACCURACY_HATSOLDIER;
 	cost = COST_HATSOLDIER;
 	displayName="AT Soldier";
-	weapons[]={"M16A2", "M47Dragon", "Throw", "Put"};
-	magazines[]={"M16A2", "M16A2", "M16A2", "M16A2", "M47Dragon"};
+	weapons[]={WEAPON_REFERENCE(M16A2), "M47Dragon", "Throw", "Put"};
+	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "M47Dragon"};
 	threat[]={THREAT_HATSOLDIER};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_AASoldier : USA_LightATSoldier
@@ -140,13 +116,9 @@ class USA_AASoldier : USA_LightATSoldier
 	accuracy = ACCURACY_AASOLDIER;
 	cost = COST_AASOLDIER;
 	displayName="AA Soldier";
-	weapons[]={"M16A2", "FIM92Stinger", "Throw", "Put"};
-	magazines[]={"M16A2", "M16A2", "M16A2", "M16A2", "FIM92Stinger"};
+	weapons[]={WEAPON_REFERENCE(M16A2), "FIM92Stinger", "Throw", "Put"};
+	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "FIM92Stinger"};
 	threat[]={THREAT_AASOLDIER};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_RadioOperator : USA_Soldier
@@ -154,8 +126,8 @@ class USA_RadioOperator : USA_Soldier
 	accuracy = ACCURACY_RADIOOPERATOR;
 	cost = COST_RADIOOPERATOR;
 	displayName="Radio Operator";
-	weapons[]={"M16A2", "PRC119_SINCGARS", "Throw", "Put"};
-	magazines[]={"M16A2", "M16A2", "M16A2", "M16A2", "M16A2", "M16A2", "M16A2", "M67", "M67", "M67"};
+	weapons[]={WEAPON_REFERENCE(M16A2), "PRC119_SINCGARS", "Throw", "Put"};
+	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "M67", "M67", "M67"};
 	threat[]={THREAT_RADIOOPERATOR};
 
 	/*class UserActions//TODO
@@ -169,10 +141,6 @@ class USA_RadioOperator : USA_Soldier
 			statement= "[this, player, 0] exec ""\d4t_misc\artillery\init.sqs""";
 		};
 	};*/
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_Miner : USA_Soldier
@@ -182,13 +150,9 @@ class USA_Miner : USA_Soldier
 	displayName="Miner";
 	canDeactivateMines=1;
 	picture="\misc\sapper.paa";
-	weapons[]={"M16A2", "Throw", "Put"};
-	magazines[]={"M16A2", "M16A2", "M16A2", "M16A2", "Mine", "Mine", "Mine"};
+	weapons[]={WEAPON_REFERENCE(M16A2), "Throw", "Put"};
+	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "Mine", "Mine", "Mine"};
 	threat[]={THREAT_MINER};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_SquadLeader : USA_Soldier
@@ -197,23 +161,15 @@ class USA_SquadLeader : USA_Soldier
 	cost = COST_SQUADLEADER;
 	picture="\misc\frcky.paa";
 	displayName="Squad Leader";
-	weapons[]={"M16A2", "M1911", "Binocular", "Throw", "Put"};
-	magazines[]={"M16A2", "M16A2", "M16A2", "M16A2", "M16A2", "M16A2", "M16A2", "M67", "M67", "ANM8", "M1911", "M1911", "M1911", "M1911"};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
+	weapons[]={WEAPON_REFERENCE(M16A2), "M1911", "Binocular", "Throw", "Put"};
+	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "M67", "M67", "ANM8", "M1911", "M1911", "M1911", "M1911"};
 };
 
 class USA_SquadLeaderNight : USA_SquadLeader
 {
 	displayName="Squad Leader (Night)";
-	weapons[]={"M16A2_M203", "M1911", "Binocular", "Throw", "Put"};
-	magazines[]={"M16A2", "M16A2", "M16A2", "M16A2", "M16A2", "Flare", "Flare", "FlareGreen", "FlareRed", "FlareYellow", "M1911", "M1911", "M1911", "M1911"};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
+	weapons[]={WEAPON_REFERENCE(M16A2_M203), "M1911", "Binocular", "Throw", "Put"};
+	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "Flare", "Flare", "FlareGreen", "FlareRed", "FlareYellow", "M1911", "M1911", "M1911", "M1911"};
 };
 
 //-Parachute
