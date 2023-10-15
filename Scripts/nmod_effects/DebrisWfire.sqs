@@ -1,0 +1,67 @@
+_vehicle = _this select 0
+
+private ["_sensor"];
+_sensor = "EmptyDetector" createVehicle [0,0,0]
+_calcH = {private["_result"]; _sensor setpos [getpos _vehicle select 0, getpos _vehicle select 1]; _result = getpos _sensor select 2; _result};
+
+? abs (call _calcH) <= 2.4 && getpos _vehicle select 2 < 5: exit
+
+~0.25 + random 0.25
+
+_Mex = random 3
+_Mex = _Mex - (_Mex mod 1)
+? _Mex == 0:exit
+
+_weight = 0.7
+
+_NumRS = random 4
+_NumRS = _NumRS - (_NumRS mod 1)
+
+? _NumRS == 0: _debris = "fxexploarmor1" createVehicle [(getpos _vehicle select 0),(getpos _vehicle select 1),(getpos _vehicle select 2) + 3]; _debris setVelocity [(velocity _vehicle select 0) / 2 + (random 4 - random 4),(velocity _vehicle select 1) / 2 + (random 4 - random 4),5 + random 5]
+? _NumRS == 1: _debris = "fxexploarmor2" createVehicle [(getpos _vehicle select 0),(getpos _vehicle select 1),(getpos _vehicle select 2) + 3]; _debris setVelocity [(velocity _vehicle select 0) / 2 + (random 4 - random 4),(velocity _vehicle select 1) / 2 + (random 4 - random 4),5 + random 5]
+? _NumRS == 2: _debris = "fxexploarmor3" createVehicle [(getpos _vehicle select 0),(getpos _vehicle select 1),(getpos _vehicle select 2) + 3]; _debris setVelocity [(velocity _vehicle select 0) / 2 + (random 4 - random 4),(velocity _vehicle select 1) / 2 + (random 4 - random 4),5 + random 5]
+? _NumRS == 3: _debris = "fxexploarmor4" createVehicle [(getpos _vehicle select 0),(getpos _vehicle select 1),(getpos _vehicle select 2) + 3]; _debris setVelocity [(velocity _vehicle select 0) / 2 + (random 4 - random 4),(velocity _vehicle select 1) / 2 + (random 4 - random 4),5 + random 5]
+
+[_debris] exec "\acgim_scripts\Nmod_Effects\debrisfire.sqs"
+
+_c = random 0.4
+? _c >= 0.2:exit
+
+_NumRS = random 4
+_NumRS = _NumRS - (_NumRS mod 1)
+
+? _NumRS == 0: _debris = "fxexploarmor1" createVehicle [(getpos _vehicle select 0),(getpos _vehicle select 1),(getpos _vehicle select 2) + 3]; _debris setVelocity [(velocity _vehicle select 0) / 2 + (random 10 - random 10),(velocity _vehicle select 1) / 2 + (random 10 - random 10),5 + random 5]
+? _NumRS == 1: _debris = "fxexploarmor2" createVehicle [(getpos _vehicle select 0),(getpos _vehicle select 1),(getpos _vehicle select 2) + 3]; _debris setVelocity [(velocity _vehicle select 0) / 2 + (random 10 - random 10),(velocity _vehicle select 1) / 2 + (random 10 - random 10),5 + random 5]
+? _NumRS == 2: _debris = "fxexploarmor3" createVehicle [(getpos _vehicle select 0),(getpos _vehicle select 1),(getpos _vehicle select 2) + 3]; _debris setVelocity [(velocity _vehicle select 0) / 2 + (random 10 - random 10),(velocity _vehicle select 1) / 2 + (random 10 - random 10),5 + random 5]
+? _NumRS == 3: _debris = "fxexploarmor4" createVehicle [(getpos _vehicle select 0),(getpos _vehicle select 1),(getpos _vehicle select 2) + 3]; _debris setVelocity [(velocity _vehicle select 0) / 2 + (random 10 - random 10),(velocity _vehicle select 1) / 2 + (random 10 - random 10),5 + random 5]
+
+[_debris] exec "\acgim_scripts\Nmod_Effects\debrisfire.sqs"
+
+_c = random 0.4
+? _c >= 0.2:exit
+
+_NumRS = random 4
+_NumRS = _NumRS - (_NumRS mod 1)
+
+? _NumRS == 0: _debris = "fxexploarmor1" createVehicle [(getpos _vehicle select 0),(getpos _vehicle select 1),(getpos _vehicle select 2) + 3]; _debris setVelocity [(velocity _vehicle select 0) / 2 + (random 10 - random 10),(velocity _vehicle select 1) / 2 + (random 10 - random 10),5 + random 5]
+? _NumRS == 1: _debris = "fxexploarmor2" createVehicle [(getpos _vehicle select 0),(getpos _vehicle select 1),(getpos _vehicle select 2) + 3]; _debris setVelocity [(velocity _vehicle select 0) / 2 + (random 10 - random 10),(velocity _vehicle select 1) / 2 + (random 10 - random 10),5 + random 5]
+? _NumRS == 2: _debris = "fxexploarmor3" createVehicle [(getpos _vehicle select 0),(getpos _vehicle select 1),(getpos _vehicle select 2) + 3]; _debris setVelocity [(velocity _vehicle select 0) / 2 + (random 10 - random 10),(velocity _vehicle select 1) / 2 + (random 10 - random 10),5 + random 5]
+? _NumRS == 3: _debris = "fxexploarmor4" createVehicle [(getpos _vehicle select 0),(getpos _vehicle select 1),(getpos _vehicle select 2) + 3]; _debris setVelocity [(velocity _vehicle select 0) / 2 + (random 10 - random 10),(velocity _vehicle select 1) / 2 + (random 10 - random 10),5 + random 5]
+
+[_debris] exec "\acgim_scripts\Nmod_Effects\debrisfire.sqs"
+
+_c = random 0.4
+? _c >= 0.2:exit
+
+_NumRS = random 4
+_NumRS = _NumRS - (_NumRS mod 1)
+
+? _NumRS == 0: _debris = "fxexploarmor1" createVehicle [(getpos _vehicle select 0),(getpos _vehicle select 1),(getpos _vehicle select 2) + 3]; _debris setVelocity [(velocity _vehicle select 0) / 2 + (random 10 - random 10),(velocity _vehicle select 1) / 2 + (random 10 - random 10),5 + random 5]
+? _NumRS == 1: _debris = "fxexploarmor2" createVehicle [(getpos _vehicle select 0),(getpos _vehicle select 1),(getpos _vehicle select 2) + 3]; _debris setVelocity [(velocity _vehicle select 0) / 2 + (random 10 - random 10),(velocity _vehicle select 1) / 2 + (random 10 - random 10),5 + random 5]
+? _NumRS == 2: _debris = "fxexploarmor3" createVehicle [(getpos _vehicle select 0),(getpos _vehicle select 1),(getpos _vehicle select 2) + 3]; _debris setVelocity [(velocity _vehicle select 0) / 2 + (random 10 - random 10),(velocity _vehicle select 1) / 2 + (random 10 - random 10),5 + random 5]
+? _NumRS == 3: _debris = "fxexploarmor4" createVehicle [(getpos _vehicle select 0),(getpos _vehicle select 1),(getpos _vehicle select 2) + 3]; _debris setVelocity [(velocity _vehicle select 0) / 2 + (random 10 - random 10),(velocity _vehicle select 1) / 2 + (random 10 - random 10),5 + random 5]
+
+[_debris] exec "\acgim_scripts\Nmod_Effects\debrisfire.sqs"
+
+#end
+exit

@@ -25,9 +25,3 @@ class M113Wreck : JeepWreck1
 	model="M113T.p3d";
 	displayName="$STR_DN_M113_WRECK";
 };
-
-class UralWreck : JeepWreck1
-{
-	model="UralT.p3d";
-	displayName="$STR_DN_URAL_WRECK";
-};

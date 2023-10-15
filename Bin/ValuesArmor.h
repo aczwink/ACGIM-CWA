@@ -5,7 +5,6 @@
 #define ARMOR_AH64A		150
 #define ARMOR_OH58D		70
 #define ARMOR_UH60		100
-#define ARMOR_MH60L		100
 #define ARMOR_CH47D		150
 #define ARMOR_M1A1		950
 #define ARMOR_M113		150

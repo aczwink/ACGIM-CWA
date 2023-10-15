@@ -1,0 +1,105 @@
+; Script by STACKER
+; SPETSNAZ Mod.
+
+_Ural = _this select 0
+_crew = crew _Ural
+_post = getpos _Ural
+_dir = getdir _Ural
+_vel = velocity _Ural
+? typeof _Ural == "dlem_ural375_open" : _ostov = "dlem_ural375_open_dead", _bag = "Ural_Bag", _kuzov = "", _zerk = "Ural_zerk", _dver = "Ural_dver", _dverl = "Ural_dverl", _koles = "Ural_koles", _bort1 = "Ural_palki1", _bort2 = "Ural_palki2", _jasik = "Ural_jasik",  goto "4asti"
+? typeof _Ural == "dlem_ural375_closed" : _ostov = "dlem_ural375_dead", _bag = "Ural_Bag", _kuzov = "", _zerk = "Ural_zerk", _dver = "Ural_dver", _dverl = "Ural_dverl", _koles = "Ural_koles", _bort1 = "Ural_palki1", _bort2 = "Ural_palki2", _jasik = "Ural_jasik",  goto "4asti"
+? typeof _Ural == "Russia_Ural4320" : _ostov = "Russia_Ural4320_Wreck", _bag = "Ural_Bag", _kuzov = "", _zerk = "Ural_zerk", _dver = "Ural_dver", _dverl = "Ural_dverl", _koles = "Ural_koles", _bort1 = "Ural_palki1", _bort2 = "Ural_palki2", _jasik = "Ural_jasik",  goto "4asti"
+? typeof _Ural == "dlem_ural4320_open" : _ostov = "dlem_ural4320_open_dead", _bag = "Ural_Bag", _kuzov = "", _zerk = "Ural_zerk", _dver = "Ural_dver", _dverl = "Ural_dverl", _koles = "Ural_koles", _bort1 = "Ural_palki1", _bort2 = "Ural_palki2", _jasik = "Ural_jasik",  goto "4asti"
+? typeof _Ural == "dlem_ural4320_repair" : _ostov = "dlem_ural4320_repair__dead", _bag = "Ural_Bag", _kuzov = "", _zerk = "Ural_zerk", _dver = "Ural_dver", _dverl = "Ural_dverl", _koles = "", _bort1 = "", _bort2 = "", _jasik = "Ural_jasik",  goto "4asti"
+? typeof _Ural == "dlem_ural4320_ammo" : _ostov = "dlem_ural4320_dead", _bag = "Ural_Bag", _kuzov = "", _zerk = "Ural_zerk", _dver = "Ural_dver", _dverl = "Ural_dverl", _koles = "Ural_koles", _bort1 = "Ural_palki1", _bort2 = "Ural_palki2", _jasik = "Ural_jasik",  goto "4asti"
+? typeof _Ural == "Russia_Ural4320Refuel" : _ostov = "Russia_Ural4320Refuel_Wreck", _bag = "Ural_Bag", _kuzov = "Ural_cist", _zerk = "Ural_zerk", _dver = "Ural_dver", _dverl = "Ural_dverl", _koles = "Ural_koles", _bort1 = "", _bort2 = "", _jasik = "Ural_jasik",  goto "4asti"
+
+
+exit
+#4asti
+
+        _s1= _crew select 0
+    
+        unassignvehicle _s1 
+    
+       
+        deletevehicle _Ural
+        ~0.05
+      
+        _ostov = _ostov createvehicle  [0, 0, 1000]
+        _ostov setpos  [(_post select 0) + (0*SIN((_dir)+0)), (_post select 1)+(0*COS((_dir)+0)), 0]  
+        _ostov setVelocity _vel
+        _ostov setdir _dir 
+        _diro = getdir _ostov
+        _pos = getpos _ostov
+       
+        
+
+       _bag = _bag createvehicle [0, 0, 1000]
+       _bag setpos [(_pos select 0) + (1.2*SIN((_diro)+290)), (_pos select 1)+(1.2*COS((_diro)+290)), 0.5]  
+       _bag setdir  (_diro +180) 
+     
+       _kuzov = _kuzov createvehicle [0, 0, 1100]
+       _kuzov setpos [(_pos select 0) + (2*SIN((_diro)+180)), (_pos select 1)+(2*COS((_diro)+180)), 0.7]  
+       _kuzov setdir  (_diro +180)
+       _kuzov setVelocity [0, 0, 15]
+       [_kuzov] exec "\acgim_scripts\Vehicles\Ural4320\fire.sqs"
+    ? typeof _Ural == "Russia_Ural4320Refuel" : [_kuzov] exec "\acgim_scripts\Vehicles\Ural4320\exp.sqs" 
+    
+      _zerk = _zerk createvehicle [0, 0, 1200]
+      _zerk setpos [(_pos select 0) + (1.6*SIN((_diro)+50)), (_pos select 1)+(1.6*COS((_diro)+50)), 1]  
+      _zerk setdir (_diro +180) 
+      _zerk setVelocity [0, 0, 5]
+
+      _koles = _koles createvehicle [0, 0, 1200]
+      _koles setpos [(_pos select 0) + (0.7*SIN((_diro)+30)), (_pos select 1)+(0.7*COS((_diro)+30)), 1]  
+      _koles setdir (_diro +90) 
+      _koles setVelocity [0, 0, 20]
+      [_koles] exec "\acgim_scripts\Vehicles\Ural4320\fire2.sqs"
+      
+      _dver = _dver createvehicle [0, 0, 1200]
+      _dver setpos [(_pos select 0) + (1.8*SIN((_diro)+35)), (_pos select 1)+(1.8*COS((_diro)+35)), 1.1]  
+      _dver setdir (_diro +180)
+
+      _dverl = _dverl createvehicle [0, 0, 1200]
+      _dverl setpos [(_pos select 0) + (1.8*SIN((_diro)+330)), (_pos select 1)+(1.8*COS((_diro)+330)), 1.2]  
+      _dverl setdir _diro 
+
+      
+      _jasik = _jasik createvehicle [0, 0, 1200]
+      _jasik setpos [(_pos select 0) + (1.2*SIN((_diro)+90)), (_pos select 1)+(1*COS((_diro)+90)), 0.5]  
+      _jasik setdir (_diro +180) 
+ 
+      _bort1 = _bort1 createvehicle [0, 0, 1200]
+      _bort1 setpos [(_pos select 0) + (1.6*SIN((_diro)+135)), (_pos select 1)+(1.6*COS((_diro)+135)), 1.8]  
+      _bort1 setdir (_diro +180) 
+
+      _bort2 = _bort2 createvehicle [0, 0, 1200]
+      _bort2 setpos [(_pos select 0) + (1.5*SIN((_diro)+225)), (_pos select 1)+(1.5*COS((_diro)+225)), 1.8]  
+      _bort2 setdir (_diro +180) 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ _bomb="Heat73" camcreate [(_pos select 0) + (0*SIN((_diro)+0)), (_pos select 1)+(0*COS((_diro)+0)), 0.1]   
+ _bomb setVelocity [0,0, 10]
+
+
+
+~0.05
+_s1 moveincargo _ostov
+unassignVehicle _s1 
+        
+
+_ostov exec "\acgim_scripts\nmod_effects\DKMM_RSC_Car_Burner.sqs"
+
+exit

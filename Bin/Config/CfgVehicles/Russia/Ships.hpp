@@ -1,0 +1,1 @@
+#include "Config\CfgVehicles\Russia\Ships\Boat.hpp"

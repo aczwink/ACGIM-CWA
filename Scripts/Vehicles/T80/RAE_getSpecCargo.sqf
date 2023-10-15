@@ -1,0 +1,1 @@
+private["_c","_t","_i"];_c=crew(_this select 0);_t=_this select 1;_i=0;if("_t==typeOf _x"count _c>0)then{while"_i<count _c"do{if(typeOf(_c select _i)==_t)then{_c=[_c select _i];_i=2;}else{_i=_i+1;};};};_c select 0

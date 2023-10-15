@@ -1,0 +1,48 @@
+;�raedor2005
+?format["%1",RHS_FctLoad]=="scalar bool array string 0xfcffffef":_this exec{\acgim_scripts\Vehicles\T80\RAE_init.sqs}
+?RHS_NoScripts:exit
+?format["%1",RHS_T80_FctLoad]=="scalar bool array string 0xfcffffef":RHS_T80_FctLoad=false
+?!RHS_T80_FctLoad:RHS_T80_FctLoad=true;RHS_versionT80=.5;RHS_PathT80="\acgim_scripts\Vehicles\T80\";RHS_T80_Fired=loadFile format["%1RAE_T80_Fired.sqf", RHS_PathT80];RHS_T80_Numbers=loadFile format["%1RAE_T80_Numbers.sqf",RHS_PathT80];RHS_T80_throwOff=objNull;RHS_T80sWithShield=["Russia_T80B"];RHS_T80sWithExtBarrels=[];RHS_T80s_Possible_Embs=["emb1","emb2","emb3","emb4","emb5","emb6","emb7","no"];RHS_T80s=["Russia_T80B"];RHS_T80sWithSnorkel=["Russia_T80B"]
+?format["%1", RHS_T80_UN]=="scalar bool array string 0xfcffffef":RHS_T80_UN=[]
+_t=_this select 0;_l="T80";
+?local _t:_t animate["suspension",.5]
+_t exec format ["%1RAE_T80_Check.sqs",RHS_PathT80]
+?format["%1",_this select(count _this-1)]!="s":goTo"d"
+_c=(crew _t-[if!(isNull driver _t)then{driver _t}else{objNull},if!(isNull gunner _t)then{gunner _t}else{objNull},if!(isNull commander _t)then{commander _t}else{objNull}])
+?count _c>0:_c select 0 action["EJECT",_t]
+_g="RHS_LogicGunDirFake"createVehicle[0,0];_g moveInCargo _t
+#d
+~.1
+_a=[_t,"randomNormal"]
+
+;? thisIsMP: goto "MP"
+_a call RHS_T80_Numbers
+goTo "loop"
+#MP
+@RHS_thereIsAServer
+~3
+? _t in RHS_T80_UN: goTo "loop"
+_a call RHS_T80_MPN
+~0.9 - random 0.6
+_i = -1
+#MPloop
+	~0.05
+	_i = _i + 1
+	? _i > 1000: _i = -1; hint "RHS_T80Pack MP Error."
+	? format ["%1", call format [{RAE_%1_Object_%2}, _l, _i]] != format ["%1", _t]: goTo "MPloop"
+
+[_t, _i] call RHS_T80_MPNumberFct
+publicVariable "RHS_T80_throwOff"
+publicVariable "RHS_T80_NoScripts"
+
+#loop
+	~0.5	
+	?isNull _t:exit
+	?format["%1",RHS_T80_throwOff]==format["%1",_t]:_t exec format["%1RAE_T80_throwOff.sqs",RHS_PathT80]
+;	?!alive _t:[_t,[.5,1,.5],90,5,""]exec format["%1RAE_Fire.sqs",RHS_PathM]; goTo "exit"
+
+goTo "loop"
+
+#exit
+exit
+	

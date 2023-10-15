@@ -1,0 +1,58 @@
+;>>>�2004raedor
+;contact: raedor@mapfact.net
+;www.mapfact.net
+;www.dkm-mod.mkdi.net
+;www.redhammerstudios.com
+;scripting questions?
+;post here: www.mapfact.net/forum/<<<
+
+_path = "\acgim_scripts\Vehicles\HMMWV\"
+_mpath = "\acgim_scripts\Vehicles\HMMWV\"
+_tank = _this select 0
+_line = "HMMWV"
+
+? format ["%1", CBT_HMMWV_NoScripts] == "scalar bool array string 0xfcffffef": CBT_HMMWV_NoScripts = false
+? format ["%1", CBT_HMMWV_UN] == "scalar bool array string 0xfcffffef": CBT_HMMWV_UN = []
+? format ["%1", CBT_HMMWV_FctLoad] == "scalar bool array string 0xfcffffef": CBT_HMMWV_FctLoad = false
+? _tank animate ["recoil", 1];
+
+? CBT_HMMWV_NoScripts || CBT_NoScripts: exit
+
+? ! CBT_HMMWV_FctLoad: CBT_HMMWV_FctLoad = true; CBT_HMMWV_UserNums = loadFile format ["%1CBT_HMMWV_UserNums.sqf", _path]; CBT_HMMWV_Numbers = loadFile format ["%1CBT_HMMWV_Numbers.sqf", _path]; CBT_HMMWV_MPN = loadFile format ["%1CBT_HMMWV_MPN.sqf", _path]; CBT_HMMWV_MPNumberFct = loadFile format ["%1CBT_HMMWV_MPNumbers.sqf", _path];
+
+CBT_HMMWVsWithNormalNumbers = ["USA_HMMWV", "Jeep"]
+CBT_HMMWVsWithChevrons = []
+CBT_HMMWVWithoutRecog = []
+CBT_HMMWVsCAV = []
+CBT_HMMWVsADA = []
+CBT_HMMWVsMED = []
+CBT_HMMWVsHQ = []
+CBT_HMMWVsMP = []
+CBT_HMMWVs_Possible_Embs = ["random", "alpha", "bravo", "char", "delta", "none"]
+CBT_HMMWVs_Possible_div = ["random", "2418i", "3i221", "1i22i", "1a16i", "1a3cav5", "247cav", "1i14cav", "1a14ada", "none"]
+
+~0.1
+
+? typeOf _tank in CBT_HMMWVsWithNormalNumbers: _array = [_tank, "random", "random", "random", "random"]
+
+? thisIsMP: goto "MP"
+_array call CBT_HMMWV_Numbers
+exit
+
+#MP
+@CBT_thereIsAServer
+~3
+? _tank in CBT_HMMWV_UN: exit
+_array call CBT_HMMWV_MPN
+~0.9 - random 0.6
+_i = -1
+#MPloop
+	~0.05
+	_i = _i + 1
+	? _i > 1000: _i = -1
+	? format ["%1", call format [{CBT_%1_Object_%2}, _line, _i]] != format ["%1", _tank]: goTo "MPloop"
+
+[_tank, _i] call CBT_HMMWV_MPNumberFct
+publicVariable "CBT_HMMWV_NoScripts"
+publicVariable "CBT_NoScripts"
+

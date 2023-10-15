@@ -1,0 +1,58 @@
+;>>>�raedor2004
+;contact: raedor@mapfact.net
+;www.mapfact.net
+;www.dkm-mod.mkdi.net
+;www.redhammerstudios.com
+;scripting questions?
+;post here: www.mapfact.net/forum/<<<
+? format ["%1", RHS_FctLoad] == "scalar bool array string 0xfcffffef": RHS_FctLoad = false
+? format ["%1", RHS_NoScripts] == "scalar bool array string 0xfcffffef": RHS_NoScripts = false
+?RHS_FctLoad||RHS_NoScripts: exit
+? format ["%1", RHS_NoSmoke] == "scalar bool array string 0xfcffffef": RHS_NoSmoke = false
+? format ["%1", RHS_lowSmoke] == "scalar bool array string 0xfcffffef": RHS_lowSmoke = false
+? format ["%1", RHS_NoCargoScripts] == "scalar bool array string 0xfcffffef": RHS_NoCargoScripts = false
+? format ["%1", RHS_NoShellEject] == "scalar bool array string 0xfcffffef": RHS_NoShellEject = false
+? format ["%1", RHS_NoSHTORA] == "scalar bool array string 0xfcffffef": RHS_NoSHTORA = false
+? format ["%1", RHS_NoARENA] == "scalar bool array string 0xfcffffef": RHS_NoARENA = false
+? format ["%1", RHS_ThereIsAServer] == "scalar bool array string 0xfcffffef": RHS_ThereIsAServer = false
+? format ["%1", RHS_NoTracers] == "scalar bool array string 0xfcffffef": RHS_NoTracers = false
+? format ["%1", RHS_LowTracers] == "scalar bool array string 0xfcffffef": RHS_LowTracers = false
+? format ["%1", RHS_PlayerTinnitus] == "scalar bool array string 0xfcffffef": RHS_PlayerTinnitus = false
+
+RHS_versionMisc=1.5
+RHS_PathM="\acgim_scripts\Vehicles\T80\"
+RHS_PathSigns="\RHS_Misc\Signs\"
+RHS_PathSmoke="\RHS_Misc\Armour\Smoke\"
+RHS_PathA="\RHS_Misc\Armour\"
+RHS_PathAir="\RHS_Misc\air\"
+~.1
+? format ["%1", MAP_FctLoad] != "scalar bool array string 0xfcffffef": goTo "afterMPCheck"
+thisIsServer = true
+thisIsMP = false
+? (playersNumber east + playersNumber west + playersNumber resistance + playersNumber civilian == 0): RHS_ThereIsAServer= true; goTo "afterMPCheck"
+~2
+thisIsMp = true
+thisIsServer = false
+? isNull (vehicle player): thisIsServer = true; goTo "afterMPCheck"
+~2.5
+? RHS_thereIsAServer: goTo "afterMPCheck"
+? local serverChk: thisIsServer = true; RHS_ThereIsAServer= true; publicVariable "RHS_ThereIsAServer"; goTo "afterMPCheck"
+hint "If you want to use the Red Hammer Studios T-55 Pack in multiplayer (especially on client-servers), put a Game Logic on the map and name it ""serverChk"" or use the ""NS"" of ""Chain of Command Mod"". Thank you."
+#afterMPCheck
+?!RHS_FctLoad: RHS_FctLoad = true; RHS_Noid = loadFile format ["%1RAE_Noid.sqf", RHS_PathM]; RHS_TriggFct = loadFile format ["%1RAE_TriggerFct.sqf", RHS_PathM]; RHS_countedCargo = loadFile format ["%1RAE_countCargo.sqf", RHS_PathM];RHS_getSpecCargo=loadFile format ["%1RAE_getSpecCargo.sqf", RHS_PathM]; RHS_logicsInCrew = loadFile format ["%1RAE_logicsInCrew.sqf", RHS_PathM]; RHS_absHeight = loadFile format ["%1RAE_absHeight.sqf", RHS_PathM]; RHS_dTC = loadFile format ["%1RAE_dontTouchCrew.sqf", RHS_PathM];RHS_find=loadFile format["%1MAP_find.sqf", RHS_PathM];RHS_TankMuzzle=loadFile format["%1WeapFX\Tank_Muzzle.sqf", RHS_PathM];RHS_MGtracer=loadFile format["%1WeapFX\MG_tracer.sqf", RHS_PathM];RHS_TankFired=loadfile format["%1WeapFX\Tank_Fired.sqf", RHS_PathM];RHS_MissileMuzzle=loadfile format["%1WeapFX\Missile_Muzzle.sqf", RHS_PathM];RHS_AmmoPitch=loadfile format["%1AmmoPitch.sqf", RHS_PathM];RHS_AmmoHeight=loadfile format["%1AmmoHeight.sqf", RHS_PathM]
+?(RHS_FctLoad)&&(RHS_LowTracers): RHS_MGtracer=loadfile format ["%1WeapFX\MG_tracer_LOW.sqf", RHS_PathM];
+RHS_SHTORA_DEAD=false
+RHS_SHTORA=false
+RHS_air_engines=[]
+RHS_shtora_running=[]
+RHS_tank_snorkeling=[]
+RHS_nonGuidedMissiles=["RPG","LAW","RHS_RPG22Rocket","RHS_PG7VLRocket","RHS_PG7VRRocket","RHS_TBG7VRocket"]
+RHS_guidedMissiles=["CarlGustav","AT3","AT4","AT6","Maverick","Hellfire","HellfireApach","SUCHJavelinAmmo","BAS_AT4ammo","BAS_TOW","BAS_Hellfire","dkmm_rah66_hellfire","RHS_9M119M","UKF_milan_ammo"]
+RHS_sinCos = call {private["_i","_r1", "_r2"]; _r1 = []; _r2 = []; _i = 0; while "_i < 50" do {_r1 = _r1 + [sin (7.2*_i)*15]; _i = _i+1;}; while "_i < 100" do {_r2 = _r2 + [cos (7.2*_i)*15]; _i = _i + 1}; [_r1, _r2]};
+?thisIsMP&&!RHS_NoSmoke:RHS_lowSmoke=true
+RHS_Reload_13=["RHS_BM8", "RHS_BM25", "RHS_BK17", "RHS_OF32"]
+RHS_Reload_15=["RHS_BR412"]
+RHS_hvyMGAmmo = ["RHS_DShKT","RHS_KT","RHS_NSV","RHS_BTR80_Bullet14_5"]
+RHS_MGAmmo = ["RHS_PKT","RHS_PKTT"]
+RHS_CannonAmmo=RHS_Reload_13+RHS_Reload_15+["RHS_3BM26","RHS_3BM32","RHS_3BM42","RHS_3BM42M","RHS_3BM48","RHS_DM53","RHS_M830A1","RHS_BK12","RHS_BK17","RHS_BK29M","RHS_3BK31","RHS_3OF26","RHS_BM3","RHS_BM5M","RHS_BM9","RHS_BK3","RHS_BK4M","RHS_OF11","D10AP","D10AP2","D10AP3","RHS_OPLAP1","RHS_OPLAP2","RHS_OPLAP3","RHS_OPLAP4","RHS_OPLAP6","RHS_3BM3","RHS_3BM5M","RHS_3BM9","D10HEAT","D10FRAG","RHS_OPLHE","RHS_BK31","RHS_3OF11","RHS_3VBK17","RHS_3BK3","RHS_3BK4M"]
+RHS_TankMissiles = ["RHS_9M119M","RHS_9M119","RHS_9M120","RHS_9M117"]

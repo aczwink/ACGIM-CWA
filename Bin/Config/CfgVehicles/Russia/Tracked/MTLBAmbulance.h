@@ -114,6 +114,6 @@ class Russia_MTLBAmbulance : Russia_BMP1
 	class EventHandlers
 	{
 		hit = "_this exec {\SJC_Scripts\Events\ArmorHit.sqs}";
-		killed = "(_this select 0) exec ""\SJC_Scripts\Events\VehicleBurner.sqs""";
+		killed = "(_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Veh_burner.sqs}";
 	};
 };

@@ -24,3 +24,13 @@ class ah64a : Helicopter
 	};
 };
 #endif
+
+class CSLA2_UH60A : Helicopter
+{
+	sectionsInherit = "Helicopter";
+	sections[] = {"cis1", "cis2", "cis3", "cis4", "cis5", "zasleh2", "offline"};
+};
+
+class CSLA2_UH60A_M2 : CSLA2_UH60A
+{
+};

@@ -1,0 +1,38 @@
+;>>>�raedor2004
+;contact: raedor@mapfact.net
+;www.mapfact.net
+;www.dkm-mod.mkdi.net
+;www.redhammerstudios.com
+;scripting questions?
+;post here: www.mapfact.net/forum/<<<
+
+? format ["%1", CBT_FctLoad] == "scalar bool array string 0xfcffffef": CBT_FctLoad = false
+? format ["%1", CBT_NoSmoke] == "scalar bool array string 0xfcffffef": CBT_NoSmoke = false
+? format ["%1", CBT_NoScripts] == "scalar bool array string 0xfcffffef": CBT_NoScripts = false
+? format ["%1", CBT_lowSmoke] == "scalar bool array string 0xfcffffef": CBT_lowSmoke = false
+? format ["%1", CBT_NoCargo] == "scalar bool array string 0xfcffffef": CBT_NoCargo = true
+? format ["%1", CBT_ThereIsAServer] == "scalar bool array string 0xfcffffef": CBT_ThereIsAServer = false
+
+
+? CBT_FctLoad || CBT_NoScripts: exit
+
+_path = "\acgim_scripts\Vehicles\HMMWV\"
+
+thisIsServer = true
+thisIsMP = false
+
+? (playersNumber east + playersNumber west + playersNumber resistance + playersNumber civilian == 0): goTo "afterMPCheck"
+~2
+thisIsMP = true
+thisIsServer = false
+? isNull (vehicle player): thisIsServer = true; CBT_ThereIsAServer=true; publicVariable "CBT_ThereIsAServer"; goTo "afterMPCheck" 
+~2.5 
+? CBT_thereIsAServer: goTo "afterMPCheck" 
+? local serverChk: thisIsServer = true; CBT_ThereIsAServer=true; publicVariable "CBT_ThereIsAServer"; CBT_NoTow = true; goTo "afterMPCheck"
+hint "If you want to use the COMBAT! Addons in multiplayer (especially on client-servers), put a Game Logic on the map and name it ""serverChk"" or use the ""NS"" of ""Chain of Command Mod"". Thank you."
+
+#afterMPCheck
+? !CBT_FctLoad: CBT_FctLoad = true; CBT_Noid = loadFile format ["%1CBT_Noid.sqf", _path]; CBT_TriggFct = loadFile format ["%1CBT_TriggerFct.sqf", _path]; CBT_countedCargo = loadFile format ["%1CBT_countCargo.sqf", _path]; CBT_logicsInCrew = loadFile format ["%1CBT_logicsInCrew.sqf", _path];
+? thisIsMP && !CBT_NoSmoke: CBT_lowSmoke = true
+
+exit

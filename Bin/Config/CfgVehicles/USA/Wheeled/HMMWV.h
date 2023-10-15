@@ -1,5 +1,3 @@
-//TODO: desert versions
-
 /*
 Sources:
 	http://en.wikipedia.org/wiki/HMMWV
@@ -63,9 +61,8 @@ class USA_HMMWV : Car
 
 	class EventHandlers
 	{
-		Init = "[_this select 0, 188] exec {\SJC_Scripts\vehicleTODO.sqs}";
-		//TODO: (also burner when killed)
-		//init="_this exec {\d4t_files\FX\scripts\vehicles\hmmwv\CBT_HMMWV_Init.sqs}; if (format [""%1"", CBT_FctLoad] == ""scalar bool array string 0xfcffffef"") then {_this exec {\d4t_files\FX\scripts\vehicles\hmmwv\CBT_init.sqs}}";
+		Init = "_this exec {\acgim_scripts\Vehicles\HMMWV\CBT_HMMWV_Init.sqs}; if (format [""%1"", CBT_FctLoad] == ""scalar bool array string 0xfcffffef"") then {_this exec {\acgim_scripts\Vehicles\HMMWV\CBT_init.sqs}}";
+		killed = "(_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Car_Burner.sqs}";
 	};
 };
 
@@ -341,8 +338,7 @@ class USA_HMMWV_Ambulance : USA_HMMWV
 
 	class EventHandlers
 	{
-		Init = "[_this select 0, 191] exec {\SJC_Scripts\vehicleTODO.sqs}";
-		//TODO: (also burner when killed)
-		//init="_this exec {\d4t_files\FX\scripts\vehicles\hmmwv\CBT_HMMWV_Init.sqs}; if (format [""%1"", CBT_FctLoad] == ""scalar bool array string 0xfcffffef"") then {_this exec {\d4t_files\FX\scripts\vehicles\hmmwv\CBT_init.sqs}}";
+		Init = "_this exec {\acgim_scripts\Vehicles\HMMWV\CBT_HMMWV_Init.sqs}; if (format [""%1"", CBT_FctLoad] == ""scalar bool array string 0xfcffffef"") then {_this exec {\acgim_scripts\Vehicles\HMMWV\CBT_init.sqs}}";
+		killed = "(_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Car_Burner.sqs}";
 	};
 };

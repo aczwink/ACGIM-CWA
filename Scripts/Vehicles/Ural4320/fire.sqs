@@ -1,0 +1,31 @@
+_object = _this select 0
+_posA = [0,0,-0.5]
+_posB = [0,0, 0.1]
+_lifeTime = 10
+_soundloop = 0
+_delay = 0.1
+_lifeTicks = _lifeTime / _delay
+_lifeTick = _lifeTicks
+_weight = 0.005  
+#Begin
+
+#fire
+;Drop [ShapeName, AnimationName, Type, TimerPeriod, LifeTime, Position, MoveVelocity, RotationVelocity, Weight, Volume, Rubbing, Size, Color, AnimationPhase, RandomDirectionPeriod, RandomDirectionIntensity, OnTimer, BeforeDestroy, Object]
+
+drop ["cl_fire", "", "Billboard", 1, 1, _posA, [random 0.3, random 0.3, 3], 40, _weight, 0.004, 0.1, [1 + random 1, 1 + random 1, 1 + random 1], [[1,0.5,0.5,0], [0.2,0.2,0,0.7], [1,1,0,0.5], [1,1,0.1,0]], [0,1], 0.5, 0.05, "", "",_object ]
+
+drop ["cl_fire", "", "Billboard", 1, 1 + random 0.2, _posA, [random 0.3, random 0.3, 3], 40, _weight, 0.004, 0.1, [1 + random 3, 4, 3], [[1,0.5,0.5,0], [1,1,0.8,0.7], [1,1,0,0.4], [1,1,0,0]], [0,1], 0.5, 0.05, "", "",_object ]
+
+;sparks
+drop ["cl_fire", "", "Billboard", 1,  2, _posB, [ random 1, random 1, random 3], 1, _weight, 0.0042, 0, [0.15], [[1,1,1,1],[0,0,0,0]], [0,1], 0.5, 1, "", "",_object]
+drop ["cl_basic", "", "Billboard", 1, 2, getpos _object, [random 2, random 2, random 14], 1.3, 1, 1, 1, [1,2.5,4,5], [[1,1,1,0.4], [0.5,0.5,0.5,0.6], [0,0,0,0.3], [0,0,0,0.1], [0,0,0,0]], [0,1,0], 5, 0.05, "", "", ""]
+
+
+~_delay
+
+_lifeTick = _lifeTick - 1
+_soundloop = _soundloop +1
+
+?_lifeTick > 0 : goto "Begin"
+exit
+

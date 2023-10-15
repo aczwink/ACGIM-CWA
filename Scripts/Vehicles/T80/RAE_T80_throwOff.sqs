@@ -1,0 +1,47 @@
+;>>>©2003raedor
+;contact: raedor@mapfact.net
+;www.mapfact.net
+;www.dkm-mod.mkdi.net
+;www.redhammerstudios.com
+;scripting questions?
+;post here: www.mapfact.net/forum/<<<
+
+_t = _this
+
+?RHS_NoScripts: exit
+
+? _t call RHS_countedCargo == 0: exit
+?isNull RHS_T80_throwOff:goTo"d"
+RHS_T80_throwOff = objNull
+
+#d
+_cargoTank = []
+_crew = crew _t
+_i = 0
+_runVar = false
+_brake = {private ["_res"]; _res = _this; while "_res > (7/3.6)" do {_res = _res - 1}; _res}
+
+#loop
+	~0.2
+	? _i == (count _crew): goTo "end"
+	?_crew select _i call RHS_dTC: _i = _i + 1; goTo "loop"
+	? speed _t > 7: _t setVelocity [(velocity _t select 0) call _brake, (velocity _t select 1) call _brake, (velocity _t select 2) call _brake]
+	unassignVehicle (_crew select _i)
+	(_crew select _i) action ["EJECT", _t]
+	_pos = position _t
+	_dir = direction _t
+	? ! _runVar: _runVar = true; (_crew select _i) setPos [(_pos select 0) + 2 * cos _dir + 2 * sin _dir, (_pos select 1) - 2 * sin _dir - 2 * cos _dir, 0]; goTo "notRun"
+	? _runVar: _runVar = false; (_crew select _i) setPos [(_pos select 0) - 2 * cos _dir +  2 * sin _dir, (_pos select 1) + 2 * sin _dir -  2 * cos _dir, 0]
+	
+	#notRun
+	(_crew select _i) setUnitPos "UP"
+	(_crew select _i) stop true
+	_cargoTank = _cargoTank + [_crew select _i]
+	_i = _i + 1
+	goTo "loop"
+
+#end
+~3
+"_x setUnitPos {AUTO}" forEach _cargoTank
+"_x stop false" forEach _cargoTank
+exit

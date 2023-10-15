@@ -14,7 +14,7 @@ class M16A2 : Riffle
 	//displayNameMagazine="30 round 5.56x45mm Magazine";
 	//shortNameMagazine="5.56x45mm Mag";
 	model="\d4t_files\models\us\weapons\m16\m16a2.p3d";
-	modelOptics="\d4t_files\optics\optic_m16a2.p3d";
+	modelOptics="\models\CSLA2_M16A2_optika.p3d";
 	reloadMagazineSound[]={"\d4t_files\sounds\weapons\handheld\reload.wss",1.000000,1};
 	drySound[]={"\d4t_files\sounds\weapons\handheld\dry.wss",0.010316,1};
 	uipicture="\d4t_files\pics\ui\soldier.paa";

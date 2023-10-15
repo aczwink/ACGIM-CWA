@@ -82,8 +82,6 @@ class USA_M113 : APC
 	class EventHandlers
 	{
 		hit = "_this exec {\SJC_Scripts\Events\ArmorHit.sqs}";
-		killed = "(_this select 0) exec {\SJC_Scripts\Events\VehicleBurner.sqs}";
+		killed = "(_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Veh_burner.sqs}";
 	};
-
-	//TODO_Desert:
 };

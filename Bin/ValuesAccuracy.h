@@ -20,7 +20,6 @@
 #define ACCURACY_AH64A					5.0
 #define ACCURACY_OH58D					5.0
 #define ACCURACY_UH60					0.3
-#define ACCURACY_MH60L					0.3
 #define ACCURACY_CH47D					0.3
 #define ACCURACY_M1A1					0.4
 #define ACCURACY_M113					0.3

@@ -463,4 +463,6 @@ class CfgSounds
 		sound[]={"Objects\fire",0.0002512,1.0};
 		titles[]={};
 	};
+
+	#include "Config\CfgSounds\Russia.hpp"
 };

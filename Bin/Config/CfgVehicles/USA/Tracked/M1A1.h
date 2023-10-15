@@ -107,8 +107,6 @@ class USA_M1A1 : Tank
     {
 		fired = "[_this select 0, _this select 1, _this select 4, [{M256Gun}]] exec {\SJC_Scripts\Events\Fire_Gun.sqs};";
 		hit = "_this exec {\SJC_Scripts\Events\ArmorHit.sqs}";
-		killed="(_this select 0) exec ""\SJC_Scripts\Events\VehicleBurner.sqs""";
+		killed = "(_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Veh_burner.sqs}";
 	};
-
-	//TODO_Desert:
 };

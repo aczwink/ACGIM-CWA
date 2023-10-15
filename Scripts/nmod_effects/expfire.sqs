@@ -1,0 +1,40 @@
+_vehicle = _this select 0
+
+[_vehicle] exec "\acgim_scripts\Nmod_Effects\slowdown.sqs"
+
+private ["_sensor"];
+_sensor = "EmptyDetector" createVehicle [0,0,0]
+_calcH = {private["_result"]; _sensor setpos [getpos _vehicle select 0, getpos _vehicle select 1]; _result = getpos _sensor select 2; _result};
+
+? abs (call _calcH) <= 2.4: [_vehicle] exec "\acgim_scripts\Nmod_Effects\waterexplosion.sqs"; exit
+
+~0.1
+
+_i = 60
+
+#loop
+
+_dir = random 360
+_dir2 = random 360
+_dir3 = random 360
+_dir4 =_dir4 +10
+_dir5 = _dir5 +10
+_rand = random 10
+? _dir4 >= 360:_dir4 =_rand
+?_dir5 >= 360:_dir5=_rand
+_velo = 1.5 + random 1.5
+
+_MV = [_velo *cos _dir2, _velo * sin _dir2, 1+ random 1]
+
+_int = 1
+
+_i = _i - 1
+
+_lt = 1.5 + random 1
+
+drop ["cl_fire","","Billboard",0.01,_lt,[0,0,0],_mv,0,1,1,0,[0,7.5 + random 2.5],[[1,1,0,0],[1,1,0,0.6],[1,1,0,0.4],[1,1,0,0]],[0,1,0,1],0,0.278463,"","",_vehicle]
+drop ["cl_basic","","Billboard",0.01,_lt,[0,0,0],_mv,0,1,1,0,[0,7.5 + random 2.5],[[0,0,0,0],[0,0,0,0.8],[0,0,0,0.5],[0,0,0,0]],[0,1,0,1],0,0.278463,"","",_vehicle]
+
+? _i <= 0:exit
+
+goto "loop"

@@ -17,7 +17,7 @@ class USA_UH60 : Helicopter
 	armor = ARMOR_UH60;
 	cost = COST_UH60;
 	mainRotorSpeed=-1;
-	model="\d4t_files\models\us\vehicles\uh60a.p3d";
+	model = "\models\CSLA2_UH60A";
 	rotorBig="vrtule_uh_v";
 	rotorBigBlend="vrtule_uh_v_bl";
 	rotorSmall="vrtule_uh_m";
@@ -26,8 +26,8 @@ class USA_UH60 : Helicopter
 	magazines[]={"Hydra70_38"};
 	driverAction="ManActUH60Pilot";
 	gunnerAction="ManActUH60Pilot";
-	dammageHalf[]={"\d4t_tex\uh60\ps_sklo.paa","\d4t_tex\uh60\ps_sklo2.paa","\d4t_tex\uh60\zp_sklo.paa","\d4t_tex\uh60\zp_sklo2.paa","\d4t_tex\uh60\po_sklo.paa","\d4t_tex\uh60\po_sklo2.paa","\d4t_tex\uh60\pp_sklo.paa","\d4t_tex\uh60\pp_sklo2.paa"};
-	dammageFull[]={"\d4t_tex\uh60\ps_sklo.paa","\d4t_tex\uh60\ps_sklo3.paa","\d4t_tex\uh60\zp_sklo.paa","\d4t_tex\uh60\zp_sklo3.paa","\d4t_tex\uh60\po_sklo.paa","\d4t_tex\uh60\po_sklo3.paa","\d4t_tex\uh60\pp_sklo.paa","\d4t_tex\uh60\pp_sklo3.paa"};
+	dammageHalf[] = {"\tex\Uh-60a\ps_sklo.paa", "\tex\Uh-60a\ps_sklo2.paa", "\tex\Uh-60a\zp_sklo.paa", "\tex\Uh-60a\zp_sklo2.paa", "\tex\Uh-60a\po_sklo.paa", "\tex\Uh-60a\po_sklo2.paa", "\tex\Uh-60a\pp_sklo.paa", "\tex\Uh-60a\pp_sklo2.paa"};
+	dammageFull[] = {"\tex\Uh-60a\ps_sklo.paa", "\tex\Uh-60a\ps_sklo3.paa", "\tex\Uh-60a\zp_sklo.paa", "\tex\Uh-60a\zp_sklo3.paa", "\tex\Uh-60a\po_sklo.paa", "\tex\Uh-60a\po_sklo3.paa", "\tex\Uh-60a\pp_sklo.paa", "\tex\Uh-60a\pp_sklo3.paa"};
 	gunnerUsesPilotView=1;
 	transportSoldier=12;
 	transportAmmo=0;
@@ -44,6 +44,7 @@ class USA_UH60 : Helicopter
 	steerAheadPlan=2.0;
 	threat[]={THREAT_UH60};
 	typicalCargo[]={"Soldier","Soldier","SoldierLAW","SoldierLAW"};
+	animated = 1;
 
 	class IndicatorAltRadar
 	{
@@ -53,6 +54,7 @@ class USA_UH60 : Helicopter
 		min=0;
 		max=304;
 	};
+
 	class IndicatorAltBaro
 	{
 		selection = "nm_alt";
@@ -61,6 +63,7 @@ class USA_UH60 : Helicopter
 		min = 0;
 		max = 61;
 	};
+
 	class IndicatorSpeed
 	{
 		selection = "mph";
@@ -69,6 +72,7 @@ class USA_UH60 : Helicopter
 		min = 0;
 		max = 120;
 	};
+
 	class IndicatorVertSpeed
 	{
 		selection = "vert_speed";
@@ -77,6 +81,7 @@ class USA_UH60 : Helicopter
 		min = -30;
 		max = 30;
 	};
+
 	class IndicatorRPM
 	{
 		selection = "rpm";
@@ -85,6 +90,7 @@ class USA_UH60 : Helicopter
 		min = 0;
 		max = 12;
 	};
+
 	class IndicatorAltRadar2
 	{
 		selection = "alt2";
@@ -93,6 +99,7 @@ class USA_UH60 : Helicopter
 		min = 0;
 		max = 304;
 	};
+
 	class IndicatorAltBaro2
 	{
 		selection = "nm_alt2";
@@ -101,6 +108,7 @@ class USA_UH60 : Helicopter
 		min = 0;
 		max = 61;
 	};
+
 	class IndicatorSpeed2
 	{
 		selection = "mph2";
@@ -109,6 +117,7 @@ class USA_UH60 : Helicopter
 		min = 0;
 		max = 120;
 	};
+
 	class IndicatorVertSpeed2
 	{
 		selection = "vert_speed2";
@@ -117,6 +126,7 @@ class USA_UH60 : Helicopter
 		min = -30;
 		max = 30;
 	};
+
 	class IndicatorRPM2
 	{
 		selection = "rpm2";
@@ -139,6 +149,7 @@ class USA_UH60 : Helicopter
 			size=0.5;
 			brightness=1.0;
 		};
+
 		class FRight
 		{
 			color[]={0.8,0.8,1.0,1.0};
@@ -150,6 +161,7 @@ class USA_UH60 : Helicopter
 			size=0.5;
 			brightness=1.0;
 		};
+
 		class BLeft
 		{
 			color[]={0.8,0.8,1.0,1.0};
@@ -161,6 +173,7 @@ class USA_UH60 : Helicopter
 			size=0.5;
 			brightness=1.0;
 		};
+
 		class BRight
 		{
 			color[]={0.8,0.8,1.0,1.0};
@@ -185,6 +198,7 @@ class USA_UH60 : Helicopter
 			angle0=0;
 			angle1=-0.03;
 		};
+
 		class LP_kolo
 		{
 			type="rotation";
@@ -206,11 +220,44 @@ class USA_UH60 : Helicopter
 		};
 	};
 
-	//TODO: event handlers? at least the killed burner
 	class EventHandlers
 	{
-		Init = "[_this select 0, 137] exec {\SJC_Scripts\vehicleTODO.sqs}";
+		hit = "_this exec {\SJC_Scripts\Events\HelicopterHit.sqs};";
 	};
 };
 
-//TODO: MG version too
+class USA_UH60MG : USA_UH60
+{
+	displayName="UH-60A-MG Black Hawk";
+	model = "\models\CSLA2_UH60A_M2";
+	gunnerAction = "ManActUH60Gunner";
+	gunnerOpticsModel = "optika_empty";
+	weapons[] = {"M2HBBrowning"};
+	magazines[] = {"M2HBBrowning", "M2HBBrowning", "M2HBBrowning", "M2HBBrowning", "M2HBBrowning", "M2HBBrowning", "M2HBBrowning"};
+	threat[] = {THREAT_UH60MG};
+
+	class Turret : TurretBase
+	{
+		minElev = -45;
+		maxElev = 15;
+		minTurn = 40;
+		maxTurn = 130;
+		soundServo[] = {"", 0.01, 1};
+	};
+
+	class ViewGunner : ViewGunnerBase
+	{
+		initAngleY = 90;
+		minAngleY = 30;
+		maxAngleY = 150;
+		initAngleX = 0;
+		minAngleX = -42;
+		maxAngleX = 5;
+	};
+
+	class EventHandlers
+	{
+		fired = "_this call loadFile {\acgim_scripts\Events\MGbullet.sqf}";
+		hit = "_this exec {\SJC_Scripts\Events\HelicopterHit.sqs};";
+	};
+};

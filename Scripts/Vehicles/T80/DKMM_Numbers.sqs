@@ -1,0 +1,22 @@
+;this script is made by DKM Rastavovich in 2003; little changes to fit RHS "system" in early 2004 by raedor; again changes for the T-80s in summer 2005 by raedor.
+;
+; >>> © Decisive Killing Machines Mod <<<
+;
+_t = _this select 0
+_ty = _this select 1
+? _ty == "randomNormal": _n = "n"
+? _ty == "randomArabic": _n = "a"
+? _ty == "randomResi": _n = "g"
+? _ty == "randomRed": _n = "r"
+_nr = (((getpos _t select 0) + (getpos _t select 1)*3)Mod 1000)-1
+_nr = _nr - (_nr Mod 1)
+_i = _nr Mod 10
+_t setobjecttexture [0, format ["%1%2%3.paa", RHS_PathSigns, _n, _i]]
+_i = ((_nr - _i)/10) Mod 10
+_t setobjecttexture [1, format ["%1%2%3.paa", RHS_PathSigns, _n, _i]]
+? _ty == "randomResi":goTo"s"
+_i = (_nr - _nr Mod 100)/100
+_t setobjecttexture [2, format ["%1%2%3.paa", RHS_PathSigns, _n, _i]]
+#s
+_i = (_nr - _nr Mod 1000)/1000
+?_i<.5&&_ty in RHS_T80sWithShield:_t setObjectTexture [8,""]]

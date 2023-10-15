@@ -1,3 +1,8 @@
+/*
+How threatening a unit is to {soft, armored, air}
+https://community.bistudio.com/wiki/CfgVehicles_Config_Reference#threat
+*/
+
 #define THREAT_SOLDIER			0.95, 0.05, 0.05
 #define THREAT_GRENADIER		1, 0.05, 0.05
 #define THREAT_MEDIC			0.9, 0.05, 0.05
@@ -20,7 +25,7 @@
 #define THREAT_AH64A			0.6, 1.0, 0.5
 #define THREAT_OH58D			0.7, 0.6, 0.3
 #define THREAT_UH60				0.7, 0.6, 0.3
-#define THREAT_MH60L			0.7, 0.05, 0.05
+#define THREAT_UH60MG			0.5, 0.05, 0.05
 #define THREAT_CH47D			0.5, 0.05, 0.05
 #define THREAT_M60A1			1.0, 0.6, 0.2
 #define THREAT_M1A1				0.9, 0.95, 0.3

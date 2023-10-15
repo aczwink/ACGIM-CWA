@@ -1,3 +1,18 @@
+# Vehicles
+| Object                                                   | Addon                    | Author                |
+|----------------------------------------------------------|--------------------------|-----------------------|
+| HMMWVs                                                   | COMBAT! HMMWV Pack 1.2.1 | COMBAT!               |
+| UH-60A Black Hawk & UH-60A-MG Black Hawk                 | CSLA II Update 2         | CSLA Development Team |
+| Ural-4320 (all variants)                                 | SFM Urals pack           | Spetsnaz Mod          |
+|                                                          |                          |                       |
+
+
+# Weapons
+| Object                                                   | Addon                    | Author                                 |
+| CAR-15 Commando SD optics                                | CSLA II Update 2         | CSLA Development Team (modified by me) |
+| M16A2 optics                                             | CSLA II Update 2         | CSLA Development Team                  |
+
+
 # Misc
 | Object                                                   | Addon                    | Author |
 |----------------------------------------------------------|--------------------------|--------|

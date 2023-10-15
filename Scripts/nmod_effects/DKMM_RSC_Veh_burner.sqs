@@ -1,0 +1,61 @@
+_t = _this 
+
+[_t] exec "\acgim_scripts\nmod_effects\DebrisWfire.sqs"
+
+? "BoatW" counttype [_t] != 1 || "BoatE" counttype [_t] != 1|| "CarrierW" counttype [_t] != 1: [_t,3] exec "\acgim_scripts\nmod_effects\dustwave.sqs"
+~1 + random 1
+_h = .1
+@ (getpos _t select 2) < 5
+_f = "nmod_fire" createvehicle getpos _t
+_s = "nmod_smoke" createvehicle getpos _t
+_ar = [_f,_s]
+_timer = 0 
+_exp = ["MortarShell", "Grenade", "Shell73"]
+_bsay = 1
+_hsay = 1
+_f inflame true
+_s inflame true
+_anumb = 1.3
+
+private ["_sensor"];
+_sensor = "EmptyDetector" createVehicle [0,0,0]
+_calcH = {private["_result"]; _sensor setpos [getpos _t select 0, getpos _t select 1]; _result = getpos _sensor select 2; _result};
+
+	_i = Random (3)
+	_i = _i - (_i Mod 1)
+	? _i == 1: _t exec "\acgim_scripts\nmod_effects\fuelboom.sqs"
+
+#cycle
+	goto "smoke"
+#explosion
+
+#smoke
+
+_f inflame true
+_s inflame true
+
+_anumb = 1.3
+
+? abs (call _calcH) <= 2.4: "deletevehicle _x" foreach _ar; exit
+
+? (vehicle player != player): goto "skip"
+? (player distance _f < 7) && _hsay == 1: player globalChat "Getting kind of hot here..."; _hsay = 0
+? (player distance _f < 4) && alive player: TitleText ["", "black faded",random 0.1]
+? (player distance _f < 4) && _bsay == 1: player globalChat "Argh, I'm getting burned!"; _bsay = 0
+? (player distance _f < 4): player setDamage (damage player) + 0.01
+#skip
+? (getpos _t select 2 > 3): _anumb = getpos _t select 2
+
+	drop ["cl_fire" , "" , "Billboard" , 1 , 5 + random 5, [getpos _t select 0,getpos _t select 1,1.3] , [random 2 - random 2,random 2 - random 2,2 + random 2] , 1 , 1 , 1 , 0.2 , [random 0.09] , [[1,1,1,1],[1,1,1,0.75],[1,1,1,0.50],[0,0,0,0]] , [0,1] , 0 , 0.1 , "" , "" , ""]
+	_f inflame true
+	_s inflame true
+	"_x setpos [getpos _t select 0, getpos _t select 1,_anumb]" foreach _ar
+	~_h
+	_timer = _timer + _h 
+	? _timer == 20 : _h = 1
+	? _timer < 20 : goto "cycle"
+	? _timer < 120 : goto "smoke" 
+
+"deletevehicle _x" foreach _ar
+exit
+

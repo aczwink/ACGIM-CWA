@@ -19,7 +19,7 @@ class CfgModels
 	
 	class Vehicle : Default
 	{
-		sections[]={"cislo","grupa","side","sektor","clan","podsvit pristroju","poskozeni","L svetlo","P svetlo","zasleh"};
+		sections[]={"cislo", "grupa", "side", "sektor", "clan", "podsvit pristroju", "poskozeni", "L svetlo", "P svetlo", "zasleh"};
 	};
 	
 	class Tank : Vehicle

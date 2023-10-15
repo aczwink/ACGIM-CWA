@@ -1,0 +1,115 @@
+;RED STAR shockwave dust script - TJ 2003
+;
+;modified by raedor
+;>>>©2003raedor
+;contact: raedor@web.de
+;www.mapfact.net
+;www.dkm-mod.mkdi.net
+;www.redhammerstudios.com
+;scripting questions?
+;post here: www.mapfact.net/forum/<<<
+;
+;Modified 10/02/03
+;Harkonin fire and burn -special thanks to Killswitch 
+
+? RHS_NoSmoke: exit
+
+_tank = _this select 0
+_delay = 0.2
+_lifeTicks = ((_this select 2) - 30)/ _delay
+_lifeTick = _lifeTicks
+_fire = 0
+_ouch = 0
+_EXPCount = 0
+_lights = []
+_water = false
+_rnd1 = random 2
+_rnd2 = random 2
+_rnd3 = random 2
+_rnd4 = random 2
+_rnd5 = random 3.5
+_weight = 0.0044
+_pos1a = [0,-_rnd5,-0.5-(_rnd5/4)]
+_pos1b = [0,-_rnd5,-0.5-(_rnd5/4)]
+_pos2a = [0,-_rnd5,-4.5-(_rnd5/4)]
+_pos2b = [0,-_rnd5,-4-(_rnd5/4)]
+_posA = [0,-_rnd5,-0.5-(_rnd5/4)]
+_posB = [0,-_rnd5,-0.5-(_rnd5/4)]
+_n = 0
+
+~1
+?(random 20 < 12): goto "resume"
+#fuel
+_tank exec format ["%1FuelExplosion.sqs", RHS_PathM]
+?!(thisIsServer): goto "resume"
+_fuel = "RHS_TankFuelExplosion" createvehicle [0,0,0]
+_fuel setpos [getpos _tank select 0,getpos _tank select 1,(getpos _tank select 2)+0.5]
+_fuel setdammage 1
+goto "crew"
+
+#resume
+~2
+
+#crew
+_crew = crew _tank
+_unit = _crew select _n
+_n = _n + 1
+?(_unit == player)&&(alive _unit): [_unit] exec format ["%1Burn.sqs",RHS_PathM]
+?(_unit != player)&&(random 3 > 2.2): [_unit] exec format ["%1BurnAI.sqs",RHS_PathM]
+? _n < (count _crew): goto "crew"
+
+_lastpos = getpos _tank
+_obj = _tank
+
+? ! (thisIsServer): goto "sound"
+_smoker = "RHS_Smoker"
+? RHS_LowSmoke: _smoker = "RHS_LSmoker"
+_light1 = _smoker createVehicle [0,0]; _light1 setPos [(getPos _tank select 0)-1+_rnd1, (getPos _tank select 1)-1+_rnd2, (getPos _tank select 2) + 2]
+_light1 inFlame true
+_lights = [_light1]
+? !RHS_LowSmoke: _light2 = _smoker createVehicle [0,0]; _light2 setPos [(getPos _tank select 0)-1+_rnd3, (getPos _tank select 1)-1+_rnd4, (getPos _tank select 2) + 2]; _light2 inFlame true; _lights = [_light1, _light2]
+
+#sound
+_soundloop = 0
+
+#Begin
+_fuel setpos [getpos _tank select 0,getpos _tank select 1,(getpos _tank select 2)+0.5]
+_light1 setPos [(getPos _tank select 0)+(sin(getdir _tank)*-1)-1+_rnd1, (getPos _tank select 1)+(cos(getdir _tank)*-1)-1+_rnd2, (getPos _tank select 2) + 2]
+_light2 setPos [(getPos _tank select 0)+(sin(getdir _tank)*-1)-1+_rnd3, (getPos _tank select 1)+(cos(getdir _tank)*-1)-1+_rnd4, (getPos _tank select 2) + 2]
+
+? position _tank select 2 < - 2.5 && position _tank select 2 > - 2.7: _posA = _pos2a; _posB = _pos2b; goTo "n"
+_posA = _pos1a; _posB = _pos1b
+
+#n
+? ((position _tank select 2 < - 0.8 && position _tank select 2 > - 2.5) || (position _tank select 2 < - 2.7)) && _lifeTcks - _lifeTick > 20: _lifeTicks = _lifeTick; _water = true; goTo "explos"
+_water = false
+
+#explos
+? ! (thisIsServer): goto "client"
+_x = random 49.5
+?_x <= 1 && _EXPCOUNT <= 4:_bang = "GrenadeHand" createvehicle [(getpos _tank select 0)+(-.6 + random 1.2),(getpos _tank select 1)+(-.6 + random 1.2),(getpos _tank select 2)+1]; _bang setvelocity [0,0,-1000]; _EXPCount = _EXPCount + 1
+?_x >= 45 && _EXPCount <= 4:_bang = "RHS_PKTT" createvehicle [(getpos _tank select 0)+(-.6 + random 1.2),(getpos _tank select 1)+(-.6 + random 1.2),(getpos _tank select 2)+1]; _bang setvelocity [0,0,-1000]; _EXPCount = _EXPCount + 1
+
+#client
+? player != (vehicle player): goTo "fire"
+?(player distance _tank <= 5) && !(_ouch >= 1): [player] Exec "\RHS_Misc\Burn.sqs"; _ouch = _ouch + 1
+
+
+#Fire
+drop ["cl_fire", "", "Billboard", 1, .2 + random .7, [(_posA select 0) - .8 + random 1.6, (_posA select 1) - 1 + random 2,(_posA select 2)], [random 0.3, random 0.3, 3], 1, _weight, 0.004, 0.1, [.5 + random 1, 1 + random .5, 1 + random .5], [[1,0.5,0.5,0], [0.2,0.2,0,0.7], [1,1,0,0.5], [1,1,0.1,0]], [0,1], 0.5, 0.05, "", "",_tank ]
+drop ["cl_fire", "", "Billboard", 1, .2 + random .7, [(_posA select 0) - .8 + random 1.6, (_posA select 1) - 1 + random 2,(_posA select 2)], [random 0.3, random 0.3, 3], 1, _weight, 0.004, 0.1, [.5 + random 1, 1 + random .5, 1 + random .5], [[1,0.5,0.5,0], [0.2,0.2,0,0.7], [1,1,0,0.5], [1,1,0.1,0]], [0,1], 0.5, 0.05, "", "",_tank ]
+drop ["cl_fire", "", "Billboard", 1, .2 + random .7, [(_posA select 0) - .8 + random 1.6, (_posA select 1) - 1 + random 2,(_posA select 2)], [random 0.3, random 0.3, 3], 1, _weight, 0.004, 0.1, [.5 + random 1, 1, .5], [[1,0.5,0.5,0], [1,1,0.8,0.7], [1,1,0,0.4], [1,1,0,0]], [0,1], 0.5, 0.05, "", "",_tank ]
+drop ["cl_fire", "", "Billboard", 1, .2 + random .7, [(_posA select 0) - .8 + random 1.6, (_posA select 1) - 1 + random 2,(_posA select 2)], [random 0.3, random 0.3, 3], 1, _weight, 0.004, 0.1, [1 + random 2, 2.5, 1.5], [[1,0.5,0.5,0], [1,1,0.8,0.7], [1,1,0,0.4], [1,1,0,0]], [0,1], 0.5, 0.05, "", "",_tank ]
+drop ["cl_fire", "", "Billboard", 1,  5, _posB, [ random 1, random 1, random 3], 1, 0.003, 0.0042, 0, [0.15], [[1,1,1,1],[0,0,0,0]], [0,1], 0.5, 1, "", "",_tank]
+drop ["cl_fire", "", "Billboard", 1,  5, _posB, [ random 1, random 1, random 3], 1, 0.003, 0.0042, 0, [0.15], [[1,1,1,1],[0,0,0,0]], [0,1], 0.5, 1, "", "",_tank]
+_fire = _fire + 1
+~_delay
+_lifeTick = _lifeTick - 1
+_soundloop = _soundloop +1
+?(_fire >= 30): _fire = 0; _ouch = 0
+?(local _tank) && (_soundloop == 4): {_x say "fire"} forEach _lights; goto "sound"
+?(_lifeTricks - _lifeTrick > 10): _fuel setpos [0,0,0]; deletevehicle _fuel
+?_lifeTick > 0 : goto "Begin"
+_tank setdammage 1
+? local _tank: "deleteVehicle _x" forEach _lights
+exit

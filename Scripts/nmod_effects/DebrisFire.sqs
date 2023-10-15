@@ -1,0 +1,48 @@
+;// How many seconds should the smoke run
+_Duration = 250 + random 250
+
+;// Calculate how many loops
+_numLoops = _Duration / 0.15
+
+;// Initialize the loop counter 
+_loopCounter = 1 
+
+_object = _this select 0
+
+;// Loop delay
+
+#loop
+?isNull _object : exit
+
+_delay = 0.001
+_size = 0.5 + random 0.5
+_Fint = 1
+_uv = 0.5
+_sint = 0.15
+_fint2 = 1
+_sizeFS = _size
+
+_Rs = random 2.01
+
+? _Rs <= 1: _shapeS = "cl_basic"; _sint = 0.4
+? _Rs >= 1: _shapeS = "missilesmoke"; _sizeFS = _sizeFS * 1.5; _sint = 0.8
+
+? (speed _object) < 30: _size = _size / 2; _delay = _delay + _delay * 100; _fint = 0
+
+~_delay
+
+drop ["cl_fire","","Billboard",0.01,0.7,[0,0,0],[0,0,0],0,2.00663,1.9,0,[_size,(_size / 2)],[[1,1,random 0.5,_fint],[1,1,random 0.5,_fint2],[1,1,random 0.5,(_fint2 / 2)],[1,1,random 0.5,0]],[0,1],0,0.03,"","",_object]
+drop [_shapeS,"","Billboard",0.01,1.7,[0,0,0],[0,0,0],0,2.00663,1.80208,0,[(_sizeFS / 2),(_sizeFS / 2)],[[0,0,0,0],[0,0,0,_sint],[0,0,0,(_sint / 2)],[0,0,0,0]],[0,1,0],0,0.015,"","",_object]
+
+;// The loop is incrimented.
+		_loopCounter = _loopCounter + 1
+;// If the script has run as long as it should, it stops
+		?(_loopCounter >= _numLoops) : goto "end"
+;// If the loop has not run long enough, then repeat until it has
+goto "loop"
+
+#end
+
+deleteVehicle _this
+
+exit

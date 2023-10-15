@@ -1,0 +1,28 @@
+;this script is made by DKM Rastavovich in 2003; little changes to fit RHS "system" in early 2004 by raedor. 
+;
+; >>> © Decisive Killing Machines Mod <<<
+;
+
+_speedold = 0
+
+#check
+		? isNull _this || ! alive _this : exit
+            ?!isengineon _this : goto "ende"
+            _speed = speed _this
+            ? (_speed < .5 && _speed > -.5) : goto "break"
+            _factor = (_speed - _speedold)/9
+            _this animate ["suspension", (.5 + _factor)]
+            ~0.1
+            _speedold = _speed
+            goto "check"
+
+#break
+            _this animate ["suspension", .5]
+            @(speed _this > .5 || speed _this < -.5)
+            _speedold = 0
+            goto "check"
+
+#ende
+		?!(alive _this): exit
+            _this animate ["suspension", .5]
+            exit

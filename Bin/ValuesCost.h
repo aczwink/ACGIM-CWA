@@ -70,7 +70,6 @@
 #define COST_AH64A					10000000
 #define COST_OH58D					2000000
 #define COST_UH60					6000000
-#define COST_MH60L					6000000
 #define COST_CH47D					8000000
 #define COST_M1A1					5000000
 #define COST_M113					500000

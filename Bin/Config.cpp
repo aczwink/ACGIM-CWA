@@ -25,7 +25,7 @@
 #include "Config\WeaponClouds.h"
 #include "Config\CfgCloth.h"
 #include "Config\EventHandlers.h"
-#include "Config\CfgVehicles.h"
+#include "Config\CfgVehicles.hpp"
 #include "Config\CfgCrew.h"
 #include "Config\CfgNonAIVehicles.h"
 #include "Config\CfgSurfaces.h"

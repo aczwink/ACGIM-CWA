@@ -17,7 +17,6 @@
 //Hardmounted
 //Guns
 #include "Config\CfgWeapons\USA\Hardmounted\GAU8Avenger.h"
-#include "Config\CfgWeapons\USA\Hardmounted\M134Minigun.h"
 #include "Config\CfgWeapons\USA\Hardmounted\M197Gatling.h"
 #include "Config\CfgWeapons\USA\Hardmounted\M230ChainGun.h"
 #include "Config\CfgWeapons\USA\Hardmounted\M61Vulcan.h"

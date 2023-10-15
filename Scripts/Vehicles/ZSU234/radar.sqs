@@ -1,0 +1,50 @@
+_zsu = _this select 0
+_op = gunner vehicle _zsu
+? isNull _op : exit
+
+_tex1 = "\sjc_textures\shilka\3.paa"
+_tex2 = "\sjc_textures\shilka\8.paa"
+_tex3 = "\sjc_textures\shilka\radar.paa"
+_tex4 = "\sjc_textures\shilka\zsu_gun_radarI.paa"
+
+_zsu animate ["pod_radar", 1]
+@_zsu animationphase "pod_radar" == 1
+_zsu setobjecttexture [6, _tex1]
+_zsu setobjecttexture [7, _tex2]
+_zsu setobjecttexture [8, _tex3]
+_zsu setobjecttexture [9, _tex4]
+_zsu setobjecttexture [3, ""]
+_zsu setobjecttexture [4, ""]
+_zsu setobjecttexture [5, ""]
+_zsu animate ["rotat_radar", 0.85]
+@_zsu animationphase "rotat_radar" == 0.85
+_zsu animate ["trigg_radar", 1]
+~2
+
+#Rot
+? !alive _zsu : exit
+_op = gunner vehicle _zsu
+? isNull _op : _zsu animate ["trigg_radar", 0]
+_zsu animate ["rotat_radar", 1]
+@_zsu animationphase "rotat_radar" == 1
+? !alive _zsu : exit
+_zsu animate ["rotat_radar", 0.70]
+@_zsu animationphase "rotat_radar" == 0.70
+?(_zsu animationphase "trigg_radar" == 0): goto "End"
+goto "Rot"
+
+#End
+_zsu animate ["rotat_radar", 0.85]
+@_zsu animationphase "rotat_radar" == 0.85
+_zsu animate ["rotat_radar", 0]
+@_zsu animationphase "rotat_radar" == 0
+_zsu setobjecttexture [3, _tex1]
+_zsu setobjecttexture [4, _tex2]
+_zsu setobjecttexture [5, _tex3]
+_zsu setobjecttexture [6, ""]
+_zsu setobjecttexture [7, ""]
+_zsu setobjecttexture [8, ""]
+_zsu setobjecttexture [9, ""]
+_zsu animate ["pod_radar", 0]
+
+exit

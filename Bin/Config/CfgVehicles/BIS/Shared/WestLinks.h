@@ -19,11 +19,6 @@ class SoldierWSaboteurPipeHGS : USA_SF_Operator
 	scope = SCOPE_HIDDEN;
 };
 
-class SoldierWSaboteurDay : USA_SF_Ranger
-{
-	scope = SCOPE_HIDDEN;
-};
-
 class SoldierWSaboteurXMS : USA_SF_Ranger_TeamLeader
 {
 	scope = SCOPE_HIDDEN;

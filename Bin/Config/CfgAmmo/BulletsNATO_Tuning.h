@@ -141,21 +141,6 @@ class CAR15_SD_Auto : BulletNATO556x45_SD_Auto
 };
 
 /*
-M134 Minigun
-Sources:
-	http://en.wikipedia.org/wiki/Minigun
-*/
-class M134Minigun : BulletNATO762x51
-{
-	minRange = 10;
-	minRangeProbab=0.9;
-	midRange=300;
-	midRangeProbab = 0.5;
-	maxRange = 1000;
-	maxRangeProbab = 0.05;
-};
-
-/*
 M2HB Browning
 */
 class M2HBBrowning : BulletNATO127x99

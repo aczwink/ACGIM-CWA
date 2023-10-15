@@ -19,7 +19,7 @@ class CAR15 : Riffle
 	shortNameMagazine = "CAR-15 Mag";
 	model = "\sjc_models\USA\Weapons\Primary\car15.p3d";
 	modelMagazine="\d4t_files\models\us\weapons\m4\m4_mag.p3d";//ODOL Explorer 2.0 was used
-	modelOptics="\d4t_files\optics\optic_m16a2.p3d";
+	modelOptics="\models\CSLA2_M16A2_optika.p3d";
 	drySound[]={"\d4t_files\sounds\weapons\handheld\dry.wss", 0.010316, 1};
 	reloadMagazineSound[]={"\d4t_files\sounds\weapons\handheld\reload.wss", 1.0, 1};
 	modes[]={"Single","FullAuto"};
@@ -78,7 +78,7 @@ class CAR15_SD : CAR15
 {
 	displayName="CAR-15 Commando SD";
 	model = "\sjc_models\USA\Weapons\Primary\car15_sd.p3d";
-	modelOptics="\d4t_files\optics\optic_m16a2.p3d";
+	modelOptics="\models\CSLA2_M16A2_optika_sd.p3d";
 	magazines[] = {"CAR15_SD"};
 	
 	class Single

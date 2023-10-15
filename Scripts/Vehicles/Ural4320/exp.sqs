@@ -1,0 +1,6 @@
+_obj = _this select 0
+_ran = (random 4) + 1
+_pos = getpos _obj
+_bomb="Heat73" camcreate [(_pos select 0) + (0*SIN((_diro)+0)), (_pos select 1)+(0*COS((_diro)+0)), (_pos select 2)]   
+ _bomb setVelocity [0,0, 10]
+exit

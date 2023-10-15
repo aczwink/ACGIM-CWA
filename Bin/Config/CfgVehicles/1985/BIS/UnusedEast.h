@@ -68,27 +68,14 @@ class BRDM : USSR_BRDM2
 	scope = SCOPE_HIDDEN;
 };
 
-class T80 : USSR_T80B
-{
-	scope = SCOPE_HIDDEN;
-};
-
 class T80Auto : T80
 {
 	scope = SCOPE_HIDDEN;
 };
 
-class ZSU : USSR_ZSU234
-{
-	scope = SCOPE_HIDDEN;
-};
 
 
 
-class Ural : USSR_Ural4320
-{
-	scope = SCOPE_HIDDEN;
-};
 
 class Ural_Open : USSR_Ural4320Open
 {
@@ -105,24 +92,7 @@ class UralReammo : USSR_Ural4320Reammo
 	scope = SCOPE_HIDDEN;
 };
 
-class UralRefuel : USSR_Ural4320Refuel
-{
-	scope = SCOPE_HIDDEN;
-};
-
 class Scud : USSR_ScudLauncher
-{
-	scope = SCOPE_HIDDEN;
-};
-
-//Ships
-class BoatE : USSR_Boat
-{
-	scope = SCOPE_HIDDEN;
-};
-
-//Weapons
-class M2StaticMGE : USSR_DSHK
 {
 	scope = SCOPE_HIDDEN;
 };

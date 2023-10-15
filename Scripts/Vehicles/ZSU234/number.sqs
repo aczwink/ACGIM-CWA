@@ -1,0 +1,28 @@
+_unit = _this select 0
+
+_i1 = random 10; _i1 = _i1 - (_i1 % 1)
+_i2 = random 10; _i2 = _i2 - (_i2 % 1)
+_i3 = random 10; _i3 = _i3 - (_i3 % 1)
+
+#Start
+_tex1 = "\sjc_textures\shilka\3.paa";
+_tex2 = "\sjc_textures\shilka\8.paa";
+_tex3 = "\sjc_textures\shilka\radar.paa";
+_unit setobjecttexture [9, ""];
+
+_unit setobjecttexture [3, _tex1]
+_unit setobjecttexture [4, _tex2]
+_unit setobjecttexture [5, _tex3]
+_unit setobjecttexture [6, ""]
+_unit setobjecttexture [7, ""]
+_unit setobjecttexture [8, ""]
+
+_unit animate ["SetNumber",1]
+_unit setObjectTexture [0, format ["\sjc_textures\shilka\rnums\%1.paa",_i1]]
+_unit setObjectTexture [1, format ["\sjc_textures\shilka\rnums\%1.paa",_i2]]
+_unit setObjectTexture [2, format ["\sjc_textures\shilka\rnums\%1.paa",_i3]]
+
+
+@ !(alive _unit) || ((_unit animationPhase "SetNumber") == 0)
+? !(alive _unit) : exit
+goto "Start"

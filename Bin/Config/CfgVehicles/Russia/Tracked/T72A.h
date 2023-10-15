@@ -141,6 +141,6 @@ class Russia_T72A : RussianTank
 		init = "_this exec {\SJC_Scripts\Russia\T72A\Signs.sqs}";
 		fired = "[_this select 0, _this select 1, _this select 4, [{2A46M}]] exec {\SJC_Scripts\Events\Fire_Gun.sqs};";
 		hit = "_this exec {\SJC_Scripts\Events\ArmorHit.sqs}";
-		killed = "(_this select 0) exec ""\SJC_Scripts\Events\VehicleBurner.sqs""";
+		killed = "(_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Veh_burner.sqs}";
 	};
 };

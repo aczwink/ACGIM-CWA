@@ -141,6 +141,11 @@ class USA_RadioOperator : USA_Soldier
 			statement= "[this, player, 0] exec ""\d4t_misc\artillery\init.sqs""";
 		};
 	};*/
+
+	class EventHandlers
+	{
+		Init = "[_this select 0, 126] exec {\SJC_Scripts\vehicleTODO.sqs}";
+	};
 };
 
 class USA_Miner : USA_Soldier

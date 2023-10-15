@@ -24,6 +24,54 @@ steps:
         path: AddOns/ABox/config.cpp
     targetPboName: ABox
 
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\APAC.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/Apac/config.cpp
+    targetPboName: Apac
+
+  - type: RepackArchive
+    sourceLocation: cwa_patch
+    source:
+      type: Archive
+      name: CWA_update.22112011-combinedALL.7z
+      pbo: Addons/BISCamel.pbo
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/BISCamel/config.cpp
+    targetPboName: BISCamel
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\BIZON.PBO.XZ
+    exclude: [config.bin, dx6.log, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/Bizon/config.cpp
+    targetPboName: Bizon
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\BMP2.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/BMP2/config.cpp
+    targetPboName: BMP2
+
 
   - type: CopyFiles
     source: resources
@@ -48,7 +96,35 @@ steps:
   #dta
   - type: ImportFiles
     source: addons
+    ignore: [data, data3d, o]
     sources:
+      - type: FileSystem
+        source: source
+        files:
+          - Models/CSLA2_M16A2_optika_sd.p3d
+          
+      - type: Archive
+        name: CSLA2Update2_Install_v220.exe
+        pbos:
+          - CSLA/Addons/csla_arm.pbo
+          - CSLA/Addons/csla_us.pbo
+        files:
+          - csla_us/CSLA2_M16A2_optika.p3d
+          - csla_us/CSLA2_UH60A.p3d
+          - csla_us/CSLA2_UH60A_M2.p3d
+          - csla_us/uh-60a/ps_sklo.paa
+          - csla_us/uh-60a/ps_sklo2.paa
+          - csla_us/uh-60a/ps_sklo3.paa
+          - csla_us/uh-60a/zp_sklo.paa
+          - csla_us/uh-60a/zp_sklo2.paa
+          - csla_us/uh-60a/zp_sklo3.paa
+          - csla_us/uh-60a/po_sklo.paa
+          - csla_us/uh-60a/po_sklo2.paa
+          - csla_us/uh-60a/po_sklo3.paa
+          - csla_us/uh-60a/pp_sklo.paa
+          - csla_us/uh-60a/pp_sklo2.paa
+          - csla_us/uh-60a/pp_sklo3.paa
+
       - type: Archive
         name: FFUR_85_Patch_1.05.exe
         pbos:
@@ -61,6 +137,28 @@ steps:
           - SLX_Grass_CWC_Islands/cain.wrp
           - SLX_Grass_CWC_Islands/Eden.wrp
 
+      - type: Archive
+        name: rus_zsu.rar
+        pbos:
+          - MNF_ZSU.pbo
+        files:
+          - { sourceFileName: MNF_ZSU/23mm.p3d, targetName: zsu234_23mm }
+          - { sourceFileName: MNF_ZSU/sounds/eng1.ogg, targetName: zsu234_eng1.ogg }
+          - { sourceFileName: MNF_ZSU/sounds/engineoff.ogg, targetName: zsu234_engineoff.ogg }
+
+      - type: Archive
+        name: SFM_URALS.rar
+        pbos:
+          - SFM_URALS.pbo
+        files:
+          - SFM_URALS/anim/DLEMuralDEADCARGO1.rtm
+          - SFM_URALS/ural4320_closed.p3d
+          - SFM_URALS/ural4320_dead.p3d
+          - SFM_URALS/ural4320_GAS.p3d
+          - SFM_URALS/ural4320_GAS_dead.p3d
+          - SFM_URALS/ural375_dead_koles.p3d
+          - SFM_URALS/Ural_dead_cist.p3d
+
   - type: CopyFiles
     source: resources
     files: Dta/*.pbo #TODO: these should be packed instead of copied
@@ -68,6 +166,22 @@ steps:
   - type: PackArchive
     source: source
     source_folder: Scripts
+    target_folder: Dta
+    targetFileName: acgim_scripts
+
+  - type: PackArchive
+    source: resources
+    source_folder: Dta/d4t_files
+    target_folder: Dta
+
+  - type: PackArchive
+    source: resources
+    source_folder: Dta/d4t_tex
+    target_folder: Dta
+
+  - type: PackArchive
+    source: resources
+    source_folder: Dta/sjc_anims
     target_folder: Dta
 
   - type: PackArchive
@@ -77,7 +191,17 @@ steps:
 
   - type: PackArchive
     source: resources
+    source_folder: Dta/sjc_models
+    target_folder: Dta
+
+  - type: PackArchive
+    source: resources
     source_folder: Dta/SJC_Scripts
+    target_folder: Dta
+
+  - type: PackArchive
+    source: resources
+    source_folder: Dta/sjc_textures
     target_folder: Dta
 
   #misc

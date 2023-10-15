@@ -48,7 +48,7 @@ class FIA_MachineGunner : FIA_Soldier
 		
 	class EventHandlers
 	{
-		Init = "[_this select 0, None] exec {\SJC_Scripts\vehicleTODO.sqs}";
+		Init = "[_this select 0, 47] exec {\SJC_Scripts\vehicleTODO.sqs}";
 	};
 };
 

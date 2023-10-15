@@ -105,22 +105,9 @@ class CfgVehicleActions
 	BIScamelDriver = "camelDriver";
 	BIScamelCargoRight = "camelCargo";
 	BIScamelCargoLeft = "camelCargo2";
-	//SJC
+	//ACGIM
 	fz_oh58plt="fz_oh58plt";
 	fz_oh58gunner="fz_oh58gunner";
-	BAS_MH60Gunner = "BAS_MH60Gunner";
-	BAS_MH60Cargo2 = "BAS_MH60Cargo2";
-	BAS_MH60Cargo3 = "BAS_MH60Cargo3";
-	BAS_MH60Cargo4 = "BAS_MH60Cargo4";
-	BAS_MH60Cargo5 = "BAS_MH60Cargo5";
-	BAS_MH60Cargo6 = "BAS_MH60Cargo6";
-	BAS_MH60Cargo7 = "BAS_MH60Cargo7";
-	BAS_MH60Cargo8 = "BAS_MH60Cargo8";
-	BAS_MH60Cargo9 = "BAS_MH60Cargo9";
-	BAS_MH60Cargo10 = "BAS_MH60Cargo10";
-	BAS_MH60Cargo11 = "BAS_MH60Cargo11";
-	BAS_MH60Cargo12 = "BAS_MH60Cargo12";
-	BAS_MH60fastrope = "BAS_MH60fastrope";
 	CBT_M2Driver="CBT_M2Driver";
 	CBT_M2Commander="CBT_M2Commander";
 	CBT_M2CommanderOut="CBT_M2CommanderOut";
@@ -133,6 +120,7 @@ class CfgVehicleActions
 	DLEMural375CARGO= "DLEMural375CARGO";
 	DLEMural375CARGO3= "DLEMural375CARGO3";
 	DLEMural375CARGO4= "DLEMural375CARGO4";
+	DLEMuralDEADCARGO1= "DLEMuralDEADCARGO1";
 	OWPMi8pilot = "OWPMi8pilot";
 	OWPMi8copilot = "OWPMi8copilot";
 	OWPMi8GunnerFront = "OWPMi8GunnerFront";

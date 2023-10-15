@@ -1,0 +1,59 @@
+;script by silola
+;edited by raedor
+
+_unit     = _this select 0
+_anzahl1  = _this select 1
+_refresh  = _this select 2
+_dauer1   = _this select 3
+_radius   = _this select 4
+_radhoe   = _this select 5
+_masse    = _this select 6
+_lichtm   = _this select 7
+_lichti   = _this select 8
+_explod   = _this select 9
+_explog   = _this select 10
+_explor   = _this select 11
+_anzahl2  = _this select 12
+_masse2   = _this select 13
+_rocket   = _this select 14
+_partnr1  = _this select 15
+_waitdam  = _this select 16
+_path = "\acgim_scripts\Nmod_effects\"
+?(format["%1",_unit] == "scalar bool array string 0xfcffffef"):_unit = xcamvehicle
+_pos = getpos _unit
+_ok  = false
+
+#wait
+?(_waitdam == 0):goto "explo"
+@((getdammage vehicle _unit) == 1) && ((getpos vehicle _unit select 2) < 3)
+~_waitdam
+
+#explo
+_anz1 = ((_anzahl1 / 2) + random (_anzahl1 / 2))
+_anz2 = ((_anzahl2 / 2) + random (_anzahl2 / 2))
+_refr = (((_refresh / 100) / 2) + random ((_refresh / 100) / 2))
+#xshowlos
+_lich = random _lichtm
+_refr = (((_refresh / 100) / 2) + random ((_refresh / 100) / 2))
+?((count _partnr1) == 0):_funk1 = ""
+?((count _partnr1) > 0):_funk1 = format["%2partikel1_%1.sqs",_partnr1 select (random ((count _partnr1) - 1)), _path]
+Drop["koulesvetlo","","Billboard",_refr,((_dauer1 / 2) + random (_dauer1 / 2)),[0,0,-1],[-_radius + (random (_radius * 2)),-_radius + (random (_radius * 2)),random _radius * _radhoe],0,(_masse / 100),0.01,0,[_lich,random _lich,0],[[0.5,0.3,0,_lichti],[0.5,0.3,0,_lichti],[0.5,0.3,0,_lichti],[0.5,0.3,0,_lichti]],[0,1,0],0,0,_funk1,"",_unit]
+_anz1 = _anz1 - 1
+?(_anz1 < 0):goto "explobomb"
+goto "xshowlos"
+
+#explobomb
+?(_rocket == 1):_gren1 = "grenade" camcreate [(getpos _unit select 0),(getpos _unit select 1),-1]
+?(_rocket == 2):_gren1 = "shell73" camcreate [(getpos _unit select 0),(getpos _unit select 1),-1]
+?(_rocket == 3):_gren1 = "rocket57" camcreate [(getpos _unit select 0),(getpos _unit select 1),-1]
+?(_rocket == 4):_gren1 = "laserguidedbomb" camcreate [(getpos _unit select 0),(getpos _unit select 1),-1]
+
+#looppar1
+Drop["koulesvetlo","","Billboard",1,((_explod / 2) + random (_explod / 2)),_pos,[-_explor + random (_explor * 2),-_explor + random (_explor * 2),random (_explor / 2)],0,(_masse2 / 100),0.01,random 0.01,[_explog / 2,_explog * 2,_explog],[[1,1,1,0],[1,1,1,1],[1,0.4,0,1],[0.5,0.5,0.5,0]],[0,1,0],0,0,"","",""]
+Drop["koulesvetlo","","Billboard",1,((_explod / 2) + random (_explod / 2)),_pos,[-_explor + random (_explor * 2),-_explor + random (_explor * 2),random (_explor / 2)],0,(_masse2 / 100),0.01,random 0.01,[_explog / 2.2,_explog * 1.8,_explog],[[1,0.4,0,0],[1,0.6,0,1],[1,0.8,0,01],[1,1,1,0]],[0,1,0],0,0,"","",""]
+_anz2 = _anz2 - 1
+?(_anz2 < 0):goto "fire"
+goto "looppar1"
+
+#fire
+exit
