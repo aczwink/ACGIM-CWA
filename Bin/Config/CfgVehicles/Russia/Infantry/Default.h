@@ -37,12 +37,9 @@ class Russia_Grenadier : Russia_Soldier
 	accuracy = ACCURACY_GRENADIER;
 	displayName = "Grenadier";
 	hiddenSelections[] = {"medic","svetlo","_AKmags1","_Backpack","_Armpatch_right","_Beret","_Cap","_Helmcamo","_HelmF","_Holster","_MAGpouch1","_PKpouch1","_PKpouch2","_Radiogear","_Rpgpack","_SVDmags","_Tuch","_Mapcase","_Lamp","_Shovel"};
-	weapons[] = {"AK74GP25", "Throw", "Put"};
+	weapons[] = {WEAPON_REFERENCE(AK74GP25), "Throw", "Put"};
 	magazines[] = {"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "VOG25", "VOG25", "VOG25", "VOG25"};
 	threat[] = {THREAT_GRENADIER};
-
-	//TODO_2005:
-	//TODO_Desert:
 };
 
 class Russia_Medic : Russia_Soldier
@@ -70,8 +67,8 @@ class Russia_MachineGunner : Russia_Soldier
 	displayName = "Machine Gunner";
 	hiddenSelections[] = {"medic","svetlo","_AKmags","_AKmags1","_Armpatch_right","_Beret","_Cap","_Gpouch","_HelmF","_Holster","_MAGpouch1","_MAGpouch2","_Radiogear","_Rpgpack","_SVDmags","_Tuch","_Mapcase","_Lamp","_Backpack","_Shovel"};
 	nameSound = "machineGunner";
-	weapons[] = {"PKM", "Throw", "Put"};
-	magazines[] = {"PKM", "PKM", "PKM", "PKM", "PKM"};
+	weapons[] = {WEAPON_REFERENCE(PKM), "Throw", "Put"};
+	magazines[] = {WEAPON_REFERENCE(PKM), WEAPON_REFERENCE(PKM), WEAPON_REFERENCE(PKM), WEAPON_REFERENCE(PKM), WEAPON_REFERENCE(PKM)};
 	threat[] = {THREAT_MACHINEGUNNER};
 
 	//TODO_2005:

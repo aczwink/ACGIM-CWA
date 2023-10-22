@@ -1,0 +1,10 @@
+_tank = _this select 0
+
+_tank animate ["recoil", 1]
+~0.2
+_i = 1
+#goback
+	_tank animate ["recoil", _i]
+	~0.03
+	? _i > 0 : _i = _i - .1, goto "goback"
+exit

@@ -1,98 +1,3 @@
-class HeavyReammoBoxWest : ReammoBoxWest
-{
-	displayName = "USA Explosives Crates";
-
-	class TransportMagazines
-	{
-		//Secondary Magazines
-		class m_M72LAW
-		{
-			magazine = "M72LAW";
-			count = 4;
-		};
-		
-		class m_M47Dragon
-		{
-			magazine = "M47Dragon";
-			count = 1;
-		};
-		
-		class m_FIM92Stinger
-		{
-			magazine = "FIM92Stinger";
-			count = 1;
-		};
-
-		//Grenades
-		class m_M67
-		{
-			magazine = "M67";
-			count = 10;
-		};
-		
-		class m_M406HEFR
-		{
-			magazine = "M406HEFR";
-			count = 6;
-		};
-
-		class m_ANM8
-		{
-			magazine = "ANM8";
-			count = 3;
-		};
-
-		class m_M18Red
-		{
-			magazine = "M18Red";
-			count = 1;
-		};
-
-		class m_M18Green
-		{
-			magazine = "M18Green";
-			count = 1;
-		};
-
-		class m_Flare
-		{
-			magazine = "Flare";
-			count = 3;
-		};
-
-		class m_FlareGreen
-		{
-			magazine = "FlareGreen";
-			count = 1;
-		};
-
-		class m_FlareRed
-		{
-			magazine = "FlareRed";
-			count = 1;
-		};
-
-		class m_FlareYellow
-		{
-			magazine = "FlareYellow";
-			count = 1;
-		};
-
-		//Items
-		class m_Mine
-		{
-			magazine = "Mine";
-			count = 3;
-		};
-
-		class m_PipeBomb
-		{
-			magazine = "PipeBomb";
-			count = 2;
-		};
-	};
-};
-
 class AmmoBoxOUTWW : HeavyReammoBox
 {
 	scope = SCOPE_PUBLIC;
@@ -134,7 +39,7 @@ class AmmoBoxOUTWW : HeavyReammoBox
 
 		class w_CAR15_SD
 		{
-			weapon = "CAR15_SD";
+			weapon = WEAPON_REFERENCE(CAR15_SD);
 			count = 1;
 		};
 
@@ -174,60 +79,6 @@ class AmmoBoxOUTWW : HeavyReammoBox
 };
 
 //FIA Crates
-class ReammoBoxGuer : ReammoBox
-{
-	scope = SCOPE_PUBLIC;
-	accuracy = ACCURACY_SUPERCLASS;
-	displayName = "FIA Ammo Crates";
-	
-	class TransportMagazines
-	{
-		//Primary Magazines
-		class m_AKM
-		{
-			magazine = "AKM";
-			count = 25;
-		};
-
-		class m_RPD
-		{
-			magazine = "RPD";
-			count = 6;
-		};
-
-		class m_HuntingRifleMag
-		{
-			magazine = "HuntingRifleMag";
-			count = 3;
-		};
-
-		class m_KozliceShell
-		{
-			magazine = "KozliceShell";
-			count = 6;
-		};
-
-		class m_KozliceBall
-		{
-			magazine = "KozliceBall";
-			count = 3;
-		};
-
-		//Tertiary Magazines
-		class m_TokarevMag
-		{
-			magazine = "TokarevMag";
-			count = 10;
-		};
-
-		class m_IngramMag
-		{
-			magazine = "IngramMag";
-			count = 4;
-		};
-	};
-};
-
 class HeavyReammoBoxRes : ReammoBoxGuer
 {
 	displayName = "FIA Explosives Crates";

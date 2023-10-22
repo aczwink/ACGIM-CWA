@@ -1,9 +1,33 @@
+class Shed : Strategic
+{
+	scope=2;
+	vehicleClass="Objects (Buildings)";
+	icon="Unknown_object";
+	model="pristresek";
+	displayName="$STR_DN_SHED";
+	accuracy=0.2;
+	typicalCargo[]={};
+	transportAmmo=0;
+	transportRepair=0;
+	transportFuel=0;
+	mapSize=9.8000002;
+	cost=0;
+	armor=200;
+};
+
+class ShedSmall : Shed
+{
+	model="pristresek_mensi";
+	displayName="$STR_DN_SHED_SMALL";
+	mapSize=4.3000002;
+	accuracy=1000;
+};
+
 class Barracks : Shed
 {
 	scope=2;
 	model="budova4_in";
 	displayName="$STR_DN_BARRACKS";
-	vehicleClass="Objects (Buildings)";
 	simulation="house";
 	mapSize=15.3999996;
 };
@@ -13,7 +37,6 @@ class Hangar_Hall : Shed
 	scope=2;
 	model="HANGAR";
 	displayName="$STR_DN_HANGAR_HALL";
-	vehicleClass="Objects (Buildings)";
 	simulation="house";
 	mapSize=25;
 };
@@ -65,6 +88,11 @@ class FuelStation : Strategic
 	accuracy=0.5;
 	transportFuel=50000;
 	destrType=DESTRUCT_ENGINE;
+
+	class EventHandlers
+	{
+		killed = "(_this select 0) exec {\acgim_scripts\Events\FuelCarrierDestroyed.sqs}; (_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Veh_burner.sqs}";
+	};
 };
 
 class FuelStationNew : FuelStation

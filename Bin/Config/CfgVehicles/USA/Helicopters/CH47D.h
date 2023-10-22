@@ -3,7 +3,7 @@ Sources:
 http://en.wikipedia.org/wiki/CH-47
 In service: 1979-(unsure, at least til 2008: present)
 */
-class USA_CH47D : Helicopter
+class Ch47D : Helicopter
 {
 	scope = SCOPE_PUBLIC;
 	crew= "USA_HelicopterPilot";
@@ -171,5 +171,11 @@ class USA_CH47D : Helicopter
 		angle = -320;
 		min = 0;
 		max = 12;
+	};
+
+	class EventHandlers
+	{
+		fired = "_this call loadFile {\acgim_scripts\Events\MGbullet.sqf}";
+		//does not have a sidemounted tail rotor
 	};
 };

@@ -177,7 +177,7 @@ class USA_Truck5tReammo : USA_Truck5t
 	};
 };
 
-class USA_Truck5tRefuel : USA_Truck5t
+class Truck5tRefuel : USA_Truck5t
 {
 	picture="iTruck5tfuel";
 	icon="Fuel_move";
@@ -200,8 +200,6 @@ class USA_Truck5tRefuel : USA_Truck5t
 
 	class EventHandlers
 	{
-		Init = "[_this select 0, 187] exec {\SJC_Scripts\vehicleTODO.sqs}";
-		//TODO: (also burner or is this included?)
-		//killed = "([_this select 0]) exec {\d4t_files\FX\scripts\FuellEffect\Init.sqs}";
+		killed = "(_this select 0) exec {\acgim_scripts\Events\FuelCarrierDestroyed.sqs}; (_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Veh_burner.sqs}";
 	};
 };

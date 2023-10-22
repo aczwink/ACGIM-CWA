@@ -1,0 +1,7 @@
+RHS_Noid = loadFile "\acgim_scripts\Vehicles\M60\RAE_Noid.sqf"
+_this exec "\acgim_scripts\Vehicles\M60\randomparts.sqs"
+_this exec "\acgim_scripts\Vehicles\M60\engineon.sqs"
+_this exec {\acgim_scripts\Vehicles\M60\RAE_driverOptics.sqs}
+_this select 0 animate ["suspension2", .5]
+_this select 0 animate ["suspension", .5]
+exit

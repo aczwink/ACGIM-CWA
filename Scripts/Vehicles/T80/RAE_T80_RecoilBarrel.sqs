@@ -1,0 +1,18 @@
+;>>>©raedor2004
+;contact: raedor@mapfact.net
+;www.mapfact.net
+;www.dkm-mod.mkdi.net
+;www.redhammerstudios.com
+;scripting questions?
+;post here: www.mapfact.net/forum/<<<
+
+? RHS_NoScripts || thisIsMP: exit
+
+_t = _this select 0
+
+;_i=0;_s=_this select 5 select 2;_p=_this select 5 select 0;_ax=-0.2+random 0.4;_ay=-0.2+random 0.4;drop["halfLight","","Billboard",.1,.8,[(_p select 0)+_ax,(_p select 1)+_ay,_p select 2],[0,0,0],1,1.275,1,0,[30+random 20],[[.95,.7,.275,.95],[1,.7,.275,0]],[0,1,0],0,0,"","",""];
+
+_t animate ["barrel",1]
+~0.2
+_t animate ["barrel",0]
+exit

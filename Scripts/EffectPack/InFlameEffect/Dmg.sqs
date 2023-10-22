@@ -1,0 +1,11 @@
+_man = _this select 0
+?(_man in inflm): exit
+?(!alive _man): exit
+_x = _this select 1
+_y = _this select 2
+_RasX = _x - (getpos _man select 0)
+_RasY = _y - (getpos _man select 1)
+_Ras = sqrt(_rasX^2 + _rasY^2)
+?(_ras > 5):exit
+[_man] exec "\acgim_scripts\EffectPack\InFlameEffect\iflame.sqs"
+exit

@@ -1,4 +1,3 @@
-#ifdef ACGIM_SCENARIO_1985
 class ah64a : Helicopter
 {
 	sectionsInherit="Vehicle";
@@ -23,7 +22,6 @@ class ah64a : Helicopter
 		"mfd_gun_mid"
 	};
 };
-#endif
 
 class CSLA2_UH60A : Helicopter
 {

@@ -1,0 +1,27 @@
+_projectile = _this select 0
+_size = _this select 1
+;_color=[[0.2,1,0.2],[0,1,0]]
+_c = 0
+_color = _this select 2
+_count = count _color
+while{_c < _count}do{_cc = _color select _c;_cc = _cc + [1];_color set [_c,_cc];_c = _c + 1};
+
+_pos=[0,0,0]
+_dir = 0
+
+#loop
+~0.001
+?(alive _projectile):_pos=getpos _projectile;_dir=getdir _projectile; goto "loop"
+;~0.01
+;?(alive _projectile) : goto "loop"
+
+_vel=[sin(_dir+(-45+random 90))*(10+random 25),cos(_dir+(-45+random 90))*(10+random 25),10+random 25]
+
+~0.1
+
+?(_pos select 2 > 4): exit
+drop["halfLight","","Billboard",1,1,_pos,_vel,0,3,1,1,[_size],_color,[0,1,0,1],1,0.6,"","",""]
+
+exit
+
+

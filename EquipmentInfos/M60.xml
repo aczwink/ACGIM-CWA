@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<weapon>
+    <title>M60 7,62 mm</title>
+    <category>Machine Gun</category>
+    <description>The M60 Machine Gun has been the US Army's general-purpose machine gun since 1950. It fires the standard NATO 7.62 mm round and is used as a general support crew-served weapon.</description>
+    <properties>
+        <length>43.89 inches/1105 mm</length>
+        <weight>23.14 lbs/10.5 kg</weight>
+        <barrel>647.7mm</barrel>
+        <caliber>7,62 mm x 51</caliber>
+        <feed>100</feed>
+        <muzzleVelocity>853 m/s</muzzleVelocity>
+        <cyclicRate>550 rpm</cyclicRate>
+    </properties>
+</weapon>

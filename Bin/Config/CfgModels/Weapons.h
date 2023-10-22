@@ -30,6 +30,6 @@ class colt_m1911_empty : Weapon {};
 class m1911_sd : Weapon{};
 class m1911_sd_empty : Weapon{};
 
-//USSR
+//Russia
 //Primary
-class svd : Weapon{};
+class rhs_svd : Weapon{};

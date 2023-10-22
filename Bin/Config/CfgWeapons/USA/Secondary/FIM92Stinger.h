@@ -2,8 +2,9 @@
 Sources:
 http://en.wikipedia.org/wiki/FIM-92_Stinger
 */
-class FIM92Stinger : CarlGustavLauncher
+class FIM92Stinger : LAWLauncher
 {
+	magazineType="6 * 		256";
 	scopeWeapon=2;
 	scopeMagazine=2;
 	model="\d4t_files\models\us\weapons\fim92a.p3d"; //used odol explorer for this

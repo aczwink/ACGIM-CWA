@@ -1,0 +1,1 @@
+private["_c","_r","_v","_a"];_a=_this select 0;_v=_this select 1;_r=-1;if(_v in _a)then{_c=count _a-1;while"_c>=0"do{if call format["{%1}=={%2}",_v,_a select _c]then{_r=_c;_c=-1;}else{_c=_c-1;}};};_r

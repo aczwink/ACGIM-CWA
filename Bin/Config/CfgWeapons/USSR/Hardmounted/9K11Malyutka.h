@@ -1,5 +1,10 @@
-class 9K11Malyutka : CarlGustavLauncher
+class 9K11Malyutka : LAWLauncher
 {
+	model="carlgustav84_proxy";
+	modelOptics="optika_CarlGustav";
+	valueWeapon=20;
+	valueMagazine=10;
+	uiPicture="isat";
 	scopeWeapon=2;
 	scopeMagazine=2;
 	weaponType=65536;

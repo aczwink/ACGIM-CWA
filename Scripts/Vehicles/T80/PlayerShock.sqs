@@ -1,0 +1,30 @@
+_pos = _this
+
+?!(local player): exit
+_vol = SoundVolume
+_obj = "Logic" createvehicle _pos
+_obj setpos _pos
+_dist = player distance _obj
+?!(alive player)||(vehicle player != player)||(_dist > 20): exit
+RHS_PlayerTinnitus = true
+?(_dist<6): player setdammage (getdammage player + 0.25)
+?(_dist<13): titlecut ["","WHITE IN",(21-_dist)/10]; player setdir ((getdir player)-7.5+random 15)
+0 fadesound (1+(21-_dist)/5)*_vol
+~0.25
+titlecut ["","BLACK OUT",0.1]
+~0.1
+titlecut ["","BLACK IN",(21-_dist)/5]
+~0.25
+playmusic "RHS_Tinnitus"
+0 fademusic 1
+(_dist/50) fadesound (_dist/10000)*_vol
+~(21-_dist)+random((21-_dist)/2)
+(5/_vol) fademusic 0
+(5/_vol) fadesound 1
+deletevehicle _obj
+~(5/_vol)
+RHS_PlayerTinnitus = false
+?(_time > (9.5+(5/_vol))): exit
+playmusic ""
+0 fademusic 1
+exit

@@ -2,7 +2,7 @@
 Sources:
 	http://en.wikipedia.org/wiki/T-54
 */
-class FIA_T54 : Tank
+class T55G : Tank
 {
 	accuracy = ACCURACY_T54;
 	maxspeed = 56;

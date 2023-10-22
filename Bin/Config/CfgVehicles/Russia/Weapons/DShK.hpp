@@ -1,4 +1,4 @@
-class Russia_DShK : USA_M2HB
+class M2StaticMGE : USA_M2HB
 {
 	side = SIDE_EAST;
 	crew = "Russia_Soldier";

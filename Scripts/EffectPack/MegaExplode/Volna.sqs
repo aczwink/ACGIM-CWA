@@ -1,0 +1,13 @@
+_gp = _this select 0
+_i = 0
+#loop
+_i = _i + 5
+_w = 0
+#loop2
+_w = _w + 20
+_Xpos = (sin(_w) * _i)+ (_gp select 0)
+_Ypos = (cos(_w) * _i)+ (_gp select 1)
+drop ["cl_basic", "", "Billboard", 1, 1, [_Xpos,_Ypos,(_gp select 2)], [random 2, random 2, random 2], 1, 1.1, 1, 1, [8], [[0.9,0.9,0.9,0], [0.95,0.95,0.95,0.1], [1,1,1,0.1], [1,1,1,0.05], [1,1,1,0]], [0,1,0], 5, 0.05, "", "", ""]
+?(_w < 360):goto "loop2"
+?(_i < 50):goto "loop"
+exit

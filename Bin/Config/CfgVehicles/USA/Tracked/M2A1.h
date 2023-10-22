@@ -3,7 +3,7 @@ Sources:
 http://en.wikipedia.org/wiki/M2_Bradley
 In service: 1986-present
 */
-class USA_M2A1 : APC
+class Bradley : APC
 {
 	scope=2;
 	displayName="M2A1 Bradley IFV";
@@ -161,7 +161,7 @@ Sources:
 	http://en.wikipedia.org/wiki/M3_Bradley
 	http://www.militaryfactory.com/armor/detail.asp?armor_id=125
 */
-class USA_M3A1 : USA_M2A1
+class USA_M3A1 : Bradley
 {
 	displayName="M3A1 Bradley CFV";
 	transportSoldier=2;

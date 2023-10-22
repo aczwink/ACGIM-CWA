@@ -11,6 +11,7 @@
 | Object                                                   | Addon                    | Author                                 |
 | CAR-15 Commando SD optics                                | CSLA II Update 2         | CSLA Development Team (modified by me) |
 | M16A2 optics                                             | CSLA II Update 2         | CSLA Development Team                  |
+| SVD Dragunov                                             | Weapon Pack v1.01        | Red Hammer Studios                     |
 
 
 # Misc
@@ -24,5 +25,6 @@
 | Object                                                   | Addon                    | Author   |
 |----------------------------------------------------------|--------------------------|----------|
 | Car and vehicle burning script when destroyed            | FlashFX Version 1.8      | Nemesis6 |
+| Fuel explosion script                                    | FlashFX Version 1.8      | Nemesis6 |
 |                                                          |                          |          |
 |                                                          |                          |          |

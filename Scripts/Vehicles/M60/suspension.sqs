@@ -1,0 +1,26 @@
+;>>>©raedor2004
+
+_tank = _this select 0
+
+_tank animate ["suspension", .5]; _tank animate ["suspension2", .5]
+
+_winkel = (_this select 5 select 1 select 0) atan2 (_this select 5 select 1 select 1)
+? _winkel < 0: _winkelt = getDir _tank; goTo "w"
+_winkelt = - getdir _tank
+
+#w
+_winkel = _winkel + _winkelt
+
+_i = 0.5
+
+_tank animate ["suspension", 0.5 + _i*cos _winkel]
+_tank animate ["suspension2", 0.5 - _i*sin _winkel]
+
+~0.15
+
+#loop
+	_tank animate ["suspension", 0.5 + _i*cos _winkel]
+	_tank animate ["suspension2", 0.5 - _i*sin _winkel]
+	~0.025
+	? _i > 0: _i = _i - 0.25; goTo "loop"
+exit

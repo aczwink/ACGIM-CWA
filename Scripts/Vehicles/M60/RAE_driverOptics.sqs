@@ -1,0 +1,20 @@
+;>>>©raedor2004
+;contact: raedor@mapfact.net
+;www.mapfact.net
+;www.dkm-mod.mkdi.net
+;www.redhammerstudios.com
+;scripting questions?
+;post here: www.mapfact.net/forum/<<<
+
+&0
+
+_tank = _this select 0
+? isNull driver _tank || isNull gunner _tank: exit
+#start
+@driver _tank distance (gunner _tank) != 0 || isNull (driver _tank)  || isNull (gunner _tank)
+? isNull (driver _tank)  || isNull (gunner _tank): exit
+_tank animate ["optics", 1]
+@driver _tank distance (gunner _tank) == 0 || isNull (driver _tank)  || isNull (gunner _tank)
+? isNull (driver _tank)  || isNull (gunner _tank): exit
+_tank animate ["optics", 0]
+goTo "start"

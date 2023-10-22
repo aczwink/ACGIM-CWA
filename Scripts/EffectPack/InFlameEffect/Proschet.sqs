@@ -1,0 +1,8 @@
+_TL = _this select 0
+_man = _this select 1
+
+~_TL
+
+pLife = pLife - [_man]
+exit
+

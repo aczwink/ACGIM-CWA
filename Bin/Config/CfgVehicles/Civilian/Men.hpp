@@ -235,6 +235,28 @@ class Civilian7 : Civilian
 	model = "\O\Char\Char05";
 };
 
+class Civilian8 : Civilian
+{
+	access = 2;
+	displayName = "$STR_DN_OUT_POLICE";
+	model = "\O\Char\Char04";
+	wounds[] = {
+		"\o\char\fizl_gate.pac", "\o\char\fizl_gate_i.pac",
+		"\o\char\fizl_top.pac", "\o\char\fizl_top_i.pac",
+		"\o\char\fizl_rukav.pac", "\o\char\fizl_rukav_i.pac",
+		"\o\misc\eva.pac", "\o\misc\eva_d.pac",
+		"\o\misc\kamila.pac", "\o\misc\kamila_d.pac",
+		"\o\misc\lada.pac", "\o\misc\lada_d.pac",
+		"\o\misc\lucie.pac", "\o\misc\lucie_d.pac",
+		"\o\misc\marketa.pac", "\o\misc\marketa_d.pac",
+		"\o\misc\nada.pac", "\o\misc\nada_d.pac",
+		FACE_WOUNDS,
+	};
+	weaponSlots = "1	 + 6*		256	 + 2*	4096	 + 	2	 + 4*	32";
+	weapons[] = {"skorpion", "binocular", "Throw", "Put"};
+	magazines[] = {"skorpionmag", "skorpionmag", "skorpionmag", "skorpionmag"};
+};
+
 class Civilian9 : Civilian
 {
 	access=2;

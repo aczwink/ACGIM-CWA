@@ -49,11 +49,6 @@ class SoldierWMortar : USA_Grenadier
 	scope = SCOPE_HIDDEN;
 };
 
-class SoldierEFakeW : SoldierWB
-{
-	scope = 1;
-};
-
 class OfficerWHG :OfficerW
 {
 	scope = 1;
@@ -75,11 +70,6 @@ class SoldierWSteyr :SoldierWB
 };
 
 class SoldierWXMS :SoldierWB
-{
-	scope = 1;
-};
-
-class HeavyGW :SoldierWG
 {
 	scope = 1;
 };

@@ -1,0 +1,11 @@
+_man = _this select 0
+#loop
+?(local server): _u = random 360; publicvariable "_u";goto "sd"
+~0.3
+#sd
+_man setdir (_u)
+_man playmove "CombatSprintF"
+~0.5
+?(alive _man): goto "loop"
+panic = panic - [_man]
+exit

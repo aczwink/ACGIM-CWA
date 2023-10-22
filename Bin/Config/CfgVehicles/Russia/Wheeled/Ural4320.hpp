@@ -2,7 +2,7 @@
 Sources:
 	http://en.wikipedia.org/wiki/Ural-4320
 */
-class Russia_Ural4320 : Truck
+class Ural : Truck
 {
 	scope=2;
 	crew = "Russia_Soldier";
@@ -66,7 +66,7 @@ class Russia_Ural4320 : Truck
 
 		class m_PKM
 		{
-			magazine = "PKM";
+			magazine = WEAPON_REFERENCE(PKM);
 			count = 6;
 		};
 
@@ -101,13 +101,13 @@ class Russia_Ural4320 : Truck
 	};
 };
 
-class Russia_Ural4320Open : Russia_Ural4320
+class Russia_Ural4320Open : Ural
 {
 	displayName="Ural-4320 open";
 	model="\sjc_models\ussr\ural4320_open.p3d";
 };
 
-class Russia_Ural4320Repair : Russia_Ural4320
+class Russia_Ural4320Repair : Ural
 {
 	picture="iuralrepair";
 	icon="Repair_move";
@@ -127,7 +127,7 @@ class Russia_Ural4320Repair : Russia_Ural4320
 	class TransportMagazines{};
 };
 
-class Russia_Ural4320Reammo : Russia_Ural4320
+class Russia_Ural4320Reammo : Ural
 {
 	icon="Ammo_move";
 	displayName="Ural-4320 ammo";
@@ -151,7 +151,7 @@ class Russia_Ural4320Reammo : Russia_Ural4320
 
 		class m_PKM
 		{
-			magazine = "PKM";
+			magazine = WEAPON_REFERENCE(PKM);
 			count = 25;
 		};
 
@@ -204,7 +204,7 @@ class Russia_Ural4320Reammo : Russia_Ural4320
 	};
 };
 
-class Russia_Ural4320Refuel : Russia_Ural4320
+class UralRefuel : Ural
 {
 	picture="iuralfuel";
 	icon="Fuel_move";
@@ -220,11 +220,16 @@ class Russia_Ural4320Refuel : Russia_Ural4320
 	type = VEHICLE_SOFT;
 	threat[]={THREAT_URAL4320REFUEL};
 	soundEnviron[]={"\sjc_sounds\vehicles\Ural_move.wav",1.930000,1};
+
+	class EventHandlers
+	{
+		killed = "_this exec ""\acgim_scripts\Vehicles\Ural4320\uralkilled.sqs""";
+	};
 };
 
 
 
-class Russia_Ural4320_Wreck : Car
+class UralWreck : Car
 {
 	model="\models\ural4320_dead.p3d";
 	vehicleClass="Objects (Wrecks)";
@@ -241,25 +246,61 @@ class Russia_Ural4320_Wreck : Car
 	armor=900000;
 	cargoAction[] = {"ManActDLEMuralDEADCARGO1"};
 };
-class Russia_Ural4320Refuel_Wreck : Russia_Ural4320_Wreck
+class Russia_Ural4320Refuel_Wreck : UralWreck
 {
 	model="\models\ural4320_GAS_dead.p3d";
 	displayName="Ural-4320 refuel wreck";	
 };
 
-class Ural_koles : Thing
+//Wreck parts - All these are vehicle additions
+class Ural_Bag : Thing
 {
+	model="\models\ural375_dead_bag.p3d";
 	armor=100000;
 	scope=2;
 	simulation="thing";
 	mapSize=0.700000;
+	displayName="Ural_Bag";
 	accuracy=0.200000;
 	destrType="DestructEngine";
-	model="\models\ural375_dead_koles.p3d";
-	displayName="Ural_koles";
 };
-class Ural_cist : Ural_koles
+class Ural_cist : Ural_Bag
 {
 	model="\models\Ural_dead_cist.p3d";
 	displayName="Ural_cist";
+};
+class Ural_dver : Ural_Bag
+{
+	model="\models\ural375_dead_dver.p3d";
+	displayName="Ural_dver";
+};
+class Ural_dverl: Ural_Bag
+{
+	model="\models\ural375_dead_dverL.p3d";
+	displayName="Ural_dverl";
+};
+class Ural_jasik: Ural_Bag
+{
+	model="\models\ural375_dead_jasik.p3d";
+	displayName="Ural_jasik";
+};
+class Ural_koles : Ural_Bag
+{
+	model="\models\ural375_dead_koles.p3d";
+	displayName="Ural_koles";
+};
+class Ural_palki1: Ural_Bag
+{
+	model="\models\ural375_dead_palki1.p3d";
+	displayName="Ural_palki1";
+};
+class Ural_palki2: Ural_Bag
+{
+	model="\models\ural375_dead_palki2.p3d";
+	displayName="Ural_palki2";
+};
+class Ural_zerk: Ural_Bag
+{
+	model="\models\ural375_dead_zerk.p3d";
+	displayName="Ural_zerk";
 };

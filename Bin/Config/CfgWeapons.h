@@ -69,83 +69,6 @@ class AK47CZ:AK47
 	magazines[]={"AK47"};
 };
 
-/*
-class AK74SU:AK74
-{
-scopeWeapon=2;
-scopeMagazine=0;
-model="AK_74_SU_proxy";
-modelOptics="optika_ak47";
-optics=1;
-opticsZoomMin=0.35;
-opticsZoomMax=0.35;
-valueWeapon=1;
-valueMagazine=1;
-displayName="$STR_DN_AK74_SU";
-drySound[]={"weapons\AK74Dry",0.01,1};
-modes[]={"Single","Burst","FullAuto"};
-magazines[]={"AK74"};
-};*/
-
-class HK:Riffle
-{
-	scopeWeapon=2;
-	scopeMagazine=2;
-	model="HKM5_SD6_proxy";
-	modelOptics="optika_HK";
-	displayName="$STR_DN_HK";
-	displayNameMagazine="$STR_MN_HK";
-	shortNameMagazine="$STR_SN_HK";
-	drySound[]={"weapons\m16dry",0.0003162,1};
-	optics=1;
-	opticsZoomMin=0.3;
-	opticsZoomMax=0.3;
-	distanceZoomMin=150;
-	distanceZoomMax=150;
-	valueWeapon=1000;
-	valueMagazine=1000;
-	initSpeed=400;
-	modes[]={"Single","FullAuto"};
-
-	class Single
-	{
-		ammo="BulletSilencedSingleW";
-		multiplier=1;
-		burst=1;
-		displayName="$STR_DN_HK";
-		dispersion=0.002;
-		sound[]={"Weapons\hk_singleshot",0.0003162,1};
-		soundContinuous=0;
-		reloadTime=0.07;
-		recoil="riffleSilenced";
-		ffCount=1;
-		autoFire=0;
-		aiRateOfFire=5.0;
-		aiRateOfFireDistance=500;
-		useAction=0;
-		useActionTitle="";
-	};
-
-	class FullAuto
-	{
-		ammo="BulletSilencedBurstW";
-		multiplier=1;
-		burst=1;
-		displayName="$STR_DN_HK_AUTO";
-		dispersion=0.004;
-		sound[]={"Weapons\hk_fullauto",0.0003162,1};
-		soundContinuous=1;
-		reloadTime=0.1;
-		ffCount=1;
-		recoil="riffleSilenced";
-		autoFire=1;
-		aiRateOfFire=5.0;
-		aiRateOfFireDistance=500;
-		useAction=0;
-		useActionTitle="";
-	};
-};
-
 class NVGoggles:Binocular
 {
 	displayName="$STR_DN_NV_GOGGLES";
@@ -167,19 +90,6 @@ class Phone:Binocular
 	model="sluchatko_proxy";
 	modelOptics="";
 };
-
-/*class PK:MachineGun7_6Manual
-{
-scopeWeapon=2;
-scopeMagazine=2;
-ammo="Bullet7_6E";
-model="PK_MG_proxy";
-modelOptics="optika_PK";
-sound[]={"Weapons\AK74full",3.1622777,1};
-displayName="$STR_DN_PK";
-displayNameMagazine="$STR_MN_PK";
-shortNameMagazine="$STR_SN_PK";
-};*/
 
 class MachineGun30A10:MachineGun30
 {
@@ -238,31 +148,6 @@ class AK47GrenadeLauncher
 	class AK47Muzzle:AK47
 	{
 		magazines[]={"AK47"};
-	};
-
-	class GrenadesMuzzle:GrenadeLauncher
-	{
-		magazines[]={"GrenadeLauncher","Flare","FlareGreen","FlareRed","FlareYellow"};
-	};
-};
-
-class AK74GrenadeLauncher
-{
-	scopeWeapon=2;
-	scopeMagazine=0;
-	weaponType=1;
-	valueWeapon=2;
-	valueMagazine=2;
-	displayName="$STR_DN_AK74_GRENADE";
-	model="ak_74_granatomet_proxy";
-	picture="";
-	uiPicture="igrenadier";
-	muzzles[]={"AK74Muzzle","GrenadesMuzzle"};
-	canDrop=1;
-
-	class AK74Muzzle//:AK74
-	{
-		magazines[]={"AK74"};
 	};
 
 	class GrenadesMuzzle:GrenadeLauncher
@@ -379,8 +264,13 @@ class RPGLauncher:LAWLauncher
 	shortNameMagazine="$STR_SN_RPG";
 };
 
-class AT4Launcher:CarlGustavLauncher
+class AT4Launcher : LAWLauncher
 {
+	magazineType="6 * 		256";
+	canLock=1;
+	valueWeapon=20;
+	valueMagazine=10;
+	uiPicture="isat";
 	model="AT-4_SpigotB_proxy";
 	modelOptics="optika_AT4_Spigot_B";
 	ammo="AT4";
@@ -791,7 +681,7 @@ class HellfireLauncherKamov:HellfireLauncherHind
 	initSpeed=30;
 };
 
-class UZIBase:HK
+/*class UZIBase:HK
 {
 	access=2;
 	scopeWeapon=0;
@@ -857,7 +747,7 @@ class UZI:UZIBase
 {
 	scopeWeapon=2;
 	magazines[]={"UZIMag"};
-};
+};*/
 
 class CZ75Base:HandGunBase
 {

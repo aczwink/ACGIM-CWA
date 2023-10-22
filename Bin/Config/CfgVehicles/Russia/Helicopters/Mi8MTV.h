@@ -10,7 +10,7 @@ class Mi8MTV : Helicopter
 	model="\sjc_files\models\russia\air\mi8mtv.p3d";
 	displayName="Mi-8MTV Hip";
 	picture="\sjc_files\pics\vehicles\Mi8_m.paa";
-	crew = "USSR_HelicopterPilot";
+	crew = "Russia_HelicopterPilot";
 	maxspeed = 250;
 	armor = ARMOR_MI8MTV;
 	side = SIDE_EAST;

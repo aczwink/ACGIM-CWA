@@ -79,7 +79,7 @@ class CAR15_SD : CAR15
 	displayName="CAR-15 Commando SD";
 	model = "\sjc_models\USA\Weapons\Primary\car15_sd.p3d";
 	modelOptics="\models\CSLA2_M16A2_optika_sd.p3d";
-	magazines[] = {"CAR15_SD"};
+	magazines[] = {"this"};
 	
 	class Single
 	{

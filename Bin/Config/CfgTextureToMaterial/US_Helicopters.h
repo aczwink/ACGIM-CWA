@@ -1,5 +1,3 @@
-#ifdef ACGIM_SCENARIO_1985
-
 class ah64a
 {
 	textures[]=
@@ -20,5 +18,3 @@ class ah64a
 	};
 	material="#Metal";
 };
-
-#endif

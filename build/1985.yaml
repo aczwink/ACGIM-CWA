@@ -72,6 +72,66 @@ steps:
         path: AddOns/BMP2/config.cpp
     targetPboName: BMP2
 
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\BRMD.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/Brmd/config.cpp
+    targetPboName: Brmd
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\CH47.PBO.XZ
+    exclude: [config.bin, config.cpp, CH47-D.backup, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/ch47/config.cpp
+    targetPboName: ch47
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\G36A.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/G36a/config.cpp
+    targetPboName: G36a
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\HUMR.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/humr/config.cpp
+    targetPboName: humr
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\HUNTER.PBO.XZ
+    exclude: [config.bin, stringtable.csv, vssver.scc]
+    include:
+      - source: source
+        path: AddOns/Hunter/config.cpp
+    targetPboName: Hunter
+
 
   - type: CopyFiles
     source: resources
@@ -138,13 +198,29 @@ steps:
           - SLX_Grass_CWC_Islands/Eden.wrp
 
       - type: Archive
+        name: RHS_weapons_v1.01.rar
+        pbos:
+          - RHS_SVD.pbo
+          - RHS_Weap.pbo
+        files:
+          - RHS_SVD/rhs_svd.p3d
+          - { sourceFileName: RHS_Weap/AK_Optics/AK_Optic2.p3d, targetName: rhs_AK_Optic2 }
+
+      - type: Archive
+        name: INQ_M60.rar
+        pbos:
+          - INQ_M60.pbo
+        files:
+          - { sourceFileName: INQ_M60/sounds/Engine_Start.ogg, targetName: m60_Engine_Start }
+
+      - type: Archive
         name: rus_zsu.rar
         pbos:
           - MNF_ZSU.pbo
         files:
           - { sourceFileName: MNF_ZSU/23mm.p3d, targetName: zsu234_23mm }
-          - { sourceFileName: MNF_ZSU/sounds/eng1.ogg, targetName: zsu234_eng1.ogg }
-          - { sourceFileName: MNF_ZSU/sounds/engineoff.ogg, targetName: zsu234_engineoff.ogg }
+          - { sourceFileName: MNF_ZSU/sounds/eng1.ogg, targetName: zsu234_eng1 }
+          - { sourceFileName: MNF_ZSU/sounds/engineoff.ogg, targetName: zsu234_engineoff }
 
       - type: Archive
         name: SFM_URALS.rar
@@ -156,8 +232,106 @@ steps:
           - SFM_URALS/ural4320_dead.p3d
           - SFM_URALS/ural4320_GAS.p3d
           - SFM_URALS/ural4320_GAS_dead.p3d
+          - SFM_URALS/ural375_dead_bag.p3d
+          - SFM_URALS/ural375_dead_dver.p3d
+          - SFM_URALS/ural375_dead_dverL.p3d
+          - SFM_URALS/ural375_dead_jasik.p3d
           - SFM_URALS/ural375_dead_koles.p3d
+          - SFM_URALS/ural375_dead_palki1.p3d
+          - SFM_URALS/ural375_dead_palki2.p3d
+          - SFM_URALS/ural375_dead_zerk.p3d
           - SFM_URALS/Ural_dead_cist.p3d
+
+  - type: BuildDtaExt
+    sourceLocation: source_equip
+    id_map:
+      source: source
+      filePath: Bin/Config/CfgWeapons/BISClassesRenames.hpp
+      regExp: "^#define\\s+(?<from>[A-Z][a-zA-Z0-9_]+)\\s+(?<to>[A-Z][a-zA-Z0-9]+)$"
+    imageSources:
+      - type: Archive
+        sourceLocation: cwa_installer
+        name: CWA.exe
+        pbos:
+          - .rsrc/0/RCDATA/CWA\DTA\DTAEXT.PBO.XZ
+        files:
+          - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/m/m_handgrenade.paa, type: magazine, targetName: HandGrenade }
+          - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/m/m_mine.paa, type: magazine, targetName: Mine }
+          - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/m/m_pipebomb.paa, type: magazine, targetName: PipeBomb }
+          - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/w/w_binocular.paa, type: weapon, targetName: Binocular }
+          - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/w/w_nvgoggles.paa, type: weapon, targetName: NVGoggles }
+          - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/emptyeq.paa, type: base, targetName: emptyeq }
+          - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/emptygun.paa, type: base, targetName: emptygun }
+          - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/emptymag.paa, type: base, targetName: emptymag }
+          - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/emptymag2.paa, type: base, targetName: emptymag2 }
+          - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/emptysec.paa, type: base, targetName: emptysec }
+
+      - type: Archive
+        sourceLocation: addons
+        name: BD Grenade Pack v3.3.rar
+        pbos:
+          - BD_GrenadePack.pbo
+        files:
+          - { sourceFileName: BD_GrenadePack/inv/ANM8.paa, type: magazine, targetName: ANM8 }
+          - { sourceFileName: BD_GrenadePack/inv/M18G.paa, type: magazine, targetName: M18Green }
+          - { sourceFileName: BD_GrenadePack/inv/M18R.paa, type: magazine, targetName: M18Red }
+          - { sourceFileName: BD_GrenadePack/inv/M67.paa, type: magazine, targetName: M67 }
+          - { sourceFileName: BD_GrenadePack/inv/RDG1W.paa, type: magazine, targetName: RDG1 }
+          - { sourceFileName: BD_GrenadePack/inv/RGO.paa, type: magazine, targetName: RGO }
+
+      - type: Archive
+        sourceLocation: addons
+        name: CBT_MISC_v1.2.rar
+        pbos:
+          - CBT_Misc.pbo
+        files:
+          - { sourceFileName: CBT_Misc/jav/gear2.paa, type: magazine, targetName: M47Dragon }
+          - { sourceFileName: CBT_Misc/jav/gear1.paa, type: weapon, targetName: M47Dragon }
+
+      - type: Archive
+        sourceLocation: addons
+        name: icprpg.rar
+        pbos:
+          - ICPrpg7.pbo
+        files:
+          - { sourceFileName: ICPrpg7/gearv1.paa, type: weapon, targetName: RPG7V }
+
+      - type: Archive
+        sourceLocation: addons
+        name: LSR_US_Weapons_Pack_300.rar
+        pbos:
+          - LSR_US_Weapons_Pack_300/LSR_uswp.pbo
+        files:
+          - { sourceFileName: LSR_uswp/weapics/w_m60.paa, type: weapon, targetName: M60 }
+
+      - type: Archive
+        sourceLocation: addons
+        name: RHS_weapons_v1.01.rar
+        pbos:
+          - RHS_Weap.pbo
+        files:
+          - { sourceFileName: "RHS_Weap/AK_Pics/m_30RD_5,45_MAG.paa", type: magazine, targetName: AK74 }
+          - { sourceFileName: RHS_Weap/AK_Pics/w_AK74.paa, type: weapon, targetName: AK74 }
+
+      - type: Archive
+        sourceLocation: addons
+        name: SJB_WeaponsPack_v1.1.cab
+        pbos:
+          - SJB_WeaponsPack_v1.1/SJB_TOSM4.pbo
+        files:
+          - { sourceFileName: SJB_TOSM4/inventory/w_car15.paa, type: weapon, targetName: CAR15 }
+          - { sourceFileName: SJB_TOSM4/inventory/m_m4a1.paa, type: magazine, targetName: CAR15_SD }
+          - { sourceFileName: SJB_TOSM4/inventory/w_car15_sd.paa, type: weapon, targetName: CAR15_SD }
+          - { sourceFileName: SJB_TOSM4/inventory/m_m4a1.paa, type: magazine, targetName: M16A2 }
+          - { sourceFileName: SJB_TOSM4/inventory/w_m16a2.paa, type: weapon, targetName: M16A2 }
+          - { sourceFileName: SJB_TOSM4/inventory/w_m16a2_m203.paa, type: weapon, targetName: M16A2_M203 }
+          - { sourceFileName: SJB_TOSM4/inventory/m_pistolmag.paa, type: magazine, targetName: M1911 }
+          - { sourceFileName: SJB_TOSM4/inventory/w_colt1911.paa, type: weapon, targetName: M1911 }
+          - { sourceFileName: SJB_TOSM4/inventory/m_pistolmag.paa, type: magazine, targetName: M1911_SD }
+          - { sourceFileName: SJB_TOSM4/inventory/w_colt1911_sd.paa, type: weapon, targetName: M1911_SD }
+          - { sourceFileName: SJB_TOSM4/inventory/m_m21.paa, type: magazine, targetName: M21 }
+          - { sourceFileName: SJB_TOSM4/inventory/w_m21.paa, type: weapon, targetName: M21 }
+          - { sourceFileName: SJB_TOSM4/inventory/w_m21_camo.paa, type: weapon, targetName: M21_JungleCamo }
 
   - type: CopyFiles
     source: resources

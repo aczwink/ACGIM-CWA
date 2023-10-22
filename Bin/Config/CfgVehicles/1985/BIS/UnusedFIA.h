@@ -1,45 +1,10 @@
 //Soldiers
-class SoldierGB : FIA_Soldier
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class SoldierGMedic : fia_medic
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class SoldierGCrew : fia_crew
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class SoldierGG : fia_grenadier
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class SoldierGMG : fia_machinegunner
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class SoldierGLAW : FIA_ATSoldier
-{
-	scope = SCOPE_HIDDEN;
-};
-
 class SoldierGAT : FIA_HATSoldier
 {
 	scope = SCOPE_HIDDEN;
 };
 
 class SoldierGAA : FIA_AASoldier
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class OfficerG : FIA_Leader
 {
 	scope = SCOPE_HIDDEN;
 };
@@ -79,16 +44,6 @@ class SoldierGFakeE:SoldierEB
 	scope=1;
 };
 
-class SoldierGFakeC:SoldierGFakeE
-{
-	scope=1;
-};
-
-class SoldierGFakeC2:SoldierGFakeE
-{
-	scope=1;
-};
-
 class OfficerGHG:OfficerG
 {
 	scope=1;
@@ -110,11 +65,6 @@ class BMPRes : FIA_BMP1
 	scope = SCOPE_HIDDEN;
 };
 
-class T55G : FIA_T54
-{
-	scope = SCOPE_HIDDEN;
-};
-
 class T72Res : FIA_T72A
 {
 	scope = SCOPE_HIDDEN;
@@ -126,11 +76,6 @@ class T80Res : FIA_T80B
 };
 
 //Cars
-class UAZG : FIA_UAZ469
-{
-	scope = SCOPE_HIDDEN;
-};
-
 class SGUAZG : FIA_UAZ469Ambulance
 {
 	scope = SCOPE_HIDDEN;

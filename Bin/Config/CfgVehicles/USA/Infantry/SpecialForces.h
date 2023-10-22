@@ -35,8 +35,8 @@ class USA_SF_Operator : USA_Soldier
 	nameSound="blackOp";
 	vehicleClass="Infantry (Special Forces)";
 	displayName="Operator";
-	weapons[]={"CAR15_SD", "M1911_SD", "Binocular", "NVGoggles", "Throw", "Put"};
-	magazines[]={"CAR15_SD", "CAR15_SD", "CAR15_SD", "CAR15_SD", "PipeBomb", "PipeBomb", "PipeBomb", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};//TODO
+	weapons[]={WEAPON_REFERENCE(CAR15_SD), "M1911_SD", "Binocular", "NVGoggles", "Throw", "Put"};
+	magazines[]={WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), "PipeBomb", "PipeBomb", "PipeBomb", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};//TODO
 	threat[]={THREAT_SFOPERATOR};
 	model="\d4t_files\models\us\infantry\1985\sf_op85.p3d";
 	canHideBodies=1;
@@ -91,8 +91,8 @@ class USA_SF_Operator_Spotter : USA_SF_Operator
 	accuracy = ACCURACY_SFOPERATOR_SPOTTER;
 	cost = COST_SFOPERATOR_SPOTTER;
 	displayName = "Operator (Spotter)";
-	weapons[] = {"CAR15_SD", "LaserDesignator", "M1911_SD", "Binocular", "NVGoggles", "Throw", "Put"};
-	magazines[] = {"CAR15_SD", "CAR15_SD", "CAR15_SD", "CAR15_SD", "LaserDesignator", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};
+	weapons[] = {WEAPON_REFERENCE(CAR15_SD), "LaserDesignator", "M1911_SD", "Binocular", "NVGoggles", "Throw", "Put"};
+	magazines[] = {WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), "LaserDesignator", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};
 
 	//TODO_2005:
 	//TODO_Marines:
@@ -118,7 +118,7 @@ class USA_SF_Operator_TeamLeader : USA_SF_Operator
 	cost = COST_SFOPERATOR_TEAMLEADER;
 	displayName="Operator (Team Leader)";
 	weapons[]={"CAR15_ACOG_SD", "M1911_SD", "Binocular", "NVGoggles", "Throw", "Put"};
-	magazines[]={"CAR15_SD", "CAR15_SD", "CAR15_SD", "CAR15_SD", "CAR15_SD", "CAR15_SD", "PipeBomb", "PipeBomb", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};
+	magazines[]={WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), "PipeBomb", "PipeBomb", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};
 
 	//TODO_2005:
 	//TODO_Marines:

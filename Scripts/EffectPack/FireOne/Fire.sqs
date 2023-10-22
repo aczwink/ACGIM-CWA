@@ -1,0 +1,49 @@
+_GP = _this select 0
+_SIZE = _this select 1
+
+_x = _GP select 0
+_y = _GP select 1
+_z = _GP select 2
+
+_TimeLife = 0
+_Alpha = 1
+_SizeFire = _SIZE
+_SizeSmoke = [(_SIZE select 0), (_SIZE select 1) * 2.2, (_SIZE select 2) * 6]
+_SizeLight = [(_SIZE select 0), (_SIZE select 1) * 1.5, (_SIZE select 2)]
+
+private ["_sensorWatert"];
+_sensorWatert = "EmptyDetector" createVehicle [0,0,0]
+_cal = {private["_result"]; _sensorWatert setpos [_this select 0, _this select 1, 0]; _result = getpos _sensorWatert select 2; _result};
+?abs([_x,_y] call _cal) <= 2: InaWater=true
+?abs([_x,_y] call _cal) > 2: InaWater=false
+?(InaWater):goto "water"
+
+_Light = "EasyFireLight" createvehicle _GP
+
+#loop
+_Light setpos _GP
+?(_Alpha > 0.3):_Light inflame true
+?(_Alpha < 0.3):_Light inflame false
+
+;_obj = nearestobject [_x+1,_y-1,_z+0.2]
+;'?("man" counttype [_obj] == 1 and alive _obj): [_obj,_x,_y] exec "\acgim_scripts\EffectPack\InFlameEffect\Dmg.sqs"
+
+~0.03
+
+_TimeLife=_TimeLife + 1
+_Alpha =_Alpha - 0.0005
+?(_Alpha > 0.3): drop ["cl_fire", "", "Billboard", 1, 0.8, [_x,_y,_z-0.2], [random 2, random 2, random 7], 0.2, 1.3, 1, 1, _SizeFire,  [[1,1,0,_Alpha], [1,0.8,0,_Alpha], [1,0.75,0,_Alpha], [1,0.8,0,0]] , [0,1,0], 5, 0.05, "", "", ""]
+?(_Alpha > 0.3): drop ["halflight", "", "Billboard", 1, 0.8, [_x,_y,_z-0.2], [random 2, random 2, random 7], 0, 1.3, 1, 1, _SizeLight,  [[0.99,0.99,0,_Alpha], [0.6,0.5,0,_Alpha], [0.3,0.2,0,_Alpha], [0.1,0.1,0,0]] , [0,1,0], 5, 0.05, "", "", ""]
+drop ["cl_basic", "", "Billboard", 1, 2.5, [_x,_y,_z], [random 5, random 5, random 14], 1.3, 1, 1, 1, _SizeSmoke, [[0.2,0.2,0.2,0.5], [0.1,0.1,0.1,_Alpha], [0,0,0,_Alpha], [0,0,0,0]] , [0,1,0], 5, 0.05, "", "", ""]
+?(_TimeLife < 2000):goto "loop"
+
+deletevehicle _Light 
+exit
+#water
+_i = 0
+#loop2
+~0.01
+_i = _i + 1
+drop ["cl_water", "", "Billboard", 1, 3, [_x,_y,_i], [random 7, random 7, random 30], 3, 2, 1, 1, [_sz+2,_sz+3,_sz+4], [[0.9,0.9,0.9,0.7], [1,1,1,1], [0.9,0.9,0.9,0.8]], [0,1,0], 5, 0.05, "", "", ""]
+?(_i < 5): goto "loop2"
+exit

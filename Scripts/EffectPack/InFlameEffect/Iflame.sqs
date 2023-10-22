@@ -1,0 +1,56 @@
+_man = _this select 0
+inflm = inflm + [_man]
+_man say "screamman"
+_tl = 0
+_sz = 0.5
+_TimeLife = 30
+private ["_sensorWatert"];
+_sensorWatert = "EmptyDetector" createVehicle [0,0,0]
+_fre = "LightofDie" createvehicle getpos _man
+pLife = pLife + [_man]
+[_TimeLife,_man] exec "\acgim_scripts\EffectPack\InFlameEffect\Proschet.sqs"
+?(_man != player and alive _man):  panic = panic + [_man]; [_man] exec "\acgim_scripts\EffectPack\InFlameEffect\panic.sqs"
+#loop
+_i = 0
+~0.02
+_cal = {private["_result"]; _sensorWatert setpos [getpos _this select 0, getpos _this select 1, 0]; _result = getpos _sensorWatert select 2; _result};
+?abs(_man call _cal) <= 1.5: goto "end"
+?abs(_man call _cal) > 1.5: drop ["cl_fire", "", "Billboard", 1, 1.5, [getpos _man select 0,getpos _man select 1, (getpos _man select 2)+0.7], [random 5, random 5, random 5], 1, 1, 1, 1, [_sz+0.5,_sz+1,_sz+2], [[1,1,0,1], [1,0.5,0,1], [1,1,0,1], [1,1,0,0.1]], [0,1,0], 5, 0.05, "", "", ""]
+?abs(_man call _cal) > 1.5: drop ["cl_basic", "", "Billboard", 1, 2, [getpos _man select 0,getpos _man select 1, (getpos _man select 2)+0.7], [random 7, random 7, random 7], 1, 1, 1, 1, [_sz+2,_sz+3,_sz+4], [[0.2,0.2,0.2,0], [0.1,0.1,0.1,1], [0,0,0,0.6], [0,0,0,0]], [0,1,0], 5, 0.05, "", "", ""]
+?abs(_man call _cal) > 1.5: drop ["halflight", "", "Billboard", 1, 0.4, [getpos _man select 0,getpos _man select 1, (getpos _man select 2)+0.7], [random 5, random 5, random 5], 1, 1, 1, 1, [_sz+2,_sz+3,_sz+4], [[0.2,0.2,0,0.5], [0.4,0.4,0,0.6], [0.5,0.5,0.5,0.7]], [0,1,0], 5, 0.05, "", "", ""]
+
+_gd = getdammage _man
+?("man" counttype [_man] == 1): _man setdammage (_gd + 0.0045)
+_fre inflame true
+
+;#loop5
+;_i = _i + 1
+;_w = 0
+;#loop6
+;_w = _w + 70
+;_Xpos = (sin(_w) * _i)+ (getpos _man select 0)
+;_Ypos = (cos(_w) * _i)+ (getpos _man select 1)
+;_obj = nearestobject [_Xpos,_Ypos,getpos _man select 2]
+;?("man" counttype [_obj] == 1 and _man != _obj): [_obj,_Xpos,_Ypos] exec "\acgim_scripts\EffectPack\InFlameEffect\dmg.sqs"
+;?("LandVehicle" counttype [_obj] == 1  and _man != _obj): [_obj,_Xpos,_Ypos] exec "\acgim_scripts\EffectPack\InFlameEffect\dmgvhc.sqs"
+;?(_w < 360):goto "loop6"
+;?(_i < 1):goto "loop5"
+
+
+?(alive _man): _fre setpos [getpos _man select 0,getpos _man select 1,(getpos _man select 2)+0.5]
+?(!alive _man): _fre inflame false; goto "use"
+?(_man in pLife): goto "loop"
+#use
+inflm = inflm - [_man]
+deletevehicle _fre
+exit
+#end
+_i = 0
+#loop2
+_i = _i + 1
+_sz = _sz + 0.5
+drop ["cl_basic", "", "Billboard", 1, 3, [getpos _man select 0,getpos _man select 1, (getpos _man select 2)+0.3], [random 1, random 1, random 1], 1, 1.1, 1, 1, [_sz+2,_sz+3,_sz+4], [[0.7,0.7,0.7,0.5], [0.8,0.8,0.8,1], [1,1,1,0.6], [1,1,1,0.2]], [0,1,0], 5, 0.05, "", "", ""]
+?(_i < 5):goto "loop2"
+inflm = inflm - [_man]
+deletevehicle _fre
+exit

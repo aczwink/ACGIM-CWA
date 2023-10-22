@@ -1,0 +1,34 @@
+_Truck = _this select 0
+_x = getpos _truck select 0
+_y = getpos _truck select 1
+_z = getpos _truck select 2
+
+_sz = 1.5
+_sz2 = 0
+private ["_sensorWatert"];
+_sensorWatert = "EmptyDetector" createVehicle [0,0,0]
+_cal = {private["_result"]; _sensorWatert setpos [_this select 0, _this select 1, _this select 2]; _result = getpos _sensorWatert select 2; _result};
+?abs([_x,_y,_z] call _cal) <= 2: InaWater=true
+?abs([_x,_y,_z] call _cal) > 2: InaWater=false
+?(InaWater):goto "water"
+
+_Light = "lightofdie" createvehicle getpos _Truck
+#loop
+_Light inflame true
+~0.001
+_sz2=_sz2 + 0.001
+drop ["cl_fire", "", "Billboard", 1, 1.5, getpos _Truck, [random 5, random 5, random 15], 1, 1, 1, 1, [_sz+0.5,_sz+1,_sz+2], [[1,1,0,1], [1,0.5,0,1], [1,1,0,1], [1,1,0,0.1]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["cl_basic", "", "Billboard", 1, 3, getpos _Truck, [random 7, random 7, random 30], 1, 1, 1, 1, [_sz+2,_sz+3,_sz+4], [[0.2,0.2,0.2,0], [0.1,0.1,0.1,1], [0,0,0,0.6], [0,0,0,0]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["halflight", "", "Billboard", 1, 0.4, getpos _Truck, [random 5, random 5, random 15], 1, 1, 1, 1, [_sz,_sz+0.5,_sz+0.7], [[0.2,0.2,0.2,0], [0.1,0.1,0.1,1], [0,0,0,0.6], [0,0,0,0]], [0,1,0], 5, 0.05, "", "", ""]
+_Light setpos getpos _Truck
+?(_sz2 < 1):goto "loop"
+deletevehicle _Light 
+exit
+#water
+_i = 0
+#loop2
+~0.01
+_i = _i + 1
+drop ["cl_water", "", "Billboard", 1, 3, [_x,_y,_i], [random 7, random 7, random 30], 3, 2, 1, 1, [_sz+2,_sz+3,_sz+4], [[0.9,0.9,0.9,0.7], [1,1,1,1], [0.9,0.9,0.9,0.8]], [0,1,0], 5, 0.05, "", "", ""]
+?(_i < 5): goto "loop2"
+exit

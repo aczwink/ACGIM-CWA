@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<weapon>
+    <title>M16A2 + M203</title>
+    <category>Assault Rifle + Grenade Launcher</category>
+    <description>The M203 40mm Grenade Launcher is here attached to an M16A2 5.56mm rifle. It is a lightweight, compact, breech loading, pump action, single shot launcher.</description>
+    <properties>
+        <length>39.15 inches/995 mm</length>
+        <weight>9.02 lbs/4,1 kg</weight>
+        <launcherWeight>3 lbs/1.36 kg</launcherWeight>
+        <barrel>20.07 inches/510 mm</barrel>
+        <caliber>5.56mm x 45mm</caliber>
+        <launcherCaliber>40mm</launcherCaliber>
+        <feed>30rd magazine</feed>
+        <muzzleVelocity>990 m/s</muzzleVelocity>
+        <cyclicRate>N/A</cyclicRate>
+        <maxRange>1312.4 ft/400 m</maxRange>
+    </properties>
+</weapon>

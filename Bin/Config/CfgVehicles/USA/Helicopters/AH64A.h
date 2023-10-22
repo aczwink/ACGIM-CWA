@@ -3,7 +3,7 @@ Sources:
 http://en.wikipedia.org/wiki/Ah64
 In service: 1986-2012
 */
-class USA_AH64A : Helicopter
+class AH64 : Helicopter
 {
 	side = SIDE_WEST;
 	scope = SCOPE_PUBLIC;

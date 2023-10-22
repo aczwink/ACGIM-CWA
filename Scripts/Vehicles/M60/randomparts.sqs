@@ -1,0 +1,11 @@
+&0
+_unit = _this select 0
+
+? format ["%1", RAE_INQ_Random] == "scalar bool array string 0xfcffffef": RAE_INQ_Random = true
+
+? !RAE_INQ_Random: exit
+
+_nrand = random 1
+? _nrand > 0.5: _unit setObjectTexture [0, "\d4t_tex\m60a3\searchL.paa"]
+Exit
+

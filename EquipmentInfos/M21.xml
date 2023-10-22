@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<weapon>
+    <title>M21</title>
+    <category>Sniper Rifle</category>
+    <description>The United States M21 sniper rifle is a modified M14 National Match rifle, with a high accuracy rating to approximately 900yds/822m. It has a 20 round detachable magazine and is gas operated and air-cooled. Standard models include a 3x to 9x Automatic Ranging Telescope (ART) sight.</description>
+    <properties>
+        <length>44.1"/112cm</length>
+        <weight>11.25 lbs/5.11kg</weight>
+        <barrel>22 inches/559mm</barrel>
+        <caliber>7.62x51mm</caliber>
+        <feed>20 round detachable box magazine</feed>
+        <muzzleVelocity>853m/s</muzzleVelocity>
+        <cyclicRate>N/A</cyclicRate>
+    </properties>
+</weapon>

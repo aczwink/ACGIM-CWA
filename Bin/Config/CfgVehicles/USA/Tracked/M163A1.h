@@ -3,7 +3,7 @@ Sources:
 	http://en.wikipedia.org/wiki/M163
 In service:1968-unknown but not anymore
 */
-class USA_M163A1 : USA_M113
+class Vulcan : USA_M113
 {
 	displayName="M163A1 VADS";
 	picture="\vulcan\ivulcan.paa";
@@ -58,9 +58,7 @@ class USA_M163A1 : USA_M113
 	
 	class EventHandlers
 	{
-		Init = "[_this select 0, 180] exec {\SJC_Scripts\vehicleTODO.sqs}";
+		hit = "_this exec {\SJC_Scripts\Events\ArmorHit.sqs}";
+		killed = "(_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Veh_burner.sqs}";
 	};
-
-	//TODO: burner when killed
-	//TODO: desert version
 };

@@ -1,0 +1,3 @@
+_vehicle = _this
+[_vehicle] exec "\acgim_scripts\EffectPack\MegaExplode\explodeThre.sqs"
+[_vehicle] exec "\acgim_scripts\EffectPack\FuellEffect\FireDtruck.sqs"

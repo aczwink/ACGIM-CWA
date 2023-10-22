@@ -62,11 +62,11 @@ class USA_HMMWV : Car
 	class EventHandlers
 	{
 		Init = "_this exec {\acgim_scripts\Vehicles\HMMWV\CBT_HMMWV_Init.sqs}; if (format [""%1"", CBT_FctLoad] == ""scalar bool array string 0xfcffffef"") then {_this exec {\acgim_scripts\Vehicles\HMMWV\CBT_init.sqs}}";
-		killed = "(_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Car_Burner.sqs}";
+		killed = "_this exec {\acgim_scripts\Vehicles\HMMWV\CBT_HMMWV_Fire.sqs}";
 	};
 };
 
-class USA_HMMWV_M2 : USA_HMMWV
+class JeepMG : USA_HMMWV
 {
 	displayName="HMMWV M2";
 	picture="\d4t_files\pics\vehicles\hmmwv_m2.paa";
@@ -187,7 +187,7 @@ class USA_HMMWV_M2 : USA_HMMWV
 	class MGunClouds : WeaponCloudsMGun{};
 };
 
-class USA_HMMWV_Mk19 : USA_HMMWV_M2
+class USA_HMMWV_Mk19 : JeepMG
 {
 	displayName="HMMWV Mk 19";
 	picture="\sjc_images\vehicles\hmmwv_mk19.paa";
@@ -197,7 +197,7 @@ class USA_HMMWV_Mk19 : USA_HMMWV_M2
 	magazines[]={"Mk19","Mk19","Mk19","Mk19"};
 };
 
-class USA_HMMWV_TOW : USA_HMMWV_M2
+class USA_HMMWV_TOW : JeepMG
 {
 	gunnerOpticsModel="\sjc_optics\usa\hmmwv_tow_gunner.p3d";
 	displayName="HMMWV TOW";

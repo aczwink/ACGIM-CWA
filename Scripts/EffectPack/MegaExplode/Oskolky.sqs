@@ -1,0 +1,35 @@
+_truck = _this select 0
+_w = _this select 1
+_z = getpos _truck select 2
+_ew = random 1
+_ew=_ew-(_ew%1)
+?(_ew == 0):_ugol = random 20
+?(_ew == 1):_ugol = random (-20)
+_w = _w + _ugol
+_i = 0
+_stU = random 2.5
+_stI = random 2.5
+#ReRan2
+_sz = random 2.5
+? (_sz < 1):goto "reRan2"
+_fre = "EasyFireLight" createvehicle [0,0,0]
+
+#loop
+_i=_i+_stI
+_stU =_stU -0.03
+_z = _z + _stU
+_sz=_sz - 0.015
+
+~0.0001
+_Xpos = (sin(_w) * _i)+ (getpos _truck select 0)
+_Ypos = (cos(_w) * _i)+ (getpos _truck select 1)
+drop ["cl_fire", "", "Billboard", 1, 1, [_Xpos,_Ypos,_z], [random 2, random 2, random 10], 1, 1, 1, 1, [_sz*2,_sz *3,_sz *4], [[1,1,0,1], [1,0.5,0,1], [1,1,0,0.4], [1,1,0,0.1]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["cl_basic", "", "Billboard", 1, 2.5, [_Xpos,_Ypos,_z], [random 2, random 2, random 10], 1, 1, 1, 1, [_sz*2,_sz *2.5,_sz *4], [[0.6,0.6,0.6,0], [0.5,0.5,0.5,1], [0,0,0,0.6], [0,0,0,0]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["halflight", "", "Billboard", 1, 0.5, [_Xpos,_Ypos,_z], [random 2, random 2, random 10], 1, 1, 1, 1,[_sz*3,_sz *4,_sz *5], [[1,0.5,0,0.8], [1,0.5,0,0.6], [1,0.5,0,0.4], [1,0.5,0,0.2], [1,1,0,0]], [0,1,0], 5, 0.05, "", "", ""]
+_fre setpos  [_Xpos,_Ypos,_z]
+?(_sz <=0):goto "Use"
+?(_z <=0 and _sz >= 0.5): [[_Xpos,_Ypos,_z],[1+(random 1),0.5+(random 0.5),0.2+(random 0.4)]] exec "\acgim_scripts\EffectPack\FireOne\Fire.sqs"; goto "use"
+?(_i != 300):goto "loop"
+#use
+deletevehicle _fre
+exit

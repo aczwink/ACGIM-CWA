@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<item>
+    <title>Anti-Tank Mine</title>
+    <category>Explosive</category>
+    <description>The Anti-Tank mine will kill or disable tanks and other heavy vehicles. It is activated by 350 pounds of pressure and is therefore not detonated by personnel.</description>
+    <properties>
+    </properties>
+</item>

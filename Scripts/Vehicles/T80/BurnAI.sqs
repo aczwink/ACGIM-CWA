@@ -1,0 +1,73 @@
+;Edited by Harkonin - Original Concept by MIF
+;Modified 10/02/03
+;-special thanks to Killswitch 
+;?(local server):exit
+;modified in 2004 by raedor
+
+_unit = _this select 0
+_water = false
+
+~random(2)
+
+_unit setdammage 0
+_unit action ["TURNOUT",(vehicle _unit)]
+_unit action ["GETOUT",(vehicle _unit)]
+
+_lastPos = getPos _unit
+_lastDir = getDir _unit
+
+_unit setdir (_lastDir - 45 + random 90)
+_unit setunitpos "UP"
+
+_dmg = getDammage _unit
+_d = 0.05
+_i = 3
+_n = 0
+_rnd1 = 45 + random 250
+
+#scream
+? side _unit == east || side _unit == resistance || side _unit == civilian: goTo "rus"
+goTo "eng"
+
+#rus
+_rnd = random 2
+? _rnd <= 1: _unit say "rus2"; goto "burn"
+_unit say "rus13"; goto "burn"
+
+#eng
+_rnd = random 5
+? _rnd <= 1: _unit say "eng32"; goto "burn"
+? _rnd > 1 && _rnd <= 2: _unit say "eng33"; goto "burn"
+? _rnd > 2 && _rnd <= 3: _unit say "eng34"; goto "burn"
+? _rnd > 3 && _rnd <= 4: _unit say "eng22"; goto "burn"
+_unit say "eng23"
+
+
+; Now toast that poor sucker
+#burn
+drop ["cl_fire", "", "Billboard", 1, 0.75, [(_lastPos select 0),(_lastPos select 1),(_lastPos select 2) + .85], [0,0,0], 1, 0.004, 0.004, 0.1, [(0.1 + 0.2), (0.1 + 0.5), (0.1 + 0.1)], [[1,1,1,0], [1,1,1,0.3], [0.3,0.3,0.3,0.5], [0,0,0,0]], [0,0.5,0], 0.5, 0.5, "", "", ""]
+_lastPos = getPos _unit
+_lastDir = getDir _unit
+?(local _unit):_unit setDammage (_dmg + _d)
+~0.05
+_i = _i + 1
+_n = _n + 1
+? _n >= _rnd1 : _unit playmove "LyingToTreatedLying"; _i = -100; goto "lowburn"
+;? _n >= 50 : _cdir = (-.5 + random 1); _n = 0
+?(random 10 > 9): _rnd2 = -1 + random 2
+_unit setdir (_lastDir + (3 + random 2)*(_rnd2/abs _rnd2))
+? _i >= 8 : _unit playmove "CombatSprintF"; _i = 0
+_d = _d + .005
+? (getDammage _unit) >= 1 : _i = 0; goto "lowburn"
+goto "burn"
+
+#lowburn
+_lastPos = getPos _unit
+drop ["cl_fire", "", "Billboard", 1, 1, [(_lastPos select 0),(_lastPos select 1),_lastPos select 2], [0,0,0], 1, 0.004, 0.004, 0.1, [(0.1 + 0.2), (0.1 + 0.5), (0.1 + 0.1)], [[1,1,1,0], [1,1,1,0.3], [0.3,0.3,0.3,0.5], [0,0,0,0]], [0,0.5,0], 0.5, 0.5, "", "", ""]
+_i = _i + 1
+~0.05
+? (_i < 75): goto "lowburn"
+?!(alive _unit): exit
+_unit setunitpos "AUTO"
+_unit dofollow (leader group _unit)
+exit

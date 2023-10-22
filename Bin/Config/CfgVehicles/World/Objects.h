@@ -427,31 +427,6 @@ class Paleta2 : PaletaBase
 	displayName="$STR_DN_PALLETS_C";
 };
 
-class Shed : Strategic
-{
-	scope=2;
-	vehicleClass="Objects";
-	icon="Unknown_object";
-	model="pristresek";
-	displayName="$STR_DN_SHED";
-	accuracy=0.2;
-	typicalCargo[]={};
-	transportAmmo=0;
-	transportRepair=0;
-	transportFuel=0;
-	mapSize=9.8000002;
-	cost=0;
-	armor=200;
-};
-
-class ShedSmall : Shed
-{
-	model="pristresek_mensi";
-	displayName="$STR_DN_SHED_SMALL";
-	mapSize=4.3000002;
-	accuracy=1000;
-};
-
 class Camp : Strategic
 {
 	scope=2;

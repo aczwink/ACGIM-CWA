@@ -11,8 +11,8 @@ class SVDDragunov : SniperRiffle //Also the BIS Class
 	ammo = "SVDDragunov";
 	recoil = "SVDDragunov";
 	sound[]={"\d4t_files\sounds\weapons\handheld\rhs_dragunov.wss",1.0,1.00};
-	model="\d4t_files\models\russia\weapons\svd.p3d";
-	modelOptics="\d4t_files\optics\optic_svd.p3d";
+	model="\models\rhs_svd.p3d";
+	modelOptics="\models\rhs_AK_Optic2.p3d";
 	opticsZoomMin=0.04;
 	opticsZoomMax=0.04;
 	distanceZoomMin=300;

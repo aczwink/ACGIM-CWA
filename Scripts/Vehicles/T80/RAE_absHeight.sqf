@@ -1,0 +1,1 @@
+_v = "EmptyDetector" createVehicle [0,0]; _v setpos [position _this select 0, position _this select 1, 0]; _r = position _v select 2; _r

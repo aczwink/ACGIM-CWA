@@ -1,0 +1,47 @@
+_truck = _this select 0
+_i = 0
+[getpos _truck] exec "\acgim_scripts\EffectPack\MegaExplode\volna.sqs"
+_truck setvelocity [0,0,15]
+_gp = getpos _truck
+
+#loop2
+[_truck,random 360] exec "\acgim_scripts\EffectPack\MegaExplode\Oskolky.sqs"
+_i=_i+1
+?(_i < 20): goto "loop2"
+
+_i = 0
+_vel = 25
+_vel2 = 22
+_yelw = [3,20,10]
+_fir = [15,10]
+_smk = [13,10]
+
+#loop
+drop ["halflight", "", "Billboard", 1, 2, [_Gp select 0, _Gp select 1, _Gp select 2], [random _vel, random _vel, random (_vel*1.3)], 0.5, 80, 1, 1, _yelw, [[1,1,0,1], [1,0.5,0,0.8], [1,1,0,0.5], [1,1,0,0.2], [1,1,0,0]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["halflight", "", "Billboard", 1, 2, [_Gp select 0, _Gp select 1, _Gp select 2], [random (-_vel), random _vel, random (_vel*1.3)], 0.5, 80, 1, 1, _yelw, [[1,1,0,1], [1,0.5,0,0.8], [1,1,0,0.5], [1,1,0,0.2], [1,1,0,0]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["halflight", "", "Billboard", 1, 2, [_Gp select 0, _Gp select 1, _Gp select 2], [random (-_vel), random (-_vel), random (_vel*1.3)], 0.5, 80, 1, 1, _yelw, [[1,1,0,1], [1,0.5,0,0.8], [1,1,0,0.5], [1,1,0,0.2], [1,1,0,0]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["halflight", "", "Billboard", 1, 2, [_Gp select 0, _Gp select 1, _Gp select 2], [random (-_vel), random (-_vel), random (-_vel)], 0.5, 80, 1, 1, _yelw, [[1,1,0,1], [1,0.5,0,0.8], [1,1,0,0.5], [1,1,0,0.2], [1,1,0,0]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["halflight", "", "Billboard", 1, 2, [_Gp select 0, _Gp select 1, _Gp select 2], [random _vel, random (-_vel), random (_vel*1.3)], 0.5, 80, 1, 1, _yelw, [[1,1,0,1], [1,0.5,0,0.8], [1,1,0,0.5], [1,1,0,0.2], [1,1,0,0]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["halflight", "", "Billboard", 1, 2, [_Gp select 0, _Gp select 1, _Gp select 2], [random _vel, random (-_vel), random (-_vel)], 0.5, 80, 1, 1, _yelw, [[1,1,0,1], [1,0.5,0,0.8], [1,1,0,0.5], [1,1,0,0.2], [1,1,0,0]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["halflight", "", "Billboard", 1, 2, [_Gp select 0, _Gp select 1, _Gp select 2], [random _vel, random _vel, random (-_vel)], 0.5, 80, 1, 1, _yelw, [[1,1,0,1], [1,0.5,0,0.8], [1,1,0,0.5], [1,1,0,0.2], [1,1,0,0]], [0,1,0], 5, 0.05, "", "", ""]
+
+drop ["cl_fire", "", "Billboard", 1, 1.5, [_Gp select 0, _Gp select 1, _Gp select 2], [random _vel2, random _vel2, random (_vel2*1.3)], 5, 60, 4, 1, _fir, [[1,1,0,1], [1,0.5,0,0.8], [1,1,0,0.7], [1,1,0,0.5], [1,1,0,0.1]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["cl_fire", "", "Billboard", 1, 1.5, [_Gp select 0, _Gp select 1, _Gp select 2], [random (-_vel2), random _vel2, random (_vel2*1.3)], 5, 60, 4, 1, _fir, [[1,1,0,1], [1,0.5,0,0.8], [1,1,0,0.7], [1,1,0,0.5], [1,1,0,0.1]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["cl_fire", "", "Billboard", 1, 1.5, [_Gp select 0, _Gp select 1, _Gp select 2], [random (-_vel2), random (-_vel2), random (_vel2*1.3)], 5, 60, 4, 1, _fir, [[1,1,0,1], [1,0.5,0,0.8], [1,1,0,0.7], [1,1,0,0.5], [1,1,0,0.1]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["cl_fire", "", "Billboard", 1, 1.5, [_Gp select 0, _Gp select 1, _Gp select 2], [random (-_vel2), random (-_vel2), random (-_vel2)], 5, 60, 4, 1,_fir, [[1,1,0,1], [1,0.5,0,0.8], [1,1,0,0.7], [1,1,0,0.5], [1,1,0,0.1]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["cl_fire", "", "Billboard", 1, 1.5, [_Gp select 0, _Gp select 1, _Gp select 2], [random _vel2, random (-_vel2), random (_vel2*1.3)], 5, 60, 4, 1, _fir, [[1,1,0,1], [1,0.5,0,0.8], [1,1,0,0.7], [1,1,0,0.5], [1,1,0,0.1]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["cl_fire", "", "Billboard", 1, 1.5, [_Gp select 0, _Gp select 1, _Gp select 2], [random _vel2, random (-_vel2), random (-_vel2)], 5, 60, 4, 1, _fir, [[1,1,0,1], [1,0.5,0,0.8], [1,1,0,0.7], [1,1,0,0.5], [1,1,0,0.1]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["cl_fire", "", "Billboard", 1, 1.5, [_Gp select 0, _Gp select 1, _Gp select 2], [random _vel2, random _vel2, random (-_vel2)], 5, 60, 4, 1, _fir, [[1,1,0,1], [1,0.5,0,0.8], [1,1,0,0.7], [1,1,0,0.5], [1,1,0,0.1]], [0,1,0], 5, 0.05, "", "", ""]
+
+drop ["cl_basic", "", "Billboard", 1, 5, [_Gp select 0, _Gp select 1, _Gp select 2], [random _vel2/2, random _vel2/2, random (_vel2*1.3)], 0.5, 50, 30, 1, _smk, [[0,0,0,1], [0.1,0.1,0.1,0.8], [0.4,0.4,0.4,0.5], [0.7,0.7,0.7,0.2], [1,1,1,0]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["cl_basic", "", "Billboard", 1, 5, [_Gp select 0, _Gp select 1, _Gp select 2], [random (-_vel2)/2, random _vel2/2, random (_vel2*1.3)/2], 0.5, 50, 30, 1, _smk, [[0,0,0,1], [0.1,0.1,0.1,0.8], [0.4,0.4,0.4,0.5], [0.7,0.7,0.7,0.2], [1,1,1,0]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["cl_basic", "", "Billboard", 1, 5, [_Gp select 0, _Gp select 1, _Gp select 2], [random (-_vel2)/2, random (-_vel2)/2, random (_vel2*1.3)], 0.5, 50, 30, 1, _smk, [[0,0,0,1], [0.1,0.1,0.1,0.8], [0.4,0.4,0.4,0.5], [0.7,0.7,0.7,0.2], [1,1,1,0]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["cl_basic", "", "Billboard", 1, 5, [_Gp select 0, _Gp select 1, _Gp select 2], [random (-_vel2)/2, random (-_vel2)/2, random (-_vel2)/2], 0.5, 50, 30, 1, _smk, [[0,0,0,1], [0.1,0.1,0.1,0.8], [0.4,0.4,0.4,0.5], [0.7,0.7,0.7,0.2], [1,1,1,0]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["cl_basic", "", "Billboard", 1, 5, [_Gp select 0, _Gp select 1, _Gp select 2], [random _vel2/2, random (-_vel2)/2, random (_vel2*1.3)], 0.5, 50, 30, 1, _smk, [[0,0,0,1], [0.1,0.1,0.1,0.8], [0.4,0.4,0.4,0.5], [0.7,0.7,0.7,0.2], [1,1,1,0]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["cl_basic", "", "Billboard", 1, 5, [_Gp select 0, _Gp select 1, _Gp select 2], [random _vel2/2, random (-_vel2)/2, random (-_vel2)/2], 0.5, 50, 30, 1, _smk, [[0,0,0,1], [0.1,0.1,0.1,0.8], [0.4,0.4,0.4,0.5], [0.7,0.7,0.7,0.2], [1,1,1,0]], [0,1,0], 5, 0.05, "", "", ""]
+drop ["cl_basic", "", "Billboard", 1, 5, [_Gp select 0, _Gp select 1, _Gp select 2], [random _vel2/2, random _vel2/2, random (-_vel2)/2], 0.5, 50, 30, 1, _smk, [[0,0,0,1], [0.1,0.1,0.1,0.8], [0.4,0.4,0.4,0.5], [0.7,0.7,0.7,0.2], [1,1,1,0]], [0,1,0], 5, 0.05, "", "", ""]
+_i=_i+1
+?(_i < 40):goto "loop"
+
+
+exit

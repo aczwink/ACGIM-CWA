@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<weapon>
+    <title>M16A2</title>
+    <category>Assault Rifle</category>
+    <description>The M16 Assault Rifle series of weapons developed from research conducted by the U.S. Army's Operations Research Office (ORO), created at Johns Hopkins University in September 1948. As the United States Army's standard-issue rifle, the M16 is a reliable and accurate weapon (although prone to jamming, as it's relatively easy for dirt to get into the chamber and magazine).</description>
+    <properties>
+        <length>39.15 inches/995 mm</length>
+        <weight>9.02 lbs/4,1 kg</weight>
+        <barrel>20.07 inches/510 mm</barrel>
+        <caliber>5.56mm x 45mm</caliber>
+        <feed>30rd magazine</feed>
+        <muzzleVelocity>990 m/s</muzzleVelocity>
+        <cyclicRate>N/A</cyclicRate>
+    </properties>
+</weapon>

@@ -1,4 +1,4 @@
-class FIA_UAZ469 : USSR_UAZ469
+class UAZG : Russia_UAZ469
 {
 	displayName = "UAZ-469";
 	model = "\sjc_models\fia\uaz469.p3d";
@@ -16,7 +16,7 @@ class FIA_UAZ469 : USSR_UAZ469
 	};*/
 };
 
-class FIA_UAZ469Ambulance : FIA_UAZ469
+class FIA_UAZ469Ambulance : UAZG
 {
 	displayName="UAZ-469 Ambulance";
 	model="sguaz";

@@ -1,0 +1,26 @@
+_veh = _this select 0
+
+#loop
+? isNull _veh || ! alive _veh : exit
+@ isEngineOn _veh || ! alive _veh
+? ! (alive _veh): exit 
+_veh say "M60_Engine"
+@ ! (isEngineOn _veh) || ! (alive _veh)
+? ! (alive _veh): exit
+_veh say "null"
+goTo "loop"
+
+
+goto "start"
+? ! (isengineon _veh) || ! (alive _veh): goto "stop"
+goTo "loop"
+
+#start
+? ! (alive _veh): exit 
+_veh say "M60_Engine"
+goto "loop"
+
+#stop
+? ! (alive _veh): exit
+_veh say "null"
+goto "loop"

@@ -24,11 +24,6 @@ class OfficerENight : OfficerE
 	scope = SCOPE_HIDDEN;
 };
 
-class HeavyGrenadier : SoldierEG
-{
-	scope = SCOPE_HIDDEN;
-};
-
 class OfficerEHG : OfficerE
 {
 	scope = SCOPE_HIDDEN;
@@ -52,21 +47,13 @@ class BISCamel2 : BISCamel
 	DisplayName = "$STR_BISCAMEL_NAME2";
 };
 
-class Mi17 : Mi8MTV
-{
-	scope = SCOPE_HIDDEN;
-};
-
 class Kamov : V80
 {
 	scope = SCOPE_HIDDEN;
 };
 
 
-class BRDM : USSR_BRDM2
-{
-	scope = SCOPE_HIDDEN;
-};
+
 
 class T80Auto : T80
 {

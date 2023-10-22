@@ -15,7 +15,7 @@ class ReammoBoxEast : ReammoBox
 
 		class m_PKM
 		{
-			magazine = "PKM";
+			magazine = WEAPON_REFERENCE(PKM);
 			count = 5;
 		};
 
@@ -55,7 +55,7 @@ class HeavyReammoBoxEast : ReammoBoxEast
 
 		class m_RPG18
 		{
-			magazine = "M47Dragon";
+			magazine = WEAPON_REFERENCE(M47Dragon);
 			count = 2;
 		};
 
@@ -122,13 +122,13 @@ class AmmoBoxOUTEW : HeavyReammoBox
 
 		class w_AK74GP25
 		{
-			weapon = "AK74GP25";
+			weapon = WEAPON_REFERENCE(AK74GP25);
 			count = 1;
 		};
 
 		class w_PKM
 		{
-			weapon = "PKM";
+			weapon = WEAPON_REFERENCE(PKM);
 			count = 1;
 		};
 
@@ -140,7 +140,7 @@ class AmmoBoxOUTEW : HeavyReammoBox
 
 		class w_AKS74
 		{
-			weapon = "AKS74";
+			weapon = WEAPON_REFERENCE(AKS74);
 			count = 2;
 		};
 

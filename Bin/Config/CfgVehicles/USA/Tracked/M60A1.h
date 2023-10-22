@@ -140,12 +140,10 @@ class USA_M60A1 : Tank
 	};
 	class EventHandlers
 	{
-		Init = "[_this select 0, 183] exec {\SJC_Scripts\vehicleTODO.sqs}";
-		//TODO:
-		/*init="_this exec {\d4t_files\FX\scripts\vehicles\m60a3\init.sqs}";
-		getIn = "_this exec {\d4t_files\FX\scripts\vehicles\m60a3\RAE_driverOptics.sqs}";
-		killed="(_this select 0) exec ""\d4t_files\FX\scripts\DKMM_RSC_Veh_burner.sqs""";
-		fired = "_this exec ""\d4t_files\FX\scripts\vehicles\m60a3\shock.sqs""; if (_this select 4 in [""105mm_m833_apfsds"",""Shell105""]) then {(_this + [_this call RHS_Noid]) exec {\d4t_files\FX\scripts\vehicles\m60a3\suspension.sqs}}";
-		engine="if (_this select 1) then {(_this select 0) exec {\d4t_files\FX\scripts\vehicles\m60a3\DKMM_RSC_Tank_Accel.sqs}}";*/
+		init="_this exec {\acgim_scripts\Vehicles\M60\init.sqs}";
+		getIn = "_this exec {\acgim_scripts\Vehicles\M60\RAE_driverOptics.sqs}";
+		killed = "_this exec ""\acgim_scripts\Vehicles\M60\fire.sqs""";
+		fired = "_this exec ""\acgim_scripts\Vehicles\M60\shock.sqs""; if (_this select 4 in [""105mm_m833_apfsds"",""Shell105""]) then {(_this + [_this call RHS_Noid]) exec {\acgim_scripts\Vehicles\M60\suspension.sqs}}";
+		engine="if (_this select 1) then {(_this select 0) exec {\acgim_scripts\Vehicles\M60\DKMM_RSC_Tank_Accel.sqs}}";
 	};
 };

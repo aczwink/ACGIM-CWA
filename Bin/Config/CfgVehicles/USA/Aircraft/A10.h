@@ -5,7 +5,7 @@ In service: 1976-present
 Comments:
 	Used "Never exceeded Speed" as maxspeed because OFP always shows less
 */
-class USA_A10 : Plane
+class A10 : Plane
 {
 	scope = SCOPE_PUBLIC;
 	access = ACCESS_FORBIDDEN;

@@ -715,22 +715,7 @@ class LAWLauncher : Default
 	uiPicture="islaw";
 };
 
-class CarlGustavLauncher : LAWLauncher
-{
-	magazineType="6 * 		256";
-	model="carlgustav84_proxy";
-	modelOptics="optika_CarlGustav";
-	canLock=1;
-	valueWeapon=20;
-	valueMagazine=10;
-	ammo="CarlGustav";
-	displayName="$STR_DN_CARL_GUSTAV";
-	displayNameMagazine="$STR_MN_CARL_GUSTAV";
-	shortNameMagazine="$STR_SN_CARL_GUSTAV";
-	uiPicture="isat";
-};
-
-class AALauncher:CarlGustavLauncher
+class AALauncher : LAWLauncher
 {
 	scopeWeapon=2;
 	scopeMagazine=2;
@@ -753,8 +738,13 @@ class AALauncher:CarlGustavLauncher
 	aiRateOfFireDistance=5000;
 };
 
-class AT3Launcher : CarlGustavLauncher
+class AT3Launcher : LAWLauncher
 {
+	model="carlgustav84_proxy";
+	modelOptics="optika_CarlGustav";
+	valueWeapon=20;
+	valueMagazine=10;
+	uiPicture="isat";
 	scopeWeapon=2;
 	scopeMagazine=2;
 	weaponType=65536;

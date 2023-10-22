@@ -9,9 +9,16 @@ Like this the real weapon name will be replaced with the BIS class correspondent
 */
 
 //Primary
-#define CAR15 M4
-#define M16A2 M16
-#define M16A2_M203 M16GrenadeLauncher
+//      FROM        TO
+//      ACGIM       BIS
+#define AK74GP25    AK74GrenadeLauncher
+#define AKS74       AK74SU
+#define CAR15       M4
+#define CAR15_SD    HK
+#define M47Dragon   CarlGustavLauncher
+#define M16A2       M16
+#define M16A2_M203  M16GrenadeLauncher
+#define PKM         PK
 
 
 

@@ -2,7 +2,7 @@
 Sources:
 	http://en.wikipedia.org/wiki/BRDM-2
 */
-class USSR_BRDM2 : LandVehicle
+class BRDM : LandVehicle
 {
 	scope = SCOPE_PUBLIC;
 	side = SIDE_EAST;

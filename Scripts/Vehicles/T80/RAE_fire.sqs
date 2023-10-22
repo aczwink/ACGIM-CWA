@@ -1,7 +1,7 @@
 ;RED STAR shockwave dust script - TJ 2003
 ;
 ;modified by raedor
-;>>>©2003raedor
+;>>>ï¿½2003raedor
 ;contact: raedor@web.de
 ;www.mapfact.net
 ;www.dkm-mod.mkdi.net
@@ -88,7 +88,7 @@ _water = false
 ? ! (thisIsServer): goto "client"
 _x = random 49.5
 ?_x <= 1 && _EXPCOUNT <= 4:_bang = "GrenadeHand" createvehicle [(getpos _tank select 0)+(-.6 + random 1.2),(getpos _tank select 1)+(-.6 + random 1.2),(getpos _tank select 2)+1]; _bang setvelocity [0,0,-1000]; _EXPCount = _EXPCount + 1
-?_x >= 45 && _EXPCount <= 4:_bang = "RHS_PKTT" createvehicle [(getpos _tank select 0)+(-.6 + random 1.2),(getpos _tank select 1)+(-.6 + random 1.2),(getpos _tank select 2)+1]; _bang setvelocity [0,0,-1000]; _EXPCount = _EXPCount + 1
+?_x >= 45 && _EXPCount <= 4:_bang = "PKT" createvehicle [(getpos _tank select 0)+(-.6 + random 1.2),(getpos _tank select 1)+(-.6 + random 1.2),(getpos _tank select 2)+1]; _bang setvelocity [0,0,-1000]; _EXPCount = _EXPCount + 1
 
 #client
 ? player != (vehicle player): goTo "fire"

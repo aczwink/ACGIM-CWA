@@ -1,0 +1,32 @@
+
+#next
+
+_tank = _this select 0
+
+_dir = getDir _tank
+_dirT = _dir
+
+#loop
+
+? _dir < (_dirT + 30): _radius = 3
+? _dir > (_dirT + 30) && _dir < (_dirT + 70): _radius = 4
+? _dir > (_dirT + 70) && _dir < (_dirT + 110): _radius = 2
+? _dir > (_dirT + 110) && _dir < (_dirT + 150): _radius = 4
+? _dir > (_dirT + 150) && _dir < (_dirT + 210): _radius = 3
+? _dir > (_dirT + 210) && _dir < (_dirT + 250): _radius = 4
+? _dir > (_dirT + 250) && _dir < (_dirT + 290): _radius = 2
+? _dir > (_dirT + 290) && _dir < (_dirT + 330): _radius = 4
+? _dir > (_dirT + 330): _radius = 3
+_velx = _radius * sin _dir
+_vely = _radius * cos _dir
+
+drop["cl_basic","","Billboard", 1,random 2, [_velx,_vely,-3],[0,0,random 4],0, 2,1,0.1,[4,3], [[0.3, 0.3,  0.168, 0.15 + random 0.4], [0.34,0.3, 0.168, 0.25], [0.345 ,0.3,0.168, 0.15 + random 0.4], [0.345,0.3,0.168,0.05]],[0],2,1,"","",_tank]
+drop["cl_basic","","Billboard", 1,random 2, [_radius * sin (_dir + 7), _radius * cos (_dir + 7),-3],[0,0,random 4],0, 2,1,0.1,[4,3], [[0.3, 0.3,  0.168, 0.15 + random 0.4], [0.34,0.3, 0.168, 0.25], [0.345 ,0.3,0.168, 0.15 + random 0.4], [0.345,0.3,0.168,0.05]],[0],2,1,"","",_tank]
+drop["cl_basic","","Billboard", 1,random 2, [_radius * sin (_dir + 14), _radius * cos (_dir + 14),-3],[0,0,random 4],0, 2,1,0.1,[4,3], [[0.3, 0.3,  0.168, 0.15 + random 0.4], [0.34,0.3, 0.168, 0.25], [0.345 ,0.3,0.168, 0.15 + random 0.4], [0.345,0.3,0.168,0.05]],[0],2,1,"","",_tank]
+drop["cl_basic","","Billboard", 1,random 2, [_radius * sin (_dir + 21), _radius * cos (_dir + 21),-3],[0,0,random 4],0, 2,1,0.1,[4,3], [[0.3, 0.3,  0.168, 0.15 + random 0.4], [0.34,0.3, 0.168, 0.25], [0.345 ,0.3,0.168, 0.15 + random 0.4], [0.345,0.3,0.168,0.05]],[0],2,1,"","",_tank]
+
+_dir = _dir + 28
+
+?_dir <= (_dirT + 360):goto "loop"
+
+exit

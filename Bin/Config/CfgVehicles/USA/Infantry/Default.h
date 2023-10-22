@@ -9,8 +9,6 @@ class USA_Soldier : Soldier
 	displayName = "Soldier";
 	threat[]={THREAT_SOLDIER};
 
-	//1985
-#ifdef ACGIM_SCENARIO_1985
 	model = "\d4t_files\models\us\infantry\1985\usa_soldier1985.p3d";
 
 	weapons[] = {WEAPON_REFERENCE(M16A2), "Throw", "Put"};
@@ -52,7 +50,6 @@ class USA_Soldier : Soldier
 		"\d4t_tex\usi85\chelS.paa", "\d4t_tex\usi85\chelSd.paa",
 		"\d4t_tex\usi85\chelT.paa", "\d4t_tex\usi85\chelTd.paa"
 	};
-#endif
 };
 
 class USA_Grenadier : USA_Soldier
@@ -106,8 +103,8 @@ class USA_ATSoldier : USA_LightATSoldier
 	accuracy = ACCURACY_HATSOLDIER;
 	cost = COST_HATSOLDIER;
 	displayName="AT Soldier";
-	weapons[]={WEAPON_REFERENCE(M16A2), "M47Dragon", "Throw", "Put"};
-	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "M47Dragon"};
+	weapons[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M47Dragon), "Throw", "Put"};
+	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M47Dragon)};
 	threat[]={THREAT_HATSOLDIER};
 };
 

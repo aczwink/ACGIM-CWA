@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<item>
+    <title>Hand Grenade</title>
+    <category>Explosive</category>
+    <description>A Hand Grenade can be thrown 130ft/40m by the average soldier, and is a standard battlefield weapon.</description>
+    <properties>
+        <killRadius>16.5 ft/5 m</killRadius>
+        <effectiveCasualtyProducingRadius>50 ft/15 m</effectiveCasualtyProducingRadius>
+        <fragmentationRadius>750 ft/230 m</fragmentationRadius>
+    </properties>
+</item>

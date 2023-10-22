@@ -85,18 +85,17 @@ class Angelina : Russia_Angelina
 };
 
 //Air
+class Mi17 : Mi8MTV
+{
+	scope = SCOPE_HIDDEN;
+};
+
 class Mi24 : Russia_Mi24
 {
 	scope = SCOPE_HIDDEN;
 };
 
 class ParachuteEast : Russia_Parachute
-{
-	scope = SCOPE_HIDDEN;
-};
-
-//Objects
-class UralWreck : Russia_Ural4320_Wreck
 {
 	scope = SCOPE_HIDDEN;
 };
@@ -138,25 +137,8 @@ class ZSU : Russia_ZSU234
 	scope = SCOPE_HIDDEN;
 };
 
-//Weapons
-//TODO: reenable as soon as found in missions :)
-/*class M2StaticMGE : Russia_DShK
-{
-	scope = SCOPE_HIDDEN;
-};*/
-
 //Wheeled
 class UAZ : Russia_UAZ469
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class Ural : Russia_Ural4320
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class UralRefuel : Russia_Ural4320Refuel
 {
 	scope = SCOPE_HIDDEN;
 };

@@ -1,0 +1,11 @@
+_vhc = _this select 0
+?(_vhc in inflm): exit
+?(!alive _vhc): exit
+_x = _this select 1
+_y = _this select 2
+_RasX = _x - (getpos _vhc select 0)
+_RasY = _y - (getpos _vhc select 1)
+_Ras = sqrt(_rasX^2 + _rasY^2)
+?(_ras > 5):exit
+[_vhc] exec "\acgim_scripts\EffectPack\InFlameEffect\vhciflame.sqs"
+exit

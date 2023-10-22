@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<weapon>
+    <title>AK-74</title>
+    <category>Assault Rifle</category>
+    <description>The AK-74 assault rifle was manufactured in 1979 by Avtomat Kalashnikova, to replace the aging AK-47. The Kalashnikov sub-machineguns are well known for their reliability. The AK-74 was designed for army personnel and law and order forces.</description>
+    <properties>
+        <length>36.61 inches/930 mm</length>
+        <weight>7.93 lbs/3,6 kg</weight>
+        <barrel>415 mm</barrel>
+        <caliber>5,45mm x 39,5</caliber>
+        <feed>30rd magazine</feed>
+        <muzzleVelocity>900 m/s</muzzleVelocity>
+        <cyclicRate>650rpm</cyclicRate>
+    </properties>
+</weapon>

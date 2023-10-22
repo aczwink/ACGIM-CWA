@@ -1,0 +1,33 @@
+private["_pr","_size","_color","_count","_pos","_vel","_x","_y","_z","_r1","_r2","_m","_xy","_za","_n","_c","_cc","_c0","_c1","_c2"];
+_pr=nearestobject [_this select 0,_this select 4];
+_size=_this select 5;
+_color=[[1,1,0.2],[1,1,0]];
+_count = count _color;
+_pos=getpos _pr;
+_vel=[(velocity _pr select 0)/1,(velocity _pr select 1)/1,(velocity _pr select 2)/1];
+_x = (_pos select 0)+(2.6*sin (getDir _pr));
+_y = (_pos select 1)+(2.6*cos (getDir _pr));
+_z = ([_pr,_x,_y] call RHS_AmmoHeight)+(2.6*sin (_pr call RHS_AmmoPitch));
+[_x,_y,_z] exec format ["%1PlayerShock.sqs", RHS_PathM];
+_r1 = -0.2 + random 0.4;
+_r2 = -0.2 + random 0.4;
+drop ["halfLight", "", "Billboard", 0.1, 0.7, [_x+_r1,_y+_r2,_z], [0,0,0], 1, 1.275, 1, 0, [(35+random 10)*_size*2], [[1,0.6,0.25,1],[1,0.6,0.25,0]], [0,1,0], 0, 0, "", "", ""];
+_m = sqrt((_vel select 0)^2 + (_vel select 1)^2);
+_xy = atan((_vel select 0)/(_vel select 1));
+_za = (_pr call RHS_AmmoPitch);
+_vel = [_m*sin (0),_m*cos (0),(_vel select 2)*sin (0)];
+_n = 0;
+while{_n<0.75}do{
+	_c = 0;
+	while{_c<_count}do{
+		_cc = _color select _c;
+		_c0 = _cc select 0;
+		_c1 = _cc select 1;
+		_c2 = _cc select 2;
+		_cc = [_c0-(_c0*_n/2),_c1-(_c1*_n/2),_c2-(_c2*_n/2),1-(_n*(4/3))];
+		_color set [_c,_cc];
+		_c = _c + 1;
+	};
+	drop["koulesvetlo","","Billboard",1,4,[0,-_n*(_size/0.15),0],_vel,1,35,1,0,[_size],_color,[0,1,0,1],0,0,"","",_pr];		
+	_n=_n+0.05;
+};

@@ -133,6 +133,11 @@ class M1Abrams : USA_M1A1
 	scope = SCOPE_HIDDEN;
 };
 
+class M60 : USA_M60A1
+{
+	scope = SCOPE_HIDDEN;
+};
+
 class Truck5t : USA_Truck5t
 {
 	scope = SCOPE_HIDDEN;
