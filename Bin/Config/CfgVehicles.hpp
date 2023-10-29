@@ -20,8 +20,6 @@ class CfgVehicles
 
 	/*
 	//----Civilian----
-	//Men
-#include "Config\CfgVehicles\Civilian\Women.h"
 	//Aircraft
 #include "Config\CfgVehicles\Civilian\Cessna182.h"
 

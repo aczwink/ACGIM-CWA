@@ -1,0 +1,174 @@
+steps:
+  #addons
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\6G30.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/6G30/config.cpp
+    targetPboName: 6G30
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\ABOX.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/ABox/config.cpp
+    targetPboName: ABox
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\APAC.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/Apac/config.cpp
+    targetPboName: Apac
+
+  - type: RepackArchive
+    sourceLocation: cwa_patch
+    source:
+      type: Archive
+      name: CWA_update.22112011-combinedALL.7z
+      pbo: Addons/BISCamel.pbo
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/BISCamel/config.cpp
+    targetPboName: BISCamel
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\BIZON.PBO.XZ
+    exclude: [config.bin, dx6.log, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/Bizon/config.cpp
+    targetPboName: Bizon
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\BMP2.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/BMP2/config.cpp
+    targetPboName: BMP2
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\BRMD.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/Brmd/config.cpp
+    targetPboName: Brmd
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\CH47.PBO.XZ
+    exclude: [config.bin, config.cpp, CH47-D.backup, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/ch47/config.cpp
+    targetPboName: ch47
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\G36A.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/G36a/config.cpp
+    targetPboName: G36a
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\HUMR.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/humr/config.cpp
+    targetPboName: humr
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\HUNTER.PBO.XZ
+    exclude: [config.bin, stringtable.csv, vssver.scc]
+    include:
+      - source: source
+        path: AddOns/Hunter/config.cpp
+    targetPboName: Hunter
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\KOLO.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/KOLO/config.cpp
+    targetPboName: KOLO
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\KOZL.PBO.XZ
+    exclude: [config.bin, stringtable.csv, vssver.scc]
+    include:
+      - source: source
+        path: AddOns/kozl/config.cpp
+    targetPboName: kozl
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\LASERGUIDED.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/LaserGuided/config.cpp
+    targetPboName: LaserGuided
+
+
+  - type: CopyFiles
+    source: resources
+    files: AddOns/*.pbo #TODO: check this, I think these are just copies of the original addon files but without the config.cpp/config.bin/stringtable.csv. This could be done with a unpack-delete config-repack step

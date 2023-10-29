@@ -93,22 +93,17 @@ class SoldierGMG : SoldierGB
 	weapons[]={"RPD", "Throw", "Put"};
 	magazines[]={"RPD", "RPD", "RPD", "RPD", "RPD"};
 	threat[]={THREAT_MACHINEGUNNER};
-	/*class UserActions //TODO
+	
+	class UserActions
+	{
+		class setcamo
 		{
-            class setcamo
-			{
-		    displayName="Establish MG Position";
+			displayName="Establish MG Position";
 			position="renzhong";
 			radius=0.500000;
 			condition="alive this";
-			statement="[this]exec""\ffur_misc\scripts\Setcamo.sqs""";
-			};
-			
-		};*/
-		
-	class EventHandlers
-	{
-		Init = "[_this select 0, 47] exec {\SJC_Scripts\vehicleTODO.sqs}";
+			statement="[this] exec""\acgim_scripts\Crafting\SetCamo.sqs""";
+		};
 	};
 };
 

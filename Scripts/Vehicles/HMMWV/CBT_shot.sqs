@@ -1,0 +1,50 @@
+_unit = _this select 0
+
+?(_unit animationPhase "ani_bullet1" ) >= 0.9 : _unit setobjecttexture [3,""]; _unit animate ["ani_bullet1",0]; goto "start"
+?(_unit animationPhase "ani_bullet2" ) >= 0.9 : _unit setobjecttexture [4,""]; _unit animate ["ani_bullet2",0]; goto "start"
+?(_unit animationPhase "ani_bullet3" ) >= 0.9 : _unit setobjecttexture [5,""]; _unit animate ["ani_bullet3",0]; goto "start"
+
+#start
+_rdbull = (random 3)
+? _rdbull <= 1 : goto "SHELL1"
+? _rdbull <= 2 : goto "SHELL2"
+? _rdbull <= 3 : goto "SHELL3"
+
+#SHELL1
+@_unit animationphase "ani_bullet1" == 0
+_unit setobjecttexture [3,"\data\nabojnicetop.pac"];_unit animate ["ani_bullet1",1];
+~.10
+goto "WAIT"
+
+#SHELL2
+@_unit animationphase "ani_bullet2" == 0
+_unit setobjecttexture [4,"\data\nabojnicetop.pac"];_unit animate ["ani_bullet2",1];
+~.10
+goto "WAIT"
+
+#SHELL3
+@_unit animationphase "ani_bullet3" == 0
+_unit setobjecttexture [5,"\data\nabojnicetop.pac"];_unit animate ["ani_bullet3",1];
+
+#WAIT
+~.10
+
+?(_unit animationPhase "ani_bullet1" ) == 1 : goto "N1"
+?(_unit animationPhase "ani_bullet2" ) == 1 : goto "N2"
+?(_unit animationPhase "ani_bullet3" ) == 1 : goto "N3"
+exit
+
+#N1
+_unit setobjecttexture [3,""];_unit animate ["ani_bullet1",0];
+@_unit animationphase "ani_bullet1" == 0
+exit
+
+#N2
+_unit setobjecttexture [4,""];_unit animate ["ani_bullet2",0];
+@_unit animationphase "ani_bullet2" == 0
+exit
+
+#N3
+_unit setobjecttexture [5,""];_unit animate ["ani_bullet3",0];
+@_unit animationphase "ani_bullet3" == 0
+exit

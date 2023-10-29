@@ -149,3 +149,48 @@ class 3VOF36 : Shell125
 	hitArmor[]={"soundHitArmor",50};
 	model="\sjc_models\russia\objects\bk12.p3d"; //looks the same
 };
+
+
+/*
+D10b
+*/
+class D10AP2 : Shell105
+{
+	hit=350;
+	indirectHit=10;
+	indirectHitRange=1;
+	cost=200;
+	minRange=10;
+	minRangeProbab=0.5;
+	midRange=1500;
+	midRangeProbab=1;
+	maxRange=2500;
+	maxRangeProbab=1;
+	soundFly[]={"\sounds\Prjtl-Flg.wss",6,1};
+	soundHit[]={"\sounds\Sabot_Hit_Ground.wss",50,1};
+	soundHitArmor[]={"\sounds\Sabot_Hit_Armor.wss",50,1};
+	hitGround[]={"soundHit",50};
+	hitArmor[]={"soundHitArmor",50};
+	hit=200;
+};
+
+class D10HEAT : Heat105
+{
+	explosive=1;
+	hit=200;
+	indirectHit=100;
+	indirectHitRange=5.0;
+	cost=1000;
+	minRange=10;
+	minRangeProbab=0.5;
+	midRange=1500;
+	midRangeProbab=1;
+	maxRange=2500;
+	maxRangeProbab=1;
+	model="\models\HEAT.p3d";
+	soundFly[]={"\sounds\Prjtl-Flg.wss",6,1};
+	soundHit[]={"\sounds\Heat_Hit.wss",50,1};
+	soundHitArmor[]={"\sounds\Heat_Hit.wss",50,1};
+	hitGround[]={"soundHit",50};
+	hitArmor[]={"soundHitArmor",50};
+};

@@ -1,141 +1,6 @@
 steps:
-  #addons
-  - type: RepackArchive
-    sourceLocation: cwa_installer
-    source:
-      type: Archive
-      name: CWA.exe
-      pbo: .rsrc/0/RCDATA/CWA\ADDONS\6G30.PBO.XZ
-    exclude: [config.bin, stringtable.csv]
-    include:
-      - source: source
-        path: AddOns/6G30/config.cpp
-    targetPboName: 6G30
-
-  - type: RepackArchive
-    sourceLocation: cwa_installer
-    source:
-      type: Archive
-      name: CWA.exe
-      pbo: .rsrc/0/RCDATA/CWA\ADDONS\ABOX.PBO.XZ
-    exclude: [config.bin, stringtable.csv]
-    include:
-      - source: source
-        path: AddOns/ABox/config.cpp
-    targetPboName: ABox
-
-  - type: RepackArchive
-    sourceLocation: cwa_installer
-    source:
-      type: Archive
-      name: CWA.exe
-      pbo: .rsrc/0/RCDATA/CWA\ADDONS\APAC.PBO.XZ
-    exclude: [config.bin, stringtable.csv]
-    include:
-      - source: source
-        path: AddOns/Apac/config.cpp
-    targetPboName: Apac
-
-  - type: RepackArchive
-    sourceLocation: cwa_patch
-    source:
-      type: Archive
-      name: CWA_update.22112011-combinedALL.7z
-      pbo: Addons/BISCamel.pbo
-    exclude: [config.bin, stringtable.csv]
-    include:
-      - source: source
-        path: AddOns/BISCamel/config.cpp
-    targetPboName: BISCamel
-
-  - type: RepackArchive
-    sourceLocation: cwa_installer
-    source:
-      type: Archive
-      name: CWA.exe
-      pbo: .rsrc/0/RCDATA/CWA\ADDONS\BIZON.PBO.XZ
-    exclude: [config.bin, dx6.log, stringtable.csv]
-    include:
-      - source: source
-        path: AddOns/Bizon/config.cpp
-    targetPboName: Bizon
-
-  - type: RepackArchive
-    sourceLocation: cwa_installer
-    source:
-      type: Archive
-      name: CWA.exe
-      pbo: .rsrc/0/RCDATA/CWA\ADDONS\BMP2.PBO.XZ
-    exclude: [config.bin, stringtable.csv]
-    include:
-      - source: source
-        path: AddOns/BMP2/config.cpp
-    targetPboName: BMP2
-
-  - type: RepackArchive
-    sourceLocation: cwa_installer
-    source:
-      type: Archive
-      name: CWA.exe
-      pbo: .rsrc/0/RCDATA/CWA\ADDONS\BRMD.PBO.XZ
-    exclude: [config.bin, stringtable.csv]
-    include:
-      - source: source
-        path: AddOns/Brmd/config.cpp
-    targetPboName: Brmd
-
-  - type: RepackArchive
-    sourceLocation: cwa_installer
-    source:
-      type: Archive
-      name: CWA.exe
-      pbo: .rsrc/0/RCDATA/CWA\ADDONS\CH47.PBO.XZ
-    exclude: [config.bin, config.cpp, CH47-D.backup, stringtable.csv]
-    include:
-      - source: source
-        path: AddOns/ch47/config.cpp
-    targetPboName: ch47
-
-  - type: RepackArchive
-    sourceLocation: cwa_installer
-    source:
-      type: Archive
-      name: CWA.exe
-      pbo: .rsrc/0/RCDATA/CWA\ADDONS\G36A.PBO.XZ
-    exclude: [config.bin, stringtable.csv]
-    include:
-      - source: source
-        path: AddOns/G36a/config.cpp
-    targetPboName: G36a
-
-  - type: RepackArchive
-    sourceLocation: cwa_installer
-    source:
-      type: Archive
-      name: CWA.exe
-      pbo: .rsrc/0/RCDATA/CWA\ADDONS\HUMR.PBO.XZ
-    exclude: [config.bin, stringtable.csv]
-    include:
-      - source: source
-        path: AddOns/humr/config.cpp
-    targetPboName: humr
-
-  - type: RepackArchive
-    sourceLocation: cwa_installer
-    source:
-      type: Archive
-      name: CWA.exe
-      pbo: .rsrc/0/RCDATA/CWA\ADDONS\HUNTER.PBO.XZ
-    exclude: [config.bin, stringtable.csv, vssver.scc]
-    include:
-      - source: source
-        path: AddOns/Hunter/config.cpp
-    targetPboName: Hunter
-
-
-  - type: CopyFiles
-    source: resources
-    files: AddOns/*.pbo #TODO: check this, I think these are just copies of the original addon files but without the config.cpp/config.bin/stringtable.csv. This could be done with a unpack-delete config-repack step
+  - type: IncludePipelineSteps
+    name: addons.yaml
 
   #bin
   - type: CompileConfig
@@ -193,9 +58,41 @@ steps:
           - "@ffsx85/addons/SLX_Grass_CWC_Islands.pbo"
         files:
           - Noe/noe.wrp
-          - SLX_Grass_CWC_Islands/Abel.wrp
+          - sourceFileName: SLX_Grass_CWC_Islands/Abel.wrp
+            targetName: Abel
+            patch:
+              #mission 07 shadow killer expects #40394 to be the fuel station
+              #this is vegetation on this map, while the fuel station is #67329
+              #106710 is the maximum id in the source file
+              - id: 40394
+                mappedId: 67329 #swap ids
+              - id: 67329
+                mappedId: 40394 #set correct id for fuel station
           - SLX_Grass_CWC_Islands/cain.wrp
           - SLX_Grass_CWC_Islands/Eden.wrp
+
+      - type: Archive
+        name: NKHole.zip
+        pbos:
+          - NKHole.pbo
+        files:
+          - NKHole/Icons/I_Earth.paa
+          - NKHole/Earth4Dir1.p3d
+
+      - type: Archive
+        name: RHS_Misc_v2.0.rar
+        pbos:
+          - RHS_Misc.pbo
+        files:
+          - RHS_Misc/Sound/100mm.wss
+          - RHS_Misc/Sound/100mmrl.wss
+          - RHS_Misc/Sound/Heat_Hit.wss
+          - RHS_Misc/Sound/mg_rl.wss
+          - RHS_Misc/Sound/Prjtl-Flg.wss
+          - RHS_Misc/Sound/Sabot_Hit_Armor.wss
+          - RHS_Misc/Sound/Sabot_Hit_Ground.wss
+          - RHS_Misc/Weapon/HEAT.p3d
+          - RHS_Misc/Weapon/Sabot.p3d
 
       - type: Archive
         name: RHS_weapons_v1.01.rar
@@ -302,7 +199,10 @@ steps:
         pbos:
           - LSR_US_Weapons_Pack_300/LSR_uswp.pbo
         files:
+          - { sourceFileName: LSR_uswp/weapics/m_m60.paa, type: magazine, targetName: M60 }
           - { sourceFileName: LSR_uswp/weapics/w_m60.paa, type: weapon, targetName: M60 }
+          - { sourceFileName: LSR_uswp/weapics/m_law.paa, type: magazine, targetName: M72LAW }
+          - { sourceFileName: LSR_uswp/weapics/w_m72a7.paa, type: weapon, targetName: M72LAW }
 
       - type: Archive
         sourceLocation: addons
@@ -312,6 +212,7 @@ steps:
         files:
           - { sourceFileName: "RHS_Weap/AK_Pics/m_30RD_5,45_MAG.paa", type: magazine, targetName: AK74 }
           - { sourceFileName: RHS_Weap/AK_Pics/w_AK74.paa, type: weapon, targetName: AK74 }
+          - { sourceFileName: RHS_Weap/AK_Pics/w_AK74S.paa, type: weapon, targetName: AKS74 }
 
       - type: Archive
         sourceLocation: addons
@@ -319,11 +220,13 @@ steps:
         pbos:
           - SJB_WeaponsPack_v1.1/SJB_TOSM4.pbo
         files:
+          - { sourceFileName: SJB_TOSM4/inventory/m_m4a1.paa, type: magazine, targetName: CAR15 }
           - { sourceFileName: SJB_TOSM4/inventory/w_car15.paa, type: weapon, targetName: CAR15 }
           - { sourceFileName: SJB_TOSM4/inventory/m_m4a1.paa, type: magazine, targetName: CAR15_SD }
           - { sourceFileName: SJB_TOSM4/inventory/w_car15_sd.paa, type: weapon, targetName: CAR15_SD }
           - { sourceFileName: SJB_TOSM4/inventory/m_m4a1.paa, type: magazine, targetName: M16A2 }
           - { sourceFileName: SJB_TOSM4/inventory/w_m16a2.paa, type: weapon, targetName: M16A2 }
+          - { sourceFileName: SJB_TOSM4/inventory/m_m203.paa, type: magazine, targetName: M406HEFR }
           - { sourceFileName: SJB_TOSM4/inventory/w_m16a2_m203.paa, type: weapon, targetName: M16A2_M203 }
           - { sourceFileName: SJB_TOSM4/inventory/m_pistolmag.paa, type: magazine, targetName: M1911 }
           - { sourceFileName: SJB_TOSM4/inventory/w_colt1911.paa, type: weapon, targetName: M1911 }

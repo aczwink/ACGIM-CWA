@@ -77,6 +77,8 @@ class CAR15_ACOG : CAR15
 class CAR15_SD : CAR15
 {
 	displayName="CAR-15 Commando SD";
+	displayNameMagazine = "CAR-15 SD Magazine";
+	shortNameMagazine = "CAR-15 SD Mag";
 	model = "\sjc_models\USA\Weapons\Primary\car15_sd.p3d";
 	modelOptics="\models\CSLA2_M16A2_optika_sd.p3d";
 	magazines[] = {"this"};

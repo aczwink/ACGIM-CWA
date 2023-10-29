@@ -6,8 +6,8 @@ class T55G : Tank
 {
 	accuracy = ACCURACY_T54;
 	maxspeed = 56;
-	//weapons[]={"RHS_D10b","RHS_DShKT","RHS_PKT"};//TODO
-	//magazines[]={"RHS_BR412","RHS_BK17","RHS_PKT","RHS_PKT","RHS_PKT","RHS_PKT","RHS_PKT","RHS_PKT","RHS_PKT","RHS_PKT","RHS_DShKT","RHS_DShKT","RHS_DShKT","RHS_DShKT"};//TODO
+	weapons[]={"D10b", "DShKM", "PKT_250"};
+	magazines[]={"BR412", "BK17", "DShKM", "DShKM", "DShKM", "DShKM", "PKT_250", "PKT_250", "PKT_250", "PKT_250", "PKT_250", "PKT_250", "PKT_250", "PKT_250"};
 	side = SIDE_FIA;
 	crew = "FIA_Crew";
 	displayName="T-54";

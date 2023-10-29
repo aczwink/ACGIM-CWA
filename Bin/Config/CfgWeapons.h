@@ -2,57 +2,16 @@ class CfgWeapons
 {
 	access = ACCESS_ADDVALUESONLY;
 
-	//BIS Classes
+//BIS Classes
 #include "Config\CfgWeapons\BISClasses.h"
 #include "Config\CfgWeapons\BISClassesRenames.hpp"
-	//Neutral
-	#include "Config\CfgWeapons\Horns.h"
-	//USA
+//Neutral
+#include "Config\CfgWeapons\Horns.h"
+//USA
 #include "Config\CfgWeapons\USA\USA.h"
-	//USSR
-		//Baseclasses
-		#include "Config\CfgWeapons\USSR\Baseclasses\GP25.h"
-		//Primary
-		#include "Config\CfgWeapons\USSR\Primary\AKM.h"
-		#include "Config\CfgWeapons\USSR\Primary\AK74.h"
-		#include "Config\CfgWeapons\USSR\Primary\PKM.h"
-		#include "Config\CfgWeapons\USSR\Primary\RPD.h"
-		#include "Config\CfgWeapons\USSR\Primary\SVDDragunov.h"
-		//Secondary
-		#include "Config\CfgWeapons\USSR\Secondary\9K32.h"
-		#include "Config\CfgWeapons\USSR\Secondary\RPG2.h"
-		#include "Config\CfgWeapons\USSR\Secondary\RPG7.h"
-		#include "Config\CfgWeapons\USSR\Secondary\RPG16.h"
-		#include "Config\CfgWeapons\USSR\Secondary\RPG18.h"
-		//Items
-		#include "Config\CfgWeapons\USSR\Items\RGO.h"
-		#include "Config\CfgWeapons\USSR\Items\VOG.h"
-		#include "Config\CfgWeapons\USSR\Items\RDG.h"
-		//Hardmounted
-			//Guns
-			#include "Config\CfgWeapons\USSR\Hardmounted\2A20.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\2A28Grom.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\2A42.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\2A46M.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\AZP23.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\KPVT.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\NSV.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\PK.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\DShK.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\GSh.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\NR30.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\YakB.h"
-			//Rockets
-			#include "Config\CfgWeapons\USSR\Hardmounted\9K11Malyutka.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\9K112Kobra.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\9K114.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\9M113Konkurs.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\R60.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\UB.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\Kh.h"
-			#include "Config\CfgWeapons\USSR\Hardmounted\KAB500L.h"
-	//Unused BIS Classes
-	#include "Config\CfgWeapons\BISClassesUnused.h"
+#include "Config\CfgWeapons\Russia.hpp"
+//Unused BIS Classes
+#include "Config\CfgWeapons\BISClassesUnused.h"
 
 class AK47CZ:AK47
 {
@@ -254,8 +213,38 @@ class PipeBomb:Put
 	magazines[]={"this"};
 };
 
-class RPGLauncher:LAWLauncher
+class RPGLauncher : Default
 {
+	scopeWeapon=2;
+	scopeMagazine=2;
+	weaponType=16;
+	magazineType="2 * 		256";
+	valueWeapon=10;
+	valueMagazine=5;
+	count=1;
+	magazineReloadTime=12;
+	reloadTime=0.5;
+	//Longer range sound.
+	//sound[]={"Weapons\at_launch",0.01,1};
+	sound[]={"Weapons\at_launch", 2, 1};
+	reloadMagazineSound[]={"Weapons\at_load",0.0003162,1};
+	initSpeed=30;
+	canLock=0;
+	reloadAction = MANACT_RELOADAT;
+	autoReload=0;
+	ffMagnitude=0.1;
+	ffFrequency=1;
+	ffCount=1;
+	recoil="LAWSingle";
+	aiRateOfFire=10.0;
+	aiRateOfFireDistance=500;
+	optics=1;
+	primary=0;
+	opticsZoomMin=0.18;
+	opticsZoomMax=0.18;
+	distanceZoomMin=100;
+	distanceZoomMax=100;
+	uiPicture="islaw";
 	model="RPG7_proxy";
 	modelOptics="optika_RPG";
 	ammo="RPG";
@@ -264,8 +253,33 @@ class RPGLauncher:LAWLauncher
 	shortNameMagazine="$STR_SN_RPG";
 };
 
-class AT4Launcher : LAWLauncher
+class AT4Launcher : Default
 {
+	scopeWeapon=2;
+	scopeMagazine=2;
+	weaponType=16;
+	count=1;
+	magazineReloadTime=12;
+	reloadTime=0.5;
+	//Longer range sound.
+	//sound[]={"Weapons\at_launch",0.01,1};
+	sound[]={"Weapons\at_launch", 2, 1};
+	reloadMagazineSound[]={"Weapons\at_load",0.0003162,1};
+	initSpeed=30;
+	reloadAction = MANACT_RELOADAT;
+	autoReload=0;
+	ffMagnitude=0.1;
+	ffFrequency=1;
+	ffCount=1;
+	recoil="LAWSingle";
+	aiRateOfFire=10.0;
+	aiRateOfFireDistance=500;
+	optics=1;
+	primary=0;
+	opticsZoomMin=0.18;
+	opticsZoomMax=0.18;
+	distanceZoomMin=100;
+	distanceZoomMax=100;
 	magazineType="6 * 		256";
 	canLock=1;
 	valueWeapon=20;
@@ -1714,8 +1728,32 @@ class XMS:M4
 		canDrop = 1;
 	};
 
-	class d4t_RPG29 : LawLauncher
+	class d4t_RPG29 : Default
 	{
+		scopeWeapon=2;
+		scopeMagazine=2;
+		weaponType=16;
+		valueWeapon=10;
+		valueMagazine=5;
+		count=1;
+		magazineReloadTime=12;
+		reloadTime=0.5;
+		reloadMagazineSound[]={"Weapons\at_load",0.0003162,1};
+		initSpeed=30;
+		canLock=0;
+		reloadAction = MANACT_RELOADAT;
+		autoReload=0;
+		ffMagnitude=0.1;
+		ffFrequency=1;
+		ffCount=1;
+		recoil="LAWSingle";
+		aiRateOfFire=10.0;
+		aiRateOfFireDistance=500;
+		optics=1;
+		primary=0;
+		distanceZoomMin=100;
+		distanceZoomMax=100;
+		uiPicture="islaw";
 		sound[]={"\ICPrpg7\sound\launch.ogg",0.250000,1};
 		modelOptics="\ICPRPG7\rpg\pgo7_sight.p3d";
 		model="\ICPrpg7\rpg\rpg29";

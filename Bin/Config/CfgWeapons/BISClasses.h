@@ -675,20 +675,9 @@ class AK47 : Riffle
 	};
 };
 
-class LAWLauncher : Default
+class AALauncher : Default
 {
-	scopeWeapon=2;
-	scopeMagazine=2;
 	weaponType=16;
-	magazineType="2 * 		256";
-	valueWeapon=10;
-	valueMagazine=5;
-	model="law_proxy";
-	modelOptics="optika_LAW";
-	ammo="LAW";
-	displayName="$STR_DN_LAW";
-	displayNameMagazine="$STR_MN_LAW";
-	shortNameMagazine="$STR_SN_LAW";
 	count=1;
 	magazineReloadTime=12;
 	reloadTime=0.5;
@@ -696,27 +685,17 @@ class LAWLauncher : Default
 	//sound[]={"Weapons\at_launch",0.01,1};
 	sound[]={"Weapons\at_launch", 2, 1};
 	reloadMagazineSound[]={"Weapons\at_load",0.0003162,1};
-	initSpeed=30;
-	canLock=0;
 	reloadAction = MANACT_RELOADAT;
 	autoReload=0;
 	ffMagnitude=0.1;
 	ffFrequency=1;
 	ffCount=1;
 	recoil="LAWSingle";
-	aiRateOfFire=10.0;
-	aiRateOfFireDistance=500;
 	optics=1;
-	primary=0;
 	opticsZoomMin=0.18;
 	opticsZoomMax=0.18;
 	distanceZoomMin=100;
 	distanceZoomMax=100;
-	uiPicture="islaw";
-};
-
-class AALauncher : LAWLauncher
-{
 	scopeWeapon=2;
 	scopeMagazine=2;
 	model="Stinger_proxy";
@@ -738,8 +717,22 @@ class AALauncher : LAWLauncher
 	aiRateOfFireDistance=5000;
 };
 
-class AT3Launcher : LAWLauncher
+class AT3Launcher : Default
 {
+	magazineReloadTime=12;
+	reloadMagazineSound[]={"Weapons\at_load",0.0003162,1};
+	reloadAction = MANACT_RELOADAT;
+	ffMagnitude=0.1;
+	ffFrequency=1;
+	ffCount=1;
+	recoil="LAWSingle";
+	aiRateOfFire=10.0;
+	aiRateOfFireDistance=500;
+	optics=1;
+	opticsZoomMin=0.18;
+	opticsZoomMax=0.18;
+	distanceZoomMin=100;
+	distanceZoomMax=100;
 	model="carlgustav84_proxy";
 	modelOptics="optika_CarlGustav";
 	valueWeapon=20;

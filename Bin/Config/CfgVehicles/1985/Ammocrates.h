@@ -46,7 +46,7 @@ class AmmoBoxOUTWW : HeavyReammoBox
 		//Secondary
 		class w_M72LAW
 		{
-			weapon = "M72LAW";
+			weapon = WEAPON_REFERENCE(M72LAW);
 			count = 1;
 		};
 

@@ -21,6 +21,13 @@ class PKT : MachineGun7_6
 	aiRateOfFireDistance=1200;
 };
 
+class PKT_250 : PKT
+{
+	count = 250;
+	magazineReloadTime = 10;
+	reloadMagazineSound[] = {"\sounds\mg_rl.wss",0.05,1};
+};
+
 class PKT_2000 : PKT
 {
 	count = 2000;
@@ -34,7 +41,7 @@ class PKT_2500 : PKT
 /*
 Sources:
 	http://en.wikipedia.org/wiki/PK_machine_gun
-Rate of fire: 650–850 -> 750
+Rate of fire: 650ï¿½850 -> 750
 */
 class PKMS : MachineGun7_6
 {

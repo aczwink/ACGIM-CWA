@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<weapon>
+    <title>M72 LAW</title>
+    <category>Anti-tank weapon</category>
+    <description>LAW is a lightweight, self-contained, antiarmor weapon consisting of a rocket packed in a launcher. It is man-portable, may be fired from either shoulder, and is issued as a round of ammunition. It requires little from the user--only a visual inspection and some operator maintenance. The launcher, which consists of two tubes, one inside the other, serves as a watertight packing container for the rocket and houses a percussion-type firing mechanism that activates the rocket.</description>
+    <properties>
+        <lengthExtended>34.67 inches / 0.95 m</lengthExtended>
+        <lengthClosed>24.8 inches/ 0.67 m</lengthClosed>
+        <weight>5.1 pounds/2.3 kg</weight>
+        <caliber>66mm</caliber>
+    </properties>
+</weapon>

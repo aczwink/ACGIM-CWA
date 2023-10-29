@@ -49,7 +49,7 @@ class HeavyReammoBoxEast : ReammoBoxEast
 		//Secondary Magazines
 		class m_PG7VL
 		{
-			magazine = "M72LAW";
+			magazine = WEAPON_REFERENCE(M72LAW);
 			count = 4;
 		};
 

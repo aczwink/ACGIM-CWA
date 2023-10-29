@@ -178,10 +178,9 @@ class JeepMG : USA_HMMWV
 
 	class EventHandlers
 	{
-		Init = "[_this select 0, 189] exec {\SJC_Scripts\vehicleTODO.sqs}";
-		//TODO: (also burner when killed)
-		//init="_this exec {\d4t_files\FX\scripts\vehicles\hmmwv\CBT_HMMWV_Init.sqs}; if (format [""%1"", CBT_FctLoad] == ""scalar bool array string 0xfcffffef"") then {_this exec {\d4t_files\FX\scripts\vehicles\hmmwv\CBT_init.sqs}}";
-		//fired="(_this select 0) exec format [""\d4t_files\FX\scripts\vehicles\hmmwv\mg.sqs"", _this select 1];[_this select 0] exec  ""\d4t_files\FX\scripts\vehicles\hmmwv\CBT_shot.sqs""; _this call loadFile {\d4t_files\FX\scripts\MGbullet.sqf}";
+		fired = "(_this select 0) exec {\acgim_scripts\Vehicles\HMMWV\CBT_M2_50cal.sqs}; [_this select 0] exec  {\acgim_scripts\Vehicles\HMMWV\CBT_shot.sqs}; _this call loadFile {\acgim_scripts\Events\MGbullet.sqf}";
+		init = "_this exec {\acgim_scripts\Vehicles\HMMWV\CBT_HMMWV_Init.sqs}; if (format [""%1"", CBT_FctLoad] == ""scalar bool array string 0xfcffffef"") then {_this exec {\acgim_scripts\Vehicles\HMMWV\CBT_init.sqs}}";
+		killed = "_this exec {\acgim_scripts\Vehicles\HMMWV\CBT_HMMWV_Fire.sqs}";
 	};
 
 	class MGunClouds : WeaponCloudsMGun{};

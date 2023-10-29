@@ -61,7 +61,7 @@ class HeavyReammoBoxWest : ReammoBoxWest
 		//Secondary Magazines
 		class m_M72LAW
 		{
-			magazine = "M72LAW";
+			magazine = WEAPON_REFERENCE(M72LAW);
 			count = 4;
 		};
 		

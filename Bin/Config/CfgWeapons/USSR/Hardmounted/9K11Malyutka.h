@@ -1,5 +1,17 @@
-class 9K11Malyutka : LAWLauncher
+class 9K11Malyutka : Default
 {
+	magazineReloadTime=12;
+	reloadMagazineSound[]={"Weapons\at_load",0.0003162,1};
+	reloadAction = MANACT_RELOADAT;
+	ffMagnitude=0.1;
+	ffFrequency=1;
+	ffCount=1;
+	recoil="LAWSingle";
+	optics=1;
+	opticsZoomMin=0.18;
+	opticsZoomMax=0.18;
+	distanceZoomMin=100;
+	distanceZoomMax=100;
 	model="carlgustav84_proxy";
 	modelOptics="optika_CarlGustav";
 	valueWeapon=20;

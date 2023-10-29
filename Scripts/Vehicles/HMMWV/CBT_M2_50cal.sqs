@@ -1,0 +1,11 @@
+? CBT_HMMWV_NoScripts || CBT_NoScripts: exit
+?!(local _this) : exit
+;_this exec "\CBT_HMMWV\fx\CBT_HMMWVshell.sqs"
+_this animate ["gun_recoil", 1]
+~0.01
+_i = 1
+#goback
+	_this animate ["gun_recoil", _i]
+	~0.01
+	? _i > 0 : _i = _i - .1, goto "goback"
+exit

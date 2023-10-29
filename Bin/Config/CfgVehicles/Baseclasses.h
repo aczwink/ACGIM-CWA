@@ -1186,8 +1186,8 @@ class SoldierLAW : Soldier
 {
 	displayName="$STR_DN_LAW_SOLDIER";
 	accuracy=1.4;
-	weapons[]={"Riffle","LAWLauncher"};
-	magazines[]={"Riffle","Riffle","Riffle","Riffle","LAWLauncher","LAWLauncher"};
+	weapons[]={"Riffle", WEAPON_REFERENCE(LAWLauncher)};
+	magazines[]={"Riffle","Riffle","Riffle","Riffle", WEAPON_REFERENCE(LAWLauncher), WEAPON_REFERENCE(LAWLauncher)};
 	threat[]={1,0.9,0.1};
 };
 

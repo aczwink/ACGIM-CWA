@@ -16,6 +16,7 @@ Like this the real weapon name will be replaced with the BIS class correspondent
 #define CAR15       M4
 #define CAR15_SD    HK
 #define M47Dragon   CarlGustavLauncher
+#define M72LAW      LAWLauncher
 #define M16A2       M16
 #define M16A2_M203  M16GrenadeLauncher
 #define PKM         PK

@@ -66,7 +66,7 @@ class USA_Truck5t : Truck
 
 		class m_M72LAW
 		{
-			magazine = "M72LAW";
+			magazine = WEAPON_REFERENCE(M72LAW);
 			count=3;
 		};
 
@@ -165,7 +165,7 @@ class USA_Truck5tReammo : USA_Truck5t
 
 		class m_M72LAW
 		{
-			magazine = "M72LAW";
+			magazine = WEAPON_REFERENCE(M72LAW);
 			count=10;
 		};
 
