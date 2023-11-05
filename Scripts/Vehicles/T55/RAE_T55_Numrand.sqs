@@ -1,0 +1,177 @@
+_unit = _this select 0
+
+RHS_T55_WithNormalRussNumbers = ["SIG_T55A","SIG_T54","SIG_T55AM2","SIG_T55AMV","SIG_T54d","SIG_T55Aw","SIG_T54w","SIG_T55AM2w"]
+RHS_T55_WithNormalNumbers = ["SIG_T55Anam","SIG_T55AnamR","SIG_T55Agdr","SIG_T55AgdrR","SIG_Ty59","SIG_Ty59ExpR","SIG_Ty69II","SIG_Ty69IIR","SIG_T55Awgdr","SIG_T55AwgdrR"]
+RHS_T55_WithArabicNumbers = ["SIG_T55d","SIG_T55dR","SIG_Ty69IId","SIG_Ty69IIdExpR","SIG_T55dBC","SIG_T55dBCR"]
+RHS_T55_WithResiNumbers = ["T55G"]
+
+? typeOf _unit in RHS_T55_WithNormalRussNumbers: goto "nr1"
+? typeOf _unit in RHS_T55_WithNormalNumbers: goto "n1"
+? typeOf _unit in RHS_T55_WithArabicNumbers: goto "a1"
+? typeOf _unit in RHS_T55_WithResiNumbers: goto "r1"
+
+#nr1
+_nrand = random(100)
+?_nrand > 90: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n9.paa"], goto "nr2"
+?_nrand > 80: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n8.paa"], goto "nr2"
+?_nrand > 70: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n7.paa"], goto "nr2"
+?_nrand > 60: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n6.paa"], goto "nr2"
+?_nrand > 50: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n5.paa"], goto "nr2"
+?_nrand > 40: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n4.paa"], goto "nr2"
+?_nrand > 30: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n3.paa"], goto "nr2"
+?_nrand > 20: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n2.paa"], goto "nr2"
+?_nrand > 10: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n1.paa"], goto "nr2"
+?_nrand > 0: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n0.paa"], goto "nr2"
+
+#nr2
+_nrand = random(100)
+?_nrand > 90: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n9.paa"], goto "nr3"
+?_nrand > 80: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n8.paa"], goto "nr3"
+?_nrand > 70: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n7.paa"], goto "nr3"
+?_nrand > 60: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n6.paa"], goto "nr3"
+?_nrand > 50: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n5.paa"], goto "nr3"
+?_nrand > 40: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n4.paa"], goto "nr3"
+?_nrand > 30: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n3.paa"], goto "nr3"
+?_nrand > 20: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n2.paa"], goto "nr3"
+?_nrand > 10: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n1.paa"], goto "nr3"
+?_nrand > 0: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n0.paa"], goto "nr3"
+
+#nr3
+_nrand = random(100)
+?_nrand > 90: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n9.paa"], goto "nr4"
+?_nrand > 80: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n8.paa"], goto "nr4"
+?_nrand > 70: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n7.paa"], goto "nr4"
+?_nrand > 60: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n6.paa"], goto "nr4"
+?_nrand > 50: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n5.paa"], goto "nr4"
+?_nrand > 40: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n4.paa"], goto "nr4"
+?_nrand > 30: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n3.paa"], goto "nr4"
+?_nrand > 20: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n2.paa"], goto "nr4"
+?_nrand > 10: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n1.paa"], goto "nr4"
+?_nrand > 0: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n0.paa"], goto "nr4"
+
+#nr4
+_nrand = random(70)
+?_nrand > 60: _unit setObjectTexture [3, "\sjc_textures\t55\signs\emb7.paa"], Exit
+?_nrand > 50: _unit setObjectTexture [3, "\sjc_textures\t55\signs\emb6.paa"], Exit
+?_nrand > 40: _unit setObjectTexture [3, "\sjc_textures\t55\signs\emb5.paa"], Exit
+?_nrand > 30: _unit setObjectTexture [3, "\sjc_textures\t55\signs\emb4.paa"], Exit
+?_nrand > 20: _unit setObjectTexture [3, "\sjc_textures\t55\signs\emb3.paa"], Exit
+?_nrand > 10: _unit setObjectTexture [3, "\sjc_textures\t55\signs\emb2.paa"], Exit
+?_nrand > 0: _unit setObjectTexture [3, "\sjc_textures\t55\signs\emb1.paa"], Exit
+
+#n1
+_nrand = random(100)
+?_nrand > 90: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n9.paa"], goto "n2"
+?_nrand > 80: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n8.paa"], goto "n2"
+?_nrand > 70: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n7.paa"], goto "n2"
+?_nrand > 60: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n6.paa"], goto "n2"
+?_nrand > 50: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n5.paa"], goto "n2"
+?_nrand > 40: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n4.paa"], goto "n2"
+?_nrand > 30: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n3.paa"], goto "n2"
+?_nrand > 20: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n2.paa"], goto "n2"
+?_nrand > 10: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n1.paa"], goto "n2"
+?_nrand > 0: _unit setObjectTexture [0, "\sjc_textures\t55\signs\n0.paa"], goto "n2"
+
+#n2
+_nrand = random(100)
+?_nrand > 90: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n9.paa"], goto "n3"
+?_nrand > 80: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n8.paa"], goto "n3"
+?_nrand > 70: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n7.paa"], goto "n3"
+?_nrand > 60: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n6.paa"], goto "n3"
+?_nrand > 50: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n5.paa"], goto "n3"
+?_nrand > 40: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n4.paa"], goto "n3"
+?_nrand > 30: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n3.paa"], goto "n3"
+?_nrand > 20: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n2.paa"], goto "n3"
+?_nrand > 10: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n1.paa"], goto "n3"
+?_nrand > 0: _unit setObjectTexture [1, "\sjc_textures\t55\signs\n0.paa"], goto "n3"
+
+#n3
+_nrand = random(100)
+?_nrand > 90: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n9.paa"], Exit
+?_nrand > 80: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n8.paa"], Exit
+?_nrand > 70: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n7.paa"], Exit
+?_nrand > 60: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n6.paa"], Exit
+?_nrand > 50: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n5.paa"], Exit
+?_nrand > 40: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n4.paa"], Exit
+?_nrand > 30: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n3.paa"], Exit
+?_nrand > 20: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n2.paa"], Exit
+?_nrand > 10: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n1.paa"], Exit
+?_nrand > 0: _unit setObjectTexture [2, "\sjc_textures\t55\signs\n0.paa"], Exit
+
+#a1
+_nrand = random(100)
+?_nrand > 90: _unit setObjectTexture [0, "\sjc_textures\t55\signs\a9.paa"], goto "a2"
+?_nrand > 80: _unit setObjectTexture [0, "\sjc_textures\t55\signs\a8.paa"], goto "a2"
+?_nrand > 70: _unit setObjectTexture [0, "\sjc_textures\t55\signs\a7.paa"], goto "a2"
+?_nrand > 60: _unit setObjectTexture [0, "\sjc_textures\t55\signs\a6.paa"], goto "a2"
+?_nrand > 50: _unit setObjectTexture [0, "\sjc_textures\t55\signs\a5.paa"], goto "a2"
+?_nrand > 40: _unit setObjectTexture [0, "\sjc_textures\t55\signs\a4.paa"], goto "a2"
+?_nrand > 30: _unit setObjectTexture [0, "\sjc_textures\t55\signs\a3.paa"], goto "a2"
+?_nrand > 20: _unit setObjectTexture [0, "\sjc_textures\t55\signs\a2.paa"], goto "a2"
+?_nrand > 10: _unit setObjectTexture [0, "\sjc_textures\t55\signs\a1.paa"], goto "a2"
+?_nrand > 0: _unit setObjectTexture [0, "\sjc_textures\t55\signs\a0.paa"], goto "a2"
+
+#a2
+_nrand = random(100)
+?_nrand > 90: _unit setObjectTexture [1, "\sjc_textures\t55\signs\a9.paa"], goto "a3"
+?_nrand > 80: _unit setObjectTexture [1, "\sjc_textures\t55\signs\a8.paa"], goto "a3"
+?_nrand > 70: _unit setObjectTexture [1, "\sjc_textures\t55\signs\a7.paa"], goto "a3"
+?_nrand > 60: _unit setObjectTexture [1, "\sjc_textures\t55\signs\a6.paa"], goto "a3"
+?_nrand > 50: _unit setObjectTexture [1, "\sjc_textures\t55\signs\a5.paa"], goto "a3"
+?_nrand > 40: _unit setObjectTexture [1, "\sjc_textures\t55\signs\a4.paa"], goto "a3"
+?_nrand > 30: _unit setObjectTexture [1, "\sjc_textures\t55\signs\a3.paa"], goto "a3"
+?_nrand > 20: _unit setObjectTexture [1, "\sjc_textures\t55\signs\a2.paa"], goto "a3"
+?_nrand > 10: _unit setObjectTexture [1, "\sjc_textures\t55\signs\a1.paa"], goto "a3"
+?_nrand > 0: _unit setObjectTexture [1, "\sjc_textures\t55\signs\a0.paa"], goto "a3"
+
+#a3
+_nrand = random(100)
+?_nrand > 90: _unit setObjectTexture [2, "\sjc_textures\t55\signs\a9.paa"], Exit
+?_nrand > 80: _unit setObjectTexture [2, "\sjc_textures\t55\signs\a8.paa"], Exit
+?_nrand > 70: _unit setObjectTexture [2, "\sjc_textures\t55\signs\a7.paa"], Exit
+?_nrand > 60: _unit setObjectTexture [2, "\sjc_textures\t55\signs\a6.paa"], Exit
+?_nrand > 50: _unit setObjectTexture [2, "\sjc_textures\t55\signs\a5.paa"], Exit
+?_nrand > 40: _unit setObjectTexture [2, "\sjc_textures\t55\signs\a4.paa"], Exit
+?_nrand > 30: _unit setObjectTexture [2, "\sjc_textures\t55\signs\a3.paa"], Exit
+?_nrand > 20: _unit setObjectTexture [2, "\sjc_textures\t55\signs\a2.paa"], Exit
+?_nrand > 10: _unit setObjectTexture [2, "\sjc_textures\t55\signs\a1.paa"], Exit
+?_nrand > 0: _unit setObjectTexture [2, "\sjc_textures\t55\signs\a0.paa"], Exit
+
+#r1
+_nrand = random(100)
+?_nrand > 90: _unit setObjectTexture [0, "\sjc_textures\t55\signs\g9.paa"], goto "r2"
+?_nrand > 80: _unit setObjectTexture [0, "\sjc_textures\t55\signs\g8.paa"], goto "r2"
+?_nrand > 70: _unit setObjectTexture [0, "\sjc_textures\t55\signs\g7.paa"], goto "r2"
+?_nrand > 60: _unit setObjectTexture [0, "\sjc_textures\t55\signs\g6.paa"], goto "r2"
+?_nrand > 50: _unit setObjectTexture [0, "\sjc_textures\t55\signs\g5.paa"], goto "r2"
+?_nrand > 40: _unit setObjectTexture [0, "\sjc_textures\t55\signs\g4.paa"], goto "r2"
+?_nrand > 30: _unit setObjectTexture [0, "\sjc_textures\t55\signs\g3.paa"], goto "r2"
+?_nrand > 20: _unit setObjectTexture [0, "\sjc_textures\t55\signs\g2.paa"], goto "r2"
+?_nrand > 10: _unit setObjectTexture [0, "\sjc_textures\t55\signs\g1.paa"], goto "r2"
+?_nrand > 0: _unit setObjectTexture [0, "\sjc_textures\t55\signs\g0.paa"], goto "r2"
+
+#r2
+_nrand = random(100)
+?_nrand > 90: _unit setObjectTexture [1, "\sjc_textures\t55\signs\g9.paa"], goto "r3"
+?_nrand > 80: _unit setObjectTexture [1, "\sjc_textures\t55\signs\g8.paa"], goto "r3"
+?_nrand > 70: _unit setObjectTexture [1, "\sjc_textures\t55\signs\g7.paa"], goto "r3"
+?_nrand > 60: _unit setObjectTexture [1, "\sjc_textures\t55\signs\g6.paa"], goto "r3"
+?_nrand > 50: _unit setObjectTexture [1, "\sjc_textures\t55\signs\g5.paa"], goto "r3"
+?_nrand > 40: _unit setObjectTexture [1, "\sjc_textures\t55\signs\g4.paa"], goto "r3"
+?_nrand > 30: _unit setObjectTexture [1, "\sjc_textures\t55\signs\g3.paa"], goto "r3"
+?_nrand > 20: _unit setObjectTexture [1, "\sjc_textures\t55\signs\g2.paa"], goto "r3"
+?_nrand > 10: _unit setObjectTexture [1, "\sjc_textures\t55\signs\g1.paa"], goto "r3"
+?_nrand > 0: _unit setObjectTexture [1, "\sjc_textures\t55\signs\g0.paa"], goto "r3"
+
+#r3
+_nrand = random(100)
+?_nrand > 90: _unit setObjectTexture [2, "\sjc_textures\t55\signs\g9.paa"], Exit
+?_nrand > 80: _unit setObjectTexture [2, "\sjc_textures\t55\signs\g8.paa"], Exit
+?_nrand > 70: _unit setObjectTexture [2, "\sjc_textures\t55\signs\g7.paa"], Exit
+?_nrand > 60: _unit setObjectTexture [2, "\sjc_textures\t55\signs\g6.paa"], Exit
+?_nrand > 50: _unit setObjectTexture [2, "\sjc_textures\t55\signs\g5.paa"], Exit
+?_nrand > 40: _unit setObjectTexture [2, "\sjc_textures\t55\signs\g4.paa"], Exit
+?_nrand > 30: _unit setObjectTexture [2, "\sjc_textures\t55\signs\g3.paa"], Exit
+?_nrand > 20: _unit setObjectTexture [2, "\sjc_textures\t55\signs\g2.paa"], Exit
+?_nrand > 10: _unit setObjectTexture [2, "\sjc_textures\t55\signs\g1.paa"], Exit
+?_nrand > 0: _unit setObjectTexture [2, "\sjc_textures\t55\signs\g0.paa"], Exit

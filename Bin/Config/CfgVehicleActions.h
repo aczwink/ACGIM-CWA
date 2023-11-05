@@ -132,4 +132,14 @@ class CfgVehicleActions
 	CBT_HMMWV240Gunner="CBT_HMMWV240Gunner";
 	RUS_ZSUCommander="RUS_ZSUCommander";
 	RUS_ZSUCommanderOut="RUS_ZSUCommanderOut";
+
+	rhs_t55cargo1="rhs_t55cargo1";
+	rhs_t55cargo2="rhs_t55cargo2";
+	rhs_t55cargo3="rhs_t55cargo3";
+	rhs_t55cargo4="rhs_t55cargo4";
+	rhs_t55cargo5="rhs_t55cargo5";
+	rhs_t55cargo6="rhs_t55cargo6";
+	rhs_t55cargo7="rhs_t55cargo7";
+	rhs_t55cargo8="rhs_t55cargo8";
+	rhs_t55cargo9="rhs_t55cargo9";
 };

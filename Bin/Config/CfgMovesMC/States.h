@@ -8633,6 +8633,7 @@ class CBT_HMMWVTOWGunnerDead : CBT_HMMWVTOWGunnerDying
 	connectTo[]={"DeadState",1};
 };
 
+#include "Config\CfgMovesMC\States\T55.hpp"
 #include "Config\CfgMovesMC\States\Ural.hpp"
 
 class OWPMi8pilot : Driver

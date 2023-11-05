@@ -36,6 +36,9 @@ class UV32 : Rocket57x64
 	shortNameMagazine="57mm rocket";
 };
 
+/*
+Source: https://en.wikipedia.org/wiki/S-5_rocket#UB-32[16][17]
+*/
 class UB32 : Rocket57x64
 {
 	displayName = "UB-32 Rocket pods";

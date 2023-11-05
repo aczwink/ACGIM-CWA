@@ -1,0 +1,117 @@
+;>>>©2003raedor
+;contact: raedor@mapfact.net
+;www.mapfact.net
+;www.dkm-mod.mkdi.net
+;www.redhammerstudios.com
+;scripting questions?
+;post here:www.mapfact.net/forum/<<<
+_t = _this
+~2
+?RHS_NoScripts:exit
+_l=false
+?RHS_NoCargoScripts:_v=-1; goTo"c"
+#s
+~0.5
+?isNull _t:exit
+?!(alive _t):exit
+?isNull driver _t:_noDriv=true; goTo"p1"
+_noDriv=false
+#p1
+?isNull gunner _t:_noGun=true; goTo"p2"
+_noGun=false
+#p2
+?_noDriv&&_noGun&&_l:_v=3; goTo"d"
+?_noDriv&&!_noGun:_v=1; goTo"t"
+?!_noDriv&&!_noGun:goTo"wyy"
+?!_noDriv&&_noGun&&_l:_v=5; goTo"d"
+;~0.5
+goTo"s"
+#wg
+@!(isNull gunner _t) || isNull _t || !(alive _t)
+goTo"s"
+#fC2
+@!(isNull driver _t) || (isNull gunner _t) || isNull _t || !(alive _t) || _t call RHS_countedCargo > 0
+?_t call RHS_countedCargo > 0:goTo"t"
+goTo"s"
+#fC1
+?_t call RHS_countedCargo==0:goTo"c"
+goTo "t" 
+#c
+?_l:goTo"s"
+_l1="RHS_Logic" createVehicle [0,0]
+_l2="RHS_Logic" createVehicle [0,0]
+_l3="RHS_Logic" createVehicle [0,0]
+_l4="RHS_Logic" createVehicle [0,0]
+_l5="RHS_Logic" createVehicle [0,0]
+_l6="RHS_Logic" createVehicle [0,0]
+_l7="RHS_Logic" createVehicle [0,0]
+_l8="RHS_Logic" createVehicle [0,0]
+_l9="RHS_Logic" createVehicle [0,0]
+~0.2
+_l1 moveInCargo _t
+_l2 moveInCargo _t
+_l3 moveInCargo _t
+_l4 moveInCargo _t
+_l5 moveInCargo _t
+_l6 moveInCargo _t
+_l7 moveInCargo _t
+_l8 moveInCargo _t
+_l9 moveInCargo _t
+_l=true
+?_v==1:goTo"fC2"
+?_v==-1:exit
+#l
+?_t call RHS_countedCargo > 0:goTo"t"
+~0.5
+?isNull _t:exit
+?!(alive _t):exit
+?(isNull gunner _t) || (isNull driver _t):goTo"s"
+?((driver _t) distance (gunner _t)) > 0:goTo"wyy"
+goTo"l"
+#wyy
+~1
+?isNull _t:exit
+?!(alive _t):exit
+?(isNull gunner _t) || (isNull driver _t):goTo"s"
+?(driver _t distance gunner _t)==0&&_t call RHS_countedCargo > 0:_v=2; goTo"t" 
+?(driver _t distance gunner _t)==0&&_t call RHS_countedCargo==0&&!_l:_v=0; goTo"c"
+?((driver _t) distance (gunner _t)) > 0&&_l:_v=4; goTo"d"
+goTo"s"
+#wnn
+@ !(isNull driver _t) || !(isNull gunner _t) || isNull _t || !(alive _t)
+goTo"s"
+#d
+?!_l:goTo"s"
+?!isNull _l1&&alive _l1:_l1 action ["EJECT", _t]
+?!isNull _l2&&alive _l2:_l2 action ["EJECT", _t]
+?!isNull _l3&&alive _l3:_l3 action ["EJECT", _t]
+?!isNull _l4&&alive _l4:_l4 action ["EJECT", _t]
+?!isNull _l5&&alive _l5:_l5 action ["EJECT", _t]
+?!isNull _l6&&alive _l6:_l6 action ["EJECT", _t]
+?!isNull _l7&&alive _l7:_l7 action ["EJECT", _t]
+?!isNull _l8&&alive _l8:_l8 action ["EJECT", _t]
+?!isNull _l9&&alive _l9:_l9 action ["EJECT", _t]
+~0.2
+?!isNull _l1:deleteVehicle _l1
+?!isNull _l2:deleteVehicle _l2
+?!isNull _l3:deleteVehicle _l3
+?!isNull _l4:deleteVehicle _l4 
+?!isNull _l5:deleteVehicle _l5
+?!isNull _l6:deleteVehicle _l6
+?!isNull _l7:deleteVehicle _l7
+?!isNull _l8:deleteVehicle _l8
+?!isNull _l9:deleteVehicle _l9
+_l=false
+?_v==3:goTo"wnn"
+?_v==5:goTo"wg"
+goTo"wyy"
+#t
+?_t call RHS_countedCargo==0:goTo"c"
+?(isNull RHS_T55_throwOff):goTo"n"
+~0.1
+goTo"t"
+#n
+RHS_T55_throwOff=_t
+publicVariable"RHS_T55_throwOff"
+@_t call RHS_countedCargo==0
+goTo"fC1"

@@ -4,16 +4,13 @@ class UAZG : Russia_UAZ469
 	model = "\sjc_models\fia\uaz469.p3d";
 	hiddenSelections[] = {"n1","n2","n3","n4","doorSign"};
 	side = SIDE_FIA;
-	crew = "FIA_Soldier";
+	crew = "SoldierGB";
 	
 	class EventHandlers
 	{
-		Init = "[_this select 0, 49] exec {\SJC_Scripts\vehicleTODO.sqs}";
+		init = "_this exec {\SJC_Scripts\Russia\UAZ469\spz.sqs};";
+		killed = "(_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Car_Burner.sqs}";
 	};
-	/*class eventHandlers//TODO
-	{
-		Init = "[(_this Select 0)] exec {\rf_uaz\scripts\spz.sqs}";
-	};*/
 };
 
 class FIA_UAZ469Ambulance : UAZG

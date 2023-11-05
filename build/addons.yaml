@@ -168,6 +168,66 @@ steps:
         path: AddOns/LaserGuided/config.cpp
     targetPboName: LaserGuided
 
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\M2A2.PBO.XZ
+    exclude: [config.bin, stringtable.csv, vssver.scc]
+    include:
+      - source: source
+        path: AddOns/M2A2/config.cpp
+    targetPboName: M2A2
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\MINI.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/MINI/config.cpp
+    targetPboName: MINI
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\MM-1.PBO.XZ
+    exclude: [config.bin, stringtable.csv, vssver.scc]
+    include:
+      - source: source
+        path: AddOns/Mm-1/config.cpp
+    targetPboName: Mm-1
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\NOE.PBO.XZ
+    exclude: [config.bin]
+    include:
+      - source: source
+        path: AddOns/Noe/config.cpp
+    targetPboName: Noe
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\O.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/O/config.cpp
+    targetPboName: O
+
 
   - type: CopyFiles
     source: resources

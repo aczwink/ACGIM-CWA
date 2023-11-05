@@ -1,0 +1,14 @@
+;#########################################
+;# Written by DPS   DPS@istel.ru         #
+;# http:\\ofp.ussr-online.net\naseorujie #
+;#########################################
+
+if (_this select 1=="OWP_UPK") then {_this exec "\acgim_scripts\Vehicles\Mi8\owp_effectupk.sqs"}
+if (_this select 1=="OWP_PKTx2") then {_this exec "\acgim_scripts\Vehicles\Mi8\owp_effect2pkt.sqs"}
+if (_this select 1=="UB32") then {_this exec "\acgim_scripts\Vehicles\Mi8\owp_effectub32.sqs"}
+if (_this select 1=="OWP_UB16") then {_this exec "\acgim_scripts\Vehicles\Mi8\owp_effectub16.sqs"}
+if (_this select 1=="PKMS") then {_this exec "\acgim_scripts\Vehicles\Mi8\owp_effectpkt.sqs"}
+if (_this select 1=="OWP_fab500") then {_this exec "\acgim_scripts\Vehicles\Mi8\owp_effectfab.sqs"}
+if (_this select 1=="OWP_fab250") then {_this exec "\acgim_scripts\Vehicles\Mi8\owp_effectfab.sqs"}
+
+exit

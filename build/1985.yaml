@@ -84,6 +84,15 @@ steps:
         pbos:
           - RHS_Misc.pbo
         files:
+          - RHS_Misc/Anim/rhs_t55cargo1.rtm
+          - RHS_Misc/Anim/rhs_t55cargo2.rtm
+          - RHS_Misc/Anim/rhs_t55cargo3.rtm
+          - RHS_Misc/Anim/rhs_t55cargo4.rtm
+          - RHS_Misc/Anim/rhs_t55cargo5.rtm
+          - RHS_Misc/Anim/rhs_t55cargo6.rtm
+          - RHS_Misc/Anim/rhs_t55cargo7.rtm
+          - RHS_Misc/Anim/rhs_t55cargo8.rtm
+          - RHS_Misc/Anim/rhs_t55cargo9.rtm
           - RHS_Misc/Sound/100mm.wss
           - RHS_Misc/Sound/100mmrl.wss
           - RHS_Misc/Sound/Heat_Hit.wss
@@ -212,7 +221,10 @@ steps:
         files:
           - { sourceFileName: "RHS_Weap/AK_Pics/m_30RD_5,45_MAG.paa", type: magazine, targetName: AK74 }
           - { sourceFileName: RHS_Weap/AK_Pics/w_AK74.paa, type: weapon, targetName: AK74 }
+          - { sourceFileName: RHS_Weap/AK_Pics/w_AK74_GP25.paa, type: weapon, targetName: AK74GP25 }
           - { sourceFileName: RHS_Weap/AK_Pics/w_AK74S.paa, type: weapon, targetName: AKS74 }
+          - { sourceFileName: RHS_Weap/pk/pk_mag.paa, type: magazine, targetName: PKM }
+          - { sourceFileName: RHS_Weap/pk/pk.paa, type: weapon, targetName: PKM }
 
       - type: Archive
         sourceLocation: addons

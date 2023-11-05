@@ -1,0 +1,10 @@
+;#########################################
+;# Written by Voyager  voyager04@mail.ru #
+;# http:\\ofp.ussr-online.net\naseorujie #
+;#########################################
+
+_this exec "\acgim_scripts\Vehicles\Mi8\owp_Height_Tracer.sqs"
+_this exec "\acgim_scripts\Vehicles\Mi8\owp_dust.sqs"
+_this exec "\acgim_scripts\Vehicles\Mi8\owp_surround.sqs"
+_this exec "\acgim_scripts\Vehicles\Mi8\owp_startengine.sqs"
+exit

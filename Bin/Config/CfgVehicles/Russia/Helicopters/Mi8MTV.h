@@ -6,7 +6,7 @@ class Mi8MTV : Helicopter
 {
 	scope = SCOPE_PUBLIC;
 	weapons[]={"PKMS", "UB32"};
-	magazines[]={"PKMS", "PKMS", "PKMS", "PKMS", "PKMS", "S5K", "S5K", "S5M"};
+	magazines[]={"PKMS", "PKMS", "PKMS", "PKMS", "PKMS", "PKMS", "S5K", "S5K", "S5M"};
 	model="\sjc_files\models\russia\air\mi8mtv.p3d";
 	displayName="Mi-8MTV Hip";
 	picture="\sjc_files\pics\vehicles\Mi8_m.paa";
@@ -315,11 +315,10 @@ class Mi8MTV : Helicopter
 
 	class EventHandlers
 	{
-		Init = "[_this select 0, 69] exec {\SJC_Scripts\vehicleTODO.sqs}";
-		//TODO
-		//engine="if (_this select 1) then {_this select 0 exec ""\OWP_Mi8\Scripts\owp_onengine.sqs""} else {_this select 0 exec ""\OWP_Mi8\Scripts\owp_onengineoff.sqs""}";
-		//init = "_this exec ""\OWP_MI8\scripts\owp_initialization.***""";
-		//IncomingMissile="_this exec ""\OWP_MI8\scripts\owp_incoming.sqs""";
-		//fired="_this exec ""\OWP_MI8\scripts\owp_effects.sqs""";
+		engine = "if (_this select 1) then {_this select 0 exec ""\acgim_scripts\Vehicles\Mi8\owp_onengine.sqs""} else {_this select 0 exec ""\acgim_scripts\Vehicles\Mi8\owp_onengineoff.sqs""}";
+		hit = "_this exec {\SJC_Scripts\Events\HelicopterHit.sqs};";
+		init = "_this exec ""\acgim_scripts\Vehicles\Mi8\owp_initialization.sqs""";
+		IncomingMissile = "_this exec ""\acgim_scripts\Vehicles\Mi8\owp_incoming.sqs""";
+		fired = "_this exec ""\acgim_scripts\Vehicles\Mi8\owp_effects.sqs""";
 	};
 };

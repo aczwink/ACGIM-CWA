@@ -1,0 +1,19 @@
+?format["%1",RHS_FctLoad]=="scalar bool array string 0xfcffffef":_this exec{\acgim_scripts\Vehicles\T80\RAE_init.sqs}
+?RHS_NoScripts:exit
+?format["%1",RHS_T55_FctLoad]=="scalar bool array string 0xfcffffef":RHS_T55_FctLoad=false
+?!RHS_T55_FctLoad:RHS_T55_FctLoad=true;RHS_PathT55="\acgim_scripts\Vehicles\T55\";RHS_T55_Fired=loadFile format["%1RAE_T55_Fired.sqf", RHS_PathT55];RHS_T55_throwOff=objNull
+_t=_this select 0;
+?local _t:_t animate["suspension",.5]
+?local _t:_t animate["suspension2",.5]
+_t exec format ["%1RAE_T55_Check.sqs",RHS_PathT55]
+_this exec "\acgim_scripts\Vehicles\T55\RAE_T55_Numrand.sqs"
+goTo "loop"
+#loop
+	~0.5	
+	?isNull _t:exit
+	?format["%1",RHS_T55_throwOff]==format["%1",_t]:_t exec format["%1RAE_T55_throwOff.sqs",RHS_PathT55]
+
+goTo "loop"
+
+#exit
+exit
