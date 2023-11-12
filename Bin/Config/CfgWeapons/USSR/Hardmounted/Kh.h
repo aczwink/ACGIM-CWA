@@ -11,6 +11,10 @@ class Kh23 : HellfireLauncher
 	aiRateOfFireDistance=0.01;
 };
 
+/*
+Sources:
+    https://en.wikipedia.org/wiki/Kh-29
+*/
 class Kh29 : MaverickLauncher
 {
 	ammo = "RocketKh29";
@@ -24,4 +28,9 @@ class Kh29 : MaverickLauncher
 class Kh29_2 : Kh29
 {
 	count = 2;
+};
+
+class Kh29_6 : Kh29
+{
+	count=6;
 };

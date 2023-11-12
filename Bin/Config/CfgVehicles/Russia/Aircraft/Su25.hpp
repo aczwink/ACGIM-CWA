@@ -15,8 +15,8 @@ class Su25 : Plane
 	armor = ARMOR_SU25;
 	cost = COST_SU25;
 	model="\sjc_models\russia\su25.p3d";
-	weapons[]={Ch29TLauncher, Rocket57x64, MachineGun30A10};//TODO
-	magazines[]={Ch29TLauncher, Rocket57x64, MachineGun30A10};//TODO
+	weapons[] = { "GSh30_2", "Kh29_6", "UB32" };
+	magazines[] = { "GSh30_2", "Kh29_6", "S5K" };
 	fov=0.5;
 	type = VEHICLE_AIR;
 	threat[]={THREAT_SU25};
@@ -83,10 +83,5 @@ class Su25 : Plane
 		angle = -240;
 		min = -150;
 		max = 150;
-	};
-	
-	class EventHandlers
-	{
-		Init = "[_this select 0, 67] exec {\SJC_Scripts\vehicleTODO.sqs}";
 	};
 };

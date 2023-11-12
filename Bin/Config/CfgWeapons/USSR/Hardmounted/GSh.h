@@ -30,7 +30,7 @@ class GSh6_23 : GSh23
 /*
 Sources:
 	http://en.wikipedia.org/wiki/Gryazev-Shipunov_GSh-6-30
-Rate of fire: 4000–6000 rpm -> 5000 rpm -> 0.012
+Rate of fire: 4000ï¿½6000 rpm -> 5000 rpm -> 0.012
 */
 class GSh6_30 : GSh23
 {
@@ -41,4 +41,19 @@ class GSh6_30 : GSh23
 	aiRateOfFire=0.1;
 	aiRateOfFireDistance=200;
 	dispersion=0.01;
+};
+
+
+/*
+Sources:
+	https://en.wikipedia.org/wiki/Gryazev-Shipunov_GSh-30-2
+Rate of fire: 1,000-3,000 rpm -> 2000 rpm avg -> 
+*/
+class GSh30_2 : GSh23
+{
+	displayName="GSh-30-2";
+	ammo = "BulletUSSR30x165";
+	count = 250;
+	initSpeed = 870;
+	reloadTime = 0.03;
 };

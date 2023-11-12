@@ -73,7 +73,7 @@ class HeavyReammoBoxWest : ReammoBoxWest
 		
 		class m_FIM92Stinger
 		{
-			magazine = "FIM92Stinger";
+			magazine = WEAPON_REFERENCE(FIM92Stinger);
 			count = 1;
 		};
 

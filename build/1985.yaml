@@ -1,3 +1,5 @@
+source_integrity:
+  CSLA2Update2_Install_v220.exe: 2c9fdd92dbfa3a0471ae1304b2448dec
 steps:
   - type: IncludePipelineSteps
     name: addons.yaml
@@ -78,6 +80,15 @@ steps:
         files:
           - NKHole/Icons/I_Earth.paa
           - NKHole/Earth4Dir1.p3d
+
+      - type: Archive
+        name: OWP_Mi8_1_0(Hight).rar
+        pbos:
+          - OWP_Mi8.pbo
+        files:
+          - OWP_Mi8/anim/OWPMi8Pilotengineon.rtm
+          - { sourceFileName: OWP_Mi8/Sounds/engstop.ogg, targetName: mi8_engstop }
+          - { sourceFileName: OWP_Mi8/Sounds/engstart.ogg, targetName: mi8_engstart }
 
       - type: Archive
         name: RHS_Misc_v2.0.rar
@@ -161,6 +172,7 @@ steps:
         pbos:
           - .rsrc/0/RCDATA/CWA\DTA\DTAEXT.PBO.XZ
         files:
+          - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/w/w_aalauncher.paa, type: weapon, targetName: FIM92Stinger }
           - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/m/m_handgrenade.paa, type: magazine, targetName: HandGrenade }
           - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/m/m_mine.paa, type: magazine, targetName: Mine }
           - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/m/m_pipebomb.paa, type: magazine, targetName: PipeBomb }
@@ -200,6 +212,7 @@ steps:
         pbos:
           - ICPrpg7.pbo
         files:
+          - { sourceFileName: ICPrpg7/rpg/geard3.paa, type: magazine, targetName: PG7VL }
           - { sourceFileName: ICPrpg7/gearv1.paa, type: weapon, targetName: RPG7V }
 
       - type: Archive

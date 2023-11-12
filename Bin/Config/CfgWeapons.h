@@ -50,19 +50,6 @@ class Phone:Binocular
 	modelOptics="";
 };
 
-class MachineGun30A10:MachineGun30
-{
-	canLock=0;
-	sound[]={"Weapons\vulcan",3.1622777,1};
-	count=2000;
-	multiplier=4;
-};
-
-class MachineGun30A10Burst:MachineGun30A10
-{
-	ammo="Bullet30A10";
-};
-
 class RiffleGrenadeLauncher
 {
 	scopeWeapon=0;
@@ -293,8 +280,12 @@ class AT4Launcher : Default
 	shortNameMagazine="$STR_SN_AT4";
 };
 
-class Rocket57x192:Rocket57x64
+class Rocket57x192:ZuniLauncher38
 {
+	ammo="Rocket57";
+	displayName="$STR_DN_ROCKET_57";
+	displayNameMagazine="$STR_MN_ROCKET_57";
+	shortNameMagazine="$STR_SN_ROCKET_57";
 	count=192;
 };
 //d4t adding res addons weapons
@@ -1200,7 +1191,8 @@ class Glock:GlockBase
 	magazines[]={"GlockMag"};
 	uiPicture="\misc\ipistole.paa";
 };
-class Rocket57x40Kamov:Rocket57x64
+
+class Rocket57x40Kamov : ZuniLauncher38
 {
 	ammo="Rocket57";
 	displayName="$STR_DN_ROCKET_57";
@@ -1514,14 +1506,7 @@ class Steyr:SteyrBase
 	scopeWeapon=2;
 	magazines[]={"SteyrMag"};
 };
-class Ch29TLauncher: MaverickLauncher
-{
-	ammo=Ch29T;
-	displayName=$STR_DN_CH29T;
-	displayNameMagazine=$STR_MN_CH29T;
-	shortNameMagazine=$STR_SN_CH29T;
-	count=6;
-};
+
 class VulcanCannon:MachineGun30
 {
 	ammo="Bullet4x20";

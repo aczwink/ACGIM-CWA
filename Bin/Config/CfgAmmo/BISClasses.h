@@ -254,13 +254,6 @@ class Bullet30W : Bullet30
 	tracerColorR[]={0.8,0.5,0.1,0.25};
 };
 
-class Bullet30A10 : Bullet30W
-{
-	hit=100;
-	indirectHit=50;
-	indirectHitRange=2;
-};
-
 class Bullet30E : Bullet30
 {
 	tracerColor[]={0.2,0.8,0.1,0.25};
@@ -631,10 +624,10 @@ Sources:
 (1) http://en.wikipedia.org/wiki/Strela_2
 initTime: (1) "approximately 0.3 seconds after leaving the launch tube it activates the rocket sustainer motor."
 thrustTime: (1) "destroy the missile after between 14 and 17 seconds"
-a = v²/2s
+a = vï¿½/2s
 t = sqrt(s/0.5a)
 
-time to reach max velocity: (1) "Once it reaches peak speed at a distance of around 120 meters from the gunner" -> t = sqrt(2s²/0.5v²) -> 0,558139
+time to reach max velocity: (1) "Once it reaches peak speed at a distance of around 120 meters from the gunner" -> t = sqrt(2sï¿½/0.5vï¿½) -> 0,558139
 */
 class 9K32 : AA
 {
@@ -743,12 +736,6 @@ class Maverick : Hellfire
 	thrust=700;
 	laserLock=0;
 	proxyShape="Maverik_proxy";
-};
-
-class Ch29T : Maverick
-{
-	model="\Su25\Ch_29T_shine";
-	proxyShape="\Su25\Ch_29T";
 };
 
 class LaserGuidedBomb : Default

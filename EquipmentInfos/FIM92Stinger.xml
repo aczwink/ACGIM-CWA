@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<weapon>
+    <title>FIM92A "Stinger"</title>
+    <category>Anti-aircraft weapon</category>
+    <description>The Stinger missile, a full-dimensional protection weapon, is the Army's system for short-range air defense that offers ground forces some protection against low-altitude airborne targets such as fixed-wing aircraft, helicopters, unmanned aerial vehicles, and cruise missiles.</description>
+    <properties>
+        <length>5 ft/1.5 m</length>
+        <weight>12.5 pounds/5.68 kg</weight>
+        <range>1 to 8 km/0.62 to 4.97 miles</range>
+    </properties>
+</weapon>

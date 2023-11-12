@@ -29,27 +29,33 @@ class UV16 : ZuniLauncher38
 	aiRateOfFireDistance=0.01;
 };
 
-class UV32 : Rocket57x64
+class UV32 : ZuniLauncher38
 {
+	ammo="Rocket57";
 	displayName ="UV-32 Rocket pods";
 	displayNameMagazine="57mm rocket";
 	shortNameMagazine="57mm rocket";
+	count=64;
 };
 
 /*
 Source: https://en.wikipedia.org/wiki/S-5_rocket#UB-32[16][17]
 */
-class UB32 : Rocket57x64
+class UB32 : ZuniLauncher38
 {
+	ammo="Rocket57";
 	displayName = "UB-32 Rocket pods";
+	displayNameMagazine="$STR_MN_ROCKET_57";
+	shortNameMagazine="$STR_SN_ROCKET_57";
 	magazines[]={"S5K", "S5M"};
 	reloadSound[]={"\sjc_files\sounds\weapons\vehicles\click.wav",-10,1};
 	backgroundReload=0;
 	count=64;
 };
 
-class S5M : Rocket57x64
+class S5M : ZuniLauncher38
 {
+	count=64;
 	sound[]={"\sjc_files\sounds\weapons\vehicles\C5.ogg",2,1};
 	ammo = "RocketS5M";
 	burst=2;

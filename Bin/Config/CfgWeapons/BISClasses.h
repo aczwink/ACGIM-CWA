@@ -675,48 +675,6 @@ class AK47 : Riffle
 	};
 };
 
-class AALauncher : Default
-{
-	weaponType=16;
-	count=1;
-	magazineReloadTime=12;
-	reloadTime=0.5;
-	//Longer range sound.
-	//sound[]={"Weapons\at_launch",0.01,1};
-	sound[]={"Weapons\at_launch", 2, 1};
-	reloadMagazineSound[]={"Weapons\at_load",0.0003162,1};
-	reloadAction = MANACT_RELOADAT;
-	autoReload=0;
-	ffMagnitude=0.1;
-	ffFrequency=1;
-	ffCount=1;
-	recoil="LAWSingle";
-	optics=1;
-	opticsZoomMin=0.18;
-	opticsZoomMax=0.18;
-	distanceZoomMin=100;
-	distanceZoomMax=100;
-	scopeWeapon=2;
-	scopeMagazine=2;
-	model="Stinger_proxy";
-	modelOptics="optika_stinger";
-	magazineType="6 * 		256";
-	canLock=2;
-	valueWeapon=20;
-	valueMagazine=10;
-	ammo="AA";
-	displayName="$STR_DN_AA";
-	displayNameMagazine="$STR_MN_AA";
-	shortNameMagazine="$STR_SN_AA";
-	initSpeed=30;
-	maxLeadSpeed=600;
-	primary=0;
-	uiPicture="isaa";
-	//Engage at range.
-	aiRateOfFire=10.0;
-	aiRateOfFireDistance=5000;
-};
-
 class AT3Launcher : Default
 {
 	magazineReloadTime=12;
@@ -815,15 +773,6 @@ class ZuniLauncher38 : AT3Launcher
 	reloadSound[]={"Weapons\missload",0.0003162,1};
 	initSpeed=44;
 	autoFire=1;
-};
-
-class Rocket57x64 : ZuniLauncher38
-{
-	ammo="Rocket57";
-	displayName="$STR_DN_ROCKET_57";
-	displayNameMagazine="$STR_MN_ROCKET_57";
-	shortNameMagazine="$STR_SN_ROCKET_57";
-	count=64;
 };
 
 class Flare : GrenadeLauncher
