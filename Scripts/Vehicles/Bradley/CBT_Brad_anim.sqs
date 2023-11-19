@@ -1,0 +1,53 @@
+;################################################################################
+;# Written by DKM-Carnage/DKM-Rastavovich					#
+;#	rastavovich@dkm-mod.net							#
+;#	http://www.dkm-mod.net							#
+;# Needs to stay in .pbo							#
+;# No support given by DKM							#
+;# 										#
+;# Edited bt Rudedog for use with CBT Bradleys					#
+;# COMBAT OFP Addons - rudedog@planetrockabilly.com 				#
+;################################################################################
+
+_tank = _this select 0
+_mode = _this select 1
+
+? CBT_NoTow: exit
+~0.1
+? _mode == 2 : goto "Remove_Tow"
+? _mode == 3 : goto "Raise_Tow"
+
+
+exit
+#Lower_Tow
+	_tank animate ["CBT_TOW", 0]
+	exit
+	
+#Raise_Tow
+	_tank animate ["CBT_TOW", 1]
+	@_tank animationphase "CBT_TOW" == 1
+	goto "Add_Tow"	
+	
+#Lower_Sting
+	? "CBT_StingerLauncher" in (magazines _tank) : _tank removeweapon "CBT_StingerLauncher"
+	_tank animate ["CBT_TOW", 0]
+	@_tank animationphase "CBT_TOW" == 0
+	exit
+	
+#Raise_Sting
+	_tank animate ["CBT_TOW", 1]
+	@_tank animationphase "CBT_TOW" == 1
+	? "CBT_StingerLauncher" in (magazines _tank) : _tank addweapon "CBT_StingerLauncher"
+	exit
+
+#Remove_Tow
+	? !local _tank : exit
+	? "M220_BGM71ETOW" in (magazines _tank) : _tank removeWeapon "M220_BGM71ETOW"
+	? "M220_BGM71DTOW" in (magazines _tank) : _tank removeWeapon "M220_BGM71DTOW"
+	goto "Lower_Tow"
+	
+#Add_Tow
+	? !local _tank : exit
+	? "M220_BGM71ETOW" in (magazines _tank) : _tank addWeapon "M220_BGM71ETOW"
+	? "M220_BGM71DTOW" in (magazines _tank) : _tank addWeapon "M220_BGM71DTOW"
+	exit

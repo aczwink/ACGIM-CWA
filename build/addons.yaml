@@ -228,6 +228,42 @@ steps:
         path: AddOns/O/config.cpp
     targetPboName: O
 
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\OH58.PBO.XZ
+    exclude: [config.bin, stringtable.csv, vssver.scc]
+    include:
+      - source: source
+        path: AddOns/oh58/config.cpp
+    targetPboName: oh58
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\O_WP.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - source: source
+        path: AddOns/O_WP/config.cpp
+    targetPboName: O_WP
+
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\STEYR.PBO.XZ
+    exclude: [config.bin, stringtable.csv, vssver.scc]
+    include:
+      - source: source
+        path: AddOns/Steyr/config.cpp
+    targetPboName: Steyr
+
 
   - type: CopyFiles
     source: resources

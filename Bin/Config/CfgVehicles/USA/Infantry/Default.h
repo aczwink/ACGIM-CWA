@@ -62,6 +62,15 @@ class USA_Grenadier : USA_Soldier
 	threat[]={THREAT_GRENADIER};
 };
 
+class SoldierWMortar : USA_Grenadier
+{
+	accuracy = 1.5;
+	displayName = "$STR_DN_MORTAR";
+	weapons[] = {WEAPON_REFERENCE(M16A2), "Throw", "Put"};
+	magazines[] = {WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "Mortar", "Mortar", "Mortar"};
+	threat[] = {1, 1, 0.1};
+};
+
 class USA_Medic : USA_Soldier
 {
 	accuracy = ACCURACY_MEDIC;

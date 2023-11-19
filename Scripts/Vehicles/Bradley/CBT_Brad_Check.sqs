@@ -1,0 +1,131 @@
+;>>>©2003raedor
+;contact: raedor@mapfact.net
+;www.mapfact.net
+;www.dkm-mod.mkdi.net
+;www.redhammerstudios.com
+;scripting questions?
+;post here: www.mapfact.net/forum/<<<
+
+_path = "\acgim_scripts\Vehicles\Bradley\"
+
+_tank = _this
+
+~2
+
+? CBT_Brad_NoScripts || CBT_NoScripts || CBT_NoCargo : exit
+
+_log = false
+
+? CBT_NoCargo: _var = -1; goTo "create"
+
+
+#start
+~0.5
+? isNull _tank: exit
+? ! (alive _tank): exit
+? isNull driver _tank: _noDriv = true; goTo "point1"
+_noDriv = false
+#point1
+? isNull gunner _tank: _noGun = true; goTo "point2"
+_noGun = false
+#point2
+? _noDriv && _noGun && _log: _var = 3; goTo "delete"
+? _noDriv && ! _noGun: _var = 1; goTo "throwOff"
+? ! _noDriv && ! _noGun: goTo "waitYesYes"
+? ! _noDriv && _noGun && _log: _var = 5; goTo "delete"
+;~0.5
+goTo "start"
+
+#waitGun 
+@! (isNull gunner _tank) || isNull _tank || ! (alive _tank) 
+goTo "start"
+
+#fillCargo_2
+@! (isNull driver _tank) || (isNull gunner _tank) || isNull _tank || ! (alive _tank) || _tank call CBT_countedCargo > 0
+? _tank call CBT_countedCargo > 0: goTo "throwOff"
+goTo "start"
+
+#fillCargo
+? _tank call CBT_countedCargo == 0: goTo "create"
+goTo  "throwOff" 
+
+#create
+? _log: goTo "start"
+_BradLogic1 = "CBTLogic" createVehicle [0,0]
+_BradLogic2 = "CBTLogic" createVehicle [0,0]
+? typeOf _tank in CBT_BradsWith6CargoProxies: _BradLogic3 = "CBTLogic" createVehicle [0,0]
+? typeOf _tank in CBT_BradsWith6CargoProxies: _BradLogic4 = "CBTLogic" createVehicle [0,0]
+? typeOf _tank in CBT_BradsWith6CargoProxies: _BradLogic5 = "CBTLogic" createVehicle [0,0]
+? typeOf _tank in CBT_BradsWith6CargoProxies: _BradLogic6 = "CBTLogic" createVehicle [0,0]
+? typeOf _tank in CBT_BradsWith7CargoProxies: _BradLogic7 = "CBTLogic" createVehicle [0,0]
+~0.2
+_BradLogic1 moveInCargo _tank
+_BradLogic2 moveInCargo _tank
+? typeOf _tank in CBT_BradsWith6CargoProxies: _BradLogic3 moveInCargo _tank
+? typeOf _tank in CBT_BradsWith6CargoProxies: _BradLogic4 moveInCargo _tank
+? typeOf _tank in CBT_BradsWith6CargoProxies: _BradLogic5 moveInCargo _tank
+? typeOf _tank in CBT_BradsWith6CargoProxies: _BradLogic6 moveInCargo _tank
+? typeOf _tank in CBT_BradsWith7CargoProxies: _BradLogic7 moveInCargo _tank
+_log = true
+? _var == 1: goTo "fillCargo_2"
+? _var == -1: exit
+
+
+#loop
+? _tank call CBT_countedCargo > 0: goTo "throwOff"
+~0.5
+? isNull _tank: exit
+? ! (alive _tank): exit
+? (isNull gunner _tank) || (isNull driver _tank): goTo "start"
+? ((driver _tank) distance (gunner _tank)) > 0: goTo "waitYesYes"
+goTo "loop"
+
+#waitYesYes
+~1
+? isNull _tank: exit
+? ! (alive _tank): exit
+? (isNull gunner _tank) || (isNull driver _tank): goTo "start"
+? (driver _tank distance gunner _tank) == 0 && _tank call CBT_countedCargo > 0: _var = 2; goTo "throwOff" 
+? (driver _tank distance gunner _tank) == 0 && _tank call CBT_countedCargo == 0 && ! _log: _var = 0; goTo "create"
+? ((driver _tank) distance (gunner _tank)) > 0 && _log: _var = 4; goTo "delete"
+goTo "start"
+
+#waitNoNo
+@ ! (isNull driver _tank) || ! (isNull gunner _tank) || isNull _tank || ! (alive _tank)
+goTo "start"
+
+#delete
+? ! _log: goTo "start"
+? ! isNull _BradLogic1 && alive _BradLogic1: _BradLogic1 action ["EJECT", _tank]
+? ! isNull _BradLogic2 && alive _BradLogic2: _BradLogic2 action ["EJECT", _tank]
+? typeOf _tank in CBT_BradsWith6CargoProxies && ! isNull _BradLogic3 && alive _BradLogic3: _BradLogic3 action ["EJECT", _tank]
+? typeOf _tank in CBT_BradsWith6CargoProxies && ! isNull _BradLogic4 && alive _BradLogic4: _BradLogic4 action ["EJECT", _tank]
+? typeOf _tank in CBT_BradsWith6CargoProxies && ! isNull _BradLogic5 && alive _BradLogic5: _BradLogic5 action ["EJECT", _tank]
+? typeOf _tank in CBT_BradsWith6CargoProxies && ! isNull _BradLogic6 && alive _BradLogic6: _BradLogic6 action ["EJECT", _tank]
+? typeOf _tank in CBT_BradsWith7CargoProxies && ! isNull _BradLogic7 && alive _BradLogic7: _BradLogic7 action ["EJECT", _tank]
+~0.2
+
+
+? ! isNull _BradLogic1: deleteVehicle _BradLogic1
+? ! isNull _BradLogic2: deleteVehicle _BradLogic2
+? typeOf _tank in CBT_BradsWith6CargoProxies && ! isNull _BradLogic3: deleteVehicle _BradLogic3
+? typeOf _tank in CBT_BradsWith6CargoProxies && ! isNull _BradLogic4: deleteVehicle _BradLogic4
+? typeOf _tank in CBT_BradsWith6CargoProxies && ! isNull _BradLogic5: deleteVehicle _BradLogic5
+? typeOf _tank in CBT_BradsWith6CargoProxies && ! isNull _BradLogic6: deleteVehicle _BradLogic6
+? typeOf _tank in CBT_BradsWith7CargoProxies && ! isNull _BradLogic7: deleteVehicle _BradLogic7
+_log = false
+? _var == 3: goTo "waitNoNo"
+? _var == 5: goTo "waitGun"
+goTo "waitYesYes"
+
+#throwOff
+? _tank call CBT_countedCargo == 0: goTo "create"
+? (isNull (CBT_Brad_throwOff)): goTo "null"
+~0.1
+goTo "throwOff"
+
+#null
+CBT_Brad_throwOff = _tank
+publicVariable "CBT_Brad_throwOff"
+@_tank call CBT_countedCargo == 0
+goTo "fillCargo"

@@ -44,16 +44,6 @@ class SoldierWSaboteur : SoldierWB
 	scope = SCOPE_HIDDEN;
 };
 
-class SoldierWMortar : USA_Grenadier
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class OfficerWHG :OfficerW
-{
-	scope = 1;
-};
-
 class SoldierWCaptive :SoldierWB
 {
 	scope = 1;

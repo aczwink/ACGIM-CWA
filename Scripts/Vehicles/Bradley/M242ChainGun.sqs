@@ -1,0 +1,10 @@
+? CBT_Brad_NoScripts || CBT_NoScripts: exit
+?!(local _this) : exit
+_this animate ["gun_recoil", 1]
+~0.03
+_i = 1
+#goback
+	_this animate ["gun_recoil", _i]
+	~0.02
+	? _i > 0 : _i = _i - .1, goto "goback"
+exit

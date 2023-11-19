@@ -182,7 +182,7 @@ class AH64 : Helicopter
 
 	class EventHandlers
 	{
-		hit = "(_this select 0) exec {\SJC_Scripts\Events\TailRotorFailure.sqs};";
+		hit = "_this exec {\SJC_Scripts\Events\HelicopterHit.sqs};";
 		init = "(_this select 0) setObjectTexture [0, {\sjc_textures\ah64\us_army.paa}];";
 	};
 };

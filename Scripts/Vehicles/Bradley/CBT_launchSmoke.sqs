@@ -1,0 +1,39 @@
+? CBT_Brad_NoScripts || CBT_NoScripts: exit
+?(jam_effects == 0):exit
+
+_unit = _this select 0
+_weapon = _this select 1
+_muzzle = _this select 2
+_mode = _this select 3
+_ammo = _this select 4
+_shot = nearestObject [_unit,_ammo]
+_pos = getPos _shot
+
+
+
+	_rocket = nearestObject [_unit, Format["%1",_ammo]]
+
+	_vel = velocity _rocket
+	
+	_dir = direction _unit
+	_unitPos = getPos _unit
+	
+	_smokePos = {[(_pos select 0)-((random 2)*sin _dir),(_pos select 1)-((1+random 2)*cos _dir),(_pos select 2)]}
+	;_smokePos = {[(_pos select 0)-((1+random 2)*sin _dir),(_pos select 1)-((1+random 2)*cos _dir),(_pos select 2)-0.2]}
+	;_smokePos = {[(_pos select 0)-((1+random 2)*sin _dir),(_pos select 1)-((1+random 2)*cos _dir),(_pos select 2)+3.3]}
+
+;_smokePos = {[(_unitPos select 0)-((1+random 2)*sin _dir),(_unitPos select 1)-((1+random 2)*cos _dir),(_unitPos select 2)+0.8]}
+
+
+	_count = 0
+
+#smokeLoop
+
+	drop["cl_basic","","Billboard",1,15,call _smokePos,[-(_vel select 0),-(_vel select 1),-(_vel select 2)],0,1.28,1,1,[0.5+random 0.2,20+random 5,40+random 10],[[0.8,0.8,0.8,0.6],[0.9,0.9,0.9,0.2],[0.9,0.9,0.9,0.1],[0.9,0.9,0.9,0]],[0,1],0,0,"","",""]
+
+	_count = _count + 1
+	~0.005
+
+	? _count <10:goto "smokeLoop"
+
+exit

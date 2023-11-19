@@ -10,11 +10,6 @@ class AmmoBoxOUTW : HeavyReammoBox
 	scope = SCOPE_HIDDEN;
 };
 
-class AmmoBoxAddW : ReammoBox
-{
-	scope = SCOPE_HIDDEN;
-};
-
 class AmmoBoxAddE:ReammoBoxEast
 {
 	scope=1;

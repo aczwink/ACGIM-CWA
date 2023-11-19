@@ -143,7 +143,13 @@ class Russia_SquadLeader : Russia_Soldier
 	picture = "\misc\frcky.paa";
 	weapons[] = {"AK74", "Tokarev", "Binocular", "Throw", "Put"};
 	magazines[] = {"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "RGO", "RGO", "RGO", "RDG1", "TokarevMag", "TokarevMag", "TokarevMag", "TokarevMag"};
+};
 
-	//TODO_2005:
-	//TODO_Desert:
+class OfficerENight : Russia_SquadLeader
+{
+	displayName = "Squad Leader (night eq.)";
+	picture = "\misc\medik.paa";
+	nightVision = 1;
+	weapons[] = {WEAPON_REFERENCE(AK74GP25), "Binocular", "NVGoggles", "Throw", "Put"};
+	magazines[] = {"AK74", "AK74", "AK74", "AK74", "HandGrenade", "HandGrenade", "HandGrenade", "Flare", "Flare", "Flare"};
 };

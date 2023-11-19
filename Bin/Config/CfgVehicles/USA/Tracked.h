@@ -15,7 +15,7 @@
 #include "Config\CfgVehicles\USA\Tracked\M163A1.h"
 
 //M2A1
-#include "Config\CfgVehicles\USA\Tracked\M2A1.h"
+#include "Config\CfgVehicles\USA\Tracked\Bradley.hpp"
 #ifdef ACGIM_SCENARIO_2007
-#include "Config\CfgVehicles\USA\Tracked\M2A1.h" //TODO: This was upgraded for sure
+#include "Config\CfgVehicles\USA\Tracked\Bradley.hpp" //TODO: This was upgraded for sure
 #endif

@@ -10,7 +10,5 @@
 #include "Config\CfgVehicles\Russia\Helicopters\Mi24V.h"
 #endif
 
-/*
 //V80
 #include "Config\CfgVehicles\Russia\Helicopters\V80.h"
-*/

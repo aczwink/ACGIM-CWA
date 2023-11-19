@@ -1,0 +1,92 @@
+;RED STAR shockwave dust script - TJ 2003
+;
+;modified by raedor
+;>>>©2003raedor
+;contact: raedor@web.de
+;www.mapfact.net
+;www.dkm-mod.mkdi.net
+;www.redhammerstudios.com
+;scripting questions?
+;post here: www.mapfact.net/forum/<<<
+;
+;Modified 10/02/03
+;Harkonin fire and burn -special thanks to Killswitch 
+
+_path = "\acgim_scripts\Vehicles\Bradley\"
+
+? CBT_NoSmoke: exit
+
+_tank = _this select 0
+_delay = 0.3
+_lifeTicks = (_this select 2)/ _delay
+_lifeTick = _lifeTicks
+_fire = 0
+_ouch = 0
+_EXPCount = 0
+_lights = []
+_water = false
+_rnd1 = random 2
+_rnd2 = random 2
+_rnd3 = random 2
+_rnd4 = random 2
+_weight = 0.0044
+_pos1a = [0,0,-0.5]
+_pos1b = [0,0,-1]
+_pos2a = [0,0,-4.5]
+_pos2b = [0,0,-4]
+_posA = [0,0,-0.5]
+_posB = [0,0,-1]
+
+~3
+
+_lastpos = getpos _tank
+_obj = _tank
+? ! (local _tank): goto "sound"
+_smoker = "CBT_Smoker"
+? CBT_LowSmoke: _smoker = "CBT_LSmoker"
+_light1 = _smoker createVehicle [0,0]; _light1 setPos [(getPos _tank select 0)-1+_rnd1, (getPos _tank select 1)-1+_rnd2, (getPos _tank select 2) + 2]
+_light1 inFlame true
+_light2 = _smoker createVehicle [0,0]; _light2 setPos [(getPos _tank select 0)-1+_rnd3, (getPos _tank select 1)-1+_rnd4, (getPos _tank select 2) + 2]
+_light2 inFlame true
+_lights = [_light1, _light2]
+
+#sound
+_soundloop = 0
+
+#Begin
+_light1 setPos [(getPos _tank select 0)-1+_rnd1, (getPos _tank select 1)-1+_rnd2, (getPos _tank select 2) + 2]
+_light2 setPos [(getPos _tank select 0)-1+_rnd3, (getPos _tank select 1)-1+_rnd4, (getPos _tank select 2) + 2]
+
+? position _tank select 2 < - 2.5 && position _tank select 2 > - 2.7: _posA = _pos2a; _posB = _pos2b; goTo "n"
+_posA = _pos1a; _posB = _pos1b
+
+#n
+? ((position _tank select 2 < - 0.8 && position _tank select 2 > - 2.5) || (position _tank select 2 < - 2.7)) && _lifeTcks - _lifeTick > 20: _lifeTicks = _lifeTick; _water = true; goTo "explos"
+_water = false
+
+#explos
+? ! (local _tank): goto "client"
+_x = random 49.5
+?_x <= 1 && _EXPCOUNT <= 2:_bang = "handgrenade" createvehicle getpos _tank; _EXPCount = _EXPCount + 1
+?_x >= 45 && _EXPCount <= 2:_bang = "BulletFullAutoG" createvehicle getpos _tank; _EXPCount = _EXPCount + 1
+
+#client
+? player != (vehicle player): goTo "fire"
+?(player distance _tank <= 5) && !(_ouch >= 1): [player] Exec "\acgim_scripts\Vehicles\HMMWV\burn.sqs"; _ouch = _ouch + 1
+
+#fire
+drop ["cl_fire", "", "Billboard", 1, 1 + random 2, [(_posA select 0) - 1 + random 2, (_posA select 1) - 1 + random 2,(_posA select 2)], [random 0.3, random 0.3, 3], 1, _weight, 0.004, 0.1, [1 + random 2, 2 + random 1, 2 + random 1], [[1,0.5,0.5,0], [0.2,0.2,0,0.7], [1,1,0,0.5], [1,1,0.1,0]], [0,1], 0.5, 0.05, "", "",_tank ]
+drop ["cl_fire", "", "Billboard", 1, 1 + random 2, [(_posA select 0) - 1 + random 2, (_posA select 1) - 1 + random 2,(_posA select 2)], [random 0.3, random 0.3, 3], 1, _weight, 0.004, 0.1, [1 + random 2, 2 + random 1, 2 + random 1], [[1,0.5,0.5,0], [0.2,0.2,0,0.7], [1,1,0,0.5], [1,1,0.1,0]], [0,1], 0.5, 0.05, "", "",_tank ]
+drop ["cl_fire", "", "Billboard", 1, 1 + random 2, [(_posA select 0) - 1 + random 2, (_posA select 1) - 1 + random 2,(_posA select 2)], [random 0.3, random 0.3, 3], 1, _weight, 0.004, 0.1, [1 + random 2, 2, 1], [[1,0.5,0.5,0], [1,1,0.8,0.7], [1,1,0,0.4], [1,1,0,0]], [0,1], 0.5, 0.05, "", "",_tank ]
+drop ["cl_fire", "", "Billboard", 1, 1 + random 2, [(_posA select 0) - 1 + random 2, (_posA select 1) - 1 + random 2,(_posA select 2)], [random 0.3, random 0.3, 3], 1, _weight, 0.004, 0.1, [2 + random 4, 5, 3], [[1,0.5,0.5,0], [1,1,0.8,0.7], [1,1,0,0.4], [1,1,0,0]], [0,1], 0.5, 0.05, "", "",_tank ]
+drop ["cl_fire", "", "Billboard", 1,  5, _posB, [ random 1, random 1, random 3], 1, 0.003, 0.0042, 0, [0.15], [[1,1,1,1],[0,0,0,0]], [0,1], 0.5, 1, "", "",_tank]
+drop ["cl_fire", "", "Billboard", 1,  5, _posB, [ random 1, random 1, random 3], 1, 0.003, 0.0042, 0, [0.15], [[1,1,1,1],[0,0,0,0]], [0,1], 0.5, 1, "", "",_tank]
+_fire = _fire + 1
+~_delay
+_lifeTick = _lifeTick - 1
+_soundloop = _soundloop +1
+?(_fire >= 30): _fire = 0; _ouch = 0
+?(local _tank) && (_soundloop == 4): {_x say "fire"} forEach _lights; goto "sound"
+?_lifeTick > 0 : goto "Begin"
+? local _tank: "deleteVehicle _x" forEach _lights
+exit

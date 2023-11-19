@@ -1,0 +1,40 @@
+_car = _this select 0
+?(!local _car): exit
+
+_numer=Random(10)
+?(_numer<1): _car setObjectTexture [0,"\sjc_textures\brdm\n0.paa"];_car setObjectTexture [3,"\sjc_textures\brdm\n0.paa"]
+?(_numer>=1 && _numer<2 ): _car setObjectTexture [0,"\sjc_textures\brdm\n1.paa"];_car setObjectTexture [3,"\sjc_textures\brdm\n1.paa"]
+?(_numer>=2 && _numer<3 ): _car setObjectTexture [0,"\sjc_textures\brdm\n2.paa"];_car setObjectTexture [3,"\sjc_textures\brdm\n2.paa"]
+?(_numer>=3 && _numer<4 ): _car setObjectTexture [0,"\sjc_textures\brdm\n3.paa"];_car setObjectTexture [3,"\sjc_textures\brdm\n3.paa"]
+?(_numer>=4 && _numer<5 ): _car setObjectTexture [0,"\sjc_textures\brdm\n4.paa"];_car setObjectTexture [3,"\sjc_textures\brdm\n4.paa"]
+?(_numer>=5 && _numer<6 ): _car setObjectTexture [0,"\sjc_textures\brdm\n5.paa"];_car setObjectTexture [3,"\sjc_textures\brdm\n5.paa"]
+?(_numer>=6 && _numer<7 ): _car setObjectTexture [0,"\sjc_textures\brdm\n6.paa"];_car setObjectTexture [3,"\sjc_textures\brdm\n6.paa"]
+?(_numer>=7 && _numer<8 ): _car setObjectTexture [0,"\sjc_textures\brdm\n7.paa"];_car setObjectTexture [3,"\sjc_textures\brdm\n7.paa"]
+?(_numer>=8 && _numer<9 ): _car setObjectTexture [0,"\sjc_textures\brdm\n8.paa"];_car setObjectTexture [3,"\sjc_textures\brdm\n8.paa"]
+?(_numer>=9): _car setObjectTexture [0,"\sjc_textures\brdm\n9.paa"];_car setObjectTexture [3,"\sjc_textures\brdm\n9.paa"]
+
+_numer=Random(10)
+?(_numer<1): _car setObjectTexture [1,"\sjc_textures\brdm\n0.paa"];_car setObjectTexture [4,"\sjc_textures\brdm\n0.paa"]
+?(_numer>=1 && _numer<2 ): _car setObjectTexture [1,"\sjc_textures\brdm\n1.paa"];_car setObjectTexture [4,"\sjc_textures\brdm\n1.paa"]
+?(_numer>=2 && _numer<3 ): _car setObjectTexture [1,"\sjc_textures\brdm\n2.paa"];_car setObjectTexture [4,"\sjc_textures\brdm\n2.paa"]
+?(_numer>=3 && _numer<4 ): _car setObjectTexture [1,"\sjc_textures\brdm\n3.paa"];_car setObjectTexture [4,"\sjc_textures\brdm\n3.paa"]
+?(_numer>=4 && _numer<5 ): _car setObjectTexture [1,"\sjc_textures\brdm\n4.paa"];_car setObjectTexture [4,"\sjc_textures\brdm\n4.paa"]
+?(_numer>=5 && _numer<6 ): _car setObjectTexture [1,"\sjc_textures\brdm\n5.paa"];_car setObjectTexture [4,"\sjc_textures\brdm\n5.paa"]
+?(_numer>=6 && _numer<7 ): _car setObjectTexture [1,"\sjc_textures\brdm\n6.paa"];_car setObjectTexture [4,"\sjc_textures\brdm\n6.paa"]
+?(_numer>=7 && _numer<8 ): _car setObjectTexture [1,"\sjc_textures\brdm\n7.paa"];_car setObjectTexture [4,"\sjc_textures\brdm\n7.paa"]
+?(_numer>=8 && _numer<9 ): _car setObjectTexture [1,"\sjc_textures\brdm\n8.paa"];_car setObjectTexture [4,"\sjc_textures\brdm\n8.paa"]
+?(_numer>=9): _car setObjectTexture [1,"\sjc_textures\brdm\n9.paa"];_car setObjectTexture [4,"\sjc_textures\brdm\n9.paa"]
+
+_numer=Random(10)
+?(_numer<1): _car setObjectTexture [2,"\sjc_textures\brdm\n0.paa"];_car setObjectTexture [5,"\sjc_textures\brdm\n0.paa"]
+?(_numer>=1 && _numer<2 ): _car setObjectTexture [2,"\sjc_textures\brdm\n1.paa"];_car setObjectTexture [5,"\sjc_textures\brdm\n1.paa"]
+?(_numer>=2 && _numer<3 ): _car setObjectTexture [2,"\sjc_textures\brdm\n2.paa"];_car setObjectTexture [5,"\sjc_textures\brdm\n2.paa"]
+?(_numer>=3 && _numer<4 ): _car setObjectTexture [2,"\sjc_textures\brdm\n3.paa"];_car setObjectTexture [5,"\sjc_textures\brdm\n3.paa"]
+?(_numer>=4 && _numer<5 ): _car setObjectTexture [2,"\sjc_textures\brdm\n4.paa"];_car setObjectTexture [5,"\sjc_textures\brdm\n4.paa"]
+?(_numer>=5 && _numer<6 ): _car setObjectTexture [2,"\sjc_textures\brdm\n5.paa"];_car setObjectTexture [5,"\sjc_textures\brdm\n5.paa"]
+?(_numer>=6 && _numer<7 ): _car setObjectTexture [2,"\sjc_textures\brdm\n6.paa"];_car setObjectTexture [5,"\sjc_textures\brdm\n6.paa"]
+?(_numer>=7 && _numer<8 ): _car setObjectTexture [2,"\sjc_textures\brdm\n7.paa"];_car setObjectTexture [5,"\sjc_textures\brdm\n7.paa"]
+?(_numer>=8 && _numer<9 ): _car setObjectTexture [2,"\sjc_textures\brdm\n8.paa"];_car setObjectTexture [5,"\sjc_textures\brdm\n8.paa"]
+?(_numer>=9): _car setObjectTexture [2,"\sjc_textures\brdm\n9.paa"];_car setObjectTexture [5,"\sjc_textures\brdm\n9.paa"]
+Exit
+

@@ -1,0 +1,70 @@
+;################################################################################
+;# Written by DKM-Carnage/DKM-Rastavovich					#
+;#	rastavovich@dkm-mod.net							#
+;#	http://www.dkm-mod.net							#
+;# Needs to stay in .pbo							#
+;# No support given by DKM							#
+;# 										#
+;# Edited bt Rudedog for use with CBT Bradleys					#
+;# COMBAT OFP Addons - rudedog@planetrockabilly.com 				#
+;################################################################################
+
+_tank = _this select 0
+
+
+? ! (alive _tank) : exit 
+
+? CBT_Brad_NoScripts || CBT_NoScripts || CBT_NoTow: goto "NoTow"
+
+#loop
+	? ! (alive _tank) : exit 
+	? CBT_NoTow: goto "NoTow"
+	~0.01
+	
+	;AI
+	? (behaviour _tank == "COMBAT" && _tank animationphase "CBT_TOW" != 1 && speed _tank < 5 && gunner _tank != player): goto "raise_tow"
+	? (behaviour _tank == "COMBAT" && _tank animationphase "CBT_TOW" != 0 && speed _tank > 5 && gunner _tank != player): goto "lower_tow"
+	? (behaviour _tank != "COMBAT" && _tank animationphase "CBT_TOW" != 0 && speed _tank > 5 && gunner _tank != player): goto "lower_tow"
+	? (behaviour _tank == "AWARE" && _tank animationphase "CBT_TOW" != 0 && speed _tank > 5 && gunner _tank != player): goto "lower_tow"
+	? (behaviour _tank == "SAFE" && _tank animationphase "CBT_TOW" != 0 && gunner _tank != player): goto "lower_tow"
+	? (behaviour _tank == "SAFE" && _tank animationphase "CBT_TOW" != 1 && gunner _tank != player): goto "loop"
+	
+	;Player
+	? CBT_NoTow: goto "NoTow"
+	~0.01
+	? (gunner _tank == player && speed _tank > 5 && _tank animationphase "CBT_TOW" == 1): goto "ply_move"
+	? (gunner _tank == player && speed _tank < 5 && _tank animationphase "CBT_TOW" == 1): goto "ply_add"
+	goto "loop"
+	
+	
+#raise_tow
+	? CBT_NoTow: goto "NoTow"
+	? (gunner _tank == player): goto "loop"
+	[_tank, 3] exec "\acgim_scripts\Vehicles\Bradley\CBT_Brad_anim.sqs"
+	@_tank animationphase "CBT_TOW" == 1
+	goto "loop"
+		
+#lower_tow
+	? CBT_NoTow: goto "NoTow"
+	? (gunner _tank == player): goto "loop"
+	[_tank, 2] exec "\acgim_scripts\Vehicles\Bradley\CBT_Brad_anim.sqs"
+	@_tank animationphase "CBT_TOW" == 0
+	goto "loop"
+
+#ply_move
+	? CBT_NoTow: goto "NoTow"
+	? "M220_BGM71ETOW" in (magazines _tank) : _tank removeweapon "M220_BGM71ETOW"
+	? "M220_BGM71DTOW" in (magazines _tank) : _tank removeweapon "M220_BGM71DTOW"
+	goto "loop"
+
+#ply_add
+	? CBT_NoTow: goto "NoTow"
+	? "M220_BGM71ETOW" in (magazines _tank) : _tank addweapon "M220_BGM71ETOW"
+	? "M220_BGM71DTOW" in (magazines _tank) : _tank addweapon "M220_BGM71DTOW"
+	goto "loop"
+	
+#NoTow
+	_tank animate ["CBT_TOW", 1]
+	@_tank animationphase "CBT_TOW" == 1
+	exit
+	

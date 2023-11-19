@@ -146,13 +146,11 @@ class Bradley : APC
 
 	class Eventhandlers
 	{
-		Init = "[_this select 0, 182] exec {\SJC_Scripts\vehicleTODO.sqs}";
-		//TODO:
-		/*init = "_this exec {\d4t_files\FX\scripts\vehicles\m3a2\CBT_Brad_Init.sqs}; if (format [""%1"", CBT_FctLoad] == ""scalar bool array string 0xfcffffef"") then {_this exec {\d4t_files\FX\scripts\vehicles\m3a2\CBT_init.sqs}};_this exec ""\d4t_files\FX\scripts\vehicles\m3a2\CBT_Brad_ai.sqs""";
-		hit="if (_this select 0 call CBT_countedCargo > 0) then {_this select 0 exec ""\d4t_files\FX\scripts\vehicles\m3a2\CBT_Brad_throwOff.sqs""}";
-		incomingMissile="if (_this select 0 call CBT_countedCargo > 0) then {_this select 0 exec ""\d4t_files\FX\scripts\vehicles\m3a2\CBT_Brad_throwOff.sqs""}";
-		fired="if (_this select 0 call RHS_countedCargo > 0) then {_this select 0 exec ""\d4t_files\FX\scripts\vehicles\m3a2\CBT_Brad_throwOff.sqs""}; if ( (_this select 1 in [{d4t_m220_tow},{d4t_m220_towa},{d4t_fim92}]) ) then {_this exec {\d4t_files\FX\scripts\vehicles\m3a2\CBT_firedEH.sqs}};if ((_this select 1) != ""d4t_m240_coax_4400"" || (_this select 1) != ""d4t_m220_tow"" || (_this select 1) != ""d4t_m220_towa"") Then {(_this select 0) exec format [""\d4t_files\FX\scripts\vehicles\m3a2\%1.sqs"", _this select 1]}";
-		killed="(_this select 0) exec ""\d4t_files\FX\scripts\DKMM_RSC_Veh_burner.sqs""";*/
+		init = "_this exec {\acgim_scripts\Vehicles\Bradley\CBT_Brad_Init.sqs}; if (format [""%1"", CBT_FctLoad] == ""scalar bool array string 0xfcffffef"") then {_this exec {\acgim_scripts\Vehicles\HMMWV\CBT_init.sqs}};_this exec ""\acgim_scripts\Vehicles\Bradley\CBT_Brad_ai.sqs""";
+		hit="if (_this select 0 call CBT_countedCargo > 0) then {_this select 0 exec ""\acgim_scripts\Vehicles\Bradley\CBT_Brad_throwOff.sqs""}";
+		incomingMissile="if (_this select 0 call CBT_countedCargo > 0) then {_this select 0 exec ""\acgim_scripts\Vehicles\Bradley\CBT_Brad_throwOff.sqs""}";
+		fired="if (_this select 0 call RHS_countedCargo > 0) then {_this select 0 exec ""\acgim_scripts\Vehicles\Bradley\CBT_Brad_throwOff.sqs""}; if ( (_this select 1 in [{M220_BGM71DTOW},{M220_BGM71ETOW}]) ) then {_this exec {\acgim_scripts\Vehicles\Bradley\CBT_firedEH.sqs}};if ((_this select 1) != ""M240Coaxial"" || (_this select 1) != ""M220_BGM71DTOW"" || (_this select 1) != ""M220_BGM71ETOW"") Then {(_this select 0) exec format [""\acgim_scripts\Vehicles\Bradley\%1.sqs"", _this select 1]}";
+		killed = "(_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Veh_burner.sqs}";
 	};
 };
 
@@ -167,6 +165,6 @@ class USA_M3A1 : Bradley
 	transportSoldier=2;
 	typicalCargo[]={SoldierLAW, SoldierLAW};
 	hiddenSelections[]={"mrk1","mrk2","gunports","seats"};
-	weapons[]={"M242ChainGun", "M240Coaxial", "M220_BGM71ETOW"};
-	magazines[]={"M242ChainGun_APDS_750", "M242ChainGun_HEI_750", "M240Coaxial", "M220_BGM71ETOW", "M220_BGM71ETOW", "M220_BGM71ETOW", "M220_BGM71ETOW", "M220_BGM71ETOW", "M220_BGM71ETOW"};
+	weapons[]={"M242ChainGun", "M240Coaxial", "M220_BGM71DTOW"};
+	magazines[]={"M242ChainGun_APDS_750", "M242ChainGun_HEI_750", "M240Coaxial", "M220_BGM71DTOW", "M220_BGM71DTOW", "M220_BGM71DTOW", "M220_BGM71DTOW", "M220_BGM71DTOW", "M220_BGM71DTOW"};
 };

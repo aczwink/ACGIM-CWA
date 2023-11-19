@@ -1,0 +1,54 @@
+;>>>©2003raedor
+;contact: raedor@mapfact.net
+;www.mapfact.net
+;www.dkm-mod.mkdi.net
+;www.redhammerstudios.com
+;scripting questions?
+;post here: www.mapfact.net/forum/<<<
+
+_path = "\acgim_scripts\Vehicles\Bradley\"
+
+_tank = _this
+
+
+? CBT_Brad_NoScripts || CBT_NoScripts || CBT_NoCargo: exit
+
+? _tank call CBT_countedCargo == 0: exit
+
+#define
+_cargoTank = []
+CBT_Brad_throwOff = objNull
+publicVariable "CBT_Brad_throwOff"
+
+_crew = crew _tank
+_i = 0
+_runVar = false
+_brake = {private ["_res"]; _res = _this; while "_res > (7/3.6)" do {_res = _res - 1}; _res}
+
+#loop
+	? speed _tank > 7: _tank setVelocity [(velocity _tank select 0) call _brake, (velocity _tank select 1) call _brake, (velocity _tank select 2) call _brake]
+	~0.2
+	? _i == (count _crew): goTo "end"
+	
+	? (((_crew select _i) == (commander _tank)) || ((_crew select _i) == (gunner _tank))  || ((_crew select _i) == (driver _tank))): _i = _i + 1; goTo "loop"
+	
+	
+	unassignVehicle (_crew select _i)
+	(_crew select _i) action ["EJECT", _tank]
+	_pos = position _tank
+	_dir = direction _tank
+	? ! _runVar: _runVar = true; (_crew select _i) setPos [(_pos select 0) + 2 * cos _dir + 2 * sin _dir, (_pos select 1) - 2 * sin _dir - 2 * cos _dir, 0]; goTo "notRun"
+	? _runVar: _runVar = false; (_crew select _i) setPos [(_pos select 0) - 2 * cos _dir +  2 * sin _dir, (_pos select 1) + 2 * sin _dir -  2 * cos _dir, 0]
+	
+	#notRun
+	(_crew select _i) setUnitPos "UP"
+	(_crew select _i) stop true
+	_cargoTank = _cargoTank + [_crew select _i]
+	_i = _i + 1
+	goTo "loop"
+
+#end
+~3
+"_x setUnitPos {AUTO}" forEach _cargoTank
+"_x stop false" forEach _cargoTank
+exit

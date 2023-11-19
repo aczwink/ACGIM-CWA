@@ -56,7 +56,7 @@ class USA_HelicopterPilot : USA_AircraftPilot
 	//TODO_Desert:
 };
 
-class USA_Officer : USA_Soldier
+class OfficerWHG : USA_Soldier
 {
 	accuracy = ACCURACY_OFFICER;
 	cost = COST_OFFICER;
@@ -66,8 +66,4 @@ class USA_Officer : USA_Soldier
 	vehicleClass="Infantry (Misc)";
 	weapons[]={"M1911", "Throw", "Put"};
 	magazines[]={"M1911", "M1911", "M1911", "M1911"};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };

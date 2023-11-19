@@ -19,11 +19,6 @@ class SoldierWFakeE : SoldierEB
 	scope = SCOPE_HIDDEN;
 };
 
-class OfficerENight : OfficerE
-{
-	scope = SCOPE_HIDDEN;
-};
-
 class OfficerEHG : OfficerE
 {
 	scope = SCOPE_HIDDEN;
@@ -47,11 +42,6 @@ class BISCamel2 : BISCamel
 	DisplayName = "$STR_BISCAMEL_NAME2";
 };
 
-class Kamov : V80
-{
-	scope = SCOPE_HIDDEN;
-};
-
 
 
 
@@ -65,16 +55,6 @@ class T80Auto : T80
 
 
 class Ural_Open : USSR_Ural4320Open
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class UralRepair : USSR_Ural4320Repair
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class UralReammo : USSR_Ural4320Reammo
 {
 	scope = SCOPE_HIDDEN;
 };

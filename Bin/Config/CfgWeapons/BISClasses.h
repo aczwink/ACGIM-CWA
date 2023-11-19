@@ -903,3 +903,5 @@ class BISGrenadeCamel : HellfireLauncher
 	aiRateOfFire = 13;
 	aiRateOfFireDistance = 2500;
 };
+
+#include "Config\CfgWeapons\BIS\UZI.hpp"

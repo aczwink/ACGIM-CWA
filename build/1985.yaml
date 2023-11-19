@@ -1,5 +1,20 @@
 source_integrity:
+  BD Grenade Pack v3.3.rar: 7d76beb505aceea7e204b209680eb5e2
+  CBT_MISC_v1.2.rar: fada852cca7d9788d36cf2b95cece844
   CSLA2Update2_Install_v220.exe: 2c9fdd92dbfa3a0471ae1304b2448dec
+  CWA.exe: f4951f2f2b0d649bf56033d2ce37593f
+  FFUR_85_Patch_1.05.exe: a6e340d9f4e3926ce4b86d3a4d65110d
+  icprpg.rar: a8fb4f1964a581affea8e53bfd65f999
+  INQ_M60.rar: 83243d03ae11bbe9f4ce9803347fda69
+  LSR_US_Weapons_Pack_300.rar: f6ccf72fd901868ace241c0efb387955
+  NKHole.zip: e428bfd5a13ade3747a84ad5560b357a
+  OWP_Mi8_1_0(Hight).rar: 1255d7c03f20d553c9b38536695fbf37
+  RHS_Misc_v2.0.rar: 39a5cc253719ea8efeb5715eafbf8399
+  RHS_weapons_v1.01.rar: b6c0a97d24f68530e97e00ae46f880da
+  rus_zsu.rar: 0f828bcac0b28646ef03101862df203a
+  SFM_URALS.rar: 5e94a250ca217fcda3342fd8bcc31904
+  SJB_WeaponsPack_v1.1.cab: ccdcf2d1c2ed5fe063083903a88766e4
+
 steps:
   - type: IncludePipelineSteps
     name: addons.yaml
@@ -149,6 +164,7 @@ steps:
           - SFM_URALS/ural4320_dead.p3d
           - SFM_URALS/ural4320_GAS.p3d
           - SFM_URALS/ural4320_GAS_dead.p3d
+          - SFM_URALS/ural4320_repair_dead.p3d
           - SFM_URALS/ural375_dead_bag.p3d
           - SFM_URALS/ural375_dead_dver.p3d
           - SFM_URALS/ural375_dead_dverL.p3d
@@ -172,6 +188,7 @@ steps:
         pbos:
           - .rsrc/0/RCDATA/CWA\DTA\DTAEXT.PBO.XZ
         files:
+          - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/m/m_aalauncher.paa, type: magazine, targetName: FIM92Stinger }
           - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/w/w_aalauncher.paa, type: weapon, targetName: FIM92Stinger }
           - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/m/m_handgrenade.paa, type: magazine, targetName: HandGrenade }
           - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/m/m_mine.paa, type: magazine, targetName: Mine }
@@ -194,6 +211,7 @@ steps:
           - { sourceFileName: BD_GrenadePack/inv/M18G.paa, type: magazine, targetName: M18Green }
           - { sourceFileName: BD_GrenadePack/inv/M18R.paa, type: magazine, targetName: M18Red }
           - { sourceFileName: BD_GrenadePack/inv/M67.paa, type: magazine, targetName: M67 }
+          - { sourceFileName: BD_GrenadePack/inv/RDG1R.paa, type: magazine, targetName: RDG1Red }
           - { sourceFileName: BD_GrenadePack/inv/RDG1W.paa, type: magazine, targetName: RDG1 }
           - { sourceFileName: BD_GrenadePack/inv/RGO.paa, type: magazine, targetName: RGO }
 

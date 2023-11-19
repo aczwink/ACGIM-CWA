@@ -191,3 +191,8 @@ class A10 : Plane
 		init = "(_this select 0) exec {\SJC_Scripts\USA\A10\num.sqs}; (_this select 0) exec {\SJC_Scripts\USA\A10\checkgear.sqs}; [_this select 0, {wa}] exec {\SJC_Scripts\USA\A10\set_markings.sqs}; (_this select 0) exec {\SJC_Scripts\USA\A10\drawmissiles.sqs}; (_this select 0) animate [{NoseGearDoor2}, 1];";
 	};
 };
+
+class A10LGB : A10
+{
+	scope = SCOPE_HIDDEN;
+};

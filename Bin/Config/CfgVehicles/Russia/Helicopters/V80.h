@@ -3,7 +3,26 @@ Sources:
 	http://en.wikipedia.org/wiki/Kamov_V-80
 	http://en.wikipedia.org/wiki/Kamov_Ka-50
 */
-class V80 : Helicopter
+/*class HellfireLauncherKamov : HellfireLauncherHind
+{
+	ammo="AT6";
+	displayName="$STR_DN_AT6";
+	displayNameMagazine="$STR_MN_AT6";
+	shortNameMagazine="$STR_SN_AT6";
+	count=12;
+	initSpeed=30;
+};
+
+class Rocket57x40Kamov : ZuniLauncher38
+{
+	ammo="Rocket57";
+	displayName="$STR_DN_ROCKET_57";
+	displayNameMagazine="$STR_MN_ROCKET_57";
+	shortNameMagazine="$STR_SN_ROCKET_57";
+	count=40;
+};*/
+
+class Kamov : Helicopter
 {
 	access=2;
 	scope=2;

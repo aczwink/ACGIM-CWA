@@ -107,7 +107,7 @@ class Russia_Ural4320Open : Ural
 	model="\sjc_models\ussr\ural4320_open.p3d";
 };
 
-class Russia_Ural4320Repair : Ural
+class UralRepair : Ural
 {
 	picture="iuralrepair";
 	icon="Repair_move";
@@ -127,7 +127,7 @@ class Russia_Ural4320Repair : Ural
 	class TransportMagazines{};
 };
 
-class Russia_Ural4320Reammo : Ural
+class UralReammo : Ural
 {
 	icon="Ammo_move";
 	displayName="Ural-4320 ammo";
@@ -141,7 +141,7 @@ class Russia_Ural4320Reammo : Ural
 	type = VEHICLE_SOFT;
 	threat[]={THREAT_URAL4320REAMMO};
 
-	class TransportMagazines//TODO
+	class TransportMagazines
 	{
 		class m_AK74
 		{
@@ -197,11 +197,6 @@ class Russia_Ural4320Reammo : Ural
 			count = 1;
 		};
 	};
-	
-	class EventHandlers
-	{
-		Init = "[_this select 0, 54] exec {\SJC_Scripts\vehicleTODO.sqs}";
-	};
 };
 
 class UralRefuel : Ural
@@ -246,10 +241,15 @@ class UralWreck : Car
 	armor=900000;
 	cargoAction[] = {"ManActDLEMuralDEADCARGO1"};
 };
-class Russia_Ural4320Refuel_Wreck : UralWreck
+class World_Ural4320Refuel_Wreck : UralWreck
 {
 	model="\models\ural4320_GAS_dead.p3d";
 	displayName="Ural-4320 refuel wreck";	
+};
+class World_Ural4320Repair_Wreck : UralWreck
+{
+	model="\models\ural4320_repair_dead.p3d";
+	displayName="Ural-4320 Repair wreck";
 };
 
 //Wreck parts - All these are vehicle additions

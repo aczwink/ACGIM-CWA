@@ -207,8 +207,7 @@ class BRDM : LandVehicle
 	
 	class EventHandlers 
 	{
-		Init = "[_this select 0, 50] exec {\SJC_Scripts\vehicleTODO.sqs}";
-		//TODO
-		//init = "[(_this Select 0)] exec ""\OFF_BRDM2\numery.sqs""";
+		init = "[(_this Select 0)] exec ""\acgim_scripts\Vehicles\BRDM2\numery.sqs""";
+		killed = "(_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Veh_burner.sqs}";
 	};
 };

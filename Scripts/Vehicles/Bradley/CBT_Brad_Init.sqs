@@ -1,0 +1,76 @@
+;>>>©2003raedor
+;contact: raedor@mapfact.net
+;www.mapfact.net
+;www.dkm-mod.mkdi.net
+;www.redhammerstudios.com
+;scripting questions?
+;post here: www.mapfact.net/forum/<<<
+
+_path = "\acgim_scripts\Vehicles\Bradley\"
+_tank = _this select 0
+_line = "Brad"
+
+? format ["%1", CBT_Brad_NoScripts] == "scalar bool array string 0xfcffffef": CBT_Brad_NoScripts = false
+? format ["%1", CBT_Brad_UN] == "scalar bool array string 0xfcffffef": CBT_Brad_UN = []
+? format ["%1", CBT_NoTow] == "scalar bool array string 0xfcffffef": CBT_NoTow = false
+? format ["%1", CBT_Brad_FctLoad] == "scalar bool array string 0xfcffffef": CBT_Brad_FctLoad = false
+? local _tank: _tank animate ["suspension", .5]; _tank animate ["CBT_TOW", 1]; _tank animate ["recoil", 1];
+
+? CBT_Brad_NoScripts || CBT_NoScripts: exit
+
+? ! CBT_Brad_FctLoad: CBT_Brad_FctLoad = true; CBT_Brad_UserNums = loadFile format ["%1CBT_Brad_UserNums.sqf", _path]; CBT_Brad_Numbers = loadFile format ["%1CBT_Brad_Numbers.sqf", _path]; CBT_Brad_MPN = loadFile format ["%1CBT_Brad_MPN.sqf", _path]; CBT_Brad_MPNumberFct = loadFile format ["%1CBT_Brad_MPNumbers.sqf", _path]; CBT_Brad_RT = loadFile format ["%1CBT_Brad_RT.sqf", _path]; CBT_Brad_LT = loadFile format ["%1CBT_Brad_LT.sqf", _path];
+
+CBT_Brad_throwOff = objNull
+CBT_BradsWithNormalNumbers = ["Bradley", "CBT_M2A1D", "CBT_M2A1G", "CBT_M2A2D", "CBT_M2A2OD", "CBT_M2A2G", "CBT_M2A2OG", "CBT_M2A2W", "CBT_M2A2OW", "CBT_M3A2D", "CBT_M3A2OD", "CBT_M3A2G", "CBT_M3A2OG", "CBT_M3A2W", "CBT_M3A2OW", "USA_M3A1", "CBT_M3A1D", "CBT_M3A1G", "CBT_M6_D", "CBT_M6_G", "CBT_M6_W"]
+CBT_BradsWithChevrons = ["CBT_M2A1D", "CBT_M2A2D", "CBT_M2A2OD", "CBT_M3A2D", "CBT_M3A2OD", "CBT_M3A1D", "CBT_M6_D"]
+CBT_Brads_Possible_Embs = ["random", "alpha", "bravo", "char", "delta", "none"]
+CBT_Brads_Possible_div = ["random", "2418i", "none"]
+CBT_BradsWithoutCargoProxies =  [""]
+CBT_BradsWith2CargoProxies =  ["CBT_M3A2OD", "CBT_M3A2OG", "CBT_M3A2OW","CBT_M3A2D", "CBT_M3A2G", "CBT_M3A2W", "USA_M3A1", "CBT_M3A1D", "CBT_M3A1G","CBT_M6_D", "CBT_M6_W", "CBT_M6_G"]
+CBT_BradsWith6CargoProxies =  ["Bradley", "CBT_M2A1D", "CBT_M2A1G", "CBT_M2A2D", "CBT_M2A2G", "CBT_M2A2W", "CBT_M2A2OD", "CBT_M2A2OG", "CBT_M2A2OW"]
+CBT_BradsWith7CargoProxies =  ["CBT_M2A2OD", "CBT_M2A2OG", "CBT_M2A2OW"]
+CBT_BradsCAV = ["CBT_M3A2OD", "CBT_M3A2OG", "CBT_M3A2OW","CBT_M3A2D", "CBT_M3A2G", "CBT_M3A2W", "USA_M3A1", "CBT_M3A1D", "CBT_M3A1G"]
+CBT_BradsADA = ["CBT_M6_D", "CBT_M6_W", "CBT_M6_G"]
+CBT_BradsTOW = ["CBT_M2A2D", "CBT_M2A2OD", "CBT_M2A2G", "CBT_M2A2OG", "CBT_M2A2W", "CBT_M2A2OW", "CBT_M3A2D", "CBT_M3A2OD", "CBT_M3A2G", "CBT_M3A2OG", "CBT_M3A2W", "CBT_M3A2OW", "Bradley", "CBT_M2A1D", "CBT_M2A1G", "USA_M3A1", "CBT_M3A1D", "CBT_M3A1G"]
+CBT_BradsWithTOWA = ["CBT_M2A2D", "CBT_M2A2OD", "CBT_M2A2G", "CBT_M2A2OG", "CBT_M2A2W", "CBT_M2A2OW", "CBT_M3A2D", "CBT_M3A2OD", "CBT_M3A2G", "CBT_M3A2OG", "CBT_M3A2W", "CBT_M3A2OW"]
+CBT_BradsWithTOW = ["Bradley", "CBT_M2A1D", "CBT_M2A1G", "USA_M3A1", "CBT_M3A1D", "CBT_M3A1G"]
+
+~0.1
+
+? ! (typeOf _tank in CBT_BradsWithoutCargoProxies): _tank exec format ["%1CBT_Brad_Check.sqs", _path]
+
+? typeOf _tank in CBT_BradsWithNormalNumbers: _array = [_tank, "random", "random", "random", "random"]
+
+? thisIsMP: goto "MP"
+_array call CBT_Brad_Numbers
+
+goTo "loop"
+
+
+#MP
+~1
+? _tank in CBT_Brad_UN: goTo "loop"
+CBT_NoTow = true
+_array call CBT_Brad_MPN
+~0.9 - random 0.6
+_i = -1
+#MPloop
+	~0.05
+	_i = _i + 1
+	? _i > 1000: _i = -1
+	? format ["%1", call format [{CBT_%1_Object_%2}, _line, _i]] != format ["%1", _tank]: goTo "MPloop"
+
+[_tank, _i] call CBT_Brad_MPNumberFct
+CBT_NoTow = true
+publicVariable "CBT_Brad_throwOff"
+publicVariable "CBT_Brad_NoScripts"
+publicVariable "CBT_NoTow"
+publicVariable "CBT_NoScripts"
+
+#loop
+	? isNull _tank: exit
+	~0.5
+	? ! (alive _tank): [_tank, [.5,1,.5], 90, 5, "" ] exec format ["%1CBT_Brad_Fire.sqs", _path]; exit
+	? format ["%1", CBT_Brad_throwOff] == format ["%1", _tank]: _tank exec format ["%1CBT_Brad_throwOff.sqs", _path]
+	? count (_tank call CBT_logicsInCrew) > 0: _tank exec format ["%1CBT_Brad_throwOff.sqs", _path]; "_x action [{EJECT}, _tank]; _x moveInCargo _tank" forEach (_tank call CBT_logicsInCrew)
+	goTo "loop"
