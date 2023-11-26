@@ -1,8 +1,13 @@
+/*
+Sources:
+https://en.wikipedia.org/wiki/GBU-12_Paveway_II
+*/
 class BombGBU12 : LaserGuidedBomb
 {
-	hit = HIT_GBU12;
-	indirectHit = INDIRECTHIT_GBU12;
-	indirectHitRange = INDIRECTHITRANGE_GBU12;
+	//uses the same warhead as the Mk 82
+	hit = HIT_MK82;
+	indirectHit = INDIRECTHIT_MK82;
+	indirectHitRange = 27.64;
 	minRange=50;
 	minRangeProbab=0.50;
 	midRange=300;
@@ -10,7 +15,7 @@ class BombGBU12 : LaserGuidedBomb
 	maxRange=2500;
 	maxRangeProbab=0.50;
 	soundHit[]={"\LaserGuided\expl2",db40,1};
-	cost = COST_GBU12;
+	cost = 21896; //dollars
 	model="\d4t_files\models\us\weapons\air\gbu12.p3d";
 	irLock = true;
 	laserLock=1;
@@ -20,16 +25,19 @@ class BombGBU12 : LaserGuidedBomb
 
 /*
 Sources:
+https://en.wikipedia.org/wiki/Mark_82_bomb
+http://characterisationexplosiveweapons.org/studies/annex-e-mk82-aircraft-bombs/
+https://wiki.warthunder.com/LDGP_Mk_82_(500_lb)
 */
 class BombMk82 : Default
 {
 	hit = HIT_MK82;
 	indirectHit = INDIRECTHIT_MK82;
-	indirectHitRange = INDIRECTHITRANGE_MK82;
+	indirectHitRange = 27.64; //80 m (across) by 30 m (along) which yields in an area of 2,400 m^2. This corresponds to a circle with radius 27.64m
 	soundHit[]={"\LaserGuided\expl2",db40,1};
 	soundFly[]={"\sjc_sounds\weapons\hardmounted\fall.wav",db-30,1.5};
 	model="\sjc_models\usa\objects\mk82.p3d";
-	cost= COST_BOMB_MK82;
+	cost= 4000; //dollars
 	irLock = false;
 	laserLock = false;
 	maxControlRange = 0;
@@ -79,7 +87,7 @@ class BombMk84 : BombMk82
 	proxyShape = "\sjc_models\USA\objects\mk84.p3d";
 };
 
-class BombBLU1 : LaserGuidedBomb //TODO
+class BombBLU1 : LaserGuidedBomb
 {
 	hit=10000;
 	indirectHit=10000;
@@ -90,7 +98,7 @@ class BombBLU1 : LaserGuidedBomb //TODO
 	cost =500;
 };
 
-class BombCBU87 : Default //TODO
+class BombCBU87 : Default
 {
 	hit=3500;
 	indirectHit=2000;

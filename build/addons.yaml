@@ -10,7 +10,7 @@ steps:
     include:
       - source: source
         path: AddOns/6G30/config.cpp
-    targetPboName: 6G30
+    targetPboName: AddOns/6G30
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -22,7 +22,7 @@ steps:
     include:
       - source: source
         path: AddOns/ABox/config.cpp
-    targetPboName: ABox
+    targetPboName: AddOns/ABox
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -34,7 +34,7 @@ steps:
     include:
       - source: source
         path: AddOns/Apac/config.cpp
-    targetPboName: Apac
+    targetPboName: AddOns/Apac
 
   - type: RepackArchive
     sourceLocation: cwa_patch
@@ -46,7 +46,7 @@ steps:
     include:
       - source: source
         path: AddOns/BISCamel/config.cpp
-    targetPboName: BISCamel
+    targetPboName: AddOns/BISCamel
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -58,7 +58,7 @@ steps:
     include:
       - source: source
         path: AddOns/Bizon/config.cpp
-    targetPboName: Bizon
+    targetPboName: AddOns/Bizon
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -70,7 +70,7 @@ steps:
     include:
       - source: source
         path: AddOns/BMP2/config.cpp
-    targetPboName: BMP2
+    targetPboName: AddOns/BMP2
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -82,7 +82,7 @@ steps:
     include:
       - source: source
         path: AddOns/Brmd/config.cpp
-    targetPboName: Brmd
+    targetPboName: AddOns/Brmd
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -94,7 +94,7 @@ steps:
     include:
       - source: source
         path: AddOns/ch47/config.cpp
-    targetPboName: ch47
+    targetPboName: AddOns/ch47
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -106,7 +106,7 @@ steps:
     include:
       - source: source
         path: AddOns/G36a/config.cpp
-    targetPboName: G36a
+    targetPboName: AddOns/G36a
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -118,7 +118,7 @@ steps:
     include:
       - source: source
         path: AddOns/humr/config.cpp
-    targetPboName: humr
+    targetPboName: AddOns/humr
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -130,7 +130,7 @@ steps:
     include:
       - source: source
         path: AddOns/Hunter/config.cpp
-    targetPboName: Hunter
+    targetPboName: AddOns/Hunter
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -142,7 +142,7 @@ steps:
     include:
       - source: source
         path: AddOns/KOLO/config.cpp
-    targetPboName: KOLO
+    targetPboName: AddOns/KOLO
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -154,7 +154,7 @@ steps:
     include:
       - source: source
         path: AddOns/kozl/config.cpp
-    targetPboName: kozl
+    targetPboName: AddOns/kozl
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -166,7 +166,7 @@ steps:
     include:
       - source: source
         path: AddOns/LaserGuided/config.cpp
-    targetPboName: LaserGuided
+    targetPboName: AddOns/LaserGuided
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -178,7 +178,7 @@ steps:
     include:
       - source: source
         path: AddOns/M2A2/config.cpp
-    targetPboName: M2A2
+    targetPboName: AddOns/M2A2
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -190,7 +190,7 @@ steps:
     include:
       - source: source
         path: AddOns/MINI/config.cpp
-    targetPboName: MINI
+    targetPboName: AddOns/MINI
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -202,7 +202,7 @@ steps:
     include:
       - source: source
         path: AddOns/Mm-1/config.cpp
-    targetPboName: Mm-1
+    targetPboName: AddOns/Mm-1
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -214,7 +214,7 @@ steps:
     include:
       - source: source
         path: AddOns/Noe/config.cpp
-    targetPboName: Noe
+    targetPboName: AddOns/Noe
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -226,7 +226,7 @@ steps:
     include:
       - source: source
         path: AddOns/O/config.cpp
-    targetPboName: O
+    targetPboName: AddOns/O
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -238,7 +238,7 @@ steps:
     include:
       - source: source
         path: AddOns/oh58/config.cpp
-    targetPboName: oh58
+    targetPboName: AddOns/oh58
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -250,7 +250,7 @@ steps:
     include:
       - source: source
         path: AddOns/O_WP/config.cpp
-    targetPboName: O_WP
+    targetPboName: AddOns/O_WP
 
   - type: RepackArchive
     sourceLocation: cwa_installer
@@ -262,7 +262,7 @@ steps:
     include:
       - source: source
         path: AddOns/Steyr/config.cpp
-    targetPboName: Steyr
+    targetPboName: AddOns/Steyr
 
 
   - type: CopyFiles

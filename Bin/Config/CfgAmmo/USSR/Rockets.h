@@ -81,7 +81,7 @@ class RocketR60 : AA
 
 /*
 Kh-23
-Speed: 2160–2700 km/h -> 2430 km/h
+Speed: 2160ï¿½2700 km/h -> 2430 km/h
 */
 class RocketKh23 : HellFire
 {
@@ -155,10 +155,45 @@ class RocketS5K : RocketS5M
 };
 
 /*
+S-8
+*/
+class RocketS8 : Rocket57
+{
+	hit=600;indirectHit=150;indirectHitRange=7;
+};
+
+/*
+9K121 Vikhr
+*/
+class Rocket9K121Vikhr : AT3
+{
+	hit=2500;
+	indirectHit=170;
+	indirectHitRange=5.5;
+	minRange=150;minRangeProbab=0.8;
+	midRange=3000;midRangeProbab=1;
+	maxRange=6000;maxRangeProbab=0.95;
+	maxSpeed=1000;
+	soundHit[]={Explosions\explosion_at3,db40,1};
+	cost=2000;
+	model = TOW;
+	irLock=true;
+	laserLock=true;
+	manualControl=false;
+	maxControlRange=100000; // unlimited control (active weapon)
+	maneuvrability=32.0;
+	initTime=0.015;
+	thrustTime=10;
+	thrust=1000;
+};
+
+/*
 9M114 Kokon
 */
-class Rocket9M114Kokon : AT6
+class Rocket9M114Kokon : Hellfire
 {
+	irLock=1;
+	laserLock=0;
 	model = "\sjc_models\russia\objects\at6.p3d";
 	proxyShape="\sjc_models\russia\objects\at6a_proxy.p3d";
 	hit = HIT_9M114KOKON;

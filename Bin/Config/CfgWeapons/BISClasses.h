@@ -735,16 +735,6 @@ class HellfireLauncherCobra : HellfireLauncher
 {
 };
 
-class HellfireLauncherHind : HellfireLauncher
-{
-	ammo="AT6";
-	displayName="$STR_DN_AT6";
-	displayNameMagazine="$STR_MN_AT6";
-	shortNameMagazine="$STR_SN_AT6";
-	count=8;
-	initSpeed=30;
-};
-
 class MaverickLauncher : HellfireLauncher
 {
 	ammo="Maverick";

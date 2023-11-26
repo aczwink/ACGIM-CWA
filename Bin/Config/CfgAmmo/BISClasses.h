@@ -702,25 +702,6 @@ class Rocket57 : Zuni
 	indirectHitRange=3;
 };
 
-class AT6 : Hellfire
-{
-	model="TOW";
-	hit=750;
-	indirectHit=350;
-	indirectHitRange=2.5;
-	minRange=50;
-	minRangeProbab=0.3;
-	midRange=300;
-	midRangeProbab=0.8;
-	maxRange=2000;
-	maxRangeProbab=0.3;
-	soundHit[]={"Explosions\hellfire",100.0000076,1};
-	maxSpeed=200;
-	irLock=1;
-	laserLock=0;
-	maneuvrability=7.0;
-};
-
 class Maverick : Hellfire
 {
 	hit=1900;

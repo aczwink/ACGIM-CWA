@@ -2,8 +2,9 @@
 Sources:
 	http://en.wikipedia.org/wiki/9K114_Shturm
 */
-class 9K114 : HellfireLauncherHind
+class 9K114 : HellfireLauncher
 {
+	initSpeed=30;
 	ammo = "Rocket9M114Kokon";
 	count=8;
 	displayName = "9K114 Shturm";

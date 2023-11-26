@@ -113,7 +113,7 @@ class UralRepair : Ural
 	icon="Repair_move";
 	displayName="Ural-4320 repair";
 	accuracy = ACCURACY_URAL4320REPAIR;
-	model="\sjc_models\ussr\ural4320_repair.p3d";
+	model = "\models\ural4320_repair.p3d";
 	hiddenSelections[]={};
 	transportSoldier=2;
 	transportRepair=200000000;

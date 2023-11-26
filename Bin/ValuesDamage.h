@@ -1,13 +1,8 @@
 //Hit, indirectHit, indirectHitRange
 //No Prooves!!!!
 //Bombs
-#define HIT_GBU12						2000
-#define INDIRECTHIT_GBU12				875
-#define INDIRECTHITRANGE_GBU12			7.5
-
-#define HIT_MK82						2000
-#define INDIRECTHIT_MK82				875
-#define INDIRECTHITRANGE_MK82			7.5
+#define HIT_MK82						4828
+#define INDIRECTHIT_MK82				3576
 
 #define HIT_MK83						4000
 #define INDIRECTHIT_MK83				1750

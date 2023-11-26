@@ -1,0 +1,88 @@
+? ! (_this select 0) : exit
+? ! (_this select 1) : exit
+
+? (format ["%1", ACGIM_ARTunits] == "scalar bool array string 0xfcffffef") : hintC "ERROR: variable ACGIM_ARTunits is not defined"; exit;
+? (count ACGIM_ARTunits == 0) : hintC "ERROR: variable ACGIM_ARTunits is empty"; exit;
+
+_pos = _this select 2
+_fired = 0
+
+_ok = createDialog "RscACGIM_Artillery"
+? (! _ok) : hintC "ERROR: Dialog resource missing"; exit;
+
+_i = 0;
+while { _i < (count ACGIM_ARTunits) } do { _unit = ACGIM_ARTunits select _i; lbAdd [101, _unit select 0]; _i = _i + 1; };
+
+lbSetCurSel [101, 0]
+
+
+#loop
+? ! (ctrlVisible 100) : goto "dialogClosed";
+? ACGIM_ARTfire : goto "closeDialog";
+_selectionIndex = lbCurSel 101;
+
+_selected = ACGIM_ARTunits select _selectionIndex;
+
+ctrlSetText [102, format ["Unit count: %1", _selected select 1]];
+ctrlSetText [103, format ["Scattering: %1 m", _selected select 2]];
+ctrlSetText [104, format ["Shots left: %1", _selected select 3]];
+
+
+~0.5
+goto "loop"
+
+
+#closeDialog
+closeDialog 0
+
+#dialogClosed
+? ! ACGIM_ARTfire : exit
+
+;undefine map click handler
+onMapSingleClick "";
+
+_unitCountInGroup = _selected select 1;
+_scattering = _selected select 2;
+_shotsLeft = _selected select 3;
+_weapon = _selected select 4;
+
+? (_shotsLeft == 0) : ACGIM_ARTfire = false; player sideChat "HQ: Can't do that. We're out of ammo. Out"; exit;
+
+player sideChat "HQ: Understood. Firing now. Over.";
+;time to aim
+~15
+
+playsound "ArtilleryCannon"
+~5
+playsound "ArtilleryShellFly"
+~0.1
+
+
+_salvesLeft = 5;
+
+#fire_salve
+? (_salvesLeft == 0) : goto "completed"
+
+_shotsLeft = _selected select 3;
+_shotsForSalve = _unitCountInGroup;
+? (_shotsLeft < _unitCountInGroup) : _shotsForSalve = _shotsLeft;
+_shotsForSalveLeft = _shotsForSalve;
+
+#fire_unit
+? (_shotsForSalveLeft == 0) : goto "salve_finished"
+_weapon camCreate [(_pos select 0) + Random(2 * _scattering) - _scattering,(_pos select 1) + Random(2 * _scattering) - _scattering, 0];
+_shotsForSalveLeft = _shotsForSalveLeft - 1;
+~1
+goto "fire_unit"
+
+#salve_finished
+_selected set [3, _shotsLeft - _shotsForSalve];
+
+_salvesLeft = _salvesLeft - 1;
+;some reload time
+~5
+goto "fire_salve"
+
+
+#completed
+ACGIM_ARTfire = false;

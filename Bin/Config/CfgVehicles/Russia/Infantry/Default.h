@@ -26,9 +26,6 @@ class Russia_Soldier : Soldier
 	};
 	weapons[] = {"AK74", "Throw", "Put"};
 	magazines[] = {"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "RGO", "RGO", "RGO"};
-
-	//TODO_2005:
-	//TODO_Desert:
 };
 
 class Russia_Grenadier : Russia_Soldier
@@ -55,9 +52,6 @@ class Russia_Medic : Russia_Soldier
 	magazines[] = {"AK74", "AK74", "AK74", "AK74"};
 	nameSound = "medic";
 	threat[] = {THREAT_MEDIC};
-
-	//TODO_2005:
-	//TODO_Desert:
 };
 
 class Russia_MachineGunner : Russia_Soldier
@@ -70,9 +64,6 @@ class Russia_MachineGunner : Russia_Soldier
 	weapons[] = {WEAPON_REFERENCE(PKM), "Throw", "Put"};
 	magazines[] = {WEAPON_REFERENCE(PKM), WEAPON_REFERENCE(PKM), WEAPON_REFERENCE(PKM), WEAPON_REFERENCE(PKM), WEAPON_REFERENCE(PKM)};
 	threat[] = {THREAT_MACHINEGUNNER};
-
-	//TODO_2005:
-	//TODO_Desert:
 };
 
 class Russia_LightATSoldier : Russia_Soldier
@@ -85,9 +76,6 @@ class Russia_LightATSoldier : Russia_Soldier
 	weapons[] = {"AK74", "RPG7V", "Throw", "Put"};
 	magazines[] = {"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "PG7VL", "PG7VL", "PG7VL", "PG7VL"};
 	threat[] = {THREAT_ATSOLDIER};
-
-	//TODO_2005:
-	//TODO_Desert:
 };
 
 class Russia_ATSoldier : Russia_LightATSoldier
@@ -99,9 +87,6 @@ class Russia_ATSoldier : Russia_LightATSoldier
 	weapons[] = {"AK74", "RPG18", "Throw", "Put"};
 	magazines[] = {"AK74", "AK74", "AK74", "AK74", "RPG18", "RPG18"};
 	threat[] = {THREAT_HATSOLDIER};
-
-	//TODO_2005:
-	//TODO_Desert:
 };
 
 class Russia_AASoldier : Russia_LightATSoldier
@@ -113,9 +98,6 @@ class Russia_AASoldier : Russia_LightATSoldier
 	weapons[] = {"AK74", "9K32", "Throw", "Put"};
 	magazines[] = {"AK74", "AK74", "AK74", "AK74", "9K32"};
 	threat[] = {THREAT_AASOLDIER};
-
-	//TODO_2005:
-	//TODO_Desert:
 };
 
 class Russia_Miner : Russia_Soldier
@@ -129,9 +111,6 @@ class Russia_Miner : Russia_Soldier
 	weapons[] = {"AK74", "Throw", "Put"};
 	magazines[] = {"AK74", "AK74", "AK74", "AK74", "MineE", "MineE", "MineE"};
 	threat[] = {THREAT_MINER};
-
-	//TODO_2005:
-	//TODO_Desert:
 };
 
 class Russia_SquadLeader : Russia_Soldier

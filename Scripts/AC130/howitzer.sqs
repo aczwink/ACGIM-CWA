@@ -1,0 +1,24 @@
+_player = _this select 1;
+
+_player sideChat "Requesting fire. Marking target with laser. Over."
+~5
+_player sideChat "AC-130 Spectre: Roger locating target. Over."
+~5
+
+_dir = getDir _player;
+_playerPos = getPos _player;
+
+_i = 0;
+_searchPos = [];
+_laserPos = objNull;
+while { _i < 50 } do { _range = _i * 50; _searchPos = [(_playerPos select 0) + sin(_dir) * _range, (_playerPos select 1) + cos(_dir) * _range, (_playerPos select 2)]; _laserObj = nearestObject [_searchPos, "LaserTargetW"]; if (not (isNull _laserObj)) then { _laserPos = getPos _laserObj; goto "found"; }; _i = _i + 1 };
+
+_player sideChat "AC-130 Spectre: Uhhh sorry we can't see the laser. Out.";
+exit;
+
+#found
+_player sideChat "AC-130 Spectre: Target acquired. Firing. Over.";
+~3
+
+_obj = "Shell125" camCreate [(_laserPos select 0), (_laserPos select 1), 10];
+_obj setVelocity [0, 0, -1000];

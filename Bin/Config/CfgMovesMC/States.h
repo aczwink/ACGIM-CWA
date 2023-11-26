@@ -8020,49 +8020,7 @@ class oh58gunnerDead : oh58gunnerDying
 	connectFrom[]={"oh58gunnerDying",1};
 	connectTo[]={"DeadState",1};
 };
-//trabant - TODO
-//			class TrabiDriverDying :  DefaultDie
-//			{
-//				actions = NoActions;
-//				file=\trab\trabidriversmrt.rtm;
-//				speed=-1;
-//				looped=0;
-//				soundEnabled=0;
-//				connectFrom[]={TrabiDriver,1};
-//			};
-//			class TrabiDriverDead :  TrabiDriverDying
-//			{
-//				actions = DeadActions;
-//				file=\trab\trabidriversmrt.rtm;
-//				speed=SPEED_STATIC;
-//				terminal = 1;
-//				connectFrom[]={TrabiDriverDying,1};
-//				connectTo[]={DeadState,1};
-//			}
-//		#define VEHIN_MOVES_VAR(Name,anim,vartime) \
-//			class Name :  Driver \
-//			{ \
-//				file=anim##stat.rtm; \
-//				speed=SPEED_STATIC; \
-//				looped=1; \
-//				variantsAI[]= {Name##V1,0.7,Name};\
-//				interpolateWith[]={Name##V1,0.5};\
-//				equivalentTo=Name; \
-//				interpolationSpeed=1; \
-//				connectTo[]={Name##Dying,1}; \
-//			} \
-//			class Name##V1 :  Name \
-//			{ \
-//				file=anim.rtm; \
-//				speed=-vartime; \
-//				looped=1; \
-//			}
-//		#define VEH_MOVES_VAR(Name,anim,time,vartime) \
-//			VEHIN_MOVES_VAR(Name,anim,vartime); \
-//			VEH_DIE_CONN(Name,anim,time)
-//
-//		VEH_MOVES_VAR(, , 1, 4);
-//
+
 class VulcanGunner : Driver
 {
 	file="\vulcan\vulcangunnerstat.rtm";
@@ -8635,6 +8593,7 @@ class CBT_HMMWVTOWGunnerDead : CBT_HMMWVTOWGunnerDying
 
 #include "Config\CfgMovesMC\States\Mi8.hpp"
 #include "Config\CfgMovesMC\States\T55.hpp"
+#include "Config\CfgMovesMC\States\Trabant.hpp"
 #include "Config\CfgMovesMC\States\Ural.hpp"
 
 class CSLA2_BMP_driverout : StandBase

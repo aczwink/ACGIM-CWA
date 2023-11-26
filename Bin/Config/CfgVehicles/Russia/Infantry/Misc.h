@@ -126,7 +126,4 @@ class Russia_Parachute : ParachuteBase
 	crew = "Russia_Soldier";
 	displayName = "Paratrooper";
 	vehicleClass = "Infantry";
-
-	//TODO_2005:
-	//TODO_Desert:
 };

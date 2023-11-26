@@ -3,6 +3,7 @@ source_integrity:
   CBT_MISC_v1.2.rar: fada852cca7d9788d36cf2b95cece844
   CSLA2Update2_Install_v220.exe: 2c9fdd92dbfa3a0471ae1304b2448dec
   CWA.exe: f4951f2f2b0d649bf56033d2ce37593f
+  DSL_a10v1.11.rar: b5fd1ef320b4e0756206e927987f2a7e
   FFUR_85_Patch_1.05.exe: a6e340d9f4e3926ce4b86d3a4d65110d
   icprpg.rar: a8fb4f1964a581affea8e53bfd65f999
   INQ_M60.rar: 83243d03ae11bbe9f4ce9803347fda69
@@ -68,19 +69,71 @@ steps:
           - csla_us/uh-60a/pp_sklo3.paa
 
       - type: Archive
+        name: DSL_a10v1.11.rar
+        pbos:
+          - DSL_a10.pbo
+        files:
+          - DSL_a10/DSL_a10_mesh_gbu_g.p3d
+
+      - type: Archive
         name: FFUR_85_Patch_1.05.exe
         pbos:
+          - "@ffsx85/addons/ffur_arty.pbo"
           - "@ffsx85/addons/Noe.pbo"
+          - "@ffsx85/addons/SLX_GL3.pbo"
           - "@ffsx85/addons/SLX_Grass.pbo"
           - "@ffsx85/addons/SLX_Grass_CWC_Islands.pbo"
         files:
-          - Noe/noe.wrp
+          - { sourceFileName: ffur_arty/wizz.ogg, targetName: arty_shellfly }
+          - { sourceFileName: SLX_GL3/Sounds/cannon.ogg, targetName: arty_cannonfire_background }
+          - sourceFileName: Noe/noe.wrp
+            targetName: noe
+            patch:
+              #mission resistance/camel attack expects #149 to be the ammo deposit
+              #this is #72871 on this map
+              - id: 149
+                mappedId: 72871 #swap ids
+              - id: 72871
+                mappedId: 149 #set correct id for ammo deposit
+
+              #mission R02Laser.Noe excepts bridge to have certain ids
+              - id: 40054
+                mappedId: 167669 #swap ids
+              - id: 167669
+                mappedId: 40054 #set correct id for bridge part
+
+              - id: 40063
+                mappedId: 167792 #swap ids
+              - id: 167792
+                mappedId: 40063 #set correct id for bridge part
+
+              - id: 40064
+                mappedId: 167793 #swap ids
+              - id: 167793
+                mappedId: 40064 #set correct id for bridge part
+
+              - id: 40065
+                mappedId: 167794 #swap ids
+              - id: 167794
+                mappedId: 40065 #set correct id for bridge part
+
+              - id: 40066
+                mappedId: 167795 #swap ids
+              - id: 167795
+                mappedId: 40066 #set correct id for bridge part
+
+              - id: 40067
+                mappedId: 167797 #swap ids
+              - id: 167797
+                mappedId: 40067 #set correct id for bridge part
+                
           - sourceFileName: SLX_Grass_CWC_Islands/Abel.wrp
             targetName: Abel
             patch:
+              #106710 is the maximum id in the source file
+
               #mission 07 shadow killer expects #40394 to be the fuel station
               #this is vegetation on this map, while the fuel station is #67329
-              #106710 is the maximum id in the source file
               - id: 40394
                 mappedId: 67329 #swap ids
               - id: 67329
@@ -164,6 +217,7 @@ steps:
           - SFM_URALS/ural4320_dead.p3d
           - SFM_URALS/ural4320_GAS.p3d
           - SFM_URALS/ural4320_GAS_dead.p3d
+          - SFM_URALS/ural4320_repair.p3d
           - SFM_URALS/ural4320_repair_dead.p3d
           - SFM_URALS/ural375_dead_bag.p3d
           - SFM_URALS/ural375_dead_dver.p3d
@@ -193,6 +247,7 @@ steps:
           - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/m/m_handgrenade.paa, type: magazine, targetName: HandGrenade }
           - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/m/m_mine.paa, type: magazine, targetName: Mine }
           - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/m/m_pipebomb.paa, type: magazine, targetName: PipeBomb }
+          - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/m/m_smokeshell.paa, type: magazine, targetName: SmokeShell }
           - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/w/w_binocular.paa, type: weapon, targetName: Binocular }
           - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/w/w_nvgoggles.paa, type: weapon, targetName: NVGoggles }
           - { sourceFileName: CWA\DTA\DTAEXT.PBO/equip/emptyeq.paa, type: base, targetName: emptyeq }
@@ -281,7 +336,7 @@ steps:
 
   - type: CopyFiles
     source: resources
-    files: Dta/*.pbo #TODO: these should be packed instead of copied
+    files: Dta/*.pbo #TODO: these should be packed instead of copied, see below
 
   - type: PackArchive
     source: source
@@ -299,6 +354,9 @@ steps:
     source_folder: Dta/d4t_tex
     target_folder: Dta
 
+  #TODO: data
+  #TODO: data3d
+
   - type: PackArchive
     source: resources
     source_folder: Dta/sjc_anims
@@ -309,20 +367,29 @@ steps:
     source_folder: Dta/sjc_files
     target_folder: Dta
 
+  #TODO: sjc_images
+
   - type: PackArchive
     source: resources
     source_folder: Dta/sjc_models
     target_folder: Dta
+
+  #TODO: sjc_optics
 
   - type: PackArchive
     source: resources
     source_folder: Dta/SJC_Scripts
     target_folder: Dta
 
+  #TODO: sjc_sounds
+
   - type: PackArchive
     source: resources
     source_folder: Dta/sjc_textures
     target_folder: Dta
+
+  - type: IncludePipelineSteps
+    name: missions.yaml
 
   #misc
   - type: CopyFiles

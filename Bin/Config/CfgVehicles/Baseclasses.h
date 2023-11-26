@@ -2299,6 +2299,11 @@ class House : NonStrategic
 	accuracy=0.2;
 	cost=0;
 	ladders[]={};
+
+	class EventHandlers
+	{
+		killed = "(_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Veh_burner.sqs}";
+	};
 };
 
 class Sound

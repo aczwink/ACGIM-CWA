@@ -3,30 +3,12 @@ Sources:
 	http://en.wikipedia.org/wiki/Kamov_V-80
 	http://en.wikipedia.org/wiki/Kamov_Ka-50
 */
-/*class HellfireLauncherKamov : HellfireLauncherHind
-{
-	ammo="AT6";
-	displayName="$STR_DN_AT6";
-	displayNameMagazine="$STR_MN_AT6";
-	shortNameMagazine="$STR_SN_AT6";
-	count=12;
-	initSpeed=30;
-};
-
-class Rocket57x40Kamov : ZuniLauncher38
-{
-	ammo="Rocket57";
-	displayName="$STR_DN_ROCKET_57";
-	displayNameMagazine="$STR_MN_ROCKET_57";
-	shortNameMagazine="$STR_SN_ROCKET_57";
-	count=40;
-};*/
 
 class Kamov : Helicopter
 {
 	access=2;
 	scope=2;
-	crew = "USSR_HelicopterPilot";
+	crew = "Russia_HelicopterPilot";
 	picture="imi24";
 	maxSpeed = 315;
 	side = SIDE_EAST;
@@ -41,8 +23,8 @@ class Kamov : Helicopter
 	rotorSmall="vrthind_m";
 	rotorSmallBlend="vrthind_m_bl";
 	soundEngine[]={"vehicles\mi_helicopter",3.1622777,1};
-	weapons[]={"2A42", "HellfireLauncherKamov","Rocket57x40Kamov"};//TODO
-	magazines[]={"3UBR8", "3UOF8", "HellfireLauncherKamov","Rocket57x40Kamov"};//TODO
+	weapons[]={"2A42", "9K121", "B8V20A"};
+	magazines[]={"3UBR8", "3UOF8", "9K121", "B8V20A"};
 	driverOpticsModel="\o\vehl\V80_optika.p3d";
 	transportSoldier=0;
 	transportAmmo=0;
@@ -150,6 +132,6 @@ class Kamov : Helicopter
 	
 	class EventHandlers
 	{
-		Init = "[_this select 0, 70] exec {\SJC_Scripts\vehicleTODO.sqs}";
+		hit = "_this exec {\SJC_Scripts\Events\HelicopterHit.sqs};";
 	};
 };

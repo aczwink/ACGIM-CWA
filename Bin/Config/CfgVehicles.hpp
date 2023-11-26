@@ -20,9 +20,6 @@ class CfgVehicles
 
 	/*
 	//----Civilian----
-	//Aircraft
-#include "Config\CfgVehicles\Civilian\Cessna182.h"
-
 	//-Empty
 #include "Config\CfgVehicles\Objects\Forest.h"
 

@@ -18,8 +18,6 @@
 #define COST_GRENADE_MK19		60
 #define COST_GRENADE_PG16		10000
 //Bombs
-#define COST_GBU12			30000
-#define COST_BOMB_MK82		10000
 #define COST_BOMB_MK83		25000
 #define COST_MK84			50000
 

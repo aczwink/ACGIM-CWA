@@ -1,0 +1,10 @@
+player sideChat "Requesting immediate fire mission. Over.";
+~5
+
+? (format ["%1", ACGIM_ARTfire] == "scalar bool array string 0xfcffffef") : ACGIM_ARTfire = false;
+? ACGIM_ARTfire : player sideChat "HQ: Sorry we're still busy with the previous fire mission. Out"; exit;
+
+player sideChat "HQ: Roger standing by four coordinates. Over.";
+
+onMapSingleClick {[_shift,_alt,_pos] exec "\acgim_scripts\Artillery\Artillery.sqs"}
+hint "Press shift+alt on the map to designate the target for artillery fire"

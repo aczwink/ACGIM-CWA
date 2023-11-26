@@ -136,21 +136,16 @@ class USA_RadioOperator : USA_Soldier
 	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "M67", "M67", "M67"};
 	threat[]={THREAT_RADIOOPERATOR};
 
-	/*class UserActions//TODO
+	class UserActions
 	{
 		class Artillery
 		{  
 			displayName="Call Artillery";
 			position="pos driver";
 			radius=2.00000;
-			condition="(side this == west) && (this hasweapon ""d4t_prc117"" || this hasweapon ""prc117"") && alive this ";
-			statement= "[this, player, 0] exec ""\d4t_misc\artillery\init.sqs""";
+			condition="(side this == west) && (this hasweapon ""PRC119_SINCGARS"") && alive this";
+			statement= "[this, player] exec ""\acgim_scripts\Artillery\init.sqs""";
 		};
-	};*/
-
-	class EventHandlers
-	{
-		Init = "[_this select 0, 126] exec {\SJC_Scripts\vehicleTODO.sqs}";
 	};
 };
 

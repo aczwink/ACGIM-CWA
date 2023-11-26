@@ -1,0 +1,29 @@
+_salvesLeft = _this select 0;
+_shotsForSalve = _this select 1;
+_weapon = _this select 2;
+_pos = _this select 3;
+_scattering = _this select 4;
+
+playsound "ArtilleryCannon"
+~5
+playsound "ArtilleryShellFly"
+~0.1
+
+#fire_salve
+? (_salvesLeft == 0) : exit
+_shotsForSalveLeft = _shotsForSalve;
+
+#fire_unit
+? (_shotsForSalveLeft == 0) : goto "salve_finished"
+_weapon camCreate [(_pos select 0) + Random(2 * _scattering) - _scattering,(_pos select 1) + Random(2 * _scattering) - _scattering, 0];
+_shotsForSalveLeft = _shotsForSalveLeft - 1;
+~1
+goto "fire_unit"
+
+#salve_finished
+_selected set [3, _shotsLeft - _shotsForSalve];
+
+_salvesLeft = _salvesLeft - 1;
+;some reload time
+~5
+goto "fire_salve"

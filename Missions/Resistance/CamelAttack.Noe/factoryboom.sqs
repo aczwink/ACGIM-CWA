@@ -1,0 +1,24 @@
+; Script for explosion of Factory
+
+
+~(random 1)
+_bomb1 = "Bomb" createVehicle getMarkerPos "e1";
+_bomb1 setDammage 1;
+
+~(random 2)
+_bomb2 = "Bomb" createVehicle getMarkerPos "e2";
+_bomb2 setDammage 1;
+
+~(random 2)
+_bomb3 = "Bomb" createVehicle getMarkerPos "e3";
+_bomb3 setDammage 1;
+
+~2
+(object 149) setDammage 1;
+
+~4
+
+"deleteVehicle x" forEach [_bomb1, _bomb2, _bomb3];
+aPD addRating 10000;
+Znicil = true;
+"1" objStatus "done";

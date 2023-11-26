@@ -464,6 +464,7 @@ class CfgSounds
 		titles[]={};
 	};
 
+	#include "Config\CfgSounds\Artillery.hpp"	
 	#include "Config\CfgSounds\USA.hpp"
 	#include "Config\CfgSounds\Russia.hpp"
 };

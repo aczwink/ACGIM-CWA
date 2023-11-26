@@ -280,14 +280,6 @@ class AT4Launcher : Default
 	shortNameMagazine="$STR_SN_AT4";
 };
 
-class Rocket57x192:ZuniLauncher38
-{
-	ammo="Rocket57";
-	displayName="$STR_DN_ROCKET_57";
-	displayNameMagazine="$STR_MN_ROCKET_57";
-	shortNameMagazine="$STR_SN_ROCKET_57";
-	count=192;
-};
 //d4t adding res addons weapons
 class 6G30Base:GrenadeLauncher
 {

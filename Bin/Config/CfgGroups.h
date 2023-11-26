@@ -1,4 +1,4 @@
-class CfgGroups //TODO
+class CfgGroups
 {
 	class West
 	{
@@ -10,7 +10,7 @@ class CfgGroups //TODO
 
 			class M1Platoon
 			{ 
-				name="M1A2 SEP Abrams Platoon";
+				name="M1A1 Abrams Platoon";
 
 				class Unit0
 				{
@@ -47,7 +47,7 @@ class CfgGroups //TODO
 
 			class M60Platoon
 			{
-				name="M1A1 Abrams Platoon";
+				name="M60 Platoon";
 
 				class Unit0
 				{
@@ -182,7 +182,7 @@ class CfgGroups //TODO
 				class Unit11
 				{
 					side=1;
-					vehicle="d4t_soldier_radioop";
+					vehicle="USA_RadioOperator";
 					rank="Private";
 					position[]={23,0,0};
 				};

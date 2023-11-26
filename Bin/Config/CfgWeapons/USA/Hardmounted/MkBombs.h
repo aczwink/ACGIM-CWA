@@ -17,6 +17,11 @@ class Mk82 : HellfireLauncher
 	aiRateOfFireDistance=0.01;
 };
 
+class Mk82_4 : Mk82
+{
+	count = 4;
+};
+
 /*
 Sources:
 	http://en.wikipedia.org/wiki/Mark_83_bomb

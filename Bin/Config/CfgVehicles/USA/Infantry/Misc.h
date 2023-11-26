@@ -7,10 +7,6 @@ class USA_Crew : USA_Soldier
 	weapons[]={"M1911", "NVGoggles", "Throw", "Put"};
 	magazines[]={"M1911", "M1911", "M1911", "M1911"};
 	model="\d4t_files\models\us\infantry\1985\crew85.p3d";
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_AircraftPilot : USA_Soldier
@@ -29,10 +25,6 @@ class USA_AircraftPilot : USA_Soldier
 		"\d4t_tex\pt\PilbdyB.paa","\d4t_tex\pt\PilBdyBD.paa",
 		"\d4t_tex\pt\PilHel1.paa","\d4t_tex\pt\PilHel1D.paa"
 	};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_HelicopterPilot : USA_AircraftPilot
@@ -50,10 +42,6 @@ class USA_HelicopterPilot : USA_AircraftPilot
 		"\d4t_tex\piloth\wl\chest.paa","\d4t_tex\piloth\wl\chest_d.paa",
 		"\d4t_tex\piloth\hgu56p.paa","\d4t_tex\piloth\hgu56p_d.paa"
 	};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class OfficerWHG : USA_Soldier

@@ -20,10 +20,6 @@ class USA_Sniper : USA_Soldier
 		"\d4t_tex\snip\back.paa", "\d4t_tex\snip\back_d.paa",
 		"\d4t_tex\snip\chest.paa", "\d4t_tex\snip\chest_d.paa"
 	};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_SF_Operator : USA_Soldier
@@ -36,7 +32,7 @@ class USA_SF_Operator : USA_Soldier
 	vehicleClass="Infantry (Special Forces)";
 	displayName="Operator";
 	weapons[]={WEAPON_REFERENCE(CAR15_SD), "M1911_SD", "Binocular", "NVGoggles", "Throw", "Put"};
-	magazines[]={WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), "PipeBomb", "PipeBomb", "PipeBomb", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};//TODO
+	magazines[]={WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), "PipeBomb", "PipeBomb", "PipeBomb", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};
 	threat[]={THREAT_SFOPERATOR};
 	model="\d4t_files\models\us\infantry\1985\sf_op85.p3d";
 	canHideBodies=1;
@@ -80,10 +76,6 @@ class USA_SF_Operator : USA_Soldier
 		"\d4t_tex\usfc85\chelS.paa",		"\d4t_tex\usfc85\chelSd.paa",
 		"\d4t_tex\usfc85\chelT.paa",		"\d4t_tex\usfc85\chelTd.paa",
 	};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_SF_Operator_Spotter : USA_SF_Operator
@@ -93,10 +85,6 @@ class USA_SF_Operator_Spotter : USA_SF_Operator
 	displayName = "Operator (Spotter)";
 	weapons[] = {WEAPON_REFERENCE(CAR15_SD), "LaserDesignator", "M1911_SD", "Binocular", "NVGoggles", "Throw", "Put"};
 	magazines[] = {WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), "LaserDesignator", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_SF_Operator_Marksman : USA_SF_Operator
@@ -106,10 +94,6 @@ class USA_SF_Operator_Marksman : USA_SF_Operator
 	displayName = "Operator (Marksman)";
 	weapons[] = {"M21_SD", "M1911_SD", "Binocular", "NVGoggles", "Throw", "Put"};
 	magazines[]={"M21_SD", "M21_SD", "M21_SD", "M21_SD", "M21_SD", "M21_SD", "PipeBomb", "PipeBomb", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_SF_Operator_TeamLeader : USA_SF_Operator
@@ -119,10 +103,6 @@ class USA_SF_Operator_TeamLeader : USA_SF_Operator
 	displayName="Operator (Team Leader)";
 	weapons[]={"CAR15_ACOG_SD", "M1911_SD", "Binocular", "NVGoggles", "Throw", "Put"};
 	magazines[]={WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), "PipeBomb", "PipeBomb", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_SF_Ranger : USA_SF_Operator
@@ -152,10 +132,6 @@ class USA_SF_Ranger_Marksman : USA_SF_Ranger
 	displayName = "Ranger (Marksman)";
 	weapons[] = {"M21", "M1911", "Throw", "Put"};
 	magazines[]={"M21", "M21", "M21", "M21", "M21", "M21", "PipeBomb", "PipeBomb", "M1911", "M1911", "M1911", "M1911"};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
 
 class USA_SF_Ranger_TeamLeader : USA_SF_Ranger
@@ -164,8 +140,4 @@ class USA_SF_Ranger_TeamLeader : USA_SF_Ranger
 	cost = COST_SFOPERATOR_TEAMLEADER;
 	displayName="Ranger (Team Leader)";
 	weapons[]={"CAR15_ACOG", "M1911", "Binocular", "Throw", "Put"};
-
-	//TODO_2005:
-	//TODO_Marines:
-	//TODO_Desert:
 };
