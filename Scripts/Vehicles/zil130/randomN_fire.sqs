@@ -1,0 +1,55 @@
+
+; Ñêðèïò ðàíäîìíûõ íîìåðîâ íà òà÷êàõ
+; (ñ) Kerd, Íàøå Îðóæèå
+
+_car = _this select 0
+_color = _this select 1
+
+; Íîìåð äîëæåí áûòü âèäà
+; 12-34 ÀÁ
+
+if (_color == 0) then {goto "Black"};
+if (_color == 1) then {goto "White"};
+
+
+#black
+_letter_array = ["A","B","C","D","E","F","G","H","I","K","L","N","P","S","U","Z"];
+_post = "";
+Goto "D1";
+
+#white
+_letter_array = ["A","B","C","D","E","F","G","H","I","K","L","N","P","S","U","Z"];
+_post = "w";
+
+#D1
+; 5-8
+;_texture = format["\ZIL131\no%1%2.paa",_letter_array,_post]
+
+_rnd = 3
+; Öèôåðíûå ÷àñòè íîìåðà
+_rnd1 = random(10);
+_rnd = _rnd1 - (_rnd1 mod 1)
+_car setobjecttexture [2,format["\sjc_textures\zil130\trno\%1%2.paa",_rnd,_post]];
+_rnd1 = random(10);
+_rnd = _rnd1 - (_rnd1 mod 1)
+_car setobjecttexture [3,format["\sjc_textures\zil130\trno\%1%2.paa",_rnd,_post]];
+_rnd1 = random(10);
+_rnd = _rnd1 - (_rnd1 mod 1)
+_car setobjecttexture [4,format["\sjc_textures\zil130\trno\%1%2.paa",_rnd,_post]];
+_rnd1 = random(10);
+_rnd = _rnd1 - (_rnd1 mod 1)
+_car setobjecttexture [5,format["\sjc_textures\zil130\trno\%1%2.paa",_rnd,_post]];
+
+;hint format["\OWP_ZIL\trno\%1%2.paa",_rnd,_post]
+; Áóêâåííûå íîìåðà
+_rnd1 = random(16);
+_rnd = _rnd1 - (_rnd1 mod 1)
+_car setobjecttexture [6,format["\sjc_textures\zil130\trno\%1%2.paa",_letter_array select _rnd,_post]];
+_rnd1 = random(16);
+_rnd = _rnd1 - (_rnd1 mod 1)
+_car setobjecttexture [7,format["\sjc_textures\zil130\trno\%1%2.paa",_letter_array select _rnd,_post]];
+_rnd1 = random(16);
+_rnd = _rnd1 - (_rnd1 mod 1)
+_car setobjecttexture [8,format["\sjc_textures\zil130\trno\%1%2.paa",_letter_array select _rnd,_post]];
+
+exit;

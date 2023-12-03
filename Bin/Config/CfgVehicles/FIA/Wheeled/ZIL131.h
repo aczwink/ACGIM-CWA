@@ -5,7 +5,7 @@ Sources:
 class FIA_ZIL131 : SkodaBase
 {
 	side = SIDE_FIA;
-	crew = "FIA_Soldier";
+	crew = "SoldierGB";
 	hasDriver=1;
 	hasgunner=0;
 	unitInfoType="UnitInfoCar";
@@ -145,6 +145,10 @@ class FIA_ZIL131 : SkodaBase
 	
 	class EventHandlers
 	{
-		init = "[_this select 0, 1] exec {\SJC_Scripts\FIA\ZIL131\randomN.sqs}";
+		init = "[_this select 0,1,0] exec {\acgim_scripts\Vehicles\zil130\Global_Check.sqs}";
+		killed = "(_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Car_Burner.sqs}";
+		engine= "_this exec ""\acgim_scripts\Vehicles\zil130\IsEngine.sqs""; [_this select 0,1,0] exec ""\acgim_scripts\Vehicles\zil130\Global_Check.sqs"";";
+		getin = "[_this select 0,1,0] exec {\acgim_scripts\Vehicles\zil130\Global_Check.sqs}";
+		getout = "[_this select 0,1,0] exec {\acgim_scripts\Vehicles\zil130\Global_Check.sqs}";
 	};
 };

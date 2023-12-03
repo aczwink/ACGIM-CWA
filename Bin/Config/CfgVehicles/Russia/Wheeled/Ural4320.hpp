@@ -76,9 +76,9 @@ class Ural : Truck
 			count = 6;
 		};
 
-		class m_PG7VL
+		class m_RPG18
 		{
-			magazine = "PG7VL";
+			magazine = WEAPON_REFERENCE(RPG18);
 			count = 3;
 		};
 
@@ -161,9 +161,9 @@ class UralReammo : Ural
 			count = 30;
 		};
 
-		class m_PG7VL
+		class m_RPG18
 		{
-			magazine = "PG7VL";
+			magazine = WEAPON_REFERENCE(RPG18);
 			count = 10;
 		};
 

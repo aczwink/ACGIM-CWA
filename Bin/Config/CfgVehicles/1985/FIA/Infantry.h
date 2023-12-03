@@ -1,14 +1,3 @@
-class FIA_HATSoldier : FIA_ATSoldier
-{
-	accuracy = ACCURACY_HATSOLDIER;
-	cost = COST_HATSOLDIER;
-	displayName="Heavy AT Soldier";
-	model = "\sjc_models\fia\rebel6.p3d";
-	weapons[]={"AKM", "RPG16", "Throw", "Put"};
-	magazines[]={"AKM", "AKM", "AKM", "AKM", "RPG16", "RPG16", "RPG16"};
-	threat[]={THREAT_HATSOLDIER};
-};
-
 class FIA_AASoldier : FIA_ATSoldier
 {
 	accuracy = ACCURACY_AASOLDIER;

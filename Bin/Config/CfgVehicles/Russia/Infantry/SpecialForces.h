@@ -16,7 +16,7 @@ class Russia_Sniper : Russia_Soldier
 	threat[]={THREAT_SNIPER};
 };
 
-class Russia_Spetsnaz : Russia_Soldier
+class SoldierESaboteur : Russia_Soldier
 {
 	accuracy = ACCURACY_SPETSNAZ;
 	cost = COST_SPETSNAZ;
@@ -30,18 +30,25 @@ class Russia_Spetsnaz : Russia_Soldier
 	canDeactivateMines=1;
 	model = "\sjc_models\USSR\spetsnaz.p3d";
 	hiddenSelections[]={"medic","svetlo","_AKmags1","_Armpatch_right","_Beret","_Backpack","_Cap","_Gpouch","_Helmcamo","_HelmF","_Holster","_PKpouch1","_PKpouch2","_Radiogear","_Rpgpack","_SVDmags","_Mapcase","_Lamp"};
-	weapons[]={WEAPON_REFERENCE(AKS74), "Tokarev", "Binocular", "NVGoggles", "Throw", "Put"};
+	weapons[]={WEAPON_REFERENCE(AKS74), "Tokarev", "Throw", "Put"};
+	magazines[]={"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "TimeBomb", "TimeBomb", "TokarevMag", "TokarevMag", "TokarevMag", "TokarevMag"};
+};
+
+class SoldierESaboteurPipe : SoldierESaboteur
+{
+	displayName = "Spetsnaz (night eq.)";
+	weapons[]={WEAPON_REFERENCE(AKS74), "Tokarev", "NVGoggles", "Throw", "Put"};
 	magazines[]={"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "PipeBomb", "PipeBomb", "TokarevMag", "TokarevMag", "TokarevMag", "TokarevMag"};
 };
 
-class Russia_Spetsnaz_RPG : Russia_Spetsnaz
+class Russia_Spetsnaz_RPG : SoldierESaboteur
 {
 	displayName="Spetsnaz (RPG)";
-	weapons[]={WEAPON_REFERENCE(AKS74), "RPG7V", "Tokarev", "Binocular", "NVGoggles", "Throw", "Put"};
-	magazines[]={"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "PG7VL", "PG7VL", "PipeBomb", "TokarevMag", "TokarevMag", "TokarevMag", "TokarevMag"};
+	weapons[]={WEAPON_REFERENCE(AKS74), "RPG16", "Tokarev", "Binocular", "NVGoggles", "Throw", "Put"};
+	magazines[]={"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "RPG16", "RPG16", "TokarevMag", "TokarevMag", "TokarevMag", "TokarevMag"};
 };
 
-class Russia_Spetsnaz_SD : Russia_Spetsnaz
+class SoldierESaboteurBizon : SoldierESaboteur
 {
 	displayName="Spetsnaz (SD)";
 	weapons[]={"AKS74B", "Tokarev", "Binocular", "NVGoggles", "Throw", "Put"};

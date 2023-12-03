@@ -1,9 +1,4 @@
 //Soldiers
-class SoldierGAT : FIA_HATSoldier
-{
-	scope = SCOPE_HIDDEN;
-};
-
 class SoldierGAA : FIA_AASoldier
 {
 	scope = SCOPE_HIDDEN;
@@ -92,11 +87,6 @@ class TruckV3SG : FIA_ZIL131
 };
 
 class TruckV3SGRefuel : FIA_ZIL130Refuel
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class TruckV3SGRepair : FIA_ZIL130Repair
 {
 	scope = SCOPE_HIDDEN;
 };

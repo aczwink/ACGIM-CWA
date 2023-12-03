@@ -1,0 +1,23 @@
+
+_car = _this select 0
+
+;_car animate ["Fuel",fuel _car]
+_car animate ["temp",1]
+_car animate ["temp2",1]
+
+
+#everloop
+if (isEngineOn _car) then {_car animate ["Fuel",fuel _car]; } else { goto "exit"; };
+~1
+?(alive _car): goto "everloop"
+
+exit;
+
+
+#Exit
+
+_car animate ["Fuel",0]; 
+_car animate ["temp",0]
+_car animate ["temp2",0]
+
+exit;

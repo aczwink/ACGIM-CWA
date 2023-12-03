@@ -1,0 +1,23 @@
+
+_car = _this select 0
+_mode = _this select 1
+_mode2 = _this select 2
+
+~0.5
+if (_car animationPhase "temp3" != 0) then {exit;};
+
+_car animate ["temp3",0];
+
+
+if (_mode2 == 2) then {Goto "Fire";};
+
+[_car,_mode] exec "\acgim_scripts\Vehicles\zil130\RandomN.sqs";
+
+exit;
+
+
+#Fire
+
+[_car,_mode] exec "\acgim_scripts\Vehicles\zil130\RandomN_fire.sqs";
+
+exit;

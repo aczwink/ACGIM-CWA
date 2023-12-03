@@ -47,15 +47,15 @@ class HeavyReammoBoxEast : ReammoBoxEast
 	class TransportMagazines
 	{
 		//Secondary Magazines
-		class m_PG7VL
+		class m_RPG18
 		{
-			magazine = WEAPON_REFERENCE(M72LAW);
+			magazine = WEAPON_REFERENCE(RPG18);
 			count = 4;
 		};
 
-		class m_RPG18
+		class m_PG7VL
 		{
-			magazine = WEAPON_REFERENCE(M47Dragon);
+			magazine = WEAPON_REFERENCE(RPG7V);
 			count = 2;
 		};
 

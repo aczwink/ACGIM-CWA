@@ -185,10 +185,15 @@ class A10 : Plane
 
 	class EventHandlers
 	{
+		Init = "[_this select 0, 51] exec {\SJC_Scripts\vehicleTODO.sqs}";
+		//TODO: in order to avoid crashes import this model via p3dEdit
+		//TODO: only fix the drawing the bomb models on the a10
+		/*
 		fired = "_this exec {\SJC_Scripts\USA\A10\firemissiles.sqs};";
 		gear = "if(_this Select 1) then {(_this select 0) exec {\SJC_Scripts\USA\A10\geardown.sqs}} else {(_this select 0) exec {\SJC_Scripts\USA\A10\gearup.sqs}}";
 		hit = "(_this select 0) exec {\SJC_Scripts\USA\A10\enginefire.sqs};";
 		init = "(_this select 0) exec {\SJC_Scripts\USA\A10\num.sqs}; (_this select 0) exec {\SJC_Scripts\USA\A10\checkgear.sqs}; [_this select 0, {wa}] exec {\SJC_Scripts\USA\A10\set_markings.sqs}; (_this select 0) exec {\SJC_Scripts\USA\A10\drawmissiles.sqs}; (_this select 0) animate [{NoseGearDoor2}, 1];";
+		*/
 	};
 };
 
@@ -200,7 +205,11 @@ class A10LGB : A10
 	hiddenSelections[]={"n1", "n2", "n3", "bas_tailflash_l", "bas_tailflash_r", "bas_taillogo_l", "bas_taillogo_r", "bas_tailnum_l", "bas_tailnum_r", "bas_usaf_l", "bas_usaf_r",	"_aimA", "_aimB", "_mavA", "_mavB", "_gbuA", "_gbuB", "_gbuC", "_gbuD"};
 	displayName = "A-10 Thunderbolt II Bomber (USAF)";
 	model = "\models\DSL_a10_mesh_gbu_g.p3d";
-	
+
+	class EventHandlers
+	{
+		Init = "[_this select 0, 51] exec {\SJC_Scripts\vehicleTODO.sqs}";
+	}; //TODO: add scripts	
 	/*class EventHandlers
 	{
 		init = "[(_this Select 0)] exec ""\DSL_a10\scripts\num.sqs""; [_this select 0] exec ""\DSL_a10\scripts\checkgear.sqs""; [_this select 0, {wa}] exec ""\DSL_a10\scripts\set_markings.sqs""; [_this select 0] exec ""\dsl_a10\scripts\drawmissiles_gbu.sqs""; _this select 0 animate [""NoseGearDoor2"", 1]; [_this select 0] exec ""\dsl_a10\scripts\enginefire.sqs""; [_this select 0] exec ""\dsl_a10\scripts\enginefiresound.sqs"";";

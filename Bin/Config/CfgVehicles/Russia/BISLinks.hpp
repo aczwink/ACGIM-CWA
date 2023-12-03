@@ -44,17 +44,7 @@ class SoldierESniper : Russia_Sniper
 	scope = SCOPE_HIDDEN;
 };
 
-class SoldierESaboteurPipe : Russia_Spetsnaz
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class SoldierESaboteurBizon : Russia_Spetsnaz_SD
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class SoldierESaboteurPipeHG : Russia_Spetsnaz
+class SoldierESaboteurPipeHG : SoldierESaboteurPipe
 {
 	scope = SCOPE_HIDDEN;
 };

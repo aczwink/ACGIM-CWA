@@ -149,5 +149,6 @@ class CfgTextureToMaterial
 #include "Config\CfgTextureToMaterial\US_Helicopters.h"
 #include "Config\CfgTextureToMaterial\US_Ships.h"
 
+#include "Config\CfgTextureToMaterial\Russia_Aircraft.hpp"
 #include "Config\CfgTextureToMaterial\Russia_Tracked.h"
 };

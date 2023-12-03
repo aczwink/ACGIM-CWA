@@ -33,3 +33,6 @@ class m1911_sd_empty : Weapon{};
 //Russia
 //Primary
 class rhs_svd : Weapon{};
+//Secondary
+class ICPrpg7e: Weapon {};
+class ICPrpg7: Weapon {};

@@ -2,6 +2,7 @@
 | Object                                                   | Addon                    | Author                |
 |----------------------------------------------------------|--------------------------|-----------------------|
 | HMMWVs                                                   | COMBAT! HMMWV Pack 1.2.1 | COMBAT!               |
+| Su-25                                                    | TomiD's retextured Su 25 | TomiD                 |
 | T-54                                                     | RHS T-54/55 Pack v1.4    | Red Hammer Studios    |
 | UH-60A Black Hawk & UH-60A-MG Black Hawk                 | CSLA II Update 2         | CSLA Development Team |
 | Ural-4320 (all variants)                                 | SFM Urals pack           | Spetsnaz Mod          |

@@ -216,12 +216,51 @@ class Tractor : Car
 	getOutAction=manactgetouttank;
 };
 
-class TruckV3SCivil : FIA_ZIL131
+class TruckV3SCivil : Truck
 {
-	side=3;
+	scope = 2;
 	crew="Civilian";
+	picture = "iv3s";
+	icon = "truck";
+	side=3;
 	displayName="$STR_DN_PV3S_CIVIL";
+	accuracy = 0.3;
+	maxSpeed = 75;
+	transportSoldier = 11;
 	model="v3scivil";
+	transportAmmo = 0;
+	transportRepair = 0;
+	turnCoef = 6;
+	cost = 20000;
+	armor = 30;
+	hiddenSelections[] = {"ammo"};
+	initCargoAngleY = 185;
+	soundEngine[] = {"vehicles\dieseltruckloop1", 0.0562341, 1};
+	weapons[] = {};
+	magazines[] = {};
+	driverAction = "ManActV3SDriver";
+	cargoAction[] = {"ManActV3SCoDriver", "ManActCargo"};
+	cargoIsCoDriver[] = {1, 0};
+	typicalCargo[] = {"Soldier", "Soldier", "SoldierLAW", "SoldierLAW"};
+	threat[] = {1, 1, 0.3};
+
+	class IndicatorSpeed
+	{
+		selection = "ukaz_rychlo";
+		axis = "osa_rychlo";
+		angle = -275;
+		min = 0;
+		max = "80 / 3.6";
+	};
+
+	class IndicatorRPM
+	{
+		selection = "ukaz_rpm";
+		axis = "osa_rpm";
+		angle = -275;
+		min = 0;
+		max = 1;
+	};
 };
 
 class JeepPolice : Car

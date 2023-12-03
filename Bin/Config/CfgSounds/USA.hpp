@@ -4,3 +4,10 @@ class M60_Engine
     name = "M60_Engine";
     titles[] = {};
 };
+
+class null
+{
+    sound[]={"",0.05,1};
+    name = "null";
+    titles[] = {};
+};

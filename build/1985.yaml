@@ -15,6 +15,9 @@ source_integrity:
   rus_zsu.rar: 0f828bcac0b28646ef03101862df203a
   SFM_URALS.rar: 5e94a250ca217fcda3342fd8bcc31904
   SJB_WeaponsPack_v1.1.cab: ccdcf2d1c2ed5fe063083903a88766e4
+  SLX_Mod_1.1_Beta.rar: f8d559de4f9301db204cd2d84eb8f04f
+  su25.rar: c689a95cb6a4efc872464cfdacc64544
+
 
 steps:
   - type: IncludePipelineSteps
@@ -142,6 +145,22 @@ steps:
           - SLX_Grass_CWC_Islands/Eden.wrp
 
       - type: Archive
+        sourceLocation: addons
+        name: icprpg.rar
+        pbos:
+          - ICPrpg7.pbo
+        files:
+          - ICPrpg7/ICPrpg7e.p3d
+          - ICPrpg7/ICPrpg7.p3d
+
+      - type: Archive
+        name: INQ_M60.rar
+        pbos:
+          - INQ_M60.pbo
+        files:
+          - { sourceFileName: INQ_M60/sounds/Engine_Start.ogg, targetName: m60_Engine_Start }
+
+      - type: Archive
         name: NKHole.zip
         pbos:
           - NKHole.pbo
@@ -192,13 +211,6 @@ steps:
           - { sourceFileName: RHS_Weap/AK_Optics/AK_Optic2.p3d, targetName: rhs_AK_Optic2 }
 
       - type: Archive
-        name: INQ_M60.rar
-        pbos:
-          - INQ_M60.pbo
-        files:
-          - { sourceFileName: INQ_M60/sounds/Engine_Start.ogg, targetName: m60_Engine_Start }
-
-      - type: Archive
         name: rus_zsu.rar
         pbos:
           - MNF_ZSU.pbo
@@ -228,6 +240,28 @@ steps:
           - SFM_URALS/ural375_dead_palki2.p3d
           - SFM_URALS/ural375_dead_zerk.p3d
           - SFM_URALS/Ural_dead_cist.p3d
+
+      - type: Archive
+        name: su25.rar
+        pbos:
+          - su25.pbo
+        files:
+          - { sourceFileName: su25/isu25.paa, targetName: su25_icon }
+          - su25/Su25.p3d
+          - su25/su25_detaily.pac
+          - su25/su25_motor1.pac
+          - su25/su25_raketomet.pac
+          - su25/su25_sop.pac
+          - su25/su25_spodek.pac
+          - su25/su25_strana1.pac
+          - su25/su25_strana2.pac
+          - su25/su25_strana3.pac
+          - su25/su25_vop.pac
+          - su25/su25_vopspod.pac
+          - { sourceFileName: su25/su_kridlo1.pac, targetName: su25_kridlo1 }
+          - { sourceFileName: su25/su_kridlo2.pac, targetName: su25_kridlo2 }
+          - { sourceFileName: su25/su_kridlokon.pac, targetName: su25_kridlokon }
+          - { sourceFileName: su25/su_kridlospod.pac, targetName: su25_kridlospod }
 
   - type: BuildDtaExt
     sourceLocation: source_equip
@@ -285,8 +319,13 @@ steps:
         pbos:
           - ICPrpg7.pbo
         files:
-          - { sourceFileName: ICPrpg7/rpg/geard3.paa, type: magazine, targetName: PG7VL }
+          - { sourceFileName: ICPrpg7/gear2.paa, type: weapon, targetName: RPG2 }
+          - { sourceFileName: ICPrpg7/rpg/geard3.paa, type: magazine, targetName: RPG7 }
+          - { sourceFileName: ICPrpg7/gear1.paa, type: weapon, targetName: RPG7 }
+          - { sourceFileName: ICPrpg7/rpg/geard3.paa, type: magazine, targetName: RPG7V }
           - { sourceFileName: ICPrpg7/gearv1.paa, type: weapon, targetName: RPG7V }
+          - { sourceFileName: ICPrpg7/rpg26/rpg18_m.paa, type: magazine, targetName: RPG18 }
+          - { sourceFileName: ICPrpg7/rpg26/rpg18_w.paa, type: weapon, targetName: RPG18 }
 
       - type: Archive
         sourceLocation: addons
@@ -309,6 +348,8 @@ steps:
           - { sourceFileName: RHS_Weap/AK_Pics/w_AK74.paa, type: weapon, targetName: AK74 }
           - { sourceFileName: RHS_Weap/AK_Pics/w_AK74_GP25.paa, type: weapon, targetName: AK74GP25 }
           - { sourceFileName: RHS_Weap/AK_Pics/w_AK74S.paa, type: weapon, targetName: AKS74 }
+          - { sourceFileName: "RHS_Weap/AK_Pics/m_30RD_7,62_MAG.paa", type: magazine, targetName: AKM }
+          - { sourceFileName: RHS_Weap/AK_Pics/w_AKM.paa, type: weapon, targetName: AKM }
           - { sourceFileName: RHS_Weap/pk/pk_mag.paa, type: magazine, targetName: PKM }
           - { sourceFileName: RHS_Weap/pk/pk.paa, type: weapon, targetName: PKM }
 
@@ -333,6 +374,14 @@ steps:
           - { sourceFileName: SJB_TOSM4/inventory/m_m21.paa, type: magazine, targetName: M21 }
           - { sourceFileName: SJB_TOSM4/inventory/w_m21.paa, type: weapon, targetName: M21 }
           - { sourceFileName: SJB_TOSM4/inventory/w_m21_camo.paa, type: weapon, targetName: M21_JungleCamo }
+
+      - type: Archive
+        sourceLocation: addons
+        name: SLX_Mod_1.1_Beta.rar
+        pbos:
+          - "@SLX/Addons/SLX_GL3.pbo"
+        files:
+          - { sourceFileName: SLX_GL3/SLX_i_PRC119.paa, type: weapon, targetName: PRC119_SINCGARS }
 
   - type: CopyFiles
     source: resources
@@ -367,7 +416,10 @@ steps:
     source_folder: Dta/sjc_files
     target_folder: Dta
 
-  #TODO: sjc_images
+  - type: PackArchive
+    source: resources
+    source_folder: Dta/sjc_images
+    target_folder: Dta
 
   - type: PackArchive
     source: resources

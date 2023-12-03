@@ -264,6 +264,18 @@ steps:
         path: AddOns/Steyr/config.cpp
     targetPboName: AddOns/Steyr
 
+  - type: RepackArchive
+    sourceLocation: cwa_installer
+    source:
+      type: Archive
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\SU25.PBO.XZ
+    exclude: [config.bin, stringtable.csv, vssver.scc]
+    include:
+      - source: source
+        path: AddOns/su25/config.cpp
+    targetPboName: AddOns/su25
+
 
   - type: CopyFiles
     source: resources

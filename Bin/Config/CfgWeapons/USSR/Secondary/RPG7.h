@@ -4,15 +4,18 @@ Sources:
 */
 class RPG7 : RPG2
 {
-	model="\ICPrpg7\ICPrpg7e";//TODO
-	modelSpecial="\ICPrpg7\ICPrpg7";//TODO
+	model = "\models\ICPrpg7e.p3d";
+	modelSpecial="\models\ICPrpg7.p3d";
 	modelOptics="\sjc_optics\russia\rpg.p3d";
 	modelMagazine="\sjc_models\ussr\objects\pg7vl.p3d";
 	displayName="RPG-7 Launcher";
 	initSpeed = 115;
-	//picture="\ICPrpg7\gear1.paa";//TODO
 	magazineType="1 * 256";
-	magazines[]={"PG7VL"};
+	magazines[]={"this"};
+
+	ammo = "RocketPG7VL";
+	displayNameMagazine="PG-7VL Grenade";
+	shortNameMagazine="PG-7VL";
 };
 
 class RPG7V : RPG7
@@ -23,11 +26,5 @@ class RPG7V : RPG7
 	distanceZoomMin=450;
 	distanceZoomMax=600;
 	displayName="RPG-7V Launcher";
-};
-
-class PG7VL : RPG7V
-{
-	ammo = "RocketPG7VL";
-	displayNameMagazine="PG-7VL Grenade";
-	shortNameMagazine="PG-7VL";
+	magazines[]={"this"};
 };

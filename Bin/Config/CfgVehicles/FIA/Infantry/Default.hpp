@@ -68,6 +68,17 @@ class SoldierGLAW : SoldierGB
 	threat[]={THREAT_ATSOLDIER};
 };
 
+class SoldierGAT : SoldierGLAW
+{
+	accuracy = ACCURACY_HATSOLDIER;
+	cost = COST_HATSOLDIER;
+	displayName="AT Specialist";
+	model = "\sjc_models\fia\rebel6.p3d";
+	weapons[]={"AKM", "RPG7", "Throw", "Put"};
+	magazines[]={"AKM", "AKM", "AKM", "AKM", "AKM", "AKM", "RPG7", "RPG7", "RPG7", "RPG7"};
+	threat[]={THREAT_HATSOLDIER};
+};
+
 class SoldierGMedic : SoldierGB
 {
 	accuracy = ACCURACY_MEDIC;

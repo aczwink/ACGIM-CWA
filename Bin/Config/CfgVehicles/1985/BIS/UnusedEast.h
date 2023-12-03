@@ -9,11 +9,6 @@ class SoldierE : SoldierEG
 	scope = SCOPE_HIDDEN;
 };
 
-class SoldierESaboteur : SoldierEB
-{
-	scope = SCOPE_HIDDEN;
-};
-
 class SoldierWFakeE : SoldierEB
 {
 	scope = SCOPE_HIDDEN;

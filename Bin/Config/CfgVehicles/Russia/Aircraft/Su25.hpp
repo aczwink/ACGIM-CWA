@@ -6,7 +6,7 @@ class Su25 : Plane
 {
 	scope = SCOPE_PUBLIC;
 	crew = "SoldierEPilot";
-	picture="\sjc_images\vehicles\su25.paa";
+	picture="\tex\su25_icon.paa";
 	side = SIDE_EAST;
 	displayName="Su-25 Frogfoot";
 	accuracy = ACCURACY_SU25;
@@ -14,7 +14,7 @@ class Su25 : Plane
 	maxSpeed = 950;
 	armor = ARMOR_SU25;
 	cost = COST_SU25;
-	model="\sjc_models\russia\su25.p3d";
+	model="\models\Su25.p3d";
 	weapons[] = { "GSh30_2", "Kh29_6", "UB32" };
 	magazines[] = { "GSh30_2", "Kh29_6", "S5K" };
 	fov=0.5;

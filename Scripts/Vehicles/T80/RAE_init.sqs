@@ -46,7 +46,7 @@ RHS_SHTORA=false
 RHS_air_engines=[]
 RHS_shtora_running=[]
 RHS_tank_snorkeling=[]
-RHS_nonGuidedMissiles=["RPG","LAW","RHS_RPG22Rocket","RHS_PG7VLRocket","RHS_PG7VRRocket","RHS_TBG7VRocket"]
+RHS_nonGuidedMissiles=["RPG","LAW","RHS_RPG22Rocket","RocketPG7VL","RHS_PG7VRRocket","RHS_TBG7VRocket"]
 RHS_guidedMissiles=["CarlGustav","AT3","AT4","AT6","Maverick","Hellfire","HellfireApach","SUCHJavelinAmmo","BAS_AT4ammo","BAS_TOW","BAS_Hellfire","dkmm_rah66_hellfire","RHS_9M119M","UKF_milan_ammo"]
 RHS_sinCos = call {private["_i","_r1", "_r2"]; _r1 = []; _r2 = []; _i = 0; while "_i < 50" do {_r1 = _r1 + [sin (7.2*_i)*15]; _i = _i+1;}; while "_i < 100" do {_r2 = _r2 + [cos (7.2*_i)*15]; _i = _i + 1}; [_r1, _r2]};
 ?thisIsMP&&!RHS_NoSmoke:RHS_lowSmoke=true

@@ -1258,7 +1258,7 @@ class CfgNonAIVehicles
 	};
 	class ProxySteyr:ProxyWeapon {};
 	class ProxyCh_29T : ProxyWeapon {
-		model = \Su25\Ch_29T; simulation = "maverickweapon";
+		model = "\Su25\Ch_29T"; simulation = "maverickweapon";
 	};
 	class ProxyTrabiDriver: ProxyDriver {};
 	class Proxyvulcangunner:Proxygunner {};
