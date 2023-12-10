@@ -1,5 +1,6 @@
 class AmmoBoxAddW : ReammoBox
 {
+	//only magazines of addon weapons. No need for that
 	scope = SCOPE_HIDDEN;
 };
 
@@ -166,5 +167,24 @@ class BISCamelPilot : SoldierWB
 
 class HeavyGW : SoldierWG
 {
-	scope = 1;
+	scope = SCOPE_HIDDEN;
+};
+
+class Parachute : ParachuteWest
+{
+	scope = SCOPE_HIDDEN;
+};
+
+class SoldierWSaboteurCheat : SoldierWSaboteurPipe
+{
+	scope = SCOPE_HIDDEN;
+	displayName="Cheating is not supported. This unit lost it's cheat effects.";
+};
+
+class Truck5tRich : Truck5t
+{
+	scope = SCOPE_HIDDEN;
+	displayName = "RichTruck";
+	accuracy = 1000;
+	cost = 1000000;
 };

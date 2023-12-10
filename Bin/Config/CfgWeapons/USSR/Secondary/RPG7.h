@@ -4,27 +4,33 @@ Sources:
 */
 class RPG7 : RPG2
 {
-	model = "\models\ICPrpg7e.p3d";
-	modelSpecial="\models\ICPrpg7.p3d";
-	modelOptics="\sjc_optics\russia\rpg.p3d";
-	modelMagazine="\sjc_models\ussr\objects\pg7vl.p3d";
+	aiRateOfFireDistance = 300;
+	ammo = "RocketPG7V";
+	canDrop = 1;
 	displayName="RPG-7 Launcher";
+	displayNameMagazine="PG-7V Grenade";
+	shortNameMagazine="PG-7V";
 	initSpeed = 115;
-	magazineType="1 * 256";
 	magazines[]={"this"};
-
-	ammo = "RocketPG7VL";
-	displayNameMagazine="PG-7VL Grenade";
-	shortNameMagazine="PG-7VL";
+	model = "\models\csla2_rpg7_empty.p3d";
+	modelMagazine = "\models\csla2_rpg7_Rocket.p3d";
+	modelOptics = "\models\csla2_rpg7_optika.p3d";
+	modelSpecial = "\models\csla2_rpg7_s_raketou.p3d";
+	reloadTime = 2;
 };
 
 class RPG7V : RPG7
 {
-	model="\sjc_models\ussr\weapons\rpg7v_empty.p3d";
-	modelSpecial="\sjc_models\ussr\weapons\rpg7v.p3d";
-	modelOptics="\sjc_optics\russia\pgo7v.p3d";
+	aiRateOfFireDistance = 400;
+	ammo = "RocketPG7VL";
+	displayName="RPG-7V Launcher";
+	displayNameMagazine = "PG-7VL Grenade";
+	shortNameMagazine = "PG-7VL";
 	distanceZoomMin=450;
 	distanceZoomMax=600;
-	displayName="RPG-7V Launcher";
 	magazines[]={"this"};
+	model = "\models\csla2_rpg7v_empty.p3d";
+	modelMagazine = "\models\csla2_rpg7v_Rocket.p3d";
+	modelOptics="\sjc_optics\russia\pgo7v.p3d";
+	modelSpecial = "\models\csla2_rpg7v_s_raketou.p3d";
 };

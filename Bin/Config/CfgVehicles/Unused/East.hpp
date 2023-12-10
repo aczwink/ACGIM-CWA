@@ -24,3 +24,25 @@ class HeavyGrenadier : SoldierEG
 {
 	scope = SCOPE_HIDDEN;
 };
+
+class OfficerECheat : OfficerE
+{
+	scope = SCOPE_HIDDEN;
+	displayName = "Cheating is not supported. This unit lost it's cheat effects.";
+};
+
+class SoldierE : SoldierEG
+{
+	scope = SCOPE_HIDDEN;
+};
+
+class SoldierENOG : SoldierEB
+{
+	scope = SCOPE_HIDDEN;
+};
+
+class UAZCheat : UAZ
+{
+	scope = SCOPE_HIDDEN;
+	displayName = "Cheating is not supported. This unit lost it's cheat effects.";
+};

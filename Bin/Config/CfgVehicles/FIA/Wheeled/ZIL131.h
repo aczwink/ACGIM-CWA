@@ -2,7 +2,7 @@
 Sources:
 	http://en.wikipedia.org/wiki/ZIL_131
 */
-class FIA_ZIL131 : SkodaBase
+class TruckV3SG : SkodaBase
 {
 	side = SIDE_FIA;
 	crew = "SoldierGB";
@@ -12,8 +12,8 @@ class FIA_ZIL131 : SkodaBase
 	scope = SCOPE_PUBLIC;
 	cost = COST_ZIL131;
 	displayName = "ZIL-131";
-	picture = "\sjc_images\vehicles\zil131.paa";
-	icon = "\sjc_images\vehicles\zil130icon.pac";
+	picture = "\tex\zil131_pic.paa";
+	icon = "\tex\zil131_icon.pac";
 	maxSpeed = 80;
 	wheelCircumference=3.400;
 	transportAmmo = 0;
@@ -32,15 +32,13 @@ class FIA_ZIL131 : SkodaBase
 	hiddenselections[]={"n_p_1","n_p_2","n_p_3","n_p_4","n_p_a","n_p_b","n_p_c"};
 	dammageHalf[] =
 	{
-		"\sjc_textures\zil130\steklo.paa", "\sjc_textures\zil130\steklob.paa",
-		"\sjc_textures\zil130\Steklo.paa", "\sjc_textures\zil130\Steklob.paa"
+		"\tex\zil131_steklo.paa", "\tex\zil131_steklob.paa",
 	};
 	dammageFull[] =
 	{
-		"\sjc_textures\zil130\steklo.paa", "\sjc_textures\zil130\stekloc.paa",
-		"\sjc_textures\zil130\Steklo.paa", "\sjc_textures\zil130\Stekloc.paa"
+		"\tex\zil131_steklo.paa", "\tex\zil131_stekloc.paa",
 	};
-	model = "\sjc_models\FIA\zil131.p3d";
+	model = "\models\zil131tentw.p3d";
 	sensitivity=0.100000;
 	weapons[]={"ZIL131Horn"};
 	soundGear[]={"\sjc_sounds\vehicles\gear.wav",db-10,1};

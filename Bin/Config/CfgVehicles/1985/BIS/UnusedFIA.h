@@ -44,11 +44,6 @@ class OfficerGHG:OfficerG
 	scope=1;
 };
 
-class SoldierGFakeC3:SoldierGFakeC
-{
-	scope=1;
-};
-
 class SoldierGPilot : SoldierGB
 {
 	scope=1;
@@ -79,16 +74,6 @@ class SGUAZG : FIA_UAZ469Ambulance
 class GJeep : Car
 {
 	scope = 1;
-};
-
-class TruckV3SG : FIA_ZIL131
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class TruckV3SGRefuel : FIA_ZIL130Refuel
-{
-	scope = SCOPE_HIDDEN;
 };
 
 class TruckV3SGReammo : FIA_ZIL130Reammo

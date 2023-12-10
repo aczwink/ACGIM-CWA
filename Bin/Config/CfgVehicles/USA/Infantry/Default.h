@@ -171,7 +171,7 @@ class USA_SquadLeader : USA_Soldier
 	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "M67", "M67", "ANM8", "M1911", "M1911", "M1911", "M1911"};
 };
 
-class USA_SquadLeaderNight : USA_SquadLeader
+class OfficerWNight : USA_SquadLeader
 {
 	displayName="Squad Leader (Night)";
 	weapons[]={WEAPON_REFERENCE(M16A2_M203), "M1911", "Binocular", "Throw", "Put"};

@@ -1,9 +1,3 @@
-//Air
-class Parachute : ParachuteWest
-{
-	scope = SCOPE_HIDDEN;
-};
-
 //Ammocrates
 class AmmoBoxOUTW : HeavyReammoBox
 {
@@ -31,22 +25,12 @@ class Church001 : Church
 	scope = SCOPE_HIDDEN;
 };
 
-class HousesDatadisk : House
-{
-	scope = SCOPE_HIDDEN;
-};
-
 class Dum17 : Dum01
 {
 	scope = SCOPE_HIDDEN;
 };
 
 class Dum14 : Dum01
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class misc01 : Dum01
 {
 	scope = SCOPE_HIDDEN;
 };

@@ -38,6 +38,6 @@ class RPG2 : Default
 	magazineType="2 * 256";
 	ammo = "PG2";
 	initSpeed = 84;
-	sound[]={"\sjc_sounds\weapons\handheld\launch.ogg",0.250000,1};
-	reloadMagazineSound[]={"\sjc_sounds\weapons\handheld\rpg_reload.wss",0.010316,1};
+	sound[]={"\sounds\rpg7_launch.ogg",0.250000,1};
+	reloadMagazineSound[]={"\sounds\rpg_reload.wss",0.010316,1};
 };

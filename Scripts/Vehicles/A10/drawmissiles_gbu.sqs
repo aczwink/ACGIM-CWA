@@ -1,0 +1,19 @@
+_plane = _this select 0
+
+#SlowLoop
+
+?(!alive _plane) : exit
+
+_swcount = _plane ammo "AIM9M"
+? (_swcount > 1) : _plane setobjecttexture[11, "\tex\a10\weap\aim9.pac"]
+? (_swcount > 0) : _plane setobjecttexture[12, "\tex\a10\weap\aim9.pac"]
+
+_mavcount = _plane ammo "AGM65BMaverick_2"
+? (_mavcount > 1) : _plane setobjecttexture[13, "\tex\a10\weap\agm65B.paa"]
+? (_mavcount > 0) : _plane setobjecttexture[14, "\tex\a10\weap\agm65B.paa"]
+
+_bombcount = _plane ammo "GBU12"
+? (_bombcount > 3) : _plane setobjecttexture[15, "\tex\a10\weap\gbu12.pac"]
+? (_bombcount > 2) : _plane setobjecttexture[16, "\tex\a10\weap\gbu12.pac"]
+? (_bombcount > 1) : _plane setobjecttexture[17, "\tex\a10\weap\gbu12.pac"]
+? (_bombcount > 0) : _plane setobjecttexture[18, "\tex\a10\weap\gbu12.pac"]

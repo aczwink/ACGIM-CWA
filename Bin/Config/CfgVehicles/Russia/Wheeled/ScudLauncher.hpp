@@ -1,4 +1,4 @@
-class USSR_ScudLauncher : USSR_Ural4320
+class Scud : Ural
 {
 	picture="iscud";
 	nameSound="scudLauncher";
@@ -24,4 +24,9 @@ class USSR_ScudLauncher : USSR_Ural4320
 	scudSound[]={"weapons\rocketflying",316.2277832,0.2};
 	scudModel="scud_strela_proxy";
 	scudModelFire="scud_strela_ohen";
+
+	class EventHandlers
+	{
+		killed = "_this exec {\acgim_scripts\Events\ExplosivesCarrierDestroyed.sqs}";
+	};
 };

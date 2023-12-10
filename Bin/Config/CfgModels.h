@@ -742,10 +742,10 @@ class CfgModels
 	#include "Config\CfgModels\Humans.h"
 	#include "Config\CfgModels\Weapons.h"
 	#include "Config\CfgModels\Optics.h"
-	#include "Config\CfgModels\Aircraft.h"
 	#include "Config\CfgModels\US_Aircraft.h"
 	#include "Config\CfgModels\US_Helicopters.h"
 #include "Config\CfgModels\Russia_Helicopters.h"
 #include "Config\CfgModels\Russia_Tracked.h"
 #include "Config\CfgModels\Russia_Wheeled.h"
+#include "Config\CfgModels\FIA_Wheeled.hpp"
 };

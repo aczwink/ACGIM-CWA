@@ -134,7 +134,7 @@ class UralReammo : Ural
 	accuracy = ACCURACY_URAL4320REAMMO;
 	transportSoldier=2;
 	transportAmmo=300000;
-	model="\sjc_models\ussr\ural4320_ammo.p3d";
+	model="\models\ural4320_ammo.p3d";
 	hiddenSelections[]={};
 	weapons[]={};
 	magazines[]={};

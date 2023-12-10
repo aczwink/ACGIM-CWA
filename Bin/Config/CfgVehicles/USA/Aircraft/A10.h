@@ -31,8 +31,8 @@ class A10 : Plane
 	driverAction = "ManActA10Pilot";
 	vehicleClass = "Vehicles (Air)";
 	displayName = "A-10 Thunderbolt II (USAF)";
-	picture="\d4t_files\pics\vehicles\a10_grey.paa";
-	model = "\d4t_files\models\us\vehicles\a10tb2.p3d";
+	picture="\tex\a10_pic.paa";
+	model = "\models\DSL_a10_mesh_g.p3d";
 	soundEngine[]={"\d4t_files\sounds\vehicles\air\a10engine.wav",4,1};
 	soundEnviron[]={"\d4t_files\sounds\vehicles\air\A10air.wss",db-10,1};
 	soundLandCrash[]={"\d4t_files\sounds\vehicles\air\LandingEnd.wav",db+60,1};
@@ -182,23 +182,18 @@ class A10 : Plane
 			angle1=-3.141581;
 		};
 	};
-
 	class EventHandlers
 	{
-		Init = "[_this select 0, 51] exec {\SJC_Scripts\vehicleTODO.sqs}";
-		//TODO: in order to avoid crashes import this model via p3dEdit
-		//TODO: only fix the drawing the bomb models on the a10
-		/*
-		fired = "_this exec {\SJC_Scripts\USA\A10\firemissiles.sqs};";
-		gear = "if(_this Select 1) then {(_this select 0) exec {\SJC_Scripts\USA\A10\geardown.sqs}} else {(_this select 0) exec {\SJC_Scripts\USA\A10\gearup.sqs}}";
-		hit = "(_this select 0) exec {\SJC_Scripts\USA\A10\enginefire.sqs};";
-		init = "(_this select 0) exec {\SJC_Scripts\USA\A10\num.sqs}; (_this select 0) exec {\SJC_Scripts\USA\A10\checkgear.sqs}; [_this select 0, {wa}] exec {\SJC_Scripts\USA\A10\set_markings.sqs}; (_this select 0) exec {\SJC_Scripts\USA\A10\drawmissiles.sqs}; (_this select 0) animate [{NoseGearDoor2}, 1];";
-		*/
+		init = "[(_this Select 0)] exec ""\acgim_scripts\Vehicles\A10\num.sqs""; [_this select 0] exec ""\acgim_scripts\Vehicles\A10\checkgear.sqs""; [_this select 0, {wa}] exec ""\acgim_scripts\Vehicles\A10\set_markings.sqs""; [_this select 0] exec ""\acgim_scripts\Vehicles\A10\drawmissiles.sqs""; _this select 0 animate [""NoseGearDoor2"", 1];"; //[_this select 0] exec ""\dsl_a10\scripts\enginefire.sqs""; [_this select 0] exec ""\dsl_a10\scripts\enginefiresound.sqs"";
+		gear="if (_this Select 1) then {[_this select 0] exec""\acgim_scripts\Vehicles\A10\geardown.sqs""} else {[_this select 0] exec ""\acgim_scripts\Vehicles\A10\gearup.sqs""}";
+		fired="_this exec ""\acgim_scripts\Vehicles\A10\firemissiles.sqs"";"; //[_this] exec ""\DSL_A10\scripts\gun_brake.sqs"";
+		hit = "(_this select 0) exec {\acgim_scripts\Vehicles\A10\enginefire.sqs};";
 	};
 };
 
 class A10LGB : A10
 {
+	//TODO: this bomber is not really ideal, since it only carries 4 GBU bombs. A second A10 isn't really necessary and it could be another aircraft instead (with more gbu bombs) and therefore we would have more variety
 	laserScanner = 1;
 	weapons[]={"GAU8Avenger", "AGM65BMaverick_2", "GBU12", "AIM9M"};
 	magazines[]={"GAU8Avenger", "AGM65BMaverick_2", "GBU12", "AIM9M"};
@@ -208,12 +203,9 @@ class A10LGB : A10
 
 	class EventHandlers
 	{
-		Init = "[_this select 0, 51] exec {\SJC_Scripts\vehicleTODO.sqs}";
-	}; //TODO: add scripts	
-	/*class EventHandlers
-	{
-		init = "[(_this Select 0)] exec ""\DSL_a10\scripts\num.sqs""; [_this select 0] exec ""\DSL_a10\scripts\checkgear.sqs""; [_this select 0, {wa}] exec ""\DSL_a10\scripts\set_markings.sqs""; [_this select 0] exec ""\dsl_a10\scripts\drawmissiles_gbu.sqs""; _this select 0 animate [""NoseGearDoor2"", 1]; [_this select 0] exec ""\dsl_a10\scripts\enginefire.sqs""; [_this select 0] exec ""\dsl_a10\scripts\enginefiresound.sqs"";";
-		gear="if (_this Select 1) then {[_this select 0] exec""\DSL_a10\scripts\geardown.sqs""} else {[_this select 0] exec ""\DSL_a10\scripts\gearup.sqs""}";
-		fired="[_this] exec ""\DSL_a10\scripts\firemissiles_gbu.sqs""; [_this] exec ""\DSL_A10\scripts\gun_brake.sqs""; "; 
-	};*/
+		init = "[(_this Select 0)] exec ""\acgim_scripts\Vehicles\A10\num.sqs""; [_this select 0] exec ""\acgim_scripts\Vehicles\A10\checkgear.sqs""; [_this select 0, {wa}] exec ""\acgim_scripts\Vehicles\A10\set_markings.sqs""; [_this select 0] exec ""\acgim_scripts\Vehicles\A10\drawmissiles_gbu.sqs""; _this select 0 animate [""NoseGearDoor2"", 1];"; //[_this select 0] exec ""\dsl_a10\scripts\enginefire.sqs""; [_this select 0] exec ""\dsl_a10\scripts\enginefiresound.sqs"";
+		gear="if (_this Select 1) then {[_this select 0] exec""\acgim_scripts\Vehicles\A10\geardown.sqs""} else {[_this select 0] exec ""\acgim_scripts\Vehicles\A10\gearup.sqs""}";
+		fired="_this exec ""\acgim_scripts\Vehicles\A10\firemissiles_gbu.sqs"";"; //[_this] exec ""\DSL_A10\scripts\gun_brake.sqs"";
+		hit = "(_this select 0) exec {\acgim_scripts\Vehicles\A10\enginefire.sqs};";
+	};
 };

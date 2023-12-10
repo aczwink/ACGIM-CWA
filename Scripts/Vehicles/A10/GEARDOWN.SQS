@@ -1,0 +1,15 @@
+_plane = _this select 0
+_plane animate ["CanGear", 0]
+~1
+_plane animate ["NoseGearDoor2", 1]
+~2
+_plane say "Gear";
+_plane animate ["NoseGearDoor", 0]
+_plane animate ["LeftGear", 0]
+_plane animate ["RightGear", 0]
+_plane animate ["NoseGear", 0]
+_plane animate ["LeftGearDoor", 0]
+_plane animate ["RightGearDoor", 0]
+~2
+_plane animate ["GearW", 0]
+exit

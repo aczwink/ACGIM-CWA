@@ -1,9 +1,4 @@
 //Soldiers
-class OfficerWNight : USA_SquadLeaderNight
-{
-	scope = SCOPE_HIDDEN;
-};
-
 class SoldierWPilotHG : West_HelicopterPilot
 {
 	scope = SCOPE_HIDDEN;

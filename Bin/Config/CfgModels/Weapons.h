@@ -34,5 +34,7 @@ class m1911_sd_empty : Weapon{};
 //Primary
 class rhs_svd : Weapon{};
 //Secondary
-class ICPrpg7e: Weapon {};
-class ICPrpg7: Weapon {};
+class csla2_rpg7_empty : Weapon{};
+class csla2_rpg7_s_raketou : Weapon{};
+class csla2_rpg7v_empty : Weapon{};
+class csla2_rpg7v_s_raketou : Weapon{};

@@ -44,11 +44,6 @@ class AmmoBoxAddW : ReammoBox //scoped out 'cause useless
 	scope=1;
 };
 
-class Truck5tRich : Truck5t //shit -.- links to 5t truck
-{
-	scope=1;
-};
-
 class M1AbramsAuto : M1Abrams //shit -.- links to m1a2 sep abrams
 {
 	scope=1;
@@ -90,11 +85,6 @@ class HeavyGrenadier:SoldierEG //useless, scoped out, links to grenadier
 };
 
 class OfficerEHG:OfficerE //not needed, scoped out
-{
-	scope=1;
-};
-
-class OfficerWNight:OfficerW //useless, links to officer
 {
 	scope=1;
 };
@@ -164,11 +154,6 @@ class OfficerGHG:OfficerG
 	scope=1;
 };
 
-class SoldierGFakeC3:SoldierGFakeC
-{
-	scope=1;
-};
-
 class Civilian8:Civilian
 {
 	scope=1;
@@ -186,11 +171,6 @@ class HeavyReammoBoxRes:HeavyReammoBox
 };
 
 class ReammoBoxOUTGuer:ReammoBox
-{
-	scope=1;
-};
-
-class Parachute:ParachuteWest //dunno what this is, scoped out
 {
 	scope=1;
 };

@@ -85,7 +85,7 @@ class Russia_ATSoldier : Russia_LightATSoldier
 	displayName = "AT Specialist";
 	hiddenSelections[] = {"medic","svetlo","_AKmags1","_Armpatch_right","_Backpack","_Beret","_Cap","_Gpouch","_HelmF","_Holster","_PKpouch1","_PKpouch2","_Radiogear","_SVDmags","_Rpgpack","_Tuch","_Mapcase","_Lamp","_Shovel"};
 	weapons[] = {"AK74", "RPG7V", "Throw", "Put"};
-	magazines[] = {"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "RPG7V", "RPG7V", "RPG7V", "RPG7V"};
+	magazines[] = {"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "RPG7V", "RPG7V"};
 	threat[] = {THREAT_HATSOLDIER};
 };
 

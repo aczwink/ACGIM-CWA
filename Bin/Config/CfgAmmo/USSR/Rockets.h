@@ -4,16 +4,26 @@ Sources:
 	http://en.wikipedia.org/wiki/RPG7
 	http://www.deagel.com/Rocket-and-Missile-Launchers/RPG-7_a002261001.aspx
 */
-class RocketPG7VL : LAW
+class RocketPG7V : LAW
 {
+	airlock=1;
+	hit = HIT_PG7V;
+	indirectHit = INDIRECTHIT_PG7V;
+	indirectHitRange = INDIRECTHITRANGE_PG7V;
+	initTime = 0.1;
+	maxSpeed = 300;
+	model = "\models\csla2_rpg7_Rocket.p3d";
 	thrustTime = 2;
 	thrust = 90;
-	maxSpeed = 294;
-	airlock=1;
-	model="\sjc_models\ussr\objects\pg7vl_fired.p3d";
-	hit = HIT_PG7VL;
-	indirectHit = INDIRECTHIT_PG7VL;
-	indirectHitRange = INDIRECTHITRANGE_PG7VL;
+	visibleFireTime = 2;
+
+	minRange = 25;
+	minRangeProbab = 0.95;
+	midRange = 250;
+	midRangeProbab = 0.8;
+	maxRange = 900;
+	maxRangeProbab = 0.3;
+
 	SoundHitArmor1[]={"\sjc_sounds\weapons\handheld\arm1.wss",db+25,1};
 	SoundHitArmor2[]={"\sjc_sounds\weapons\handheld\arm2.wss",db+25,1};
 	SoundHitArmor3[]={"\sjc_sounds\weapons\handheld\arm3.wss",db+25,1};
@@ -21,6 +31,16 @@ class RocketPG7VL : LAW
 	soundHit[]={"\sjc_sounds\weapons\handheld\boom.wav",38.622778,0.85};
 	soundFly[]={"\sjc_sounds\weapons\handheld\fly.ogg",db+0,1.0};
 };
+
+class RocketPG7VL : RocketPG7V
+{
+	hit = HIT_PG7VL;
+	indirectHit = INDIRECTHIT_PG7VL;
+	indirectHitRange = INDIRECTHITRANGE_PG7VL;
+	midRange = 300;
+	model = "\models\csla2_rpg7v_Rocket.p3d";
+};
+
 
 /*
 RPG-18

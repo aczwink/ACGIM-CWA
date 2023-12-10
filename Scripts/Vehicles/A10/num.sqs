@@ -1,0 +1,25 @@
+_vehicle = _this select 0
+
+? (!local _vehicle): exit
+
+_numselection = 0
+
+#Next
+_rand = random 10
+
+? (_rand>= 0 and _rand< 1)  : _vehicle setobjecttexture [_numselection, "\tex\a10\Nums\0.paa"]
+? (_rand>= 1 and _rand< 2)  : _vehicle setobjecttexture [_numselection, "\tex\a10\Nums\1.paa"]
+? (_rand>= 2 and _rand< 3)  : _vehicle setobjecttexture [_numselection, "\tex\a10\Nums\2.paa"]
+? (_rand>= 3 and _rand< 4)  : _vehicle setobjecttexture [_numselection, "\tex\a10\Nums\3.paa"]
+? (_rand>= 4 and _rand< 5)  : _vehicle setobjecttexture [_numselection, "\tex\a10\Nums\4.paa"]
+? (_rand>= 5 and _rand< 6)  : _vehicle setobjecttexture [_numselection, "\tex\a10\Nums\5.paa"]
+? (_rand>= 6 and _rand< 7)  : _vehicle setobjecttexture [_numselection, "\tex\a10\Nums\6.paa"]
+? (_rand>= 7 and _rand< 8)  : _vehicle setobjecttexture [_numselection, "\tex\a10\Nums\7.paa"]
+? (_rand>= 8 and _rand< 9)  : _vehicle setobjecttexture [_numselection, "\tex\a10\Nums\8.paa"]
+? (_rand>= 9 and _rand<10)  : _vehicle setobjecttexture [_numselection, "\tex\a10\Nums\9.paa"]
+
+_numselection = _numselection +1
+
+?(_numselection != 3) : goto "Next"
+
+exit

@@ -1,0 +1,21 @@
+_plane = _this select 0
+
+?(!alive _plane) : exit
+
+_swcount = _plane ammo "AIM9M"
+? (_swcount > 1) : _plane setobjecttexture[11, "\tex\a10\weap\aim9.pac"]
+? (_swcount > 0) : _plane setobjecttexture[12, "\tex\a10\weap\aim9.pac"]
+
+_mavcount = _plane ammo "AGM65BMaverick"
+? (_mavcount > 5) : _plane setobjecttexture[13, "\tex\a10\weap\agm65B.paa"]
+? (_mavcount > 4) : _plane setobjecttexture[14, "\tex\a10\weap\agm65B.paa"]
+? (_mavcount > 3) : _plane setobjecttexture[15, "\tex\a10\weap\agm65B.paa"]
+? (_mavcount > 2) : _plane setobjecttexture[16, "\tex\a10\weap\agm65B.paa"]
+? (_mavcount > 1) : _plane setobjecttexture[17, "\tex\a10\weap\agm65B.paa"]
+? (_mavcount > 0) : _plane setobjecttexture[18, "\tex\a10\weap\agm65B.paa"]
+
+_bombcount = _plane ammo "Mk82_4"
+? (_bombcount > 3) : _plane setobjecttexture[19, "\tex\a10\weap\mk82.pac"]
+? (_bombcount > 2) : _plane setobjecttexture[20, "\tex\a10\weap\mk82.pac"]
+? (_bombcount > 1) : _plane setobjecttexture[21, "\tex\a10\weap\mk82.pac"]
+? (_bombcount > 0) : _plane setobjecttexture[22, "\tex\a10\weap\mk82.pac"]

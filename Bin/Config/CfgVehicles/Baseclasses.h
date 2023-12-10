@@ -2148,7 +2148,6 @@ class ReammoBox : Strategic
 	animated=0;
 	scope=1;
 	icon="Ammo_move";
-	model="hromada_beden";
 	displayName="$STR_DN_AMMO_CRATES";
 	accuracy=0.2;
 	typicalCargo[]={};
@@ -2169,7 +2168,7 @@ class HeavyReammoBox : Strategic
 	animated=0;
 	scope=1;
 	icon="Ammo_move";
-	model="bedna_ammo";
+	model = "hromada_beden";
 	displayName="$STR_DN_AMMO_CRATES_WEST2";
 	accuracy=1000;
 	typicalCargo[]={};

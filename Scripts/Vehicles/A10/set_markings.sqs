@@ -1,0 +1,124 @@
+; usage: [this, "dr"] exec "\DSL_a10\scripts\set_markings.sqs"
+; or [this, "is"] exec "\DSL_a10\scripts\set_markings.sqs"
+; ...
+
+_plane = _this select 0
+_markings = _this select 1
+
+goto _markings
+goto "end"
+
+#dr
+_plane setobjecttexture [3,"\tex\a10\b\tail_dr.paa"]
+_plane setobjecttexture [4,"\tex\a10\b\tail_dr.paa"]
+
+_plane setobjecttexture [5,""]
+_plane setobjecttexture [6,""]
+
+_plane setobjecttexture [7,"\tex\a10\b\af90224.paa"]
+_plane setobjecttexture [8,"\tex\a10\b\af90224.paa"]
+
+_plane setobjecttexture [9,"\tex\a10\b\afrc.paa"]
+_plane setobjecttexture [10,"\tex\a10\b\afrc.paa"]
+goto "end"
+
+#dr2
+_plane setobjecttexture [3,"\tex\a10\b\tail_dr.paa"]
+_plane setobjecttexture [4,"\tex\a10\b\tail_dr.paa"]
+
+_plane setobjecttexture [5,""]
+_plane setobjecttexture [6,""]
+
+_plane setobjecttexture [7,"\tex\a10\b\af90228.paa"]
+_plane setobjecttexture [8,"\tex\a10\b\af90228.paa"]
+
+_plane setobjecttexture [9,"\tex\a10\b\afrc.paa"]
+_plane setobjecttexture [10,"\tex\a10\b\afrc.paa"]
+goto "end"
+
+#is
+_plane setobjecttexture [3,"\tex\a10\b\tail_is.paa"]
+_plane setobjecttexture [4,"\tex\a10\b\tail_is.paa"]
+
+_plane setobjecttexture [5,"\tex\a10\b\afeurlogo.paa"]
+_plane setobjecttexture [6,"\tex\a10\b\afeurlogo.paa"]
+
+_plane setobjecttexture [7,"\tex\a10\b\af94109.paa"]
+_plane setobjecttexture [8,"\tex\a10\b\af94109.paa"]
+
+_plane setobjecttexture [9,"\tex\a10\b\usaf.paa"]
+_plane setobjecttexture [10,"\tex\a10\b\usaf.paa"]
+goto "end"
+
+#li
+_plane setobjecttexture [3,"\tex\a10\b\tail_li.paa"]
+_plane setobjecttexture [4,"\tex\a10\b\tail_li.paa"]
+
+_plane setobjecttexture [5,""]
+_plane setobjecttexture [6,""]
+
+_plane setobjecttexture [7,"\tex\a10\b\af89110.paa"]
+_plane setobjecttexture [8,"\tex\a10\b\af89110.paa"]
+
+_plane setobjecttexture [9,"\tex\a10\b\usaf.paa"]
+_plane setobjecttexture [10,"\tex\a10\b\usaf.paa"]
+goto "end"
+
+#my
+_plane setobjecttexture [3,"\tex\a10\b\tail_my.paa"]
+_plane setobjecttexture [4,"\tex\a10\b\tail_my.paa"]
+
+_plane setobjecttexture [5,""]
+_plane setobjecttexture [6,""]
+
+_plane setobjecttexture [7,"\tex\a10\b\af94011.paa"]
+_plane setobjecttexture [8,"\tex\a10\b\af94011.paa"]
+
+_plane setobjecttexture [9,"\tex\a10\b\usaf.paa"]
+_plane setobjecttexture [10,"\tex\a10\b\usaf.paa"]
+goto "end"
+
+#wa
+_plane setobjecttexture [3,"\tex\a10\b\tail_wa.paa"]
+_plane setobjecttexture [4,"\tex\a10\b\tail_wa.paa"]
+
+_plane setobjecttexture [5,"\tex\a10\b\acclogo.paa"]
+_plane setobjecttexture [6,"\tex\a10\b\acclogo.paa"]
+
+_plane setobjecttexture [7,"\tex\a10\b\af87011.paa"]
+_plane setobjecttexture [8,"\tex\a10\b\af87011.paa"]
+
+_plane setobjecttexture [9,"\tex\a10\b\usaf.paa"]
+_plane setobjecttexture [10,"\tex\a10\b\usaf.paa"]
+goto "end"
+
+#wa2
+_plane setobjecttexture [3,"\tex\a10\b\tail_wa.paa"]
+_plane setobjecttexture [4,"\tex\a10\b\tail_wa.paa"]
+
+_plane setobjecttexture [5,"\tex\a10\b\acclogo.paa"]
+_plane setobjecttexture [6,"\tex\a10\b\acclogo.paa"]
+
+_plane setobjecttexture [7,"\tex\a10\b\af87012.paa"]
+_plane setobjecttexture [8,"\tex\a10\b\af87012.paa"]
+
+_plane setobjecttexture [9,"\tex\a10\b\usaf.paa"]
+_plane setobjecttexture [10,"\tex\a10\b\usaf.paa"]
+goto "end"
+
+#zz
+_plane setobjecttexture [3,"\tex\a10\b\tail_zz.paa"]
+_plane setobjecttexture [4,"\tex\a10\b\tail_zz.paa"]
+
+_plane setobjecttexture [5,""]
+_plane setobjecttexture [6,""]
+
+_plane setobjecttexture [7,"\tex\a10\b\af94109.paa"]
+_plane setobjecttexture [8,"\tex\a10\b\af94109.paa"]
+
+_plane setobjecttexture [9,"\tex\a10\b\rescue.paa"]
+_plane setobjecttexture [10,"\tex\a10\b\rescue.paa"]
+goto "end"
+
+#end
+exit

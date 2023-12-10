@@ -29,27 +29,27 @@ _rnd = 3
 ; Öèôåðíûå ÷àñòè íîìåðà
 _rnd1 = random(10);
 _rnd = _rnd1 - (_rnd1 mod 1)
-_car setobjecttexture [2,format["\sjc_textures\zil130\trno\%1%2.paa",_rnd,_post]];
+_car setobjecttexture [2,format["\tex\zil\n\%1%2.paa",_rnd,_post]];
 _rnd1 = random(10);
 _rnd = _rnd1 - (_rnd1 mod 1)
-_car setobjecttexture [3,format["\sjc_textures\zil130\trno\%1%2.paa",_rnd,_post]];
+_car setobjecttexture [3,format["\tex\zil\n\%1%2.paa",_rnd,_post]];
 _rnd1 = random(10);
 _rnd = _rnd1 - (_rnd1 mod 1)
-_car setobjecttexture [4,format["\sjc_textures\zil130\trno\%1%2.paa",_rnd,_post]];
+_car setobjecttexture [4,format["\tex\zil\n\%1%2.paa",_rnd,_post]];
 _rnd1 = random(10);
 _rnd = _rnd1 - (_rnd1 mod 1)
-_car setobjecttexture [5,format["\sjc_textures\zil130\trno\%1%2.paa",_rnd,_post]];
+_car setobjecttexture [5,format["\tex\zil\n\%1%2.paa",_rnd,_post]];
 
 ;hint format["\OWP_ZIL\trno\%1%2.paa",_rnd,_post]
 ; Áóêâåííûå íîìåðà
 _rnd1 = random(16);
 _rnd = _rnd1 - (_rnd1 mod 1)
-_car setobjecttexture [6,format["\sjc_textures\zil130\trno\%1%2.paa",_letter_array select _rnd,_post]];
+_car setobjecttexture [6,format["\tex\zil\n\%1%2.paa",_letter_array select _rnd,_post]];
 _rnd1 = random(16);
 _rnd = _rnd1 - (_rnd1 mod 1)
-_car setobjecttexture [7,format["\sjc_textures\zil130\trno\%1%2.paa",_letter_array select _rnd,_post]];
+_car setobjecttexture [7,format["\tex\zil\n\%1%2.paa",_letter_array select _rnd,_post]];
 _rnd1 = random(16);
 _rnd = _rnd1 - (_rnd1 mod 1)
-_car setobjecttexture [8,format["\sjc_textures\zil130\trno\%1%2.paa",_letter_array select _rnd,_post]];
+_car setobjecttexture [8,format["\tex\zil\n\%1%2.paa",_letter_array select _rnd,_post]];
 
 exit;

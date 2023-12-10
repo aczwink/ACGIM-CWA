@@ -16,7 +16,7 @@ class BombGBU12 : LaserGuidedBomb
 	maxRangeProbab=0.50;
 	soundHit[]={"\LaserGuided\expl2",db40,1};
 	cost = 21896; //dollars
-	model="\d4t_files\models\us\weapons\air\gbu12.p3d";
+	model="\models\GBU12.p3d";
 	irLock = true;
 	laserLock=1;
 	maxControlRange=100000;

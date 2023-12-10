@@ -1,282 +1,339 @@
 steps:
   #addons
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\6G30.PBO.XZ
     exclude: [config.bin, stringtable.csv]
     include:
-      - source: source
-        path: AddOns/6G30/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/6G30/config.cpp
     targetPboName: AddOns/6G30
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\ABOX.PBO.XZ
     exclude: [config.bin, stringtable.csv]
     include:
-      - source: source
-        path: AddOns/ABox/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/ABox/config.cpp
     targetPboName: AddOns/ABox
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\APAC.PBO.XZ
     exclude: [config.bin, stringtable.csv]
     include:
-      - source: source
-        path: AddOns/Apac/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/Apac/config.cpp
     targetPboName: AddOns/Apac
 
   - type: RepackArchive
-    sourceLocation: cwa_patch
     source:
       type: Archive
+      sourceLocation: cwa_patch
       name: CWA_update.22112011-combinedALL.7z
       pbo: Addons/BISCamel.pbo
     exclude: [config.bin, stringtable.csv]
     include:
-      - source: source
-        path: AddOns/BISCamel/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/BISCamel/config.cpp
     targetPboName: AddOns/BISCamel
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\BIZON.PBO.XZ
     exclude: [config.bin, dx6.log, stringtable.csv]
     include:
-      - source: source
-        path: AddOns/Bizon/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/Bizon/config.cpp
     targetPboName: AddOns/Bizon
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\BMP2.PBO.XZ
     exclude: [config.bin, stringtable.csv]
     include:
-      - source: source
-        path: AddOns/BMP2/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/BMP2/config.cpp
     targetPboName: AddOns/BMP2
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\BRMD.PBO.XZ
     exclude: [config.bin, stringtable.csv]
     include:
-      - source: source
-        path: AddOns/Brmd/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/Brmd/config.cpp
     targetPboName: AddOns/Brmd
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\CH47.PBO.XZ
     exclude: [config.bin, config.cpp, CH47-D.backup, stringtable.csv]
     include:
-      - source: source
-        path: AddOns/ch47/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/ch47/config.cpp
     targetPboName: AddOns/ch47
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\G36A.PBO.XZ
     exclude: [config.bin, stringtable.csv]
     include:
-      - source: source
-        path: AddOns/G36a/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/G36a/config.cpp
     targetPboName: AddOns/G36a
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\HUMR.PBO.XZ
     exclude: [config.bin, stringtable.csv]
     include:
-      - source: source
-        path: AddOns/humr/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/humr/config.cpp
     targetPboName: AddOns/humr
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\HUNTER.PBO.XZ
     exclude: [config.bin, stringtable.csv, vssver.scc]
     include:
-      - source: source
-        path: AddOns/Hunter/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/Hunter/config.cpp
     targetPboName: AddOns/Hunter
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\KOLO.PBO.XZ
     exclude: [config.bin, stringtable.csv]
     include:
-      - source: source
-        path: AddOns/KOLO/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/KOLO/config.cpp
     targetPboName: AddOns/KOLO
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\KOZL.PBO.XZ
     exclude: [config.bin, stringtable.csv, vssver.scc]
     include:
-      - source: source
-        path: AddOns/kozl/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/kozl/config.cpp
     targetPboName: AddOns/kozl
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\LASERGUIDED.PBO.XZ
     exclude: [config.bin, stringtable.csv]
     include:
-      - source: source
-        path: AddOns/LaserGuided/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/LaserGuided/config.cpp
     targetPboName: AddOns/LaserGuided
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\M2A2.PBO.XZ
     exclude: [config.bin, stringtable.csv, vssver.scc]
     include:
-      - source: source
-        path: AddOns/M2A2/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/M2A2/config.cpp
     targetPboName: AddOns/M2A2
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\MINI.PBO.XZ
     exclude: [config.bin, stringtable.csv]
     include:
-      - source: source
-        path: AddOns/MINI/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/MINI/config.cpp
     targetPboName: AddOns/MINI
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\MM-1.PBO.XZ
     exclude: [config.bin, stringtable.csv, vssver.scc]
     include:
-      - source: source
-        path: AddOns/Mm-1/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/Mm-1/config.cpp
     targetPboName: AddOns/Mm-1
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\NOE.PBO.XZ
     exclude: [config.bin]
     include:
-      - source: source
-        path: AddOns/Noe/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/Noe/config.cpp
     targetPboName: AddOns/Noe
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\O.PBO.XZ
     exclude: [config.bin, stringtable.csv]
     include:
-      - source: source
-        path: AddOns/O/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/O/config.cpp
     targetPboName: AddOns/O
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\OH58.PBO.XZ
     exclude: [config.bin, stringtable.csv, vssver.scc]
     include:
-      - source: source
-        path: AddOns/oh58/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/oh58/config.cpp
     targetPboName: AddOns/oh58
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\O_WP.PBO.XZ
     exclude: [config.bin, stringtable.csv]
     include:
-      - source: source
-        path: AddOns/O_WP/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/O_WP/config.cpp
     targetPboName: AddOns/O_WP
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\STEYR.PBO.XZ
     exclude: [config.bin, stringtable.csv, vssver.scc]
     include:
-      - source: source
-        path: AddOns/Steyr/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/Steyr/config.cpp
     targetPboName: AddOns/Steyr
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\ADDONS\SU25.PBO.XZ
     exclude: [config.bin, stringtable.csv, vssver.scc]
     include:
-      - source: source
-        path: AddOns/su25/config.cpp
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/su25/config.cpp
     targetPboName: AddOns/su25
 
+  - type: RepackArchive
+    source:
+      type: Archive
+      sourceLocation: cwa_installer
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\TRAB.PBO.XZ
+    exclude: [config.bin, stringtable.csv, vssver.scc]
+    include:
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/trab/config.cpp
+    targetPboName: AddOns/trab
 
-  - type: CopyFiles
-    source: resources
-    files: AddOns/*.pbo #TODO: check this, I think these are just copies of the original addon files but without the config.cpp/config.bin/stringtable.csv. This could be done with a unpack-delete config-repack step
+  - type: RepackArchive
+    source:
+      type: Archive
+      sourceLocation: cwa_installer
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\VULCAN.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/vulcan/config.cpp
+    targetPboName: AddOns/vulcan
+
+  - type: RepackArchive
+    source:
+      type: Archive
+      sourceLocation: cwa_installer
+      name: CWA.exe
+      pbo: .rsrc/0/RCDATA/CWA\ADDONS\XMS.PBO.XZ
+    exclude: [config.bin, stringtable.csv]
+    include:
+      - type: FileSystem
+        sourceLocation: source
+        files: AddOns/XMS/config.cpp
+    targetPboName: AddOns/XMS

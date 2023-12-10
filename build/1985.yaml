@@ -10,13 +10,17 @@ source_integrity:
   LSR_US_Weapons_Pack_300.rar: f6ccf72fd901868ace241c0efb387955
   NKHole.zip: e428bfd5a13ade3747a84ad5560b357a
   OWP_Mi8_1_0(Hight).rar: 1255d7c03f20d553c9b38536695fbf37
+  OWP_ZIL_09b.rar: 1b1df802d6505a1a01b38091a20618a9
   RHS_Misc_v2.0.rar: 39a5cc253719ea8efeb5715eafbf8399
   RHS_weapons_v1.01.rar: b6c0a97d24f68530e97e00ae46f880da
   rus_zsu.rar: 0f828bcac0b28646ef03101862df203a
+  sancGRAAmod3.rar: c8eaa36ad5b944bf36bca8afb213df3d
   SFM_URALS.rar: 5e94a250ca217fcda3342fd8bcc31904
   SJB_WeaponsPack_v1.1.cab: ccdcf2d1c2ed5fe063083903a88766e4
   SLX_Mod_1.1_Beta.rar: f8d559de4f9301db204cd2d84eb8f04f
   su25.rar: c689a95cb6a4efc872464cfdacc64544
+  wgl_texture_replacement_pack.rar: 7a5b7be150ee54148fb6ae12c6f2289a
+
 
 
 steps:
@@ -41,20 +45,28 @@ steps:
 
   #dta
   - type: ImportFiles
-    source: addons
     ignore: [data, data3d, o]
     sources:
       - type: FileSystem
-        source: source
+        sourceLocation: source
         files:
           - Models/CSLA2_M16A2_optika_sd.p3d
           
       - type: Archive
+        sourceLocation: addons
         name: CSLA2Update2_Install_v220.exe
         pbos:
+          - CSLA/Addons/csla.pbo
           - CSLA/Addons/csla_arm.pbo
           - CSLA/Addons/csla_us.pbo
         files:
+          - csla/rpg7/csla2_rpg7_empty.p3d
+          - csla/rpg7/csla2_rpg7_optika.p3d
+          - csla/rpg7/csla2_rpg7_Rocket.p3d
+          - csla/rpg7/csla2_rpg7_s_raketou.p3d
+          - csla/rpg7/csla2_rpg7v_empty.p3d
+          - csla/rpg7/csla2_rpg7v_Rocket.p3d
+          - csla/rpg7/csla2_rpg7v_s_raketou.p3d
           - csla_us/CSLA2_M16A2_optika.p3d
           - csla_us/CSLA2_UH60A.p3d
           - csla_us/CSLA2_UH60A_M2.p3d
@@ -72,13 +84,84 @@ steps:
           - csla_us/uh-60a/pp_sklo3.paa
 
       - type: Archive
+        sourceLocation: addons
         name: DSL_a10v1.11.rar
         pbos:
           - DSL_a10.pbo
         files:
+          - { sourceFileName: DSL_a10/B/ACCLOGO.PAA, targetName: a10/B/acclogo }
+          - { sourceFileName: DSL_a10/B/AF87011.PAA, targetName: a10/B/af87011 }
+          - { sourceFileName: DSL_a10/B/AF87012.PAA, targetName: a10/B/af87012 }
+          - { sourceFileName: DSL_a10/B/AF89110.PAA, targetName: a10/B/af89110 }
+          - { sourceFileName: DSL_a10/B/AF90224.PAA, targetName: a10/B/af90224 }
+          - { sourceFileName: DSL_a10/B/AF90228.PAA, targetName: a10/B/af90228 }
+          - { sourceFileName: DSL_a10/B/AF94011.PAA, targetName: a10/B/af94011 }
+          - { sourceFileName: DSL_a10/B/AF94109.PAA, targetName: a10/B/af94109 }
+          - { sourceFileName: DSL_a10/B/afeurlogo.paa, targetName: a10/B/afeurlogo }
+          - { sourceFileName: DSL_a10/B/AFRC.PAA, targetName: a10/B/afrc }
+          - { sourceFileName: DSL_a10/B/AFRES.PAA, targetName: a10/B/afres }
+          - { sourceFileName: DSL_a10/B/RESCUE.PAA, targetName: a10/B/rescue }
+          - { sourceFileName: DSL_a10/B/TAIL_DR.PAA, targetName: a10/B/tail_dr }
+          - { sourceFileName: DSL_a10/B/TAIL_IS.PAA, targetName: a10/B/tail_is }
+          - { sourceFileName: DSL_a10/B/TAIL_LI.PAA, targetName: a10/B/tail_li }
+          - { sourceFileName: DSL_a10/B/TAIL_MY.PAA, targetName: a10/B/tail_my }
+          - { sourceFileName: DSL_a10/B/TAIL_WA.PAA, targetName: a10/B/tail_wa }
+          - { sourceFileName: DSL_a10/B/TAIL_ZZ.PAA, targetName: a10/B/tail_zz }
+          - { sourceFileName: DSL_a10/B/USAF.PAA, targetName: a10/B/usaf }
+          - { sourceFileName: DSL_a10/B/WEST_02.PAA, targetName: a10/B/west_02 }
+          - { sourceFileName: DSL_a10/Dgn/Bok.pac, targetName: a10/Dgn/bok }
+          - { sourceFileName: DSL_a10/Gy/Bok.pac, targetName: a10/Gy/bok }
+          - { sourceFileName: DSL_a10/Gy/Dol.pac, targetName: a10/Gy/dol }
+          - { sourceFileName: DSL_a10/Gy/Dol_l_sk.pac, targetName: a10/Gy/dol_l_sk }
+          - { sourceFileName: DSL_a10/Gy/Dol_r_sk.pac, targetName: a10/Gy/dol_r_sk }
+          - { sourceFileName: DSL_a10/Gy/Fkg.pac, targetName: a10/Gy/fkg }
+          - { sourceFileName: DSL_a10/Gy/L_silnik.pac, targetName: a10/Gy/l_silnik }
+          - { sourceFileName: DSL_a10/Gy/L_sk.pac, targetName: a10/Gy/l_sk }
+          - { sourceFileName: DSL_a10/Gy/Mgs.pac, targetName: a10/Gy/mgs }
+          - { sourceFileName: DSL_a10/Gy/Mgs2.pac, targetName: a10/Gy/mgs2 }
+          - { sourceFileName: DSL_a10/Gy/Pol_l_sk.pac, targetName: a10/Gy/pol_l_sk }
+          - { sourceFileName: DSL_a10/Gy/Pol_r_sk.pac, targetName: a10/Gy/pol_r_sk }
+          - { sourceFileName: DSL_a10/Gy/Pylon_b.pac, targetName: a10/Gy/pylon_b }
+          - { sourceFileName: DSL_a10/Gy/R_silnik.pac, targetName: a10/Gy/r_silnik }
+          - { sourceFileName: DSL_a10/Gy/R_sk.pac, targetName: a10/Gy/r_sk }
+          - { sourceFileName: DSL_a10/Gy/S_wydech.pac, targetName: a10/Gy/s_wydech }
+          - { sourceFileName: DSL_a10/Gy/St_pion.pac, targetName: a10/Gy/st_pion }
+          - { sourceFileName: DSL_a10/Gy/St_poz_l.pac, targetName: a10/Gy/st_poz_l }
+          - { sourceFileName: DSL_a10/Gy/St_poz_r.pac, targetName: a10/Gy/st_poz_r }
+          - { sourceFileName: DSL_a10/Gy/Wlot_s.pac, targetName: a10/Gy/wlot_s }
+          - { sourceFileName: DSL_a10/Gy/Zwis.pac, targetName: a10/Gy/zwis }
+          - { sourceFileName: DSL_a10/Gy/Zwis2a.pac, targetName: a10/Gy/zwis2a }
+          - { sourceFileName: DSL_a10/NUMS/0.paa, targetName: a10/Nums/0 }
+          - { sourceFileName: DSL_a10/NUMS/1.paa, targetName: a10/Nums/1 }
+          - { sourceFileName: DSL_a10/NUMS/2.paa, targetName: a10/Nums/2 }
+          - { sourceFileName: DSL_a10/NUMS/3.paa, targetName: a10/Nums/3 }
+          - { sourceFileName: DSL_a10/NUMS/4.paa, targetName: a10/Nums/4 }
+          - { sourceFileName: DSL_a10/NUMS/5.paa, targetName: a10/Nums/5 }
+          - { sourceFileName: DSL_a10/NUMS/6.paa, targetName: a10/Nums/6 }
+          - { sourceFileName: DSL_a10/NUMS/7.paa, targetName: a10/Nums/7 }
+          - { sourceFileName: DSL_a10/NUMS/8.paa, targetName: a10/Nums/8 }
+          - { sourceFileName: DSL_a10/NUMS/9.paa, targetName: a10/Nums/9 }
+          - DSL_a10/sound/Gear.wav
+          - DSL_a10/WEAP/AGM65B.p3d
+          - { sourceFileName: DSL_a10/WEAP/AGM65B.paa, targetName: a10/Weap/agm65b }
+          - { sourceFileName: DSL_a10/WEAP/AIM9.pac, targetName: a10/Weap/aim9 }
+          - DSL_a10/WEAP/Aim9M.p3d
+          - { sourceFileName: DSL_a10/WEAP/ALQ131_g.pac, targetName: a10/Weap/alq131_g }
+          - { sourceFileName: DSL_a10/WEAP/ALQ131B_g.pac, targetName: a10/Weap/alq131b_g }
+          - DSL_a10/WEAP/GBU12.p3d
+          - { sourceFileName: DSL_a10/WEAP/gbu12.pac, targetName: a10/Weap/gbu12 }
+          - { sourceFileName: DSL_a10/WEAP/mk82.pac, targetName: a10/Weap/mk82 }
+          - { sourceFileName: DSL_a10/WEAP/usafalq.paa, targetName: a10/Weap/usafalq }
+          - { sourceFileName: DSL_a10/Chrom.paa, targetName: a10/chrom }
+          - DSL_a10/DSL_a10_mesh_g.p3d
           - DSL_a10/DSL_a10_mesh_gbu_g.p3d
+          - { sourceFileName: DSL_a10/GLASS.PAA, targetName: a10/glass }
+          - { sourceFileName: DSL_a10/GLASS2.PAA, targetName: a10/glass2 }
+          - { sourceFileName: DSL_a10/picgrey.paa, targetName: a10_pic }
+          - { sourceFileName: DSL_a10/Stozek.pac, targetName: a10/stozek }
 
       - type: Archive
+        sourceLocation: addons
         name: FFUR_85_Patch_1.05.exe
         pbos:
           - "@ffsx85/addons/ffur_arty.pbo"
@@ -150,10 +233,11 @@ steps:
         pbos:
           - ICPrpg7.pbo
         files:
-          - ICPrpg7/ICPrpg7e.p3d
-          - ICPrpg7/ICPrpg7.p3d
+          - { sourceFileName: ICPrpg7/Sound/launch.ogg, targetName: rpg7_launch }
+          - ICPrpg7/rpg/rpg_reload.wss
 
       - type: Archive
+        sourceLocation: addons
         name: INQ_M60.rar
         pbos:
           - INQ_M60.pbo
@@ -161,6 +245,7 @@ steps:
           - { sourceFileName: INQ_M60/sounds/Engine_Start.ogg, targetName: m60_Engine_Start }
 
       - type: Archive
+        sourceLocation: addons
         name: NKHole.zip
         pbos:
           - NKHole.pbo
@@ -169,6 +254,7 @@ steps:
           - NKHole/Earth4Dir1.p3d
 
       - type: Archive
+        sourceLocation: addons
         name: OWP_Mi8_1_0(Hight).rar
         pbos:
           - OWP_Mi8.pbo
@@ -178,6 +264,48 @@ steps:
           - { sourceFileName: OWP_Mi8/Sounds/engstart.ogg, targetName: mi8_engstart }
 
       - type: Archive
+        sourceLocation: addons
+        name: OWP_ZIL_09b.rar
+        pbos:
+          - OWP_ZIL_pack_09b/OWP_ZIL.pbo
+        files:
+          - { sourceFileName: OWP_ZIL/trno/0w.paa, targetName: zil/n/0w }
+          - { sourceFileName: OWP_ZIL/trno/1w.paa, targetName: zil/n/1w }
+          - { sourceFileName: OWP_ZIL/trno/2w.paa, targetName: zil/n/2w }
+          - { sourceFileName: OWP_ZIL/trno/3w.paa, targetName: zil/n/3w }
+          - { sourceFileName: OWP_ZIL/trno/4w.paa, targetName: zil/n/4w }
+          - { sourceFileName: OWP_ZIL/trno/5w.paa, targetName: zil/n/5w }
+          - { sourceFileName: OWP_ZIL/trno/6w.paa, targetName: zil/n/6w }
+          - { sourceFileName: OWP_ZIL/trno/7w.paa, targetName: zil/n/7w }
+          - { sourceFileName: OWP_ZIL/trno/8w.paa, targetName: zil/n/8w }
+          - { sourceFileName: OWP_ZIL/trno/9w.paa, targetName: zil/n/9w }
+          - { sourceFileName: OWP_ZIL/trno/Aw.paa, targetName: zil/n/Aw }
+          - { sourceFileName: OWP_ZIL/trno/Bw.paa, targetName: zil/n/Bw }
+          - { sourceFileName: OWP_ZIL/trno/Cw.paa, targetName: zil/n/Cw }
+          - { sourceFileName: OWP_ZIL/trno/Dw.paa, targetName: zil/n/Dw }
+          - { sourceFileName: OWP_ZIL/trno/Ew.paa, targetName: zil/n/Ew }
+          - { sourceFileName: OWP_ZIL/trno/Fw.paa, targetName: zil/n/Fw }
+          - { sourceFileName: OWP_ZIL/trno/Gw.paa, targetName: zil/n/Gw }
+          - { sourceFileName: OWP_ZIL/trno/Hw.paa, targetName: zil/n/Hw }
+          - { sourceFileName: OWP_ZIL/trno/Iw.paa, targetName: zil/n/Iw }
+          - { sourceFileName: OWP_ZIL/trno/Kw.paa, targetName: zil/n/Kw }
+          - { sourceFileName: OWP_ZIL/trno/Lw.paa, targetName: zil/n/Lw }
+          - { sourceFileName: OWP_ZIL/trno/Nw.paa, targetName: zil/n/Nw }
+          - { sourceFileName: OWP_ZIL/trno/Pw.paa, targetName: zil/n/Pw }
+          - { sourceFileName: OWP_ZIL/trno/Sw.paa, targetName: zil/n/Sw }
+          - { sourceFileName: OWP_ZIL/trno/Uw.paa, targetName: zil/n/Uw }
+          - { sourceFileName: OWP_ZIL/trno/Zw.paa, targetName: zil/n/Zw }
+          - { sourceFileName: OWP_ZIL/icon131cw.paa, targetName: zil131_pic }
+          - { sourceFileName: OWP_ZIL/iconammo.paa, targetName: zil130_iconammo }
+          - { sourceFileName: OWP_ZIL/pic_ZIL.pac, targetName: zil131_icon }
+          - { sourceFileName: OWP_ZIL/steklo.paa, targetName: zil131_steklo }
+          - { sourceFileName: OWP_ZIL/steklob.paa, targetName: zil131_steklob }
+          - { sourceFileName: OWP_ZIL/stekloc.paa, targetName: zil131_stekloc }
+          - OWP_ZIL/zil130ARepair.p3d
+          - OWP_ZIL/zil131tentw.p3d
+
+      - type: Archive
+        sourceLocation: addons
         name: RHS_Misc_v2.0.rar
         pbos:
           - RHS_Misc.pbo
@@ -202,6 +330,7 @@ steps:
           - RHS_Misc/Weapon/Sabot.p3d
 
       - type: Archive
+        sourceLocation: addons
         name: RHS_weapons_v1.01.rar
         pbos:
           - RHS_SVD.pbo
@@ -211,6 +340,7 @@ steps:
           - { sourceFileName: RHS_Weap/AK_Optics/AK_Optic2.p3d, targetName: rhs_AK_Optic2 }
 
       - type: Archive
+        sourceLocation: addons
         name: rus_zsu.rar
         pbos:
           - MNF_ZSU.pbo
@@ -220,11 +350,13 @@ steps:
           - { sourceFileName: MNF_ZSU/sounds/engineoff.ogg, targetName: zsu234_engineoff }
 
       - type: Archive
+        sourceLocation: addons
         name: SFM_URALS.rar
         pbos:
           - SFM_URALS.pbo
         files:
           - SFM_URALS/anim/DLEMuralDEADCARGO1.rtm
+          - SFM_URALS/ural4320_ammo.p3d
           - SFM_URALS/ural4320_closed.p3d
           - SFM_URALS/ural4320_dead.p3d
           - SFM_URALS/ural4320_GAS.p3d
@@ -242,6 +374,7 @@ steps:
           - SFM_URALS/Ural_dead_cist.p3d
 
       - type: Archive
+        sourceLocation: addons
         name: su25.rar
         pbos:
           - su25.pbo
@@ -315,15 +448,22 @@ steps:
 
       - type: Archive
         sourceLocation: addons
+        name: CSLA2Update2_Install_v220.exe
+        pbos:
+          - CSLA/Addons/csla_mod.pbo
+        files:
+          - { sourceFileName: csla_mod/icons/m_rpg7.paa, type: magazine, targetName: RPG7 }
+          - { sourceFileName: csla_mod/icons/w_rpg7.paa, type: weapon, targetName: RPG7 }
+          - { sourceFileName: csla_mod/icons/m_rpg7v.paa, type: magazine, targetName: RPG7V }
+          - { sourceFileName: csla_mod/icons/w_rpg7v.paa, type: weapon, targetName: RPG7V }
+
+      - type: Archive
+        sourceLocation: addons
         name: icprpg.rar
         pbos:
           - ICPrpg7.pbo
         files:
           - { sourceFileName: ICPrpg7/gear2.paa, type: weapon, targetName: RPG2 }
-          - { sourceFileName: ICPrpg7/rpg/geard3.paa, type: magazine, targetName: RPG7 }
-          - { sourceFileName: ICPrpg7/gear1.paa, type: weapon, targetName: RPG7 }
-          - { sourceFileName: ICPrpg7/rpg/geard3.paa, type: magazine, targetName: RPG7V }
-          - { sourceFileName: ICPrpg7/gearv1.paa, type: weapon, targetName: RPG7V }
           - { sourceFileName: ICPrpg7/rpg26/rpg18_m.paa, type: magazine, targetName: RPG18 }
           - { sourceFileName: ICPrpg7/rpg26/rpg18_w.paa, type: weapon, targetName: RPG18 }
 
@@ -342,16 +482,18 @@ steps:
         sourceLocation: addons
         name: RHS_weapons_v1.01.rar
         pbos:
+          - RHS_SVD.pbo
           - RHS_Weap.pbo
         files:
           - { sourceFileName: "RHS_Weap/AK_Pics/m_30RD_5,45_MAG.paa", type: magazine, targetName: AK74 }
           - { sourceFileName: RHS_Weap/AK_Pics/w_AK74.paa, type: weapon, targetName: AK74 }
           - { sourceFileName: RHS_Weap/AK_Pics/w_AK74_GP25.paa, type: weapon, targetName: AK74GP25 }
-          - { sourceFileName: RHS_Weap/AK_Pics/w_AK74S.paa, type: weapon, targetName: AKS74 }
           - { sourceFileName: "RHS_Weap/AK_Pics/m_30RD_7,62_MAG.paa", type: magazine, targetName: AKM }
           - { sourceFileName: RHS_Weap/AK_Pics/w_AKM.paa, type: weapon, targetName: AKM }
+          - { sourceFileName: RHS_Weap/AK_Pics/w_AK74S.paa, type: weapon, targetName: AKS74 }
           - { sourceFileName: RHS_Weap/pk/pk_mag.paa, type: magazine, targetName: PKM }
           - { sourceFileName: RHS_Weap/pk/pk.paa, type: weapon, targetName: PKM }
+          - { sourceFileName: RHS_SVD/SVD.paa, type: weapon, targetName: SVDDragunov }
 
       - type: Archive
         sourceLocation: addons
@@ -383,15 +525,35 @@ steps:
         files:
           - { sourceFileName: SLX_GL3/SLX_i_PRC119.paa, type: weapon, targetName: PRC119_SINCGARS }
 
-  - type: CopyFiles
-    source: resources
-    files: Dta/*.pbo #TODO: these should be packed instead of copied, see below
+  - type: ExtractPBO
+    source:
+      type: Archive
+      sourceLocation: addons
+      name: wgl_texture_replacement_pack.rar
+      pbo: wgl_texture_replacement_pack/dta/abel.pbo
+    targetFolder: Dta
 
   - type: PackArchive
     source: source
     source_folder: Scripts
     target_folder: Dta
     targetFileName: acgim_scripts
+
+  - type: ExtractPBO
+    source:
+      type: Archive
+      sourceLocation: addons
+      name: sancGRAAmod3.rar
+      pbo: "@GRAA/Dta/Anim.pbo"
+    targetFolder: Dta
+
+  - type: ExtractPBO
+    source:
+      type: Archive
+      sourceLocation: addons
+      name: wgl_texture_replacement_pack.rar
+      pbo: wgl_texture_replacement_pack/dta/cain.pbo
+    targetFolder: Dta
 
   - type: PackArchive
     source: resources
@@ -403,8 +565,88 @@ steps:
     source_folder: Dta/d4t_tex
     target_folder: Dta
 
-  #TODO: data
-  #TODO: data3d
+  - type: RepackArchive
+    source:
+      type: Archive
+      sourceLocation: cwa_patch
+      name: CWA_update.22112011-combinedALL.7z
+      pbo: Dta/Data.pbo
+    exclude: []
+    include:
+      - type: FlatArchive
+        sourceLocation: addons
+        name: modulsky_v0.9.rar
+        files:
+          - "!modulsky/newdata/desta.01.paa"
+          - "!modulsky/newdata/desta.02.paa"
+          - "!modulsky/newdata/desta.03.paa"
+          - "!modulsky/newdata/desta.04.paa"
+          - "!modulsky/newdata/jasno.pac"
+          - "!modulsky/newdata/mesic.01.paa"
+          - "!modulsky/newdata/mesic.02.paa"
+          - "!modulsky/newdata/mesic.03.paa"
+          - "!modulsky/newdata/mesic.04.paa"
+          - "!modulsky/newdata/mesic.05.paa"
+          - "!modulsky/newdata/mesic.06.paa"
+          - "!modulsky/newdata/mesic.07.paa"
+          - "!modulsky/newdata/mesic.08.paa"
+          - "!modulsky/newdata/mesic.09.paa"
+          - "!modulsky/newdata/mesic.10.paa"
+          - "!modulsky/newdata/mesic.11.paa"
+          - "!modulsky/newdata/mesic.12.paa"
+          - "!modulsky/newdata/mrak_war_1.paa"
+          - "!modulsky/newdata/mrak_war_3.paa"
+          - "!modulsky/newdata/mrak_war_4.paa"
+          - "!modulsky/newdata/mrak_war_5.paa"
+          - "!modulsky/newdata/nabojnicebck.pac"
+          - "!modulsky/newdata/nabojnicetop.pac"
+          - "!modulsky/newdata/night_sum.01.paa"
+          - "!modulsky/newdata/night_sum.02.paa"
+          - "!modulsky/newdata/night_sum.03.paa"
+          - "!modulsky/newdata/night_sum.04.paa"
+          - "!modulsky/newdata/night_sum.05.paa"
+          - "!modulsky/newdata/nightvisiontl.paa"
+          - "!modulsky/newdata/nvg_tex.pac"
+          - "!modulsky/newdata/oblacno.pac"
+          - "!modulsky/newdata/obloha.pac"
+          - "!modulsky/newdata/slunce.paa"
+          - "!modulsky/newdata/tracer.paa"
+          - "!modulsky/newdata/zatazeno.pac"
+    targetPboName: Dta/Data
+
+  - type: RepackArchive
+    source:
+      type: Archive
+      sourceLocation: cwa_patch
+      name: CWA_update.22112011-combinedALL.7z
+      pbo: Dta/Data3D.pbo
+    exclude: []
+    include:
+      - type: FlatArchive
+        sourceLocation: addons
+        name: modulsky_v0.9.rar
+        files:
+          - resource/moon.p3d
+          - resource/obloha.p3d
+          - resource/stars.p3d
+          - resource/sunHalo.p3d
+
+      - type: FileSystem
+        sourceLocation: source
+        files:
+          - Models/cl_basic.p3d
+          - Models/cl_fire.p3d
+          - Models/cl_fireD.p3d
+          - Models/cl_water.p3d
+    targetPboName: Dta/Data3D
+
+  - type: ExtractPBO
+    source:
+      type: Archive
+      sourceLocation: addons
+      name: wgl_texture_replacement_pack.rar
+      pbo: wgl_texture_replacement_pack/dta/eden.pbo
+    targetFolder: Dta
 
   - type: PackArchive
     source: resources
@@ -426,14 +668,20 @@ steps:
     source_folder: Dta/sjc_models
     target_folder: Dta
 
-  #TODO: sjc_optics
+  - type: PackArchive
+    source: resources
+    source_folder: Dta/sjc_optics
+    target_folder: Dta
 
   - type: PackArchive
     source: resources
     source_folder: Dta/SJC_Scripts
     target_folder: Dta
 
-  #TODO: sjc_sounds
+  - type: PackArchive
+    source: resources
+    source_folder: Dta/sjc_sounds
+    target_folder: Dta
 
   - type: PackArchive
     source: resources

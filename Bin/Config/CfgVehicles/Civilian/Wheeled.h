@@ -223,6 +223,7 @@ class TruckV3SCivil : Truck
 	picture = "iv3s";
 	icon = "truck";
 	side=3;
+	displayName = "Praga V3S Civil";
 	displayName="$STR_DN_PV3S_CIVIL";
 	accuracy = 0.3;
 	maxSpeed = 75;

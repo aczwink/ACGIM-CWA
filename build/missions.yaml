@@ -1,69 +1,77 @@
 steps:
   #Resistance missions
   - type: RepackArchive
-    sourceLocation: cwa_patch
     source:
       type: Archive
+      sourceLocation: cwa_patch
       name: CWA_update.22112011-combinedALL.7z
       pbo: Missions/Resistance/CamelAttack.Noe.pbo
     exclude: [factoryboom.sqs]
     include:
-      - source: source
-        path: Missions/Resistance/CamelAttack.Noe/factoryboom.sqs
+      - type: FileSystem
+        sourceLocation: source
+        files: Missions/Resistance/CamelAttack.Noe/factoryboom.sqs
     targetPboName: MissionsACGIM/CamelAttack.Noe
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\MISSIONS\RESISTANCE\R02LASER.NOE.PBO.XZ
     exclude: [mission.sqm]
     include:
-      - source: source
-        path: Missions/Resistance/R02Laser.Noe/mission.sqm
+      - type: FileSystem
+        sourceLocation: source
+        files: Missions/Resistance/R02Laser.Noe/mission.sqm
     targetPboName: MissionsACGIM/R02Laser.Noe
     
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\MISSIONS\RESISTANCE\R05TANKPLATOON.NOE.PBO.XZ
     exclude: [MISSION.SQM]
     include:
-      - source: source
-        path: Missions/Resistance/R05TankPlatoon.Noe/MISSION.SQM
+      - type: FileSystem
+        sourceLocation: source
+        files: Missions/Resistance/R05TankPlatoon.Noe/MISSION.SQM
     targetPboName: MissionsACGIM/R05TankPlatoon.Noe
 
 
   #ACGIM missions
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\MISSIONS\RESISTANCE\R02LASER.NOE.PBO.XZ
     exclude: [briefing.French.htm, briefing.German.html, briefing.html, briefing.Italian.html, briefing.Spanish.html, mission.sqm, overview.French.html, overview.German.html, overview.html, overview.Italian.html, overview.spanish.html]
     include:
-      - source: source
-        path: Missions/ACGIM/AC130.Noe/briefing.html
-      - source: source
-        path: Missions/ACGIM/AC130.Noe/mission.sqm
-      - source: source
-        path: Missions/ACGIM/AC130.Noe/overview.html
+      - type: FileSystem
+        sourceLocation: source
+        files: Missions/ACGIM/AC130.Noe/briefing.html
+      - type: FileSystem
+        sourceLocation: source
+        files: Missions/ACGIM/AC130.Noe/mission.sqm
+      - type: FileSystem
+        sourceLocation: source
+        files: Missions/ACGIM/AC130.Noe/overview.html
     targetPboName: MissionsACGIM/AC130.Noe
 
   - type: RepackArchive
-    sourceLocation: cwa_installer
     source:
       type: Archive
+      sourceLocation: cwa_installer
       name: CWA.exe
       pbo: .rsrc/0/RCDATA/CWA\MISSIONS\C02BATTLEFIELDS.EDEN.PBO.XZ
     exclude: [mission.sqm, overview.Czech.html, overview.french.html, overview.german.html, overview.html, overview.italian.html, overview.spanish.html]
     include:
-      - source: source
-        path: Missions/ACGIM/Artillery.Eden/mission.sqm
-      - source: source
-        path: Missions/ACGIM/Artillery.Eden/overview.html
+      - type: FileSystem
+        sourceLocation: source
+        files: Missions/ACGIM/Artillery.Eden/mission.sqm
+      - type: FileSystem
+        sourceLocation: source
+        files: Missions/ACGIM/Artillery.Eden/overview.html
     targetPboName: MissionsACGIM/Artillery.Eden

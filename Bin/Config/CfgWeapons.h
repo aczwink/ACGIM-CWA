@@ -200,46 +200,6 @@ class PipeBomb:Put
 	magazines[]={"this"};
 };
 
-class RPGLauncher : Default
-{
-	scopeWeapon=2;
-	scopeMagazine=2;
-	weaponType=16;
-	magazineType="2 * 		256";
-	valueWeapon=10;
-	valueMagazine=5;
-	count=1;
-	magazineReloadTime=12;
-	reloadTime=0.5;
-	//Longer range sound.
-	//sound[]={"Weapons\at_launch",0.01,1};
-	sound[]={"Weapons\at_launch", 2, 1};
-	reloadMagazineSound[]={"Weapons\at_load",0.0003162,1};
-	initSpeed=30;
-	canLock=0;
-	reloadAction = MANACT_RELOADAT;
-	autoReload=0;
-	ffMagnitude=0.1;
-	ffFrequency=1;
-	ffCount=1;
-	recoil="LAWSingle";
-	aiRateOfFire=10.0;
-	aiRateOfFireDistance=500;
-	optics=1;
-	primary=0;
-	opticsZoomMin=0.18;
-	opticsZoomMax=0.18;
-	distanceZoomMin=100;
-	distanceZoomMax=100;
-	uiPicture="islaw";
-	model="RPG7_proxy";
-	modelOptics="optika_RPG";
-	ammo="RPG";
-	displayName="$STR_DN_RPG";
-	displayNameMagazine="$STR_MN_RPG";
-	shortNameMagazine="$STR_SN_RPG";
-};
-
 class AT4Launcher : Default
 {
 	scopeWeapon=2;

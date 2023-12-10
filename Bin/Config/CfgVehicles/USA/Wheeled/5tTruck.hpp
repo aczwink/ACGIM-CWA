@@ -175,6 +175,11 @@ class USA_Truck5tReammo : USA_Truck5t
 			count=15;
 		};
 	};
+
+	class EventHandlers
+	{
+		killed = "_this exec {\acgim_scripts\Events\ExplosivesCarrierDestroyed.sqs}";
+	};
 };
 
 class Truck5tRefuel : USA_Truck5t

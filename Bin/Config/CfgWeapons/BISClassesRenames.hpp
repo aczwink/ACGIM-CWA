@@ -21,6 +21,7 @@ Like this the real weapon name will be replaced with the BIS class correspondent
 #define M16A2           M16
 #define M16A2_M203      M16GrenadeLauncher
 #define PKM             PK
+#define RPG7            RPGLauncher //use the RPG-7 because it betters matches range-wise with the BIS RPG
 
 
 

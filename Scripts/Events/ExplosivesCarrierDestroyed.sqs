@@ -1,0 +1,7 @@
+_vehicle = _this select 0
+
+; TODO: this explosion is actually too big for ammo, should many small ones
+[_vehicle] exec "\acgim_scripts\EffectPack\MegaExplode\explodeThre.sqs"
+[_vehicle] exec "\acgim_scripts\EffectPack\FuellEffect\FireDtruck.sqs"
+
+_vehicle exec "\acgim_scripts\nmod_effects\DKMM_RSC_Veh_burner.sqs"

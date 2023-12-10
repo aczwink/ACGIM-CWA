@@ -1,0 +1,8 @@
+_plane = _this select 0
+
+
+~.2
+?(speed _plane >200 && isengineon _plane): [_this select 0] exec "\acgim_scripts\Vehicles\A10\gearup.sqs"
+
+#Exit
+exit

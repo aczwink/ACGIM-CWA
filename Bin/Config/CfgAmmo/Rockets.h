@@ -101,7 +101,7 @@ class AGM65MaverickB : Maverick
 	thrust = 325; //No Proof
 	thrustTime = 15; //No Proof
 	maxSpeed = 319.444444;
-	model="\d4t_files\models\us\weapons\air\agm65b.p3d";
+	model="\models\AGM65B.p3d";
 };
 
 /*
@@ -159,7 +159,7 @@ class RocketAGM114A : AT3
 Sources:
 	http://en.wikipedia.org/wiki/Hydra_70
 Info:
-	g = 9.81 m/s²
+	g = 9.81 m/sï¿½
 	Acceleration: 60-70 g (initial) 95-100 g (final)
 	Burn time: 1.05 - 1.10 sec
 	Motor burnout velocity: 2,425 ft/s (739 m/s)
@@ -234,7 +234,7 @@ class RocketAIM9M : RocketAIM9
 {
 	maneuvrability=75;
 	maxleadspeed=4000;
-	model="\d4t_files\models\us\weapons\air\aim9m.p3d";
+	model="\models\Aim9M.p3d";
 };
 
 /*

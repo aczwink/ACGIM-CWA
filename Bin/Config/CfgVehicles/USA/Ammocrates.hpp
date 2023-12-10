@@ -3,6 +3,7 @@ class ReammoBoxWest : ReammoBox
 	scope = SCOPE_PUBLIC;
 	accuracy = ACCURACY_SUPERCLASS;
 	displayName = "USA Ammo Crates";
+	model = "\ABox\ABox";
 	
 	class TransportMagazines
 	{
@@ -52,8 +53,10 @@ class ReammoBoxWest : ReammoBox
 	};
 };
 
-class HeavyReammoBoxWest : ReammoBoxWest
+class HeavyReammoBoxWest : HeavyReammoBox
 {
+	scope = SCOPE_PUBLIC;
+	accuracy = ACCURACY_SUPERCLASS;
 	displayName = "USA Explosives Crates";
 
 	class TransportMagazines
@@ -144,5 +147,10 @@ class HeavyReammoBoxWest : ReammoBoxWest
 			magazine = "PipeBomb";
 			count = 2;
 		};
+	};
+
+	class EventHandlers
+	{
+		killed = "_this exec {\acgim_scripts\Events\ExplosivesCarrierDestroyed.sqs}";
 	};
 };

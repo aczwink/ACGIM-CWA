@@ -32,7 +32,7 @@ class RPG16 : Default
 	distanceZoomMin=450;
 	distanceZoomMax=650;
 	sound[]={"\sjc_sounds\weapons\handheld\fire.wss",db18,1.0};
-	reloadMagazineSound[]={"\sjc_sounds\weapons\handheld\rpg_reload.wss",0.010316,1};
+	reloadMagazineSound[]={"\sounds\rpg_reload.wss",0.010316,1};
 	initSpeed = 130;
 	canDrop = true;
 	ammo = "PG16";

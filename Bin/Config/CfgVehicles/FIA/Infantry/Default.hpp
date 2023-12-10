@@ -74,8 +74,8 @@ class SoldierGAT : SoldierGLAW
 	cost = COST_HATSOLDIER;
 	displayName="AT Specialist";
 	model = "\sjc_models\fia\rebel6.p3d";
-	weapons[]={"AKM", "RPG7", "Throw", "Put"};
-	magazines[]={"AKM", "AKM", "AKM", "AKM", "AKM", "AKM", "RPG7", "RPG7", "RPG7", "RPG7"};
+	weapons[]={"AKM", WEAPON_REFERENCE(RPG7), "Throw", "Put"};
+	magazines[]={"AKM", "AKM", "AKM", "AKM", WEAPON_REFERENCE(RPG7), WEAPON_REFERENCE(RPG7), WEAPON_REFERENCE(RPG7)};
 	threat[]={THREAT_HATSOLDIER};
 };
 

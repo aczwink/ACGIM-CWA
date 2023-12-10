@@ -1203,3 +1203,17 @@ class Housepumpa : House
 	displayName = "House 113";
 	model="\o\misc\pumpa";
 };
+
+class HousesDatadisk : House
+{
+	scope = SCOPE_HIDDEN;
+	access = 2;
+	armor = 2000;
+};
+
+class misc01 : HousesDatadisk
+{
+	scope = SCOPE_HIDDEN;
+	displayName = "$STR_DN_OUT_BLACK";
+	model = "\O\Misc\Carnakrychle";
+};

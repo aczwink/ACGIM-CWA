@@ -3,6 +3,7 @@ class ReammoBoxEast : ReammoBox
 	scope = SCOPE_PUBLIC;
 	accuracy = ACCURACY_SUPERCLASS;
 	displayName = "USSR Ammo Crates";
+	model = "\ABox\ABoxR";
 
 	class TransportMagazines
 	{
@@ -40,8 +41,10 @@ class ReammoBoxEast : ReammoBox
 	};
 };
 
-class HeavyReammoBoxEast : ReammoBoxEast
+class HeavyReammoBoxEast : HeavyReammoBox
 {
+	scope = SCOPE_PUBLIC;
+	accuracy = ACCURACY_SUPERCLASS;
 	displayName = "USSR Explosives Crates";
 
 	class TransportMagazines
@@ -103,13 +106,17 @@ class HeavyReammoBoxEast : ReammoBoxEast
 			count = 2;
 		};
 	};
+
+	class EventHandlers
+	{
+		killed = "_this exec {\acgim_scripts\Events\ExplosivesCarrierDestroyed.sqs}";
+	};
 };
 
-class AmmoBoxOUTEW : HeavyReammoBox
+class AmmoBoxOUTEW : ReammoBoxEast
 {
-	scope = SCOPE_PUBLIC;
-	accuracy = ACCURACY_SUPERCLASS;
 	displayName = "USSR Weapon Crates";
+	model = "bedna_ammo";
 
 	class TransportWeapons
 	{
@@ -153,7 +160,7 @@ class AmmoBoxOUTEW : HeavyReammoBox
 		//Secondary
 		class w_RPG7V
 		{
-			weapon = "RPG7V";
+			weapon = WEAPON_REFERENCE(RPG7V);
 			count = 1;
 		};
 

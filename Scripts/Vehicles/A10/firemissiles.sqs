@@ -1,0 +1,123 @@
+_weapon = _this select 1
+?(_weapon == "GAU8Avenger"): exit
+
+_ammoname = _this select 4
+_plane = _this select 0
+
+; Decide what we've fired
+? (_weapon == "AIM9M"): goto "SW2Check"
+? (_weapon == "AGM65BMaverick"): goto "MavCheck"
+? (_weapon == "Mk82_4"): goto "BombCheck"
+
+exit
+
+#SW2Check
+_swcount = _plane ammo "AIM9M"
+? (_swcount == 1) : goto "swAaway"
+? (_swcount == 0) : goto "swBaway"
+
+#BombCheck
+_bombcount = _plane ammo "Mk82_4"
+? (_bombcount == 3) : goto "bombAaway"
+? (_bombcount == 2) : goto "bombBaway"
+? (_bombcount == 1) : goto "bombCaway"
+? (_bombcount == 0) : goto "bombDaway"
+
+#MavCheck
+_mavcount = _plane ammo "AGM65BMaverick"
+? (_mavcount == 5) : goto "mavAaway"
+? (_mavcount == 4) : goto "mavBaway"
+? (_mavcount == 3) : goto "mavCaway"
+? (_mavcount == 2) : goto "mavDaway"
+? (_mavcount == 1) : goto "mavEaway"
+? (_mavcount == 0) : goto "mavFaway"
+
+#swAaway
+_plane setobjecttexture[11, ""]
+_missmove = -5.8
+goto "MoveMissile"
+
+#swBaway
+_plane setobjecttexture[12, ""]
+_missmove = -6
+goto "MoveMissile"
+
+#mavAaway
+_plane setobjecttexture[13, ""]
+_missmove = -3.8
+goto "MoveMissile"
+
+#mavBaway
+_plane setobjecttexture[14, ""]
+_missmove = 3.8
+goto "MoveMissile"
+
+#mavCaway
+_plane setobjecttexture[15, ""]
+_missmove = -3.8
+goto "MoveMissile"
+
+#mavDaway
+_plane setobjecttexture[16, ""]
+_missmove = 3.8
+goto "MoveMissile"
+
+#mavEaway
+_plane setobjecttexture[17, ""]
+_missmove = -3.8
+goto "MoveMissile"
+
+#mavFaway
+_plane setobjecttexture[18, ""]
+_missmove = 3.8
+goto "MoveMissile"
+
+#bombAaway
+_plane setobjecttexture[19, ""]
+_missmove = 1.6
+goto "MoveMissile"
+
+#bombBaway
+_plane setobjecttexture[20, ""]
+_missmove = -1.6
+goto "MoveMissile"
+
+#bombCaway
+_plane setobjecttexture[21, ""]
+_missmove = .6
+goto "MoveMissile"
+
+#bombDaway
+_plane setobjecttexture[22, ""]
+_missmove = -.6
+goto "MoveMissile"
+
+
+#MoveMissile
+; Get the missile object
+_missobj = nearestobject[_plane, _ammoname]
+
+; Get the missile direction
+_missdir = direction _missobj
+
+; Get the height minus a little drop
+_zpos = (getpos _plane select 2) + 1.5
+
+; Move the missile in the horizontal plane 
+_xpos = ( (getpos _plane) select 0 ) - (_missmove * cos(_missdir))
+_ypos = ( (getpos _plane) select 1 ) + (_missmove * sin(_missdir))
+
+; Create an empty object
+_sensor = "EmptyDetector" createVehicle [0,0,0]
+
+; Place it directly under the plane in the horizontal 
+_sensor setpos [getpos _plane select 0, getpos _plane select 1]; 
+
+; The OFP engine puts the object on the land surface, so we can get the ground height
+_result = getpos _sensor select 2;
+
+; Bump the zpos upwards
+_zpos = _zpos - _result
+
+; And set the position
+_missobj setpos[_xpos, _ypos, _zpos]

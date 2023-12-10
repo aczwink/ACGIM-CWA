@@ -2,7 +2,7 @@ access=3;
 idd=0;
 movingEnable=1;
 controlsBackground[]={"Background1","Background2","Background3"};
-controls[]={"FP1", "FP2", "FP3", "CWA","Line1","Line2","Continue","Player","Game","SingleMission","Multiplayer","Custom","Options","Quit","Version","AllMissions","Copy","ACGIM_ModTitle", "ACGIM_ConfigScenario", "ACGIM_Copyright"};
+controls[]={"CWA","Line1","Line2","Continue","Player","Game","SingleMission","Multiplayer","Custom","Options","Quit","Version","AllMissions","Copy","ACGIM_ModTitle", "ACGIM_ConfigScenario", "ACGIM_Copyright"};
 
 class copy:RscText
 {
@@ -16,39 +16,6 @@ class copy:RscText
 	colorText[]={1,1,1,0.5};
 	font="tahomaB24";
 	sizeEx=0.016;
-};
-
-class FP1 : RscPicture
-{
-	text="OFPlogo1.paa";
-	colorText[]={0.23,0.3,0.08,0.75};
-	//x = 0.356;
-	x = 0.01;
-	y = 0.02;
-	w=0.09;
-	h=0.1;
-};
-
-class FP2:RscPicture
-{
-	text="OFPlogo2.paa";
-	colorText[]={0.23,0.3,0.08,0.75};
-	//x = 0.455;
-	x = 0.1;
-	y=0.02;
-	w=0.09;
-	h=0.1;
-};
-
-class FP3:RscPicture
-{
-	text="OFPlogo3.paa";
-	colorText[]={0.23,0.3,0.08,0.75};
-	//x=0.545;
-	x = 0.19;
-	y=0.02;
-	w=0.09;
-	h=0.1;
 };
 
 class CWA: RscPicture {

@@ -35,3 +35,8 @@ class SoldierGFakeC2 : Civilian2
     magazines[] = {"AK74", "AK74", "AK74", "AK74", "HandGrenade", "HandGrenade"};
     cost = 40000;
 };
+
+class SoldierGFakeC3 : SoldierGFakeC
+{
+	model = "\O\Char\Char01";
+};
