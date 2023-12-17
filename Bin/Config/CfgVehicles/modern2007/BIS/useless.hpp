@@ -99,16 +99,6 @@ class SoldierWCaptive:SoldierWB // useless, links to rifleman
 	scope=1;
 };
 
-class SoldierWG36a:SoldierWB //useless, so it links to rifleman
-{
-	scope=1;
-};
-
-class SoldierWSteyr:SoldierWB //useless, so it links to rifleman
-{
-	scope=1;
-};
-
 class SoldierWXMS:SoldierWB //useless, links to rifleman
 {
 	scope=1;
@@ -125,11 +115,6 @@ class SoldierGNOG:SoldierGB
 };
 
 class SoldierG:SoldierGG
-{
-	scope=1;
-};
-
-class OfficerGNight:SoldierGB
 {
 	scope=1;
 };

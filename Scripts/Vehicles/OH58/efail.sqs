@@ -1,0 +1,18 @@
+_heli = _this select 0
+
+_gas = 0.0005
+_enginePos = [0, -1, +1]
+
+_heli vehicleRadio "fzah64_bt_le_out"
+
+#loop
+~0.001
+drop ["cl_basic", "", "Billboard", 0.5, 0.5, _enginePos, [0,0,0], 0, 0.5, 0.5, 0.001, [1,2], [[0,0,0,0],[0,0,0,0.4],[0,0,0,0]], [0], 0.1, 0.2, "", "", _heli]
+_fuel = fuel _heli
+_heli setfuel (_fuel - _gas)
+?(getdammage _heli < 0.25): goto "quit"
+?!alive _heli: goto "quit"
+goto "loop"
+
+#quit
+exit

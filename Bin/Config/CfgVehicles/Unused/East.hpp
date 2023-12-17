@@ -41,6 +41,12 @@ class SoldierENOG : SoldierEB
 	scope = SCOPE_HIDDEN;
 };
 
+class SoldierESaboteurCheat : SoldierEB
+{
+	scope = SCOPE_HIDDEN;
+	displayName="Cheating is not supported. This unit lost it's cheat effects.";
+};
+
 class UAZCheat : UAZ
 {
 	scope = SCOPE_HIDDEN;

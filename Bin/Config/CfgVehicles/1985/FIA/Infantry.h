@@ -4,8 +4,8 @@ class FIA_AASoldier : FIA_ATSoldier
 	cost = COST_AASOLDIER;
 	displayName="AA Soldier";
 	model = "\sjc_models\fia\rebel7.p3d";
-	weapons[]={"AKM", "9K32", "Throw", "Put"};
-	magazines[]={"AKM", "AKM", "AKM", "AKM", "9K32"};
+	weapons[]={"AKM", "9K32Launcher", "Throw", "Put"};
+	magazines[]={"AKM", "AKM", "AKM", "AKM", "9K32Launcher"};
 	threat[]={THREAT_AASOLDIER};
 };
 

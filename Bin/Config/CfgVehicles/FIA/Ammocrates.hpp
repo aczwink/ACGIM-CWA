@@ -74,9 +74,9 @@ class HeavyReammoBoxRes : HeavyReammoBox
 			count = 3;
 		};
 		
-		class m_9K32
+		class m_9K32Launcher
 		{
-			magazine = "9K32";
+			magazine = "9K32Launcher";
 			count = 1;
 		};
 

@@ -1,4 +1,4 @@
-class 9K32 : Default
+class 9K32Launcher : Default
 {
 	weaponType=16;
 	count=1;

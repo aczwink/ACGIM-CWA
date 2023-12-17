@@ -39,16 +39,6 @@
 		displayName="Crew";
 		};
 
-	class SoldierGPilot:SoldierGB
-		{
-		scope=1;
-		nameSound="pilot";
-		accuracy=1000;
-		weapons[]={"AK47CZ","NVGoggles","Throw","Put"};
-		displayName="Pilot";
-		sensitivity=2;
-		};
-
 	class SoldierGG:SoldierGB
 		{
 		displayName="Grenadier";

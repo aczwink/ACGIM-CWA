@@ -1,0 +1,97 @@
+; Heli Dust script by Vektorboson
+; Modified by Franze for use on OH-58s
+; see _sensor and _calcH for above sea level calculation!
+; execute just
+; MyHeli exec "effects\heli_dust.sqs"
+; Note modification introduces user variables: fz_ah64dust, fz_ah64desert, fz_ah64grass, fz_ah64sand,
+; fz_ah64water for rotor wash color and fz_ah64rtrwash to turn off rotor wash.
+
+_ah64d = _this select 0
+
+?!(isEngineOn _ah64d): exit
+
+_null = "scalar bool array string 0xfcffffef"
+
+private ["_sensor"];
+
+_sensor = "EmptyDetector" createVehicle [0,0,0]
+_calcH = {private["_result"]; _sensor setpos [getpos _ah64d select 0, getpos _ah64d select 1, 0]; _result = getpos _sensor select 2; _result};
+
+?format["%1",HDSIN ] == _null: HDSIN = call {private["_i","_result"]; _result = []; _i = 0; while "_i < 50" do {_result = _result + [sin (7.2*_i)*7]; _i = _i+1;}; _result}
+?format["%1",HDCOS ] == _null: HDCOS = call {private["_i","_result"]; _result = []; _i = 0; while "_i < 50" do {_result = _result + [cos (7.2*_i)*7]; _i = _i + 1}; _result}
+
+HDCOLORGRASS  = [[0.35,0.35,0.3,0], [0.2, 0.2, 0.1, 0.5],[0.2, 0.27, 0.15, 0]]
+HDCOLORSAND   = [[0.35,0.35,0.3,0],[0.35,0.35,0.3,0],[0.6, 0.57, 0.5, 0.5],[0.5, 0.47, 0.4, 0]]
+HDCOLORDUST   = [[0.4,0.4,0.4,0],[0.6,0.6,0.6,0],[0.4,0.4,0.4,0.7], [0.65, 0.6, 0.5, 0]]
+HDCOLORDESERT = [[0.4,0.4,0.4,0],[0.6,0.6,0.6,0],[0.7,0.7,0.65,1], [0.65, 0.6, 0.5, 0]]
+HDCOLORWATER = [[0.8,0.8,0.9,0],[0.9,0.9,1,0.7],[0.8,0.8,0.9,0],[0.8,0.8,0.9,0]]
+
+; color for this helictoper
+?(fz_ah64dust == 1): goto "dust"
+?(fz_ah64desert == 1): goto "desert"
+?(fz_ah64grass == 1): goto "grass"
+?(fz_ah64sand == 1): goto "sand"
+?(fz_ah64water == 1): goto "wasser"
+
+#dust
+_icolor = HDCOLORDUST
+goto "next"
+#grass
+_icolor = HDCOLORGRASS
+goto "next"
+#sand
+_icolor = HDCOLORSAND
+goto "next"
+#desert
+_icolor = HDCOLORDESERT
+goto "next"
+#wasser
+_icolor = HDCOLORWATER
+goto "next"
+
+#next
+_repeat = true
+_lifetime = 2
+_shape = "cl_basic"
+_color = _icolor
+
+
+#repeat
+?!(isEngineOn _ah64d): exit
+?!(alive _ah64d): exit
+?(fuel vehicle _ah64d < 0.01): exit
+@(getpos _ah64d select 2) < 30 && speed _ah64d < 120 && isEngineOn _ah64d
+
+#loop
+?!(isEngineOn _ah64d): exit
+_pos = getpos _ah64d
+_x = _pos select 0
+_y = _pos select 1
+
+_i = 0
+#l1
+_vel = [HDSIN select _i, HDCOS select _i, 0]
+?(fz_ah64lowdust == 1): goto "lowdust"
+?(fz_ah64highdust == 1): goto "highdust"
+?!(isEngineOn _ah64d): exit
+#lowdust
+_size1 = random 1
+_size2 = random 1 + 0.5
+goto "sizedef"
+#highdust
+_size1 = random 2
+_size2 = random 2 + 1
+#sizedef
+_size = [_size1, _size2]
+drop [_shape, "", "Billboard", _lifetime, _lifetime, [_x, _y, 0], _vel, 0, 0.2, 0.157, 0.001, _size, _color, [0], 0.1, 0.2, "", "", ""]
+_i = _i + 1
+?_i < 50: goto "l1"
+~0.01
+_color = _icolor
+_shape = "cl_basic"
+?abs(_ah64d call _calcH) < 3: _color = HDCOLORWATER; _shape = "cl_water"
+?(getpos _ah64d select 2) < 30 && speed _ah64d < 120 && isEngineOn _ah64d: goto "loop"
+
+?_repeat && alive _ah64d : goto "repeat"
+
+exit

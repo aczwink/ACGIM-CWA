@@ -1,0 +1,36 @@
+;OH-58 crash script modification by Franze
+;uses elements from DKMM's Mi-28 scripting
+_heli = _this select 0
+_dir = getdir _heli
+_crew = crew _heli
+
+
+?!(local _heli): exit
+?(typeof _heli == "OH58"): _type = "OH58_Wreck"
+;?(typeof _heli == "fz_oh58d_early"): _type = "fz_oh58wreck"
+
+_crashPos = [0, 0, 1]
+
+#loop
+~0.001
+?getPos _heli select 2 > 3: goto "loop"
+
+#crash
+_wreck = _type createvehicle getpos _heli
+_wreck setdir _dir
+_wreck setvelocity [0,0,1]
+
+drop ["cl_basic", "", "Billboard", 3, 3, _crashPos, [0,-3,1], 0, 1, 1, 0.001, [60,80], [[0,0,0,0.7],[0,0,0,0]], [0], 0.1, 0.2, "", "", _wreck]
+drop ["cl_basic", "", "Billboard", 3, 3, _crashPos, [0,-3,1], 0, 1, 1, 0.001, [60,80], [[0,0,0,0.7],[0,0,0,0]], [0], 0.1, 0.2, "", "", _wreck]
+drop ["cl_basic", "", "Billboard", 3, 3, _crashPos, [0,-3,1], 0, 1, 1, 0.001, [60,80], [[0,0,0,0.7],[0,0,0,0]], [0], 0.1, 0.2, "", "", _wreck]
+drop ["cl_basic", "", "Billboard", 3, 3, _crashPos, [0,-3,1], 0, 1, 1, 0.001, [60,80], [[0,0,0,0.7],[0,0,0,0]], [0], 0.1, 0.2, "", "", _wreck]
+drop ["cl_basic", "", "Billboard", 3, 3, _crashPos, [0,-3,1], 0, 1, 1, 0.001, [60,80], [[0,0,0,0.7],[0,0,0,0]], [0], 0.1, 0.2, "", "", _wreck]
+drop ["cl_basic", "", "Billboard", 3, 3, _crashPos, [0,-3,1], 0, 1, 1, 0.001, [60,80], [[0,0,0,0.7],[0,0,0,0]], [0], 0.1, 0.2, "", "", _wreck]
+
+_i = 0 
+"unassignvehicle _x, _x setpos [getpos _heli select 0,getpos _heli select 1,10 + _i], _i = _i + 1" foreach _crew
+~0.5
+"_x assignascargo _wreck, _x moveincargo _wreck" foreach _crew 
+? _this select 1 == 0 : "_x setdammage 1" foreach _crew
+_heli setpos [0,0,0]
+exit 

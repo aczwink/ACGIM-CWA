@@ -1,0 +1,64 @@
+;weapon positioning script modified from Diesel's A-10
+;Borrowed and modified by Franze WITHOUT permission for use on OH-58D
+_oh58 = _this select 0
+_weapon = _this select 1
+_mags = magazines _oh58
+
+?(player == gunner vehicle _oh58): goto "checkweapons"
+
+?!(local _oh58): exit
+
+#checkweapons
+?(_weapon == "Hydra70"): goto "rocket"
+;?(_weapon == "fz_artyweapon"): goto "artymarker"
+
+exit
+
+#rocket
+_missmove = + 1.25
+
+#herkt
+_missobj = nearestobject[_oh58, "Hydra70"]
+goto "rktcont"
+
+#rktcont
+_missdir = direction _missobj
+
+_zpos = (getpos _oh58 select 2) + .6
+
+_xpos = ( (getpos _oh58) select 0 ) - (_missmove * cos(_missdir))
+_ypos = ( (getpos _oh58) select 1 ) + (_missmove * sin(_missdir))
+
+_sensor = "EmptyDetector" createVehicle [0,0,0]
+
+_sensor setpos [getpos _oh58 select 0, getpos _oh58 select 1]; 
+_result = getpos _sensor select 2;
+
+_zpos = _zpos - _result
+
+_missobj setpos[_xpos, _ypos, _zpos]
+
+exit
+
+;#artymarker
+;?(fz_oh50calonly == 1): exit
+;_missmove = 0
+;_missobj = nearestobject[_oh58, "fz_artymarker"]
+
+;_missdir = direction _missobj
+
+;_zpos = (getpos _oh58 select 2) + 3.5
+
+;_xpos = ( (getpos _oh58) select 0 ) - (_missmove * cos(_missdir))
+;_ypos = ( (getpos _oh58) select 1 ) + (_missmove * sin(_missdir))
+
+;_sensor = "EmptyDetector" createVehicle [0,0,0]
+
+;_sensor setpos [getpos _oh58 select 0, getpos _oh58 select 1]; 
+;_result = getpos _sensor select 2;
+
+;_zpos = _zpos - _result
+
+;_missobj setpos[_xpos, _ypos, _zpos]
+
+;exit

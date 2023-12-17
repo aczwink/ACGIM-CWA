@@ -1,0 +1,59 @@
+;################################################################################
+;# Written by DKM-Rastavovich rastavovich@dkm-mod.mkdi.net			#
+;#	http://www.dkm-mod.mkdi.net						#
+;# Used with permission from DKM						#							#
+;# Borrowed by Franze WITHOUT permission to use on the OH-58D		        #
+;################################################################################
+_chopper = _this select 0
+
+fz_ah64map = 1
+? (format ["%1",bas_60mapsize] == {scalar bool array string 0xfcffffef}): bas_60mapsize = 256
+_ms = bas_60mapsize * 50
+;? driver _chopper != player : exit
+_origin = "EmptyDetector" camcreate [0,0,0]
+
+_origin setpos [6400, 3000, 0]
+_p1 = (getpos _origin select 2) - ((getpos _origin select 2) Mod 1)
+
+_origin setpos [6400, 6400, 0]
+_p2 = (getpos _origin select 2) - ((getpos _origin select 2) Mod 1)
+
+_origin setpos [6400, 9800, 0]
+_p3 = (getpos _origin select 2) - ((getpos _origin select 2) Mod 1)
+
+_origin setpos [3000, 6400, 0]
+_p4 = (getpos _origin select 2) - ((getpos _origin select 2) Mod 1)
+
+_origin setpos [9600, 4100, 0]
+_p5 = (getpos _origin select 2) - ((getpos _origin select 2) Mod 1)
+camdestroy _origin
+? ((_p1>=-2 && _p1<=0) && _p2==-141 && _p3==-2 && _p4==-80 && _p5==-136) : _chopper setObjectTexture [38,"\d4t_tex\ah64\ah64mfdev.paa"],fz_ah64map = 1, goto "check"
+
+? (_p1==-49 && _p2==-269 && _p3==-177 && _p4==-231 && _p5==-35) : _chopper setObjectTexture [39,"\d4t_tex\ah64\ah64mfdma.paa"],fz_ah64map = 2, goto "check"
+
+? ((_p1>=-2 && _p1<=0) && _p2==-449 && (_p3>=-2 && _p3<=0) && _p4==-226 && (_p5>=-2 && _p5<=0)): _chopper setObjectTexture [40,"\d4t_tex\ah64\ah64mfdko.paa"],fz_ah64map = 3,  goto "check"
+
+? ((_p1>=-2 && _p1<=0) && (_p2>=-2 && _p2<=0) && (_p3>=-2 && _p3<=0) && (_p4>=-2 && _p4<=0) && _p5==-29) :  _chopper setObjectTexture [41,"\d4t_tex\ah64\ah64mfddi.paa"],fz_ah64map = 4, goto "check"
+
+? (_p1==-36 && _p2==-136 && _p3==-324 && _p4==-48 && _p5==-135): _chopper setObjectTexture [42,"\d4t_tex\ah64\ah64mfdno.paa"],fz_ah64map = 5, goto "check"
+
+
+#check
+#check2
+	?!isengineon _chopper: goto "ende"
+	?(_ms - (getpos _chopper select 0)) < 0 : _chopper animate ["map_X", 1], goto "y"
+	?(_ms - (getpos _chopper select 0)) > _ms : _chopper animate ["map_X", 0], goto "y"
+	_chopper animate ["map_X", ((getpos _chopper select 0)/_ms) + 0]
+	#y
+	?(_ms - (getpos _chopper select 1)) < 0 : _chopper animate ["map_Y", 1], goto "n"
+	?(_ms - (getpos _chopper select 1)) > _ms : _chopper animate ["map_Y", 0], goto "n"
+	_chopper animate ["map_Y", ((getpos _chopper select 1)/_ms) + 0] 
+	#n
+	~1
+	goto "check2"
+
+#ende
+	_chopper animate ["map_X", 0]
+	_chopper animate ["map_Y", 0]
+	
+	exit

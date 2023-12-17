@@ -1,6 +1,6 @@
 ;this script is made by DKM Rastavovich in 2003; little changes to fit RHS "system" in early 2004 by raedor; again changes for the T-80s in summer 2005 by raedor.
 ;
-; >>> © Decisive Killing Machines Mod <<<
+; >>> ï¿½ Decisive Killing Machines Mod <<<
 ;
 _t = _this select 0
 _ty = _this select 1
@@ -8,7 +8,8 @@ _ty = _this select 1
 ? _ty == "randomArabic": _n = "a"
 ? _ty == "randomResi": _n = "g"
 ? _ty == "randomRed": _n = "r"
-_nr = (((getpos _t select 0) + (getpos _t select 1)*3)Mod 1000)-1
+_p = getpos _t
+_nr = (((_p select 0) + (_p select 1)*3) Mod 1000)-1
 _nr = _nr - (_nr Mod 1)
 _i = _nr Mod 10
 _t setobjecttexture [0, format ["%1%2%3.paa", RHS_PathSigns, _n, _i]]

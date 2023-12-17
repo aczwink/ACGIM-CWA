@@ -1,0 +1,19 @@
+_heli = _this select 0
+
+#loop
+~0.001
+_velocity = velocity _heli
+_heli setvelocity [(_velocity select 0) / 1.01,(_velocity select 1) / 1.01,(_velocity select 2)]
+?!(isengineon _heli): goto "standby"
+?(getdammage _heli < 0.05): goto "quit"
+?!alive _heli: goto "quit"
+goto "loop"
+
+#standby
+~0.0001
+?(isengineon _heli): goto "loop"
+?(getdammage _heli < 0.05): goto "quit"
+goto "standby"
+
+#quit
+exit

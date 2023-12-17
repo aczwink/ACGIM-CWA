@@ -692,16 +692,3 @@
 			maxFov=1.2;
 			};
 		};
-
-	class JetRangerSilent:JetRanger
-		{
-		access=2;
-		nameSound="chopper";
-		accuracy=0.3;
-		maxSpeed=235;
-		soundEngine[]={"\oh58\oh58",0.0001,1};
-		displayName="$STR_DN_OUT_HELI_SIL";
-		armor=30;
-		cost=10000000;
-		model="\O\Vehl\JR_RC.p3d";
-		};

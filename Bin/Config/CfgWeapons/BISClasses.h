@@ -894,4 +894,6 @@ class BISGrenadeCamel : HellfireLauncher
 	aiRateOfFireDistance = 2500;
 };
 
+#include "Config\CfgWeapons\BIS\G36.hpp"
+#include "Config\CfgWeapons\BIS\Steyr.hpp"
 #include "Config\CfgWeapons\BIS\UZI.hpp"

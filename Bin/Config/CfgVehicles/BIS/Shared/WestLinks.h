@@ -44,16 +44,6 @@ class SoldierWCaptive :SoldierWB
 	scope = 1;
 };
 
-class SoldierWG36a :SoldierWB
-{
-	scope = 1;
-};
-
-class SoldierWSteyr :SoldierWB
-{
-	scope = 1;
-};
-
 class SoldierWXMS :SoldierWB
 {
 	scope = 1;

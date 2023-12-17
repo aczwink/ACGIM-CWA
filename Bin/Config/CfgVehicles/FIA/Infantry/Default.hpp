@@ -128,3 +128,11 @@ class OfficerG : SoldierGB
 	weapons[]={"AKM", "tokarev", "Binocular", "Throw", "Put"};
 	magazines[]={"AKM", "AKM", "AKM", "AKM", "AKM", "AKM", "RGO", "RGO", "RGO", "RDG1", "tokarevmag", "tokarevmag", "tokarevmag", "tokarevmag"};
 };
+
+class OfficerGNight : OfficerG
+{
+	displayName = "Squad Leader (night eq.)";
+	nightVision = 1;
+	weapons[] = {"AKMGP25", "Binocular", "NVGoggles", "Throw", "Put"};
+	magazines[] = {"AKM", "AKM", "AKM", "AKM", "AKM", "AKM", "RGO", "Flare", "Flare", "Flare"};
+};

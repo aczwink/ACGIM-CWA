@@ -1,0 +1,37 @@
+; tail-rotor fail script by Vektorboson
+; Borrowed and modified by Franze for AH-64D
+?(_tailrfail == 1): goto "quit"
+
+_tailrfail = 1
+
+_heli   = _this select 0
+
+_heli sidechat "Damn! Mayday! Mayday! We're going down!"
+
+; Position of helicopter engine (adjust this for different helicopters!)
+_enginePos = [0, -6, 0]
+
+drop ["cl_fire", "", "Billboard", 1, 1, _enginePos, [0,-3,1], 0, 1, 1, 0.001, [1,5], [[1,1,1,1],[1,1,1,0]], [0], 0.1, 0.2, "", "", _heli]
+~0.05
+drop ["cl_fire", "", "Billboard", 1, 1, _enginePos, [0,-3,1], 0, 1, 1, 0.001, [1,5], [[1,1,1,1],[1,1,1,0]], [0], 0.1, 0.2, "", "", _heli]
+~0.02
+drop ["cl_fire", "", "Billboard", 1, 1, _enginePos, [0,-3,1], 0, 1, 1, 0.001, [1,5], [[1,1,1,1],[1,1,1,0]], [0], 0.1, 0.2, "", "", _heli]
+_AddDir = 0.1
+~(random 1)
+
+#loop
+_dir = getDir _heli
+?_AddDir < 5: _AddDir = _AddDir + 0.05
+_heli setDir (_dir + _AddDir)
+_v = Velocity _heli
+_heli setVelocity  [((_v select 0) / 1.001), ((_v select 1) / 1.001), -10]
+drop ["cl_basic", "", "Billboard", 7, 7, _enginePos, [0,0,0], 0, 1, 1, 0.001, [1,5], [[0,0,0,0],[0,0,0,0.7],[0,0,0,0]], [0], 0.1, 0.2, "", "", _heli]
+~0.01
+?alive _heli: _heli setFuel 0; _heli setdammage 0.8
+?getPos _heli select 2 > 2: goto "loop"
+
+;?alive _heli: _heli setFuel 0
+?!alive _heli: goto "quit"
+
+#quit
+exit

@@ -200,46 +200,6 @@ class PipeBomb:Put
 	magazines[]={"this"};
 };
 
-class AT4Launcher : Default
-{
-	scopeWeapon=2;
-	scopeMagazine=2;
-	weaponType=16;
-	count=1;
-	magazineReloadTime=12;
-	reloadTime=0.5;
-	//Longer range sound.
-	//sound[]={"Weapons\at_launch",0.01,1};
-	sound[]={"Weapons\at_launch", 2, 1};
-	reloadMagazineSound[]={"Weapons\at_load",0.0003162,1};
-	initSpeed=30;
-	reloadAction = MANACT_RELOADAT;
-	autoReload=0;
-	ffMagnitude=0.1;
-	ffFrequency=1;
-	ffCount=1;
-	recoil="LAWSingle";
-	aiRateOfFire=10.0;
-	aiRateOfFireDistance=500;
-	optics=1;
-	primary=0;
-	opticsZoomMin=0.18;
-	opticsZoomMax=0.18;
-	distanceZoomMin=100;
-	distanceZoomMax=100;
-	magazineType="6 * 		256";
-	canLock=1;
-	valueWeapon=20;
-	valueMagazine=10;
-	uiPicture="isat";
-	model="AT-4_SpigotB_proxy";
-	modelOptics="optika_AT4_Spigot_B";
-	ammo="AT4";
-	displayName="$STR_DN_AT4";
-	displayNameMagazine="$STR_MN_AT4";
-	shortNameMagazine="$STR_SN_AT4";
-};
-
 //d4t adding res addons weapons
 class 6G30Base:GrenadeLauncher
 {
@@ -359,94 +319,7 @@ class HellfireLauncherBMP2:AT3Launcher
 	shortNameMagazine="$STR_DN_ADD_BMP2_AT";
 };
 
-class G36aBase:Riffle
-{
-	scopeWeapon=2;
-	scopeMagazine=2;
-	model="\G36A\G36";
-	modelOptics="\G36A\G36_optics";
-	picture="\G36A\w_g36.paa";
-	optics=1;
-	opticsZoomMin=0.28;
-	opticsZoomMax=0.28;
-	distanceZoomMin=300;
-	distanceZoomMax=300;
-	displayName="$STR_DN_ADD_G36";
-	displayNameMagazine="$STR_DN_ADD_G36_AMMO";
-	shortNameMagazine="$STR_DN_ADD_G36_AMMO";
-	drySound[]={"weapons\M16dry",0.0031623,1};
-	magazines[]={"G36a"};
-	modes[]={"Single","Burst","Fullauto"};
 
-	class Single
-	{
-		ammo="G36a";
-		multiplier=1;
-		burst=1;
-		displayName="$STR_DN_ADD_G36";
-		dispersion=0.0002;
-		sound[]={"\G36A\g36a.wss",1.0,1};
-		soundContinuous=0;
-		reloadTime=0.1;
-		ffCount=1;
-		recoil="riffleSingle";
-		autoFire=0;
-		aiRateOfFire=0.5;
-		aiRateOfFireDistance=500;
-		useAction=0;
-		useActionTitle="";
-	};
-
-	class Burst
-	{
-		ammo="G36a";
-		multiplier=1;
-		burst=3;
-		displayName="$STR_DN_ADD_G36_BURST";
-		dispersion=0.001;
-		sound[]={"\G36A\g36a_burst",1.0,1};
-		soundContinuous=0;
-		reloadTime=0.1;
-		ffCount=3;
-		recoil="riffleBurst3";
-		autoFire=0;
-		aiRateOfFire=0.5;
-		aiRateOfFireDistance=500;
-		useAction=0;
-		useActionTitle="";
-	};
-
-	class FullAuto
-	{
-		ammo="G36a";
-		multiplier=1;
-		burst=1;
-		displayName="G36 Auto";
-		dispersion=0.0003;
-		sound[]={"\G36A\g36a_full",1.0,1};
-		soundContinuous=0;
-		reloadTime=0.07;
-		ffCount=1;
-		recoil="riffleBurst3";
-		autoFire=1;
-		aiRateOfFire=0.5;
-		aiRateOfFireDistance=500;
-		useAction=0;
-		useActionTitle="";
-	};
-};
-
-class G36aMag:G36aBase
-{
-	scopeMagazine=2;
-	picture="\G36a\m_G36.paa";
-};
-
-class G36a:G36aBase
-{
-	scopeWeapon=2;
-	magazines[]={"G36aMag"};
-};
 class BikeHorn:CarHorn
 {
 	drySound[]={"\kolo\bc_ring.wav",0.1,1};
@@ -1303,75 +1176,6 @@ class ZuniLauncherOH:ZuniLauncher38
 	opticsZoomMax=0.84;
 	count=14;
 	reloadTime=0.15;
-};
-class SteyrBase:Riffle
-{
-	scopeWeapon=1;
-	scopeMagazine=1;
-	model="\steyr\steyr";
-	modelOptics="\steyr\optika_steyr";
-	picture="\Steyr\w_steyr.paa";
-	optics=1;
-	opticsZoomMin=0.28;
-	opticsZoomMax=0.28;
-	distanceZoomMin=300;
-	distanceZoomMax=300;
-	displayName="$STR_DN_ADD_STEYR";
-	displayNameMagazine="$STR_DN_ADD_STEYR_AMMO";
-	shortNameMagazine="$STR_DN_ADD_STEYR_AMMO_SHORT";
-	drySound[]={"weapons\M16dry",0.0031623,1};
-	modes[]={"Single","Fullauto"};
-
-	class Single
-	{
-		ammo="Steyr";
-		multiplier=1;
-		burst=1;
-		displayName="$STR_DN_ADD_STEYR";
-		dispersion=0.0002;
-		sound[]={"\Steyr\Steyr",1.0,1};
-		soundContinuous=0;
-		reloadTime=0.1;
-		ffCount=1;
-		recoil="riffleSingle";
-		autoFire=0;
-		aiRateOfFire=2.5;
-		aiRateOfFireDistance=500;
-		useAction=0;
-		useActionTitle="";
-	};
-
-	class FullAuto
-	{
-		ammo="Steyr";
-		multiplier=1;
-		burst=1;
-		displayName="$STR_DN_ADD_STEYR_AUTO";
-		dispersion=0.0003;
-		sound[]={"\Steyr\Steyr",1.0,1};
-		soundContinuous=0;
-		reloadTime=0.07;
-		ffCount=1;
-		recoil="riffleBurst3";
-		recoilFixed="riffleSingleFixed";
-		autoFire=1;
-		aiRateOfFire=0.5;
-		aiRateOfFireDistance=500;
-		useAction=0;
-		useActionTitle="";
-	};
-};
-
-class SteyrMag:SteyrBase
-{
-	scopeMagazine=2;
-	picture="\Steyr\m_steyr.paa";
-};
-
-class Steyr:SteyrBase
-{
-	scopeWeapon=2;
-	magazines[]={"SteyrMag"};
 };
 
 class VulcanCannon:MachineGun30

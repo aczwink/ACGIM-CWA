@@ -1,0 +1,273 @@
+_oh58 = _this select 0
+
+publicvariable "fz_oh58doors"
+
+?(typeof _oh58 == "OH58"): _oh58 setobjecttexture [56,"\d4t_tex\oh58\top.paa"]
+;?(typeof _oh58 == "fz_oh58d" or typeof _oh58 == "fz_oh58d_early"): _oh58 setobjecttexture [55,"\d4t_tex\oh58\top.paa"]
+?(fz_oh58doors == 0): goto "mainloop"
+_oh58 setobjecttexture [25,"\d4t_tex\oh58\door1.paa"]
+_oh58 setobjecttexture [27,"\d4t_tex\oh58\wndow.paa"]
+
+_spd = "\d4t_tex\oh58\art_0.paa"
+_spd2 = "\d4t_tex\oh58\art_0.paa"
+
+_oh58 setobjecttexture [79,"\d4t_tex\oh58\art_0.paa"]
+
+;Default to showing map
+_oh58 animate ["p_mfd", 0.25]
+
+#Mainloop
+~0.00001
+?(not alive _oh58): exit
+_mags = magazines _oh58
+
+?(fz_artystrikes <= 0): _oh58 setobjecttexture [57,"\d4t_tex\oh58\art_0.paa"]
+?(fz_artystrikes == 1): _oh58 setobjecttexture [57,"\d4t_tex\oh58\art_1.paa"]
+?(fz_artystrikes == 2): _oh58 setobjecttexture [57,"\d4t_tex\oh58\art_2.paa"]
+?(fz_artystrikes == 3): _oh58 setobjecttexture [57,"\d4t_tex\oh58\art_3.paa"]
+?(fz_artystrikes == 4): _oh58 setobjecttexture [57,"\d4t_tex\oh58\art_4.paa"]
+?(fz_artystrikes == 5): _oh58 setobjecttexture [57,"\d4t_tex\oh58\art_5.paa"]
+?(fz_artystrikes == 6): _oh58 setobjecttexture [57,"\d4t_tex\oh58\art_6.paa"]
+?(fz_artystrikes == 7): _oh58 setobjecttexture [57,"\d4t_tex\oh58\art_7.paa"]
+?(fz_artystrikes == 8): _oh58 setobjecttexture [57,"\d4t_tex\oh58\art_8.paa"]
+?(fz_artystrikes >= 9): _oh58 setobjecttexture [57,"\d4t_tex\oh58\art_9.paa"]
+
+;;Note speed calculation method is very crude - change later when more suitable formula is found
+;;additional note - LEARN ARITHMETIC!
+
+_speed = (speed _oh58) * 0.01
+?(_speed >= 0 and _speed < 1): _spd = "\d4t_tex\oh58\art_0.paa"
+?(_speed >= 1 and _speed < 2): _spd = "\d4t_tex\oh58\art_1.paa"
+?(_speed >= 2 and _speed < 3): _spd = "\d4t_tex\oh58\art_2.paa"
+?(_speed >= 3 and _speed < 4): _spd = "\d4t_tex\oh58\art_3.paa"
+?(_speed >= 4 and _speed < 5): _spd = "\d4t_tex\oh58\art_4.paa"
+?(_speed >= 5 and _speed < 6): _spd = "\d4t_tex\oh58\art_5.paa"
+?(_speed >= 6 and _speed < 7): _spd = "\d4t_tex\oh58\art_6.paa"
+?(_speed >= 7 and _speed < 8): _spd = "\d4t_tex\oh58\art_7.paa"
+?(_speed >= 8 and _speed < 9): _spd = "\d4t_tex\oh58\art_8.paa"
+?(_speed >= 9 and _speed < 10): _spd = "\d4t_tex\oh58\art_9.paa"
+;;here starts negative numbers
+?(_speed <= 0 and _speed > -1): _spd = "\d4t_tex\oh58\art_0.paa"
+?(_speed <= -1 and _speed > -2): _spd = "\d4t_tex\oh58\art_1.paa"
+?(_speed <= -2 and _speed > -3): _spd = "\d4t_tex\oh58\art_2.paa"
+?(_speed <= -3 and _speed > -4): _spd = "\d4t_tex\oh58\art_3.paa"
+?(_speed <= -4 and _speed > -5): _spd = "\d4t_tex\oh58\art_4.paa"
+?(_speed <= -5 and _speed > -6): _spd = "\d4t_tex\oh58\art_5.paa"
+?(_speed <= -6 and _speed > -7): _spd = "\d4t_tex\oh58\art_6.paa"
+?(_speed <= -7 and _speed > -8): _spd = "\d4t_tex\oh58\art_7.paa"
+?(_speed <= -8 and _speed > -9): _spd = "\d4t_tex\oh58\art_8.paa"
+?(_speed <= -9 and _speed > 10): _spd = "\d4t_tex\oh58\art_9.paa"
+_oh58 setobjecttexture [81,_spd]
+
+_speed2 = _speed * 10
+?(_speed2 >= 0 and _speed2 < 1 or _speed2 >= 10 and _speed2 < 11 or _speed2 >= 20 and _speed2 < 21 or _speed2 >= 30): _spd2 = "\d4t_tex\oh58\art_0.paa"
+?(_speed2 >= 1 and _speed2 < 2 or _speed2 >= 11 and _speed2 < 12 or _speed2 >= 21 and _speed2 < 22): _spd2 = "\d4t_tex\oh58\art_1.paa"
+?(_speed2 >= 2 and _speed2 < 3 or _speed2 >= 12 and _speed2 < 13 or _speed2 >= 22 and _speed2 < 23): _spd2 = "\d4t_tex\oh58\art_2.paa"
+?(_speed2 >= 3 and _speed2 < 4 or _speed2 >= 13 and _speed2 < 14 or _speed2 >= 23 and _speed2 < 24): _spd2 = "\d4t_tex\oh58\art_3.paa"
+?(_speed2 >= 4 and _speed2 < 5 or _speed2 >= 14 and _speed2 < 15 or _speed2 >= 24 and _speed2 < 25): _spd2 = "\d4t_tex\oh58\art_4.paa"
+?(_speed2 >= 5 and _speed2 < 6 or _speed2 >= 15 and _speed2 < 16 or _speed2 >= 25 and _speed2 < 26): _spd2 = "\d4t_tex\oh58\art_5.paa"
+?(_speed2 >= 6 and _speed2 < 7 or _speed2 >= 16 and _speed2 < 17 or _speed2 >= 26 and _speed2 < 27): _spd2 = "\d4t_tex\oh58\art_6.paa"
+?(_speed2 >= 7 and _speed2 < 8 or _speed2 >= 17 and _speed2 < 18 or _speed2 >= 27 and _speed2 < 28): _spd2 = "\d4t_tex\oh58\art_7.paa"
+?(_speed2 >= 8 and _speed2 < 9 or _speed2 >= 18 and _speed2 < 19 or _speed2 >= 28 and _speed2 < 29): _spd2 = "\d4t_tex\oh58\art_8.paa"
+?(_speed2 >= 9 and _speed2 < 10 or _speed2 >= 19 and _speed2 < 20 or _speed2 >= 29 and _speed2 < 30): _spd2 = "\d4t_tex\oh58\art_9.paa"
+;;here starts negative numbers for tenths of the speed
+?(_speed2 <= 0 and _speed2 > -1 or _speed2 <= -10 and _speed2 > -11 or _speed2 <= -20 and _speed2 > -21 or _speed2 <= -30): _spd2 = "\d4t_tex\oh58\art_0.paa"
+?(_speed2 <= -1 and _speed2 > -2 or _speed2 <= -11 and _speed2 > -12 or _speed2 <= -21 and _speed2 > -22): _spd2 = "\d4t_tex\oh58\art_1.paa"
+?(_speed2 <= -2 and _speed2 > -3 or _speed2 <= -12 and _speed2 > -13 or _speed2 <= -22 and _speed2 > -23): _spd2 = "\d4t_tex\oh58\art_2.paa"
+?(_speed2 <= -3 and _speed2 > -4 or _speed2 <= -13 and _speed2 > -14 or _speed2 <= -23 and _speed2 > -24): _spd2 = "\d4t_tex\oh58\art_3.paa"
+?(_speed2 <= -4 and _speed2 > -5 or _speed2 <= -14 and _speed2 > -15 or _speed2 <= -24 and _speed2 > -25): _spd2 = "\d4t_tex\oh58\art_4.paa"
+?(_speed2 <= -5 and _speed2 > -6 or _speed2 <= -15 and _speed2 > -16 or _speed2 <= -25 and _speed2 > -26): _spd2 = "\d4t_tex\oh58\art_5.paa"
+?(_speed2 <= -6 and _speed2 > -7 or _speed2 <= -16 and _speed2 > -17 or _speed2 <= -26 and _speed2 > -27): _spd2 = "\d4t_tex\oh58\art_6.paa"
+?(_speed2 <= -7 and _speed2 > -8 or _speed2 <= -17 and _speed2 > -18 or _speed2 <= -27 and _speed2 > -28): _spd2 = "\d4t_tex\oh58\art_7.paa"
+?(_speed2 <= -8 and _speed2 > -9 or _speed2 <= -18 and _speed2 > -19 or _speed2 <= -28 and _speed2 > -29): _spd2 = "\d4t_tex\oh58\art_8.paa"
+?(_speed2 <= -9 and _speed2 > -10 or _speed2 <= -19 and _speed2 > -20 or _speed2 <= -29 and _speed2 > -30): _spd2 = "\d4t_tex\oh58\art_9.paa"
+_oh58 setobjecttexture [80,_spd2]
+
+?(_oh58 animationPhase "p_mfd" == 0.25) : _oh58 setobjecttexture [36,"\d4t_tex\ah64\ah64_nvl.paa"] and _oh58 setobjecttexture [37,"\d4t_tex\ah64\ah64_nvl.paa"]
+?!(_oh58 animationPhase "p_mfd" == 0.25) : _oh58 setobjecttexture [36,""] and _oh58 setobjecttexture [37,""]
+?(_oh58 animationPhase "p_mfd" == 0.5) : _oh58 setobjecttexture [65,"\d4t_tex\ah64\ihdscmp2a.paa"] and _oh58 setobjecttexture [66,"\d4t_tex\ah64\vsi1.paa"] and _oh58 setobjecttexture [75,"\d4t_tex\oh58\loal2.paa"] and _oh58 setobjecttexture [82,"\d4t_tex\ah64\ah64_nvl.paa"] and _oh58 setobjecttexture [83,"\d4t_tex\oh58\pch_ldr.paa"]
+?!(_oh58 animationPhase "p_mfd" == 0.5) : _oh58 setobjecttexture [65,""] and _oh58 setobjecttexture [66,""] and _oh58 setobjecttexture [75,""] and _oh58 setobjecttexture [82,""] and _oh58 setobjecttexture [83,""]
+
+?!(_oh58 hasweapon "Hydra70"): goto "removetex"
+?(_oh58 hasweapon "Hydra70"): _oh58 setobjecttexture [26,"\d4t_tex\oh58\tail1.paa"]
+goto "rockets1"
+
+#removetex
+_oh58 setobjecttexture [0,""]
+_oh58 setobjecttexture [1,""]
+_oh58 setobjecttexture [2,""]
+_oh58 setobjecttexture [3,""]
+_oh58 setobjecttexture [4,""]
+_oh58 setobjecttexture [5,""]
+_oh58 setobjecttexture [6,""]
+_oh58 setobjecttexture [7,""]
+_oh58 setobjecttexture [8,""]
+_oh58 setobjecttexture [9,""]
+_oh58 setobjecttexture [10,""]
+_oh58 setobjecttexture [11,""]
+_oh58 setobjecttexture [12,""]
+_oh58 setobjecttexture [13,""]
+_oh58 setobjecttexture [14,""]
+_oh58 setobjecttexture [15,""]
+_oh58 setobjecttexture [16,""]
+_oh58 setobjecttexture [17,""]
+_oh58 setobjecttexture [18,""]
+_oh58 setobjecttexture [19,""]
+_oh58 setobjecttexture [20,""]
+_oh58 setobjecttexture [21,""]
+_oh58 setobjecttexture [22,""]
+_oh58 setobjecttexture [23,""]
+_oh58 setobjecttexture [24,""]
+_oh58 setobjecttexture [26,""]
+_oh58 setobjecttexture [67,""]
+_oh58 setobjecttexture [68,""]
+_oh58 setobjecttexture [69,""]
+_oh58 setobjecttexture [70,""]
+_oh58 setobjecttexture [71,""]
+_oh58 setobjecttexture [72,""]
+_oh58 setobjecttexture [73,""]
+_oh58 setobjecttexture [74,""]
+_oh58 setobjecttexture [76,""]
+_oh58 setobjecttexture [77,""]
+_oh58 setobjecttexture [78,""]
+
+
+#rockets1
+_rock1 = 11
+_rock2 = 13
+_rock3 = 15
+_rock4 = 17
+_rock5 = 19
+_rock6 = 21
+_rock7 = 23
+_pod = 9
+_hudrock = 76
+_rkttype1 = "\d4t_tex\oh58\rkt1he.paa"
+_rkttype2 = "\d4t_tex\oh58\rkt2he.paa"
+_rkttype3 = "\d4t_tex\oh58\rkt3he.paa"
+_rkttype4 = "\d4t_tex\oh58\rkt4he.paa"
+_rkttype5 = "\d4t_tex\oh58\rkt5he.paa"
+_rkttype6 = "\d4t_tex\oh58\rkt6he.paa"
+_rkttype7 = "\d4t_tex\oh58\rkt7he.paa"
+
+#rrockets1
+#rhffour
+_oh58 setobjecttexture [4,""] and _oh58 setobjecttexture [5,""] and _oh58 setobjecttexture [0,""] and _oh58 setobjecttexture [1,""] and _oh58 setobjecttexture [2,""] and _oh58 setobjecttexture [3,""] and _oh58 setobjecttexture [67,""] and _oh58 setobjecttexture [69,""] and _oh58 setobjecttexture [68,""] and _oh58 setobjecttexture [70,""]
+
+#rockets2
+_rkttype1 = "\d4t_tex\oh58\rkt1he.paa"
+_rkttype2 = "\d4t_tex\oh58\rkt2he.paa"
+_rkttype3 = "\d4t_tex\oh58\rkt3he.paa"
+_rkttype4 = "\d4t_tex\oh58\rkt4he.paa"
+_rkttype5 = "\d4t_tex\oh58\rkt5he.paa"
+_rkttype6 = "\d4t_tex\oh58\rkt6he.paa"
+_rkttype7 = "\d4t_tex\oh58\rkt7he.paa"
+
+_oh58 setobjecttexture [8,"\d4t_tex\oh58\rocketpod.paa"]
+_oh58 setobjecttexture [9,"\d4t_tex\oh58\rocketpod.paa"]
+_ammocnt = (_oh58 ammo "Hydra70")
+? _ammocnt > 13 : _oh58 setobjecttexture [10,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [11,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [12,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [13,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [14,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [15,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [16,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [17,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [18,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [19,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [20,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [21,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [22,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [23,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [76,_rkttype7]; _oh58 setobjecttexture [77,_rkttype7]
+? _ammocnt > 12 and _ammocnt < 13 : _oh58 setobjecttexture [11,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [77,_rkttype7]
+? _ammocnt > 11 and _ammocnt < 12 : _oh58 setobjecttexture [12,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [76,_rkttype6]
+? _ammocnt > 10 and _ammocnt < 11 : _oh58 setobjecttexture [13,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [77,_rkttype6]
+? _ammocnt > 9 and _ammocnt < 10 : _oh58 setobjecttexture [14,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [76,_rkttype5]
+? _ammocnt > 8 and _ammocnt < 9 : _oh58 setobjecttexture [15,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [77,_rkttype5]
+? _ammocnt > 7 and _ammocnt < 8 : _oh58 setobjecttexture [16,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [76,_rkttype4]
+? _ammocnt > 6 and _ammocnt < 7 : _oh58 setobjecttexture [17,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [77,_rkttype4]
+? _ammocnt > 5 and _ammocnt < 6 : _oh58 setobjecttexture [18,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [76,_rkttype3]
+? _ammocnt > 4 and _ammocnt < 5 : _oh58 setobjecttexture [19,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [77,_rkttype3]
+? _ammocnt > 3 and _ammocnt < 4 : _oh58 setobjecttexture [20,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [76,_rkttype2]
+? _ammocnt > 2 and _ammocnt < 3 : _oh58 setobjecttexture [21,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [77,_rkttype2]
+? _ammocnt > 1 and _ammocnt < 2 : _oh58 setobjecttexture [22,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [76,_rkttype1]
+? _ammocnt > 0 and _ammocnt < 1 : _oh58 setobjecttexture [23,"\d4t_tex\ah64\agm114_1.paa"]; _oh58 setobjecttexture [77,_rkttype1]
+
+? _ammocnt == 13 : _oh58 setobjecttexture [10,""]; _oh58 setobjecttexture [76,_rkttype6]
+? _ammocnt == 12 : _oh58 setobjecttexture [11,""]; _oh58 setobjecttexture [10,""]; _oh58 setobjecttexture [77,_rkttype6]
+? _ammocnt == 11 : _oh58 setobjecttexture [12,""]; _oh58 setobjecttexture [11,""]; _oh58 setobjecttexture [10,""]; _oh58 setobjecttexture [76,_rkttype5]
+? _ammocnt == 10 : _oh58 setobjecttexture [13,""]; _oh58 setobjecttexture [12,""]; _oh58 setobjecttexture [11,""]; _oh58 setobjecttexture [10,""]; _oh58 setobjecttexture [77,_rkttype5]
+? _ammocnt == 9 : _oh58 setobjecttexture [14,""]; _oh58 setobjecttexture [13,""]; _oh58 setobjecttexture [12,""]; _oh58 setobjecttexture [11,""]; _oh58 setobjecttexture [10,""]; _oh58 setobjecttexture [76,_rkttype4]
+? _ammocnt == 8 : _oh58 setobjecttexture [15,""]; _oh58 setobjecttexture [14,""]; _oh58 setobjecttexture [13,""]; _oh58 setobjecttexture [12,""]; _oh58 setobjecttexture [11,""]; _oh58 setobjecttexture [10,""]; _oh58 setobjecttexture [77,_rkttype4]
+? _ammocnt == 7 : _oh58 setobjecttexture [16,""]; _oh58 setobjecttexture [15,""]; _oh58 setobjecttexture [14,""]; _oh58 setobjecttexture [13,""]; _oh58 setobjecttexture [12,""]; _oh58 setobjecttexture [11,""]; _oh58 setobjecttexture [10,""]; _oh58 setobjecttexture [76,_rkttype3]
+? _ammocnt == 6 : _oh58 setobjecttexture [17,""]; _oh58 setobjecttexture [16,""]; _oh58 setobjecttexture [15,""]; _oh58 setobjecttexture [14,""]; _oh58 setobjecttexture [13,""]; _oh58 setobjecttexture [12,""]; _oh58 setobjecttexture [11,""]; _oh58 setobjecttexture [10,""]; _oh58 setobjecttexture [77,_rkttype3]
+? _ammocnt == 5 : _oh58 setobjecttexture [18,""]; _oh58 setobjecttexture [17,""]; _oh58 setobjecttexture [16,""]; _oh58 setobjecttexture [15,""]; _oh58 setobjecttexture [14,""]; _oh58 setobjecttexture [13,""]; _oh58 setobjecttexture [12,""]; _oh58 setobjecttexture [11,""]; _oh58 setobjecttexture [10,""]; _oh58 setobjecttexture [76,_rkttype2]
+? _ammocnt == 4 : _oh58 setobjecttexture [19,""]; _oh58 setobjecttexture [18,""]; _oh58 setobjecttexture [17,""]; _oh58 setobjecttexture [16,""]; _oh58 setobjecttexture [15,""]; _oh58 setobjecttexture [14,""]; _oh58 setobjecttexture [13,""]; _oh58 setobjecttexture [12,""]; _oh58 setobjecttexture [11,""]; _oh58 setobjecttexture [10,""]; _oh58 setobjecttexture [77,_rkttype2]
+? _ammocnt == 3 : _oh58 setobjecttexture [20,""]; _oh58 setobjecttexture [19,""]; _oh58 setobjecttexture [18,""]; _oh58 setobjecttexture [17,""]; _oh58 setobjecttexture [16,""]; _oh58 setobjecttexture [15,""]; _oh58 setobjecttexture [14,""]; _oh58 setobjecttexture [13,""]; _oh58 setobjecttexture [12,""]; _oh58 setobjecttexture [11,""]; _oh58 setobjecttexture [10,""]; _oh58 setobjecttexture [76,_rkttype1]
+? _ammocnt == 2 : _oh58 setobjecttexture [21,""]; _oh58 setobjecttexture [20,""]; _oh58 setobjecttexture [19,""]; _oh58 setobjecttexture [18,""]; _oh58 setobjecttexture [17,""]; _oh58 setobjecttexture [16,""]; _oh58 setobjecttexture [15,""]; _oh58 setobjecttexture [14,""]; _oh58 setobjecttexture [13,""]; _oh58 setobjecttexture [12,""]; _oh58 setobjecttexture [11,""]; _oh58 setobjecttexture [10,""]; _oh58 setobjecttexture [77,_rkttype1]
+? _ammocnt == 1 : _oh58 setobjecttexture [22,""]; _oh58 setobjecttexture [21,""]; _oh58 setobjecttexture [20,""]; _oh58 setobjecttexture [19,""]; _oh58 setobjecttexture [18,""]; _oh58 setobjecttexture [17,""]; _oh58 setobjecttexture [16,""]; _oh58 setobjecttexture [15,""]; _oh58 setobjecttexture [14,""]; _oh58 setobjecttexture [13,""]; _oh58 setobjecttexture [12,""]; _oh58 setobjecttexture [11,""]; _oh58 setobjecttexture [10,""]; _oh58 setobjecttexture [76,""]
+? _ammocnt == 0 : _oh58 setobjecttexture [23,""]; _oh58 setobjecttexture [22,""]; _oh58 setobjecttexture [21,""]; _oh58 setobjecttexture [20,""]; _oh58 setobjecttexture [19,""]; _oh58 setobjecttexture [18,""]; _oh58 setobjecttexture [17,""]; _oh58 setobjecttexture [16,""]; _oh58 setobjecttexture [15,""]; _oh58 setobjecttexture [14,""]; _oh58 setobjecttexture [13,""]; _oh58 setobjecttexture [12,""]; _oh58 setobjecttexture [11,""]; _oh58 setobjecttexture [10,""]; _oh58 setobjecttexture [77,""]
+
+_oh58 setobjecttexture [7,""] and _oh58 setobjecttexture [6,""] and _oh58 setobjecttexture [71,""] and _oh58 setobjecttexture [73,""]
+? _ammocnt == 1 : _oh58 setobjecttexture [71,""]
+? _ammocnt == 0 : _oh58 setobjecttexture [73,""]
+
+_oh58 setobjecttexture [6,""] and _oh58 setobjecttexture [7,""] and _oh58 setobjecttexture [71,""] and _oh58 setobjecttexture [72,""] and _oh58 setobjecttexture [73,""] and _oh58 setobjecttexture [74,""]
+? _ammocnt == 3 : _oh58 setobjecttexture [71,""]
+? _ammocnt == 2 : _oh58 setobjecttexture [72,""]
+? _ammocnt == 1 : _oh58 setobjecttexture [73,""]
+? _ammocnt == 0 : _oh58 setobjecttexture [74,""]
+
+_oh58 setobjecttexture [24,""] and _oh58 setobjecttexture [78,""] and goto "damage"
+
+
+#damage
+_amountdamage=getdammage _oh58
+?(_amountdamage< 0.05 and _sysdamA == 1): goto "nodamage"
+?(_amountdamage>= 0.25 and _amountdamage<= 0.5): goto "minordamage"
+?(_amountdamage>= 0.5 and _amountdamage<= 0.75): goto "Majordamage"
+?(_amountdamage>= 0.75 and _amountdamage<= 0.94): goto "Criticaldamage"
+?(_tailrfail == 1): goto "MainLoop"
+?(_amountdamage>= 0.95): [_oh58] exec "\acgim_scripts\Vehicles\OH58\trfail.sqs"; _tailrfail = 1
+
+goto "MainLoop"
+
+#nodamage
+#repairs
+_tailrfail = 0
+_sysdamA = 0
+_sysdamB = 0
+_sysdamC = 0
+;remove system damage MFD msgs
+_oh58 setobjecttexture [28,""]
+_oh58 setobjecttexture [29,""]
+_oh58 setobjecttexture [30,""]
+_oh58 setobjecttexture [31,""]
+_oh58 setobjecttexture [32,""]
+_oh58 setobjecttexture [33,""]
+_oh58 setobjecttexture [34,""]
+_oh58 setobjecttexture [35,""]
+_oh58 setdammage 0
+_oh58 animate ["p_mfd", 0]
+_oh58 animate ["jammer", 0]
+_oh58 animate ["firebottles", 0]
+_oh58 vehiclechat "Systems fully repaired."
+goto "MainLoop"
+
+#MinorDamage
+?(_sysdamA == 1): goto "skipmin"
+_sysdamA = 1
+[_oh58] exec "\acgim_scripts\Vehicles\OH58\sysfail.sqs"
+#skipmin
+goto "MainLoop"
+
+#MajorDamage
+?(_sysdamB == 1): goto "skipmaj"
+_sysdamB = 1
+[_oh58] exec "\acgim_scripts\Vehicles\OH58\sysfail.sqs"
+~0.01
+[_oh58] exec "\acgim_scripts\Vehicles\OH58\sysfail.sqs"
+#skipmaj
+goto "MainLoop"
+
+#CriticalDamage
+?(_sysdamC == 1): goto "skipcrit"
+_sysdamC = 1
+[_oh58] exec "\acgim_scripts\Vehicles\OH58\sysfail.sqs"
+~0.01
+[_oh58] exec "\acgim_scripts\Vehicles\OH58\sysfail.sqs"
+~0.01
+[_oh58] exec "\acgim_scripts\Vehicles\OH58\sysfail.sqs"
+#skipcrit
+goto "MainLoop"
+
+#quit
+exit

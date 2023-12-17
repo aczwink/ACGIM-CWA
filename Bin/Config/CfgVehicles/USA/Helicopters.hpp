@@ -14,18 +14,11 @@
 #include "Config\CfgVehicles\USA\Helicopters\CH47D.h"
 #endif
 
+//OH-58D
+#include "Config\CfgVehicles\USA\Helicopters\OH58D.h"
+
 //UH-60A
 #include "Config\CfgVehicles\USA\Helicopters\UH60A.h"
 #ifdef ACGIM_SCENARIO_2007
 #include "Config\CfgVehicles\USA\Helicopters\UH60A.h"
 #endif
-
-/*
-
-
-//OH-58D
-#include "Config\CfgVehicles\USA\Helicopters\OH58D.h"
-#ifdef ACGIM_SCENARIO_2007
-#include "Config\CfgVehicles\USA\Helicopters\OH58D.h"
-#endif
-*/

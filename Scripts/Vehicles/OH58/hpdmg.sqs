@@ -1,0 +1,16 @@
+_oh58 = _this select 0
+_weps = weapons _oh58
+
+;randomweapons failure
+
+#mixeddmg
+?(_oh58 hasweapon "Hydra70"): goto "14rockdmg"
+
+exit
+
+#14rockdmg
+?!(_oh58 hasweapon "Hydra70"): exit
+_oh58 vehiclechat "Rocket pod failure."
+_oh58 removeweapon "Hydra70"
+
+exit

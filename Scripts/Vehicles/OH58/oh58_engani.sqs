@@ -1,0 +1,35 @@
+_oh58 = _this select 0
+
+?(player == gunner vehicle _oh58): goto "cont"
+?!(local _oh58): exit
+
+#cont
+
+_fuelwarn = 0
+
+?(_oh58 animationphase "eng_temp" == 0): _oh58 animate ["eng_temp",0.5]
+?(_oh58 animationphase "oil_temp" == 0): _oh58 animate ["oil_temp",0.4]
+?(_oh58 animationphase "oil_psi" == 0): _oh58 animate ["oil_psi",0.6]
+?(_oh58 animationphase "hyd_temp" == 0): _oh58 animate ["hyd_temp",0.3]
+?(_oh58 animationphase "hyd_psi" == 0): _oh58 animate ["hyd_psi",0.5]
+?(_oh58 animationphase "trans_temp" == 0): _oh58 animate ["trans_temp",0.6]
+
+#waitloop
+~0.01
+?!(isengineon _oh58): goto "quit"
+?!(alive _oh58): exit
+_oh58 animate ["indi_fuel", (fuel vehicle _oh58)]
+
+?(fuel vehicle _oh58 < 0.1 and _fuelwarn == 0): _oh58 vehiclechat "Bingo Fuel"; _fuelwarn = 1
+
+?(isengineon _oh58): goto "waitloop"
+goto "waitloop"
+
+#quit
+?!(_oh58 animationphase "eng_temp" == 0.2 or _oh58 animationphase "eng_temp" == 0.8 or _oh58 animationphase "eng_temp" == 1): _oh58 animate ["eng_temp",0]
+?!(_oh58 animationphase "oil_temp" == 0.1 or _oh58 animationphase "oil_temp" == 0.7 or _oh58 animationphase "oil_temp" == 1): _oh58 animate ["oil_temp",0]
+?!(_oh58 animationphase "oil_psi" == 0.1 or _oh58 animationphase "oil_psi" == 0.8 or _oh58 animationphase "oil_psi" == 1): _oh58 animate ["oil_psi",0]
+?!(_oh58 animationphase "hyd_temp" == 0.1 or _oh58 animationphase "hyd_temp" == 0.7 or _oh58 animationphase "hyd_temp" == 1): _oh58 animate ["hyd_temp",0]
+?!(_oh58 animationphase "hyd_psi" == 0.1 or _oh58 animationphase "hyd_psi" == 0.8 or _oh58 animationphase "hyd_psi" == 1): _oh58 animate ["hyd_psi",0]
+?!(_oh58 animationphase "trans_temp" == 0.8 or _oh58 animationphase "trans_temp" == 1): _oh58 animate ["trans_temp",0]
+exit

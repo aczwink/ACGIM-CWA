@@ -522,8 +522,8 @@ class A10 : Plane //d4t bug -> bombs on bomb ports have mk82 model instead of gb
 	soundEnviron[]={"\d4t_files\sounds\vehicles\air\A10air.wss",db-10,1};
 	soundLandCrash[]={"\d4t_files\sounds\vehicles\air\LandingEnd.wav",db+60,1};
 	soundGear[]={"",db-75,1};
-	weapons[]={d4t_gau8, d4t_agm65b_6, d4t_hydra70_14, d4t_aim9m_2, d4t_gbu12_4};
-	magazines[]={d4t_gau8, d4t_agm65b_6, d4t_hydra70_14, d4t_aim9m_2, d4t_gbu12_4};
+	weapons[]={d4t_gau8, d4t_agm65b_6, Hydra70, d4t_aim9m_2, d4t_gbu12_4};
+	magazines[]={d4t_gau8, d4t_agm65b_6, Hydra70, d4t_aim9m_2, d4t_gbu12_4};
 	hiddenSelections[]={"n1", "n2", "n3", "bas_tailflash_l", "bas_tailflash_r", "bas_taillogo_l", "bas_taillogo_r", "bas_tailnum_l", "bas_tailnum_r", "bas_usaf_l", "bas_usaf_r",	"_aimA", "_aimB", 	"_mavA", "_mavB", "_mavC", "_mavD", "_mavE", "_mavF", "_mk82A", "_mk82B", "_mk82C", "_mk82D"};
 
 	class GunFire : d4t_air_mgun{};
@@ -1702,8 +1702,8 @@ class OH58 : Helicopter
 	armor=100;
 	cost=10000000;
 	model="\d4t_files\models\us\vehicles\oh58d.p3d";
-	weapons[]={"d4t_hydra70_14","LaserDesignatorOH"};//d4t note: the laser designator...
-	magazines[]={"d4t_hydra70_14","LaserDesignatorOH"};
+	weapons[]={"Hydra70","LaserDesignatorOH"};//d4t note: the laser designator...
+	magazines[]={"Hydra70","LaserDesignatorOH"};
 	hasGunner=1;
 	transportSoldier=1;
 	cargoAction[]={ManActfz_oh58gunner};

@@ -3,7 +3,7 @@ Sources:
 	http://en.wikipedia.org/wiki/Bell_OH-58_Kiowa
 In service: 1985-present
 */
-class USA_OH58D : Helicopter
+class OH58 : Helicopter
 {
 	side = SIDE_WEST;
 	scope = SCOPE_PUBLIC;
@@ -231,51 +231,18 @@ class USA_OH58D : Helicopter
 		};
 	};
 
-	class UserActions
-	{
-		//TODO
-		/*class switchpfmd
-		{
-			displayName="Cycle MFD";
-			position="pltaction";
-			radius=3;
-			condition="driver vehicle this == player";
-			statement="[this] exec ""\d4t_files\FX\scripts\vehicles\oh58\cycle_pmfd.sqs""";
-		};
-
-		class artyrequest
-		{
-			displayName="Request Artillery";
-			position="pltaction";
-			radius=2
-			condition="driver vehicle this == player and fz_artystrikes >= 1";
-			statement="[this] exec ""\d4t_misc\apache\scripting\artillery_click.sqs""";
-		};
-
-		class firebottleson
-		{
-			displayName="Fire Extinguishers";
-			position="doorarea";
-			radius=3;
-			condition="driver vehicle this == player and this animationPhase ""firebottles"" == 0"; 
-			statement="[this] exec ""\d4t_files\FX\scripts\vehicles\oh58\bottles.sqs""";
-		};*/
-	};
-
 	class Eventhandlers
 	{
-		Init = "[_this select 0, 49] exec {\SJC_Scripts\vehicleTODO.sqs}";
-		//TODO
-		/*init="[_this select 0] exec {\d4t_files\FX\scripts\vehicles\oh58\initialize58D.sqs}, [_this select 0] exec {\d4t_files\FX\scripts\vehicles\oh58\so.sqs};";
-		engine="[_this select 0] exec {\d4t_files\FX\scripts\vehicles\oh58\oh58_map.sqs}, [_this select 0] exec {\d4t_files\FX\scripts\vehicles\oh58\oh58_engani.sqs}, [_this select 0] exec {\d4t_files\FX\scripts\vehicles\oh58\oh58_rtrwash.sqs}";
-		fired="[_this select 0,_this select 1] exec {\d4t_files\FX\scripts\vehicles\oh58\wpnfire_oh.sqs}, [_this select 0,_this select 1] exec {\d4t_files\FX\scripts\vehicles\ah64\BarrageArea.sqs}, [_this] exec {\d4t_files\FX\scripts\vehicles\ah64\prox.sqs};";
-		IncomingMissile="if ((_this select 0)==(_this select 0)) then {[_this] exec ""\d4t_files\FX\scripts\vehicles\oh58\CMS.sqs""};";
-		Killed="[_this select 0] exec {\d4t_files\FX\scripts\vehicles\oh58\oh58_crash.sqs};";
-		GetIn="[_this select 0,_this select 1] exec {\d4t_files\FX\scripts\vehicles\ah64\apr39.sqs}";*/
+		init="[_this select 0] exec {\acgim_scripts\Vehicles\OH58\initialize58D.sqs}, [_this select 0] exec {\acgim_scripts\Vehicles\OH58\so.sqs};";
+		engine="[_this select 0] exec {\acgim_scripts\Vehicles\OH58\oh58_map.sqs}, [_this select 0] exec {\acgim_scripts\Vehicles\OH58\oh58_engani.sqs}, [_this select 0] exec {\acgim_scripts\Vehicles\OH58\oh58_rtrwash.sqs}";
+		fired="[_this select 0,_this select 1] exec {\acgim_scripts\Vehicles\OH58\wpnfire_oh.sqs}, [_this select 0,_this select 1] exec {\d4t_files\FX\scripts\vehicles\ah64\BarrageArea.sqs}, [_this] exec {\d4t_files\FX\scripts\vehicles\ah64\prox.sqs};";
+		IncomingMissile="if ((_this select 0)==(_this select 0)) then {[_this] exec ""\acgim_scripts\Vehicles\OH58\CMS.sqs""};";
+		Killed="[_this select 0] exec {\acgim_scripts\Vehicles\OH58\oh58_crash.sqs};";
+		GetIn="[_this select 0,_this select 1] exec {\d4t_files\FX\scripts\vehicles\ah64\apr39.sqs}";
 	};
 };
 
-class OH58DWreck : USA_OH58D
+class OH58DWreck : OH58
 {
 	model = "\d4t_files\models\us\misc\oh58d_wreck.p3d";
 	vehicleClass = "Objects (Wrecks)";

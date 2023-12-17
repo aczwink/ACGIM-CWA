@@ -1,0 +1,59 @@
+;OH-58D system failure script by Franze
+_oh58 = _this select 0
+?!(local _oh58): exit
+
+#loop
+~0.001
+_amountdamage=getdammage _oh58
+?(_amountdamage>= 0.25 and _amountdamage<= 0.5): goto "randomMARG"
+
+?(_amountdamage>= 0.5 and _amountdamage<= 0.80): goto "randomFAIL"
+
+?(_amountdamage>= 0.80): goto "randomFIRE"
+
+#randomMARG
+_num = random 8
+?(_num < 1) : _oh58 setobjecttexture [28,"\d4t_tex\oh58\marg1.paa"] and _oh58 vehiclechat "Cockpit systems have been hit." and _oh58 animate ["jammer",0.5] and _oh58 vehicleradio "fzoh58_bt_rdrjam_fail" and goto "quit"
+?(_num < 2) : _oh58 setobjecttexture [29,"\d4t_tex\oh58\marg1.paa"] and _oh58 vehiclechat "Engine has been damaged." and _oh58 vehicleRadio "fzah64_le_dam" and _oh58 animate ["trans_temp",0.8] and [_oh58] exec "\acgim_scripts\Vehicles\OH58\emarg.sqs" and goto "quit"
+?(_num < 3) : _oh58 setobjecttexture [30,"\d4t_tex\oh58\marg1.paa"] and _oh58 vehiclechat "Rotor has been damaged." and _oh58 vehicleRadio "fzah64_rotordamage" and [_oh58] exec "\acgim_scripts\Vehicles\OH58\rtrmarg.sqs" and goto "quit"
+?(_num < 4) : _oh58 setobjecttexture [31,"\d4t_tex\oh58\marg1.paa"] and _oh58 vehiclechat "Tail rotor has been damaged." and _oh58 vehicleRadio "fzah64_taildamage" and [_oh58] exec "\acgim_scripts\Vehicles\OH58\trmarg.sqs" and goto "quit"
+?(_num < 5) : _oh58 setobjecttexture [32,"\d4t_tex\oh58\marg1.paa"] and _oh58 vehiclechat "Left weapons pylon has been hit." and goto "quit"
+?(_num < 6) : _oh58 setobjecttexture [33,"\d4t_tex\oh58\marg1.paa"] and _oh58 vehiclechat "Right weapons pylon has been hit." and goto "quit"
+?(_num < 7) : _oh58 setobjecttexture [34,"\d4t_tex\oh58\marg1.paa"] and _oh58 vehiclechat "Oil pressure high." and _oh58 animate ["eng_temp",0.8] and _oh58 animate ["oil_psi",0.8] and _oh58 animate ["oil_temp",0.7] and goto "randFIRE"
+?(_num < 8) : _oh58 setobjecttexture [35,"\d4t_tex\oh58\marg1.paa"] and _oh58 vehiclechat "Hydraulic pressure high." and _oh58 animate ["hyd_psi",0.8] and _oh58 animate ["hyd_temp",0.7] and [_oh58] exec "\acgim_scripts\Vehicles\OH58\hydmarg.sqs" and goto "quit"
+
+goto "quit"
+
+#randomFAIL
+_num = random 8
+?(_num < 1) : _oh58 setobjecttexture [28,"\d4t_tex\oh58\fail1.paa"] and _oh58 vehiclechat "Cockpit systems have failed." and _oh58 animate ["p_mfd", 0.75] and _oh58 animate ["jammer",0.5] and _oh58 vehicleradio "fzoh58_bt_rdrjam_fail" and goto "quit"
+?(_num < 2) : _oh58 setobjecttexture [29,"\d4t_tex\oh58\fail1.paa"] and _oh58 vehiclechat "Engine has failed." and _oh58 vehicleRadio "fzah64_leak" and [_oh58] exec "\acgim_scripts\Vehicles\OH58\efail.sqs" and goto "quit"
+?(_num < 3) : _oh58 setobjecttexture [30,"\d4t_tex\oh58\fail1.paa"] and _oh58 vehiclechat "Rotor has failed." and _oh58 vehicleRadio "fzoh58_bt_rtrtrans_fail" and _oh58 animate ["trans_temp",1] and _oh58 setfuel 0 and goto "quit"
+?(_num < 4) : _oh58 setobjecttexture [31,"\d4t_tex\oh58\fail1.paa"] and _oh58 vehiclechat "Tail rotor has failed" and _oh58 vehicleRadio "fzoh58_bt_trtrans_fail" and [_oh58] exec "\acgim_scripts\Vehicles\OH58\trfail.sqs" and goto "quit"
+?(_num < 5) : _oh58 setobjecttexture [32,"\d4t_tex\oh58\fail1.paa"] and [_oh58] exec "\acgim_scripts\Vehicles\OH58\hpdmg.sqs" and goto "quit"
+?(_num < 6) : _oh58 setobjecttexture [33,"\d4t_tex\oh58\fail1.paa"] and [_oh58] exec "\acgim_scripts\Vehicles\OH58\hpdmg.sqs" and goto "quit"
+?(_num < 7) : _oh58 setobjecttexture [34,"\d4t_tex\oh58\fail1.paa"] and _oh58 vehiclechat "Oil pressure high." and _oh58 animate ["eng_temp",1] and _oh58 animate ["oil_psi",1] and _oh58 animate ["oil_temp",1] and goto "randFIRE"
+?(_num < 8) : _oh58 setobjecttexture [35,"\d4t_tex\oh58\fail1.paa"] and _oh58 vehiclechat "Hydraulic pressure high." and _oh58 animate ["hyd_psi",1] and _oh58 animate ["hyd_temp",1] and [_oh58] exec "\acgim_scripts\Vehicles\OH58\hydfail.sqs" and goto "quit"
+
+goto "quit"
+
+#randomFIRE
+_num = random 9
+?(_num < 1) : _oh58 setobjecttexture [28,"\d4t_tex\oh58\fail1.paa"] and _oh58 vehiclechat "Cockpit systems have failed." and _oh58 animate ["p_mfd", 0.75] and _oh58 animate ["jammer",0.5] and _oh58 vehicleradio "fzoh58_bt_rdrjam_fail" and goto "quit"
+?(_num < 2) : _oh58 setobjecttexture [29,"\d4t_tex\oh58\fail1.paa"] and _oh58 vehiclechat "Engine has failed." and [_oh58] exec "\acgim_scripts\Vehicles\OH58\efail.sqs" and goto "quit"
+?(_num < 3) : _oh58 setobjecttexture [30,"\d4t_tex\oh58\fail1.paa"] and _oh58 vehiclechat "Rotor has failed." and _oh58 vehicleRadio "fzoh58_bt_rtrtrans_fail" and _oh58 animate ["trans_temp",1] and _oh58 setfuel 0 and goto "quit"
+?(_num < 4) : _oh58 setobjecttexture [31,"\d4t_tex\oh58\fail1.paa"] and _oh58 vehiclechat "Tail rotor has failed" and _oh58 vehicleRadio "fzoh58_bt_trtrans_fail" and [_oh58] exec "\acgim_scripts\Vehicles\OH58\trfail.sqs" and goto "quit"
+?(_num < 5) : _oh58 setobjecttexture [32,"\d4t_tex\oh58\fail1.paa"] and [_oh58] exec "\acgim_scripts\Vehicles\OH58\hpdmg.sqs" and goto "quit"
+?(_num < 6) : _oh58 setobjecttexture [33,"\d4t_tex\oh58\fail1.paa"] and [_oh58] exec "\acgim_scripts\Vehicles\OH58\hpdmg.sqs" and goto "quit"
+?(_num < 7) : _oh58 setobjecttexture [34,"\d4t_tex\oh58\fail1.paa"] and _oh58 vehicleRadio "fzah64_bt_oil_psi_low" and _oh58 vehiclechat "Oil pressure low." and _oh58 animate ["eng_temp",0.2] and _oh58 animate ["oil_psi",0.1] and _oh58 animate ["oil_temp",0.1] and goto "randFIRE"
+?(_num < 8) : _oh58 setobjecttexture [35,"\d4t_tex\oh58\fail1.paa"] and _oh58 vehicleRadio "fzah64_bt_hyd_psi_low" and _oh58 vehiclechat "Hydraulic pressure low." and _oh58 animate ["hyd_psi",0.1] and _oh58 animate ["hyd_temp",0.1] and [_oh58] exec "\acgim_scripts\Vehicles\OH58\hydfail.sqs" and goto "quit"
+?(_num < 9) : [_oh58] exec "\acgim_scripts\Vehicles\OH58\efire.sqs" and goto "quit"
+goto "quit"
+
+#randFIRE
+_num = random 2
+?(_num < 1) : [_oh58] exec "\acgim_scripts\Vehicles\OH58\efire.sqs"
+exit
+
+#quit
+exit

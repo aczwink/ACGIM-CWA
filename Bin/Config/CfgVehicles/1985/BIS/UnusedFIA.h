@@ -29,11 +29,6 @@ class SoldierG:SoldierGG
 	scope=1;
 };
 
-class OfficerGNight:SoldierGB
-{
-	scope=1;
-};
-
 class SoldierGFakeE:SoldierEB
 {
 	scope=1;
@@ -42,27 +37,6 @@ class SoldierGFakeE:SoldierEB
 class OfficerGHG:OfficerG
 {
 	scope=1;
-};
-
-class SoldierGPilot : SoldierGB
-{
-	scope=1;
-};
-
-//Armored
-class BMPRes : FIA_BMP1
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class T72Res : FIA_T72A
-{
-	scope = SCOPE_HIDDEN;
-};
-
-class T80Res : FIA_T80B
-{
-	scope = SCOPE_HIDDEN;
 };
 
 //Cars
@@ -74,9 +48,4 @@ class SGUAZG : FIA_UAZ469Ambulance
 class GJeep : Car
 {
 	scope = 1;
-};
-
-class TruckV3SGReammo : FIA_ZIL130Reammo
-{
-	scope = SCOPE_HIDDEN;
 };

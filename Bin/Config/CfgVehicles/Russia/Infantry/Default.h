@@ -84,8 +84,8 @@ class Russia_ATSoldier : Russia_LightATSoldier
 	cost = COST_HATSOLDIER;
 	displayName = "AT Specialist";
 	hiddenSelections[] = {"medic","svetlo","_AKmags1","_Armpatch_right","_Backpack","_Beret","_Cap","_Gpouch","_HelmF","_Holster","_PKpouch1","_PKpouch2","_Radiogear","_SVDmags","_Rpgpack","_Tuch","_Mapcase","_Lamp","_Shovel"};
-	weapons[] = {"AK74", "RPG7V", "Throw", "Put"};
-	magazines[] = {"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "RPG7V", "RPG7V"};
+	weapons[] = {"AK74", WEAPON_REFERENCE(RPG7V), "Throw", "Put"};
+	magazines[] = {"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", WEAPON_REFERENCE(RPG7V), WEAPON_REFERENCE(RPG7V)};
 	threat[] = {THREAT_HATSOLDIER};
 };
 
@@ -95,8 +95,8 @@ class Russia_AASoldier : Russia_LightATSoldier
 	cost = COST_AASOLDIER;
 	displayName = "AA Soldier";
 	hiddenSelections[] = {"medic","svetlo","_AKmags1","_Armpatch_right","_Backpack","_Beret","_Cap","_Gpouch","_HelmF","_Holster","_PKpouch1","_PKpouch2","_Radiogear","_SVDmags","_Rpgpack","_Tuch","_Mapcase","_Lamp","_Shovel"};
-	weapons[] = {"AK74", "9K32", "Throw", "Put"};
-	magazines[] = {"AK74", "AK74", "AK74", "AK74", "9K32"};
+	weapons[] = {"AK74", "9K32Launcher", "Throw", "Put"};
+	magazines[] = {"AK74", "AK74", "AK74", "AK74", "9K32Launcher"};
 	threat[] = {THREAT_AASOLDIER};
 };
 

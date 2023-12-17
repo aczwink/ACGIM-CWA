@@ -1,0 +1,23 @@
+_heli   = _this select 0
+
+_enginePos = [0, -6, 0]
+
+#loop
+drop ["cl_basic", "", "Billboard", 0.5, 0.5, _enginePos, [0,0,0], 0, 0.5, 0.5, 0.001, [1,2], [[0,0,0,0],[0,0,0,0.4],[0,0,0,0]], [0], 0.1, 0.2, "", "", _heli]
+~0.01
+_rand = random 200
+?(_rand > 199): [_heli] exec "\acgim_scripts\Vehicles\OH58\tr_flay.sqs"
+?(getdammage _heli < 0.05): goto "quit"
+?!alive _heli: goto "quit"
+?!(isengineon _heli): goto "standby"
+goto "loop"
+
+#standby
+~0.0001
+?(isengineon _heli): goto "loop"
+?(getdammage _heli < 0.05): goto "quit"
+?!alive _heli: goto "quit"
+goto "standby"
+
+#quit
+exit

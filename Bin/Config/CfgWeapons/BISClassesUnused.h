@@ -1,9 +1,6 @@
 //Primary
 class M16S : M16{};
 
-//Secondary
-class 9K32Launcher : 9K32{};
-
 //Items
 class SmokeShell : ANM8{};
 class SmokeShellRed : SmokeShell

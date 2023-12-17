@@ -1,0 +1,28 @@
+_heli = _this select 0
+
+#loop
+~0.001
+_ticker = 200
+_rand = random 300
+?(_rand > 299): goto "hydflay"
+?!(isengineon _heli): goto "standby"
+?(getdammage _heli < 0.05): goto "quit"
+?!alive _heli: goto "quit"
+goto "loop"
+
+#hydflay
+~0.01
+_velocity = velocity _heli
+_heli setvelocity [(_velocity select 0) / 1.1,(_velocity select 1) / 1.1,(_velocity select 2)]
+_ticker = _ticker - 1
+?(_ticker <= 0): goto "loop"
+goto "hydflay"
+
+#standby
+~0.0001
+?(isengineon _heli): goto "loop"
+?(getdammage _heli < 0.05): goto "quit"
+goto "standby"
+
+#quit
+exit

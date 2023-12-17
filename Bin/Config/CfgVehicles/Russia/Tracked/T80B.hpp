@@ -5,6 +5,7 @@ Sources:
 */
 class Russia_T80B : RussianTank
 {
+	nameSound = "t80";
 	scope = SCOPE_PUBLIC;
 	side = SIDE_EAST;
 	displayName="T-80B";

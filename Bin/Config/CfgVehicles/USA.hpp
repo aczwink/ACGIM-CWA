@@ -7,3 +7,4 @@
 #include "Config\CfgVehicles\USA\Static.hpp"
 #include "Config\CfgVehicles\USA\Ammocrates.hpp"
 #include "Config\CfgVehicles\USA\BISLinks.hpp"
+#include "Config\CfgVehicles\USA\Unused.hpp"

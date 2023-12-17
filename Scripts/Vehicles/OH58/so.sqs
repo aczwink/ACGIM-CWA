@@ -1,0 +1,86 @@
+_oh58 = _this select 0
+
+_num = random 10
+?(_num >= 0 and _num < 2): _oh58 setobjecttexture [58,"\d4t_tex\oh58\srl_num0.paa"]
+?(_num >= 2 and _num < 3): _oh58 setobjecttexture [58,"\d4t_tex\oh58\srl_num1.paa"]
+?(_num >= 3 and _num < 4): _oh58 setobjecttexture [58,"\d4t_tex\oh58\srl_num2.paa"]
+?(_num >= 4 and _num < 5): _oh58 setobjecttexture [58,"\d4t_tex\oh58\srl_num3.paa"]
+?(_num >= 5 and _num < 6): _oh58 setobjecttexture [58,"\d4t_tex\oh58\srl_num4.paa"]
+?(_num >= 6 and _num < 7): _oh58 setobjecttexture [58,"\d4t_tex\oh58\srl_num5.paa"]
+?(_num >= 7 and _num < 8): _oh58 setobjecttexture [58,"\d4t_tex\oh58\srl_num6.paa"]
+?(_num >= 8 and _num < 9): _oh58 setobjecttexture [58,"\d4t_tex\oh58\srl_num7.paa"]
+?(_num >= 9 and _num < 10): _oh58 setobjecttexture [58,"\d4t_tex\oh58\srl_num8.paa"]
+?(_num >= 10): _oh58 setobjecttexture [58,"\d4t_tex\oh58\srl_num9.paa"]
+
+#numtwo
+_num = random 10
+?(_num >= 0 and _num < 2): _oh58 setobjecttexture [59,"\d4t_tex\oh58\srl_num0.paa"]
+?(_num >= 2 and _num < 3): _oh58 setobjecttexture [59,"\d4t_tex\oh58\srl_num1.paa"]
+?(_num >= 3 and _num < 4): _oh58 setobjecttexture [59,"\d4t_tex\oh58\srl_num2.paa"]
+?(_num >= 4 and _num < 5): _oh58 setobjecttexture [59,"\d4t_tex\oh58\srl_num3.paa"]
+?(_num >= 5 and _num < 6): _oh58 setobjecttexture [59,"\d4t_tex\oh58\srl_num4.paa"]
+?(_num >= 6 and _num < 7): _oh58 setobjecttexture [59,"\d4t_tex\oh58\srl_num5.paa"]
+?(_num >= 7 and _num < 8): _oh58 setobjecttexture [59,"\d4t_tex\oh58\srl_num6.paa"]
+?(_num >= 8 and _num < 9): _oh58 setobjecttexture [59,"\d4t_tex\oh58\srl_num7.paa"]
+?(_num >= 9 and _num < 10): _oh58 setobjecttexture [59,"\d4t_tex\oh58\srl_num8.paa"]
+?(_num >= 10): _oh58 setobjecttexture [59,"\d4t_tex\oh58\srl_num9.paa"]
+
+#numthree
+_num = random 10
+?(_num >= 0 and _num < 2): _oh58 setobjecttexture [60,"\d4t_tex\oh58\srl_num0.paa"]
+?(_num >= 2 and _num < 3): _oh58 setobjecttexture [60,"\d4t_tex\oh58\srl_num1.paa"]
+?(_num >= 3 and _num < 4): _oh58 setobjecttexture [60,"\d4t_tex\oh58\srl_num2.paa"]
+?(_num >= 4 and _num < 5): _oh58 setobjecttexture [60,"\d4t_tex\oh58\srl_num3.paa"]
+?(_num >= 5 and _num < 6): _oh58 setobjecttexture [60,"\d4t_tex\oh58\srl_num4.paa"]
+?(_num >= 6 and _num < 7): _oh58 setobjecttexture [60,"\d4t_tex\oh58\srl_num5.paa"]
+?(_num >= 7 and _num < 8): _oh58 setobjecttexture [60,"\d4t_tex\oh58\srl_num6.paa"]
+?(_num >= 8 and _num < 9): _oh58 setobjecttexture [60,"\d4t_tex\oh58\srl_num7.paa"]
+?(_num >= 9 and _num < 10): _oh58 setobjecttexture [60,"\d4t_tex\oh58\srl_num8.paa"]
+?(_num >= 10): _oh58 setobjecttexture [60,"\d4t_tex\oh58\srl_num9.paa"]
+
+#numfour
+_num = random 10
+?(_num >= 0 and _num < 2): _oh58 setobjecttexture [61,"\d4t_tex\oh58\srl_num0.paa"]
+?(_num >= 2 and _num < 3): _oh58 setobjecttexture [61,"\d4t_tex\oh58\srl_num1.paa"]
+?(_num >= 3 and _num < 4): _oh58 setobjecttexture [61,"\d4t_tex\oh58\srl_num2.paa"]
+?(_num >= 4 and _num < 5): _oh58 setobjecttexture [61,"\d4t_tex\oh58\srl_num3.paa"]
+?(_num >= 5 and _num < 6): _oh58 setobjecttexture [61,"\d4t_tex\oh58\srl_num4.paa"]
+?(_num >= 6 and _num < 7): _oh58 setobjecttexture [61,"\d4t_tex\oh58\srl_num5.paa"]
+?(_num >= 7 and _num < 8): _oh58 setobjecttexture [61,"\d4t_tex\oh58\srl_num6.paa"]
+?(_num >= 8 and _num < 9): _oh58 setobjecttexture [61,"\d4t_tex\oh58\srl_num7.paa"]
+?(_num >= 9 and _num < 10): _oh58 setobjecttexture [61,"\d4t_tex\oh58\srl_num8.paa"]
+?(_num >= 10): _oh58 setobjecttexture [61,"\d4t_tex\oh58\srl_num9.paa"]
+
+#numfive
+_num = random 10
+?(_num >= 0 and _num < 2): _oh58 setobjecttexture [62,"\d4t_tex\oh58\srl_num0.paa"]
+?(_num >= 2 and _num < 3): _oh58 setobjecttexture [62,"\d4t_tex\oh58\srl_num1.paa"]
+?(_num >= 3 and _num < 4): _oh58 setobjecttexture [62,"\d4t_tex\oh58\srl_num2.paa"]
+?(_num >= 4 and _num < 5): _oh58 setobjecttexture [62,"\d4t_tex\oh58\srl_num3.paa"]
+?(_num >= 5 and _num < 6): _oh58 setobjecttexture [62,"\d4t_tex\oh58\srl_num4.paa"]
+?(_num >= 6 and _num < 7): _oh58 setobjecttexture [62,"\d4t_tex\oh58\srl_num5.paa"]
+?(_num >= 7 and _num < 8): _oh58 setobjecttexture [62,"\d4t_tex\oh58\srl_num6.paa"]
+?(_num >= 8 and _num < 9): _oh58 setobjecttexture [62,"\d4t_tex\oh58\srl_num7.paa"]
+?(_num >= 9 and _num < 10): _oh58 setobjecttexture [62,"\d4t_tex\oh58\srl_num8.paa"]
+?(_num >= 10): _oh58 setobjecttexture [62,"\d4t_tex\oh58\srl_num9.paa"]
+
+?(fz_randunit == 1): goto "randomunit"
+
+exit
+
+#randomunit
+_num = random 6
+?(_num >= 0 and _num < 2): _oh58 setobjecttexture [63,"\d4t_tex\oh58\i\1stcav.paa"]
+?(_num >= 2 and _num < 3): _oh58 setobjecttexture [63,"\d4t_tex\oh58\i\cavsabers.paa"]
+?(_num >= 3 and _num < 4): _oh58 setobjecttexture [63,"\d4t_tex\oh58\i\2ndarmor.paa"]
+?(_num >= 4 and _num < 5): _oh58 setobjecttexture [63,"\d4t_tex\oh58\i\82ndair.paa"]
+?(_num >= 5 and _num <= 6): _oh58 setobjecttexture [63,"\d4t_tex\oh58\i\4tharmor.paa"]
+
+_num = random 6
+?(_num >= 0 and _num < 2): _oh58 setobjecttexture [64,"\d4t_tex\oh58\i\allbase.paa"]
+?(_num >= 2 and _num < 3): _oh58 setobjecttexture [64,"\d4t_tex\oh58\i\enemy.paa"]
+?(_num >= 3 and _num < 4): _oh58 setobjecttexture [64,"\d4t_tex\oh58\i\gityou.paa"]
+?(_num >= 4 and _num < 5): _oh58 setobjecttexture [64,"\d4t_tex\oh58\i\hurtya.paa"]
+?(_num >= 5 and _num <= 6): _oh58 setobjecttexture [64,"\d4t_tex\oh58\i\pest.paa"]
+
+exit

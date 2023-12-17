@@ -1,0 +1,111 @@
+;Missile spoof script by Franze
+;Uses elements from BAS's spoof missile script
+;and from Moph's range bearing and altitude script
+_helo = _this select 0
+_enemy = _helo select 2
+_count = 0
+
+?(not alive (_helo select 0) ): exit
+
+?(isengineon (_helo select 0)): goto "next"
+exit
+#next
+
+_weaponname = _helo select 1
+
+_missile = nearestobject [_enemy,_weaponname]
+
+_text = format["%1", _missile]
+;hint format ["Heres the Text: %1",_text]
+?(_text == "NOID jam_rpg7rocketf"): goto "rpg"
+?(_text == "NOID icprpg7rocketf"): goto "rpg"
+?(_text == "NOID dkmm_mi28_23mmtr"): exit
+?(_text == "NOID fz_50cal"): exit
+
+goto "misdir1"
+
+#rpg
+
+(_helo select 0) vehiclechat "R P G!"
+
+exit
+
+#misdir1
+_poshelo = getpos (_helo select 0)
+_posenemy = getpos _missile
+
+#start
+_x1 = _poshelo select 0
+_y1 = _poshelo select 1
+_z1 = _poshelo select 2
+_x2 = _posenemy select 0
+_y2 = _posenemy select 1
+_z2 = _posenemy select 2
+
+_x = (_x1 - _x2)
+_y = (_y1 - _y2)
+;;_range = ((_x^2)+(_y^2))^0.5
+_range = _missile distance (_helo select 0)
+
+? (_x>0) and (_y>0): _theta = atan (abs _x/ abs _y) +180
+? (_x>0) and (_y<0): _theta = atan (abs _y/ abs _x) +270
+? (_x<0) and (_y<0): _theta = atan (abs _x/ abs _y)
+? (_x<0) and (_y>0): _theta = atan (abs _y/ abs _x) +90
+
+;;goto "highlowchk"
+
+_dirhelo1 = direction (_helo select 0)
+
+_theta = (360 + (_dirhelo1 - _theta))Mod 360
+
+?(_theta > 15 and _theta < 45): _oclock = 11; (_helo select 0) setobjecttexture [54,"\d4t_tex\ah64\rwr2a.paa"]
+?(_theta > 45 and _theta < 75): _oclock = 10; (_helo select 0) setobjecttexture [53,"\d4t_tex\ah64\rwr2a.paa"]
+?(_theta > 75 and _theta < 105): _oclock = 9; (_helo select 0) setobjecttexture [52,"\d4t_tex\ah64\rwr2a.paa"]
+?(_theta > 105 and _theta < 135): _oclock = 8; (_helo select 0) setobjecttexture [51,"\d4t_tex\ah64\rwr2a.paa"]
+?(_theta > 135 and _theta < 165): _oclock = 7; (_helo select 0) setobjecttexture [50,"\d4t_tex\ah64\rwr2a.paa"]
+?(_theta > 165 and _theta < 195): _oclock = 6; (_helo select 0) setobjecttexture [49,"\d4t_tex\ah64\rwr2a.paa"]
+?(_theta > 195 and _theta < 225): _oclock = 5; (_helo select 0) setobjecttexture [48,"\d4t_tex\ah64\rwr2a.paa"]
+?(_theta > 225 and _theta < 255): _oclock = 4; (_helo select 0) setobjecttexture [47,"\d4t_tex\ah64\rwr2a.paa"]
+?(_theta > 255 and _theta < 285): _oclock = 3; (_helo select 0) setobjecttexture [46,"\d4t_tex\ah64\rwr2a.paa"]
+?(_theta > 285 and _theta < 315): _oclock = 2; (_helo select 0) setobjecttexture [45,"\d4t_tex\ah64\rwr2a.paa"]
+?(_theta > 315 and _theta < 345): _oclock = 1; (_helo select 0) setobjecttexture [44,"\d4t_tex\ah64\rwr2a.paa"]
+?(_theta > 345 and _theta < 360): _oclock = 12; (_helo select 0) setobjecttexture [43,"\d4t_tex\ah64\rwr2a.paa"]
+?(_theta > 0 and _theta < 15): _oclock = 12; (_helo select 0) setobjecttexture [43,"\d4t_tex\ah64\rwr2a.paa"]
+#highlowchk
+?(_z2 > _z1): goto "high"
+?(_z2 < _z1): goto "low"
+
+#high
+(_helo select 0) vehiclechat format ["%1 Missile %2 OClock High %3 Meters",_weaponname,_oclock,_range]
+
+goto "rndm"
+
+#low
+(_helo select 0) vehiclechat format ["%1 Missile %2 OClock Low %3 Meters",_weaponname,_oclock,_range]
+
+#rndm
+[(_helo select 0)] exec "\d4t_files\FX\scripts\vehicles\ah64\incmissile.sqs"
+?(random 100 < 10): goto "quit"
+
+@ (_missile distance (_helo select 0)) <40
+
+#loop
+_missile setdir (direction _missile - 5 - random 3)
+_count =_count +1
+
+? _count <7:goto "loop"
+
+#quit
+(_helo select 0) setobjecttexture [54,""]
+(_helo select 0) setobjecttexture [53,""]
+(_helo select 0) setobjecttexture [52,""]
+(_helo select 0) setobjecttexture [51,""]
+(_helo select 0) setobjecttexture [50,""]
+(_helo select 0) setobjecttexture [49,""]
+(_helo select 0) setobjecttexture [48,""]
+(_helo select 0) setobjecttexture [47,""]
+(_helo select 0) setobjecttexture [46,""]
+(_helo select 0) setobjecttexture [45,""]
+(_helo select 0) setobjecttexture [44,""]
+(_helo select 0) setobjecttexture [43,""]
+exit

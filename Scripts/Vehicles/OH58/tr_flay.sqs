@@ -1,0 +1,24 @@
+_heli = _this select 0
+
+_rand = random 2
+_timer = 100
+
+?(_rand < 1): goto "loop2"
+
+#loop1
+~0.01
+_dir = direction _heli
+_heli setdir (_dir +0.5)
+_timer = _timer - 1
+?(_timer > 0): goto "loop1"
+
+exit
+
+#loop2
+~0.01
+_dir = direction _heli
+_heli setdir (_dir -0.5)
+_timer = _timer - 1
+?(_timer > 0): goto "loop2"
+
+exit

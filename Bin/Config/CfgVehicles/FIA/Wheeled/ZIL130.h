@@ -72,7 +72,7 @@ class TruckV3SGRepair : TruckV3SG
 	class TransportMagazines {};
 };
 
-class FIA_ZIL130Reammo : TruckV3SGRepair
+class TruckV3SGReammo : TruckV3SGRepair
 {
 	displayName = "ZIL-130 Reammo";
 	transportAmmo = 300000;
