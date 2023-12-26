@@ -15,3 +15,11 @@ class AGM114A : AT3Launcher
 	aiRateOfFire=13.0;
 	aiRateOfFireDistance=2500;
 };
+
+class AGM114L_8 : AGM114A
+{
+	ammo = d4t_agm114l_hellfire;
+	displayName="AGM-114L Hellfire";
+	displayNameMagazine="AGM-114L";
+	shortNameMagazine="AGM-114L";
+};

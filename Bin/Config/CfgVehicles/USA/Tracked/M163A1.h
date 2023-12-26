@@ -3,7 +3,7 @@ Sources:
 	http://en.wikipedia.org/wiki/M163
 In service:1968-unknown but not anymore
 */
-class Vulcan : USA_M113
+class Vulcan : M113
 {
 	displayName="M163A1 VADS";
 	picture="\vulcan\ivulcan.paa";

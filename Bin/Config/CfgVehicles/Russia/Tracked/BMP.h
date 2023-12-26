@@ -2,10 +2,10 @@
 Sources:
 	http://en.wikipedia.org/wiki/BMP-1
 */
-class Russia_BMP1 : APC
+class BMP : APC
 {
 	displayName = "BMP-1";
-	crew = "Russia_Crew";
+	crew = "SoldierECrew";
 	scope=2;
 	side=0;
 	nameSound="BMP";
@@ -103,7 +103,7 @@ class Russia_BMP1 : APC
 	};
 };
 
-class Russia_BMP2 : Russia_BMP1
+class BMP2 : BMP
 {
 	access=2;
 	displayName = "BMP-2";

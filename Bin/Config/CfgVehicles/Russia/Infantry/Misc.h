@@ -1,4 +1,4 @@
-class Russia_Crew : Russia_Soldier
+class SoldierECrew : SoldierEB
 {
 	model="\d4t_files\models\russia\infantry\1985\ussr_crew85.p3d";
 	hiddenSelections[]={};
@@ -19,7 +19,7 @@ class Russia_Crew : Russia_Soldier
 	};
 };
 
-class Russia_HelicopterPilot : Russia_Soldier
+class Russia_HelicopterPilot : SoldierEB
 {
 	model="\d4t_files\models\russia\infantry\1985\ussr_helipilot85.p3d";
 	hiddenSelections[]={"headgear","shlem2"};
@@ -40,7 +40,7 @@ class Russia_HelicopterPilot : Russia_Soldier
 	};
 };
 
-class Russia_AircraftPilot : Russia_HelicopterPilot
+class SoldierEPilot : Russia_HelicopterPilot
 {
 	displayName="Aircraft Pilot";
 	model="\d4t_files\models\russia\infantry\1985\ussr_aircraftpilot85.p3d";
@@ -87,7 +87,7 @@ class Russia_AircraftPilot : Russia_HelicopterPilot
 	};
 };
 
-class Russia_Officer : Russia_Soldier
+class OfficerEHG : SoldierEB
 {
 	nameSound="officer";
 	displayName="Officer";
@@ -99,7 +99,7 @@ class Russia_Officer : Russia_Soldier
 	magazines[] = {"TokarevMag", "TokarevMag", "TokarevMag", "TokarevMag"};
 };
 
-class Russia_General : Russia_Officer
+class GeneralE : OfficerEHG
 {
 	displayName = "General";
 	model = "mc vojake2_guba";
@@ -107,7 +107,7 @@ class Russia_General : Russia_Officer
 	magazines[] = {};
 };
 
-class Russia_Angelina : Russia_Soldier
+class Angelina : SoldierEB
 {
 	displayName="$STR_DN_ANGELINA";
 	vehicleClass="Infantry (Misc)";
@@ -119,11 +119,11 @@ class Russia_Angelina : Russia_Soldier
 };
 
 //Parachute
-class Russia_Parachute : ParachuteBase
+class ParachuteEast : ParachuteBase
 {
 	scope = SCOPE_PUBLIC;
 	side = SIDE_EAST;
-	crew = "Russia_Soldier";
+	crew = "SoldierEB";
 	displayName = "Paratrooper";
 	vehicleClass = "Infantry";
 };

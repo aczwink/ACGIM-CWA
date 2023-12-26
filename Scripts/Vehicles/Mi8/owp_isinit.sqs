@@ -3,7 +3,7 @@ _me = _this select 0
 _arraytypeG = ["OWP_Mi8MT_g","OWP_Mi8TV_g","OWP_Mi8MTV_g"]
 _arraytypeUN = ["OWP_Mi8T_un"]
 _arraytypeD = ["OWP_Mi8T_d","OWP_Mi8TV_d","OWP_Mi8MTV_d"]
-_arraytypeM = ["OWP_Mi8MT_m","OWP_Mi8TV_m","Mi8MTV"]
+_arraytypeM = ["OWP_Mi8MT_m","OWP_Mi8TV_m","Mi17"]
 _arraytypeW = ["OWP_Mi8T_w","OWP_Mi8TV_w","OWP_Mi8MTV_w"]
 
 if (typeof _me in _arraytypeG) then {_me SetObjectTexture [0,"\sjc_files\textures\Mi-8MTV\dop1.pac"];_me SetObjectTexture [1,"\sjc_files\textures\Mi-8MTV\dop1.pac"];exit}

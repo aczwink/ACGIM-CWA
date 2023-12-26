@@ -1,15 +1,13 @@
-//TOOD: desert versions
-
 /*
 Sources:
 	https://en.wikipedia.org/wiki/M939_Truck
 In service: 1982-present
 */
 
-class USA_Truck5t : Truck
+class Truck5t : Truck
 {
 	scope=2;
-	crew = "USA_Soldier";
+	crew = "SoldierWB";
 	picture="itruck5t";
 	icon="truck";
 	model="\d4t_files\models\us\vehicles\5t_woodland.p3d";
@@ -52,9 +50,9 @@ class USA_Truck5t : Truck
 			count=20;
 		};
 
-		class m_M60
+		class m_MG
 		{
-			magazine = "M60";
+			magazine = WEAPON_REFERENCE(M60);
 			count=6;
 		};
 
@@ -101,7 +99,7 @@ class USA_Truck5t : Truck
 	};
 };
 
-class USA_Truck5tOpen : USA_Truck5t
+class Truck5tOpen : Truck5t
 {
 	model="\d4t_files\models\us\vehicles\5t_open_woodland.p3d";
 	hiddenSelections[]={};
@@ -109,7 +107,7 @@ class USA_Truck5tOpen : USA_Truck5t
 	displayName="5t Truck open";
 };
 
-class USA_Truck5tRepair : USA_Truck5t
+class Truck5tRepair : Truck5t
 {
 	picture="itruck5trepair";
 	icon="Repair_move";
@@ -129,7 +127,7 @@ class USA_Truck5tRepair : USA_Truck5t
 	class TransportMagazines{};
 };
 
-class USA_Truck5tReammo : USA_Truck5t
+class Truck5tReammo : Truck5t
 {
 	icon="Ammo_move";
 	displayName="5t Truck Ammo";
@@ -151,9 +149,9 @@ class USA_Truck5tReammo : USA_Truck5t
 			count=40;
 		};
 
-		class m_M60
+		class m_MG
 		{
-			magazine = "M60";
+			magazine = WEAPON_REFERENCE(M60);
 			count = 25;
 		};
 
@@ -182,7 +180,7 @@ class USA_Truck5tReammo : USA_Truck5t
 	};
 };
 
-class Truck5tRefuel : USA_Truck5t
+class Truck5tRefuel : Truck5t
 {
 	picture="iTruck5tfuel";
 	icon="Fuel_move";

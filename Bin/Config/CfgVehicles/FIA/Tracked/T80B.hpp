@@ -1,4 +1,4 @@
-class T80Res : Russia_T80B
+class T80Res : T80
 {
 	access=2;
 	displayName = "T-80B (Stolen)";

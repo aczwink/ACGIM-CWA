@@ -3,11 +3,11 @@ Sources:
 	http://en.wikipedia.org/wiki/Uh60
 In service: 1979-present
 */
-class USA_UH60 : Helicopter
+class UH60 : Helicopter
 {
 	scope=2;
 	enableSweep=0;
-	crew = "USA_HelicopterPilot";
+	crew = "SoldierWPilotHG";
 	picture="iuh60";
 	maxSpeed = 295;
 	side=1;
@@ -226,7 +226,7 @@ class USA_UH60 : Helicopter
 	};
 };
 
-class USA_UH60MG : USA_UH60
+class UH60MG : UH60
 {
 	displayName="UH-60A-MG Black Hawk";
 	model = "\models\CSLA2_UH60A_M2";

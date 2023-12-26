@@ -9,6 +9,12 @@ class car15 : Weapon{};
 class car15_sd : Weapon{};
 class car15acog_sd : Weapon{};
 
+class m4_aimpoint : Weapon{};
+class m4_m203_aimpoint : Weapon{};
+class m82a1 : Weapon{};
+class m240b : Weapon{};
+class m249 : Weapon{};
+
 //Secondary
 class m72law : Weapon{};
 class m72law_e : Weapon{};
@@ -29,6 +35,9 @@ class colt_m1911 : Weapon {};
 class colt_m1911_empty : Weapon {};
 class m1911_sd : Weapon{};
 class m1911_sd_empty : Weapon{};
+
+class m9 : Weapon{};
+class m9_empty : Weapon{};
 
 //Russia
 //Primary

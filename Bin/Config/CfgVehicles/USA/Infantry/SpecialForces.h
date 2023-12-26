@@ -1,9 +1,10 @@
-class USA_Sniper : USA_Soldier
+class SoldierWSniper : SoldierWB
 {
 	accuracy = ACCURACY_SNIPER;
 	camouflage = CAMOUFLAGE_SNIPER;
 	canDeactivateMines=1;
 	canHideBodies=1;
+	nightVision=1;
 	cost = COST_SNIPER;
 	displayName="Sniper";
 	hiddenSelections[]={"medic"};
@@ -13,16 +14,23 @@ class USA_Sniper : USA_Soldier
 	sensitivity = 2;
 	threat[]={THREAT_SNIPER};
 	vehicleClass="Infantry (Special Forces)";
-	weapons[]={"M21_JungleCamo", "M1911_SD", "NVGoggles", "Throw", "Put"};
-	magazines[]={"M21", "M21", "M21", "M21", "M21", "M21", "ANM8", "ANM8", "M18Red", "M18Green", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};
 	wounds[]= //No face is visible, no facial wounds
 	{
 		"\d4t_tex\snip\back.paa", "\d4t_tex\snip\back_d.paa",
 		"\d4t_tex\snip\chest.paa", "\d4t_tex\snip\chest_d.paa"
 	};
+
+#ifdef ACGIM_SCENARIO_1985
+	weapons[]={"M21_JungleCamo", "M1911_SD", "NVGoggles", "Throw", "Put"};
+	magazines[]={"M21", "M21", "M21", "M21", "M21", "M21", "M21", "ANM8", "M18Red", "M18Green", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	weapons[]={"M82A1","MK23SD","NVGoggles","Throw","Put"};
+	magazines[]={"M82A1","M82A1","M82A1","M82A1","M82A1","M82A1","M82A1","ANM8","M18Red","M18Green","MK23SD","MK23SD","MK23SD","MK23SD"};
+#endif
 };
 
-class USA_SF_Operator : USA_Soldier
+class SoldierWSaboteur : SoldierWB
 {
 	accuracy = ACCURACY_SFOPERATOR;
 	camouflage = CAMOUFLAGE_USA_SF_OPERATOR;
@@ -31,13 +39,16 @@ class USA_SF_Operator : USA_Soldier
 	nameSound="blackOp";
 	vehicleClass="Infantry (Special Forces)";
 	displayName="Operator";
-	weapons[]={WEAPON_REFERENCE(CAR15_SD), "M1911_SD", "Binocular", "NVGoggles", "Throw", "Put"};
-	magazines[]={WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), "PipeBomb", "PipeBomb", "PipeBomb", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};
 	threat[]={THREAT_SFOPERATOR};
-	model="\d4t_files\models\us\infantry\1985\sf_op85.p3d";
 	canHideBodies=1;
 	canDeactivateMines=1;
+	nightVision=1;
+
+#ifdef ACGIM_SCENARIO_1985
 	hiddenSelections[]={"goou", "goostu", "googu", "good", "goostd", "googd"};
+	model="\d4t_files\models\us\infantry\1985\sf_op85.p3d";
+	weapons[]={WEAPON_REFERENCE(CAR15_SD), "M1911_SD", "Binocular", "NVGoggles", "Throw", "Put"};
+	magazines[]={WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), "PipeBomb", "PipeBomb", "PipeBomb", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};
 	wounds[]=
 	{
 		FACE_WOUNDS,
@@ -76,47 +87,109 @@ class USA_SF_Operator : USA_Soldier
 		"\d4t_tex\usfc85\chelS.paa",		"\d4t_tex\usfc85\chelSd.paa",
 		"\d4t_tex\usfc85\chelT.paa",		"\d4t_tex\usfc85\chelTd.paa",
 	};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	hiddenSelections[]={"goou","goostu","googu","essu","good","goostd","googd","essd"};
+	model="\d4t_files\models\us\infantry\sf_op.p3d";//used odol explorer for this, if there are any bugs better to use textureswap
+	weapons[]={"M4ACOG_SD","MK23SD","Binocular","NVGoggles","Throw","Put"};
+	magazines[]={"M4_SD","M4_SD","M4_SD","M4_SD","PipeBomb","PipeBomb","PipeBomb","MK23SD","MK23SD","MK23SD","MK23SD"};
+	wounds[]={
+		"\d4t_tex\usfc\armr.paa","\d4t_tex\usfc\armrd.paa",
+		"\d4t_tex\usfc\bodyb.paa","\d4t_tex\usfc\bodybd.paa",
+		"\d4t_tex\usfc\bodyf.paa","\d4t_tex\usfc\bodyfd.paa",
+		"\d4t_tex\usfc\cachs.paa","\d4t_tex\usfc\cachsd.paa",
+		"\d4t_tex\usfc\cacht.paa","\d4t_tex\usfc\cachtd.paa",
+		"\d4t_tex\usfc\legl.paa","\d4t_tex\usfc\legld.paa",
+		"\d4t_tex\usfc\legp.paa","\d4t_tex\usfc\legpd.paa",
+		"\d4t_tex\usfc\legr.paa","\d4t_tex\usfc\legrd.paa",
+		"\d4t_tex\usfc\sarml.paa","\d4t_tex\usfc\sarmLd.paa",
+		"\d4t_tex\usfc\sbab.paa","\d4t_tex\usfc\sbaBd.paa",
+		"\d4t_tex\usfc\sbaf.paa","\d4t_tex\usfc\sbaFd.paa",
+	};
+#endif
 };
 
-class USA_SF_Operator_Spotter : USA_SF_Operator
+class SoldierWSaboteurLaser : SoldierWSaboteur
 {
 	accuracy = ACCURACY_SFOPERATOR_SPOTTER;
 	cost = COST_SFOPERATOR_SPOTTER;
 	displayName = "Operator (Spotter)";
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[] = {WEAPON_REFERENCE(CAR15_SD), "LaserDesignator", "M1911_SD", "Binocular", "NVGoggles", "Throw", "Put"};
 	magazines[] = {WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), "LaserDesignator", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	weapons[]={"M4Cobra_SD","ANPAQ1","MK23SD","Binocular","NVGoggles","Throw","Put"};
+	magazines[]={"M4_SD","M4_SD","M4_SD","M4_SD","M4_SD","M4_SD","ANPAQ1","PipeBomb","PipeBomb","MK23SD","MK23SD","MK23SD","MK23SD"};
+#endif
 };
 
-class USA_SF_Operator_Marksman : USA_SF_Operator
+class SoldierWSaboteurPipe : SoldierWSaboteur
 {
 	accuracy = ACCURACY_SFOPERATOR_MARKSMAN;
 	cost = COST_SFOPERATOR_MARKSMAN;
 	displayName = "Operator (Marksman)";
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[] = {"M21_SD", "M1911_SD", "Binocular", "NVGoggles", "Throw", "Put"};
 	magazines[]={"M21_SD", "M21_SD", "M21_SD", "M21_SD", "M21_SD", "M21_SD", "PipeBomb", "PipeBomb", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	weapons[]={"M4SPR_SD","MK23SD","Binocular","NVGoggles","Throw","Put"};
+	magazines[]={"M4_SD","M4_SD","M4_SD","M4_SD","M4_SD","M4_SD","PipeBomb","PipeBomb","MK23SD","MK23SD","MK23SD","MK23SD"};
+#endif
 };
 
-class USA_SF_Operator_TeamLeader : USA_SF_Operator
+class SoldierWSaboteurPipeHGS : SoldierWSaboteur
 {
 	accuracy = ACCURACY_SFOPERATOR_TEAMLEADER;
 	cost = COST_SFOPERATOR_TEAMLEADER;
 	displayName="Operator (Team Leader)";
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[]={"CAR15_ACOG_SD", "M1911_SD", "Binocular", "NVGoggles", "Throw", "Put"};
 	magazines[]={WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), WEAPON_REFERENCE(CAR15_SD), "PipeBomb", "PipeBomb", "M1911_SD", "M1911_SD", "M1911_SD", "M1911_SD"};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	weapons[]={"M4Eotech_SD","MK23SD","Binocular","NVGoggles","Throw","Put"};
+	magazines[]={"M4_SD","M4_SD","M4_SD","M4_SD","M4_SD","M4_SD","PipeBomb","PipeBomb","MK23SD","MK23SD","MK23SD","MK23SD"};
+#endif
 };
 
-class USA_SF_Ranger : USA_SF_Operator
+
+class SoldierWSaboteurDay : SoldierWSaboteur
 {
 	accuracy = ACCURACY_SFOPERATOR;
 	cost = COST_SFOPERATOR;
-	model = "\sjc_models\USA\ranger.p3d";
-	hiddenSelections[]={"goou", "goostu", "googu", "good", "goostd", "googd", "medic", "mic", "holster"};
 	displayName="Ranger";
+
+#ifdef ACGIM_SCENARIO_1985
+	hiddenSelections[]={"goou", "goostu", "googu", "good", "goostd", "googd", "medic", "mic", "holster"};
+	model = "\sjc_models\USA\ranger.p3d";
 	weapons[]={WEAPON_REFERENCE(CAR15), "M1911", "Throw", "Put"};
 	magazines[]={WEAPON_REFERENCE(CAR15), WEAPON_REFERENCE(CAR15), WEAPON_REFERENCE(CAR15), WEAPON_REFERENCE(CAR15), WEAPON_REFERENCE(CAR15), WEAPON_REFERENCE(CAR15), "PipeBomb", "PipeBomb", "M1911", "M1911", "M1911", "M1911"};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	hiddenSelections[]={"medic","holster","mic"};
+	model="\d4t_files\models\us\infantry\ranger.p3d";
+	weapons[]={"M4ACOG","M9","Binocular","Throw","Put"};
+	magazines[]={"M4","M4","M4","M4","M4","M4","PipeBomb","PipeBomb","M9","M9","M9","M9"};
+	wounds[]={
+		"\d4t_tex\rng\aarm_l.paa","\d4t_tex\rng\aarm_ld.paa",
+		"\d4t_tex\rng\arm_r.paa","\d4t_tex\rng\arm_rd.paa",
+		"\d4t_tex\rng\body_bk.paa","\d4t_tex\rng\body_bkd.paa",
+		"\d4t_tex\rng\body_frt.paa","\d4t_tex\rng\body_frtd.paa",
+		"\d4t_tex\rng\foot_bk.paa","\d4t_tex\rng\foot_bkd.paa",
+		"\d4t_tex\rng\foot_frt.paa","\d4t_tex\rng\foot_frtd.paa",
+		"\d4t_tex\rng\FOOTPOK.paa","\d4t_tex\rng\FOOTPOKd.paa",
+		"\d4t_tex\rng\mich_sid.paa","\d4t_tex\rng\mich_sidd.paa",
+		"\d4t_tex\rng\mich_tp.paa","\d4t_tex\rng\mich_tpd.paa"
+	};
+#endif
 };
 
-class USA_SF_Ranger_Spotter : USA_SF_Ranger
+class USA_SF_Ranger_Spotter : SoldierWSaboteurDay
 {
 	accuracy = ACCURACY_SFOPERATOR_SPOTTER;
 	cost = COST_SFOPERATOR_SPOTTER;
@@ -125,19 +198,32 @@ class USA_SF_Ranger_Spotter : USA_SF_Ranger
 	magazines[] = {WEAPON_REFERENCE(CAR15), WEAPON_REFERENCE(CAR15), WEAPON_REFERENCE(CAR15), WEAPON_REFERENCE(CAR15), "LaserDesignator", "M1911", "M1911", "M1911", "M1911"};
 };
 
-class USA_SF_Ranger_Marksman : USA_SF_Ranger
+class SoldierWSaboteurPipeHG : SoldierWSaboteurDay
 {
 	accuracy = ACCURACY_SFOPERATOR_MARKSMAN;
 	cost = COST_SFOPERATOR_MARKSMAN;
 	displayName = "Ranger (Marksman)";
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[] = {"M21", "M1911", "Throw", "Put"};
 	magazines[]={"M21", "M21", "M21", "M21", "M21", "M21", "PipeBomb", "PipeBomb", "M1911", "M1911", "M1911", "M1911"};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	weapons[]={"M4SPR","M9","Binocular","Throw","Put"};
+	magazines[]={"M4","M4","M4","M4","M4","M4","M4","M4","PipeBomb","M9","M9","M9","M9"};
+#endif
 };
 
-class USA_SF_Ranger_TeamLeader : USA_SF_Ranger
+class SoldierWSaboteurXMS : SoldierWSaboteurDay
 {
 	accuracy = ACCURACY_SFOPERATOR_TEAMLEADER;
 	cost = COST_SFOPERATOR_TEAMLEADER;
 	displayName="Ranger (Team Leader)";
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[]={"CAR15_ACOG", "M1911", "Binocular", "Throw", "Put"};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	weapons[]={"M4Eotech","M9","Binocular","Throw","Put"};
+#endif
 };

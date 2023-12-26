@@ -4,3 +4,5 @@
 #include "Config\CfgVehicles\World\DefensiveStructures.hpp"
 #include "Config\CfgVehicles\World\Sounds.hpp"
 #include "Config\CfgVehicles\World\Wrecks.h"
+#include "Config\CfgVehicles\World\Forest.h"
+#include "Config\CfgVehicles\World\Unused.hpp"

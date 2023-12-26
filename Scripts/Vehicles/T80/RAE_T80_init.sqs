@@ -2,7 +2,7 @@
 ?format["%1",RHS_FctLoad]=="scalar bool array string 0xfcffffef":_this exec{\acgim_scripts\Vehicles\T80\RAE_init.sqs}
 ?RHS_NoScripts:exit
 ?format["%1",RHS_T80_FctLoad]=="scalar bool array string 0xfcffffef":RHS_T80_FctLoad=false
-?!RHS_T80_FctLoad:RHS_T80_FctLoad=true;RHS_versionT80=.5;RHS_PathT80="\acgim_scripts\Vehicles\T80\";RHS_T80_Fired=loadFile format["%1RAE_T80_Fired.sqf", RHS_PathT80];RHS_T80_Numbers=loadFile format["%1RAE_T80_Numbers.sqf",RHS_PathT80];RHS_T80_throwOff=objNull;RHS_T80sWithShield=["Russia_T80B"];RHS_T80sWithExtBarrels=[];RHS_T80s_Possible_Embs=["emb1","emb2","emb3","emb4","emb5","emb6","emb7","no"];RHS_T80s=["Russia_T80B"];RHS_T80sWithSnorkel=["Russia_T80B"]
+?!RHS_T80_FctLoad:RHS_T80_FctLoad=true;RHS_versionT80=.5;RHS_PathT80="\acgim_scripts\Vehicles\T80\";RHS_T80_Fired=loadFile format["%1RAE_T80_Fired.sqf", RHS_PathT80];RHS_T80_Numbers=loadFile format["%1RAE_T80_Numbers.sqf",RHS_PathT80];RHS_T80_throwOff=objNull;RHS_T80sWithShield=["T80"];RHS_T80sWithExtBarrels=[];RHS_T80s_Possible_Embs=["emb1","emb2","emb3","emb4","emb5","emb6","emb7","no"];RHS_T80s=["T80"];RHS_T80sWithSnorkel=["T80"]
 ?format["%1", RHS_T80_UN]=="scalar bool array string 0xfcffffef":RHS_T80_UN=[]
 _t=_this select 0;_l="T80";
 ?local _t:_t animate["suspension",.5]

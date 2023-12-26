@@ -20,7 +20,7 @@ _line = "HMMWV"
 
 ? ! CBT_HMMWV_FctLoad: CBT_HMMWV_FctLoad = true; CBT_HMMWV_UserNums = loadFile format ["%1CBT_HMMWV_UserNums.sqf", _path]; CBT_HMMWV_Numbers = loadFile format ["%1CBT_HMMWV_Numbers.sqf", _path]; CBT_HMMWV_MPN = loadFile format ["%1CBT_HMMWV_MPN.sqf", _path]; CBT_HMMWV_MPNumberFct = loadFile format ["%1CBT_HMMWV_MPNumbers.sqf", _path];
 
-CBT_HMMWVsWithNormalNumbers = ["USA_HMMWV", "Jeep"]
+CBT_HMMWVsWithNormalNumbers = ["HMMWV", "Jeep"]
 CBT_HMMWVsWithChevrons = []
 CBT_HMMWVWithoutRecog = []
 CBT_HMMWVsCAV = []

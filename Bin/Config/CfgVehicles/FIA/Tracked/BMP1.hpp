@@ -1,4 +1,4 @@
-class BMPRes : Russia_BMP1
+class BMPRes : BMP
 {
 	access=2;
 	displayName="BMP-1 (Stolen)";

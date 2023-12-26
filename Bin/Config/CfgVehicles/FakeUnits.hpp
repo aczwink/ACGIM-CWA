@@ -2,8 +2,7 @@ class SoldierEFakeW : SoldierWB
 {
     model = "MC vojakW2";
     moves = "CfgMovesMC";
-    vehicleClass = "Men";
-    scope = 1;
+    vehicleClass="Infantry (Misc)";
     side = 0;
     accuracy = 2;
     displayName = "$STR_DN_ESOLDIERFAKE";
@@ -14,7 +13,6 @@ class SoldierEFakeW : SoldierWB
 
 class SoldierGFakeC : Civilian
 {
-    scope = 1;
     side = 2;
     accuracy = 2;
     displayName = "$STR_DN_CIVILFAKE";
@@ -26,7 +24,6 @@ class SoldierGFakeC : Civilian
 
 class SoldierGFakeC2 : Civilian2
 {
-    scope = 1;
     side = 2;
     accuracy = 2;
     displayName = "$STR_DN_CIVILFAKE";
@@ -39,4 +36,30 @@ class SoldierGFakeC2 : Civilian2
 class SoldierGFakeC3 : SoldierGFakeC
 {
 	model = "\O\Char\Char01";
+};
+
+class SoldierGFakeE : SoldierEB
+{
+	model = "MC vojakE2";
+    moves = "CfgMovesMC";
+    vehicleClass="Infantry (Misc)";
+    side = 2;
+    accuracy = 2;
+    displayName = "$STR_DN_SOLDIERFAKE";
+    weapons[] = {"AK74", "Throw", "Put"};
+    magazines[] = {"AK74", "AK74", "AK74", "AK74", "HandGrenade", "HandGrenade", "HandGrenade", "HandGrenade", "HandGrenade", "HandGrenade"};
+    cost = 40000;
+};
+
+class SoldierWFakeE : SoldierEB
+{
+	scope = SCOPE_HIDDEN;
+    moves = "CfgMovesMC";
+    vehicleClass="Infantry (Misc)";
+    side = 1;
+    accuracy = 2;
+    displayName = "$STR_DN_SOLDIERFAKE";
+    weapons[] = {"AK74", "Throw", "Put"};
+    magazines[] = {"AK74", "AK74", "AK74", "AK74", "HandGrenade", "HandGrenade", "HandGrenade", "HandGrenade", "HandGrenade", "HandGrenade"};
+    cost = 40000;
 };

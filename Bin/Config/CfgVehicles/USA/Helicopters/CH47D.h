@@ -6,7 +6,7 @@ In service: 1979-(unsure, at least til 2008: present)
 class Ch47D : Helicopter
 {
 	scope = SCOPE_PUBLIC;
-	crew= "USA_HelicopterPilot";
+	crew= "SoldierWPilotHG";
 	picture = "\ch47\ich47.paa";
 	maxSpeed = 315;
 	side=1;

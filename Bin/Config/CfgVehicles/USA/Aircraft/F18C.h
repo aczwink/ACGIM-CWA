@@ -20,7 +20,7 @@ class USA_F18C : Plane
 	elevatorSensitivity = 0.80;
 	flapsFrictionCoef = 1.5;
 	side=1;
-	crew = "USA_AircraftPilot";
+	crew = "SoldierWPilot";
 	driveriscommander=1;
 	driverAction = ManActA10Pilot;
 	camouflage=10;

@@ -130,3 +130,13 @@ class AKS74B : AKS74
 		useActionTitle="";
 	};
 };
+
+class AK74M : AK74	
+{
+	scopeMagazine=2;
+	displayName="AK-74M";
+	displayNameMagazine="30 round 5.45 x 39mm Magazine";
+	shortNameMagazine="5.45x49mm Mag";
+	count=30;
+	model="\d4t_files\models\russia\weapons\ak74m.p3d";
+};

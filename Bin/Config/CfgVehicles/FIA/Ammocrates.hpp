@@ -105,3 +105,64 @@ class HeavyReammoBoxRes : HeavyReammoBox
 		killed = "_this exec {\acgim_scripts\Events\ExplosivesCarrierDestroyed.sqs}";
 	};
 };
+
+class AmmoBoxOUTGW : ReammoBoxGuer
+{
+	displayName = "FIA Weapon Crates";
+	model = "bedna_ammo";
+
+	class TransportWeapons
+	{
+		//Primary
+		class w_AKM
+		{
+			weapon = "AKM";
+			count = 3;
+		};
+
+		class w_AKMGP25
+		{
+			weapon = "AKMGP25";
+			count = 1;
+		};
+
+		class w_RPD
+		{
+			weapon = "RPD";
+			count = 1;
+		};
+
+		class w_HuntingRifle
+		{
+			weapon = "HuntingRifle";
+			count = 1;
+		};
+
+		class w_Kozlice
+		{
+			weapon = "Kozlice";
+			count = 1;
+		};
+		
+		//Secondary
+		class w_RPG2
+		{
+			weapon = "RPG2";
+			count = 2;
+		};
+
+		//Tertiary
+		class w_Tokarev
+		{
+			weapon = "Tokarev";
+			count = 4;
+		};
+		
+		//Items
+		class w_Binocular
+		{
+			weapon = "Binocular";
+			count = 1;
+		};
+	};
+};

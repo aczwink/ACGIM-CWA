@@ -3,12 +3,12 @@ Sources:
 	http://en.wikipedia.org/wiki/Patrol_Boat,_River
 In service: 1966-1995
 */
-class USA_PBRMkII : SmallShip
+class BoatW : SmallShip
 {
 	displayName="$STR_DN_MARK_II";
 	accuracy = ACCURACY_PBRMKII;
 	scope=2;
-	crew = "USA_Soldier";
+	crew = "SoldierWB";
 	model="pbr";
 	picture="ipbr";
 	side=1;

@@ -5,7 +5,7 @@ Sources:
 class Ural : Truck
 {
 	scope=2;
-	crew = "Russia_Soldier";
+	crew = "SoldierEB";
 	picture="iural";
 	icon="truck";
 	side=0;
@@ -101,10 +101,10 @@ class Ural : Truck
 	};
 };
 
-class Russia_Ural4320Open : Ural
+class Ural_Open : Ural
 {
 	displayName="Ural-4320 open";
-	model="\sjc_models\ussr\ural4320_open.p3d";
+	model="\models\ural4320_open.p3d";
 };
 
 class UralRepair : Ural
@@ -240,6 +240,11 @@ class UralWreck : Car
 	destrType="DestructEngine";
 	armor=900000;
 	cargoAction[] = {"ManActDLEMuralDEADCARGO1"};
+};
+class World_Ural4320Open_Wreck: UralWreck
+{
+	model="\models\ural4320_op_dead.p3d";
+	displayName="Ural-4320 (open) wreck";
 };
 class World_Ural4320Refuel_Wreck : UralWreck
 {

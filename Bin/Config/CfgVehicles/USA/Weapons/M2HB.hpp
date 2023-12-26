@@ -4,14 +4,14 @@ Sources:
 In service: 1933-present
 */
 
-class USA_M2HB : APC
+class M2StaticMG : APC
 {
 	scope=2;
 	vehicleClass="Weapons";
 	side=1;
 	hideProxyInCombat=0;
 	picture="m2";
-	crew = "USA_Soldier";
+	crew = "SoldierWB";
 	hasDriver=0;
 	hasGunner=1;
 	hasCommander=0;

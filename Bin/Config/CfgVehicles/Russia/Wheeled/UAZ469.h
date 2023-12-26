@@ -3,11 +3,11 @@ Sources:
 	http://en.wikipedia.org/wiki/UAZ-469
 	http://warfare.ru/?linkid=2297&catid=247
 */
-class Russia_UAZ469 : Car
+class UAZ : Car
 {
 	picture="\sjc_images\vehicles\uaz.paa";
 	scope=2;
-	crew = "Russia_Soldier";
+	crew = "SoldierEB";
 	side=0;
 	displayName="UAZ-469";
 	nameSound="UAZ";

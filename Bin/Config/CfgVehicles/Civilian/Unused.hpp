@@ -53,3 +53,8 @@ class JetRangerSilent : JetRanger
     cost = 10000000;
     model = "\O\Vehl\JR_RC.p3d";
 };
+
+class PaperCar : Car
+{
+	scope = SCOPE_HIDDEN;
+};

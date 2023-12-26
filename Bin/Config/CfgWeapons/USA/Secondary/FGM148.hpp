@@ -1,0 +1,43 @@
+class FGM148 : Default
+{
+    scopeWeapon=2;
+    scopeMagazine=2;
+    weaponType=16;
+    magazineType="6 * 256";
+    ammo = "RocketFGM148";
+    displayNameMagazine="Javelin Missile";
+    shortNameMagazine="Javelin";
+    magazineReloadTime=12;
+    reloadTime=0.5;
+    reloadAction = MANACT_RELOADAT;
+    autoReload=0;
+    ffMagnitude=0.1;
+    ffFrequency=1;
+    ffCount=1;
+    recoil="LAWSingle";
+    optics=1;
+    primary=0;
+    uiPicture="islaw";
+    model="\d4t_files\models\us\weapons\fgm148_empty.p3d";//used odol for this, if there are any bugs better to use textureswap
+    modelMagazine="\d4t_files\models\us\weapons\javelin_missile.p3d";//used odol for this, if there are any bugs better to use textureswap
+    modelSpecial="\d4t_files\models\us\weapons\fgm148.p3d";//used odol for this, if there are any bugs better to use textureswap
+    modelOptics="\d4t_files\optics\optic_fgm148.p3d";//used odol for this, if there are any bugs better to use textureswap
+    sound[]={"\d4t_files\sounds\weapons\handheld\fgm148_fire.wss","db17",1};
+    reloadMagazineSound[]={"\d4t_files\sounds\weapons\handheld\fgm148_reload.wss",0.010316,1};
+    displayName="FGM-148 Javelin";
+    canLock=2;
+    dexterity=0.25;
+    valueWeapon=20;
+    valueMagazine=10;
+    initSpeed=10;
+    canDrop=1;
+    opticsZoomMin=0.04;
+    opticsZoomMax=0.12;
+    distanceZoomMin=40;
+    distanceZoomMax=80;
+    aiRateOfFire=20;
+    aiRateOfFireDistance=0;
+    maxLeadSpeed=1000;
+    count=1;
+    magazines[]={"this"};
+};

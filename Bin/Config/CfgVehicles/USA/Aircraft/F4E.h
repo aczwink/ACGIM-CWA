@@ -7,7 +7,7 @@ In service: 1965-1996
 class USA_F4E : Plane
 {
 	scope = SCOPE_PUBLIC;
-	crew="USA_AircraftPilot";
+	crew="SoldierWPilot";
 	side=1;
 	displayName="F-4E Phantom II (USAF)";
 	accuracy = ACCURACY_F4E;

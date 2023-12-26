@@ -27,7 +27,7 @@ class A10 : Plane
 	armor = ARMOR_A10;
 	accuracy = ACCURACY_A10;
 	fuelCapacity=100;
-	crew = "USA_AircraftPilot";
+	crew = "SoldierWPilot";
 	driverAction = "ManActA10Pilot";
 	vehicleClass = "Vehicles (Air)";
 	displayName = "A-10 Thunderbolt II (USAF)";

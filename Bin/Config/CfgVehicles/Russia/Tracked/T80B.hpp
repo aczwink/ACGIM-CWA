@@ -3,15 +3,18 @@ Sources:
 	http://en.wikipedia.org/wiki/T-80
 	http://www.inetres.com/gp/military/cv/tank/T-80.html
 */
-class Russia_T80B : RussianTank
+class T80 : RussianTank
 {
+	picture = "it80";
 	nameSound = "t80";
+	accuracy = 0.5;
+	maxSpeed = 70;
 	scope = SCOPE_PUBLIC;
 	side = SIDE_EAST;
 	displayName="T-80B";
 	laserscanner=0;
 	hiddenSelections[]={"n1","n2","n3","SNK1","SNK2","SNK3","emb","shield"};
-	crew = "Russia_Crew";
+	crew = "SoldierECrew";
 	ejectdeadcargo=1;
 	canfloat=0;
 	gunnerOpticsModel="\sjc_optics\russia\t80_gunner.p3d";
@@ -63,6 +66,15 @@ class Russia_T80B : RussianTank
 	class Turret:TurretBase
 	{
 	};
+
+	class IndicatorRPM
+	{
+		selection = "ukaz_rpm";
+		axis = "osa_rpm";
+		angle = -290;
+		min = 0;
+		max = 1;
+	};
 	
 	class IndicatorSpeed
 	{
@@ -78,6 +90,7 @@ class Russia_T80B : RussianTank
 		selection="ukaz_rychlo2";
 		axis="osa_rychlo2";
 	};
+
 	class HitEngine
 	{
 		armor=0.8;

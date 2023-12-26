@@ -22,6 +22,12 @@ class ural4320_GAS
 	sections[]={"clan","L svetlo","P svetlo","zadni svetlo","brzdove svetlo"};
 };
 
+class ural4320_open
+{
+	sectionsInherit="Vehicle";
+	sections[]={"clan","L svetlo","P svetlo","zadni svetlo","brzdove svetlo"};
+};
+
 class ural4320_repair
 {
 	sectionsInherit="Vehicle";

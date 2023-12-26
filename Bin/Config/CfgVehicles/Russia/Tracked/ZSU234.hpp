@@ -2,13 +2,13 @@
 Sources:
 	http://en.wikipedia.org/wiki/ZSU-23-4
 */
-class Russia_ZSU234 : Tank
+class ZSU : Tank
 {
 	scope = SCOPE_PUBLIC;
 	side = SIDE_EAST;
 	displayName="ZSU-23-4 Shilka";
 	model="\sjc_models\russia\shilka.p3d";
-	crew = "Russia_Crew";
+	crew = "SoldierECrew";
 	hiddenSelections[]={"n1","n2","n3","pod_1","pod_2","pod_3","rot_1","rot_2","rot_3","ukaz_radar"};
 	weapons[]={"AZP23"};
 	magazines[]={"AZP23"};

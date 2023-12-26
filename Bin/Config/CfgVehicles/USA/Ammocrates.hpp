@@ -14,9 +14,9 @@ class ReammoBoxWest : ReammoBox
 			count = 20;
 		};
 
-		class m_M60
+		class m_MG
 		{
-			magazine = "M60";
+			magazine = WEAPON_REFERENCE(M60);
 			count = 5;
 		};
 
@@ -152,5 +152,84 @@ class HeavyReammoBoxWest : HeavyReammoBox
 	class EventHandlers
 	{
 		killed = "_this exec {\acgim_scripts\Events\ExplosivesCarrierDestroyed.sqs}";
+	};
+};
+
+class AmmoBoxOUTWW : ReammoBoxWest
+{
+	displayName = "USA Weapon Crates";
+	model = "bedna_ammo";
+
+	class TransportWeapons
+	{
+		//Primary
+		class w_M16A2
+		{
+			weapon = WEAPON_REFERENCE(M16A2);
+			count = 3;
+		};
+
+		class w_M16A2_M203
+		{
+			weapon = WEAPON_REFERENCE(M16A2_M203);
+			count = 1;
+		};
+
+		class w_MG
+		{
+			weapon = WEAPON_REFERENCE(M60);
+			count = 1;
+		};
+
+		class w_M21
+		{
+			weapon = "M21";
+			count = 1;
+		};
+
+		class w_CAR15
+		{
+			weapon = WEAPON_REFERENCE(CAR15);
+			count = 2;
+		};
+
+		class w_CAR15_SD
+		{
+			weapon = WEAPON_REFERENCE(CAR15_SD);
+			count = 1;
+		};
+
+		//Secondary
+		class w_M72LAW
+		{
+			weapon = WEAPON_REFERENCE(M72LAW);
+			count = 1;
+		};
+
+		//Tertiary
+		class w_M1911
+		{
+			weapon = "M1911";
+			count = 4;
+		};
+
+		class w_M1911_SD
+		{
+			weapon = "M1911_SD";
+			count = 1;
+		};
+
+		//Items
+		class w_Binocular
+		{
+			weapon = "Binocular";
+			count = 2;
+		};
+
+		class w_NVGoggles
+		{
+			weapon = "NVGoggles";
+			count = 1;
+		};
 	};
 };

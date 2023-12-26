@@ -40,7 +40,7 @@ class BRDM : LandVehicle
 	gunnerhasoptics=1;
 	gunnerOpticsModel="\sjc_optics\russia\brdm_gunner.p3d";
 	castGunnerShadow = false;
-	crew = "Russia_Crew";
+	crew = "SoldierECrew";
 	type = VEHICLE_ARMOR;
 	threat[] = {THREAT_BRDM2};
 	transportSoldier = 3;

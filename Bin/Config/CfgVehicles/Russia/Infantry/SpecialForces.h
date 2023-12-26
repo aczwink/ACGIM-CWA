@@ -1,4 +1,4 @@
-class Russia_Sniper : Russia_Soldier
+class SoldierESniper : SoldierEB
 {
 	accuracy = ACCURACY_SNIPER;
 	camouflage = CAMOUFLAGE_USSR_SPETSNAZ;
@@ -16,7 +16,7 @@ class Russia_Sniper : Russia_Soldier
 	threat[]={THREAT_SNIPER};
 };
 
-class SoldierESaboteur : Russia_Soldier
+class SoldierESaboteur : SoldierEB
 {
 	accuracy = ACCURACY_SPETSNAZ;
 	cost = COST_SPETSNAZ;

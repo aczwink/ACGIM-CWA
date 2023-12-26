@@ -4,11 +4,11 @@ Sources:
 	http://www.globalsecurity.org/military/systems/aircraft/ah-1s.htm
 In service: late 1979-2001
 */
-class USA_AH1F : Helicopter
+class Cobra : Helicopter
 {
 	picture="\d4t_files\pics\vehicles\ah1f.paa";
 	uipicture="\d4t_files\pics\vehicles\ah1f.paa";
-	crew = "USA_HelicopterPilot";
+	crew = "SoldierWPilotHG";
 	scope=2;
 	side=1;
 	displayName="AH-1F Cobra (USAF)";

@@ -8,21 +8,34 @@ This is how it is done:
 Like this the real weapon name will be replaced with the BIS class correspondent everywhere in the config. Note that, like this, the real weapon name can not be used in double quotes anymore.
 */
 
-//Primary
 //      FROM            TO
 //      ACGIM           BIS
 #define AK74GP25        AK74GrenadeLauncher
 #define AKS74           AK74SU
-#define CAR15           M4
 #define CAR15_SD        HK
 #define FIM92Stinger    AALauncher
 #define M47Dragon       CarlGustavLauncher
 #define M72LAW          LAWLauncher
-#define M16A2           M16
 #define M16A2_M203      M16GrenadeLauncher
 #define PKM             PK
 #define RPG7            RPGLauncher //use the RPG-7 because it betters matches range-wise with the BIS RPG
 #define RPG7V           AT4Launcher
+
+
+#ifdef ACGIM_SCENARIO_1985
+//      FROM            TO
+//      ACGIM           BIS
+#define CAR15           M4
+#define M16A2           M16
+#endif
+
+
+#ifdef ACGIM_SCENARIO_2007
+//      FROM            TO
+//      ACGIM           BIS
+#define M4Aimpoint      M16
+#define M249SAW         M60
+#endif
 
 
 

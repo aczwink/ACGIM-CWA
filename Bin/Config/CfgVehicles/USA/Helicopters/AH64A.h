@@ -9,7 +9,7 @@ class AH64 : Helicopter
 	scope = SCOPE_PUBLIC;
 	displayName="AH-64A Apache";
 	picture = "\apac\iAH64";
-	crew = "USA_HelicopterPilot";
+	crew = "SoldierWPilotHG";
 	accuracy = ACCURACY_AH64A;
 	driverAction = "ManActAH64Pilot";
 	gunnerAction = "ManActAH64Gunner";

@@ -96,7 +96,28 @@ class Bullet45ACP_SD : Bullet45ACP
 	tracerColorR[]={0,0,0,0.005};
 };
 
-//20×102mm
+//9x19
+class Bullet9x19 : BulletSingle
+{
+	hit=6.5;
+	indirectHit=1;
+	indirectHitRange=0.050000;
+	visibleFire=14;
+	audibleFire=14;
+	visibleFireTime=2;
+	cartridge="FxCartridgeSmall";
+	tracerColor[]={0,0,0,0.005};
+	tracerColorR[]={0,0,0,0.005};
+	//No Proof for Range Values
+	minRange=1;
+	minRangeProbab=0.100000;
+	midRange=10;
+	midRangeProbab=0.700000;
+	maxRange=20;
+	maxRangeProbab=0.040000;
+};
+
+//20ï¿½102mm
 class Bullet20x102 : ExplosiveBullet
 {
 	cost = COST_BULLET20X102;

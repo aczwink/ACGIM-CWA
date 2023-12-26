@@ -1,7 +1,7 @@
-class M2StaticMGE : USA_M2HB
+class M2StaticMGE : M2StaticMG
 {
 	side = SIDE_EAST;
-	crew = "Russia_Soldier";
+	crew = "SoldierEB";
 	displayName="DShK MG";
 	model="\sjc_models\russia\dshk.p3d";
 	weapons[]={"DShKM"};

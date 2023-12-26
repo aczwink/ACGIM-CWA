@@ -1,0 +1,17 @@
+steps:
+  - type: RepackArchive
+    source:
+      type: FileSystem
+      sourceLocation: redhammer
+      pbo: redhammer.pbo
+    exclude: []
+    include:
+      - type: FileSystem
+        sourceLocation: source
+        files:
+          - { sourceFileName: Campaigns/redhammer/missions/15returnchopper.abel/mission.sqm, targetFileName: missions/15returnchopper.abel/mission.sqm }
+          - { sourceFileName: Campaigns/redhammer/missions/17sniper.abel/mission.sqm, targetFileName: missions/17sniper.abel/mission.sqm }
+          - { sourceFileName: Campaigns/redhammer/missions/20resistance.eden/mission.sqm, targetFileName: missions/20resistance.eden/mission.sqm }
+    targetPboName: Campaigns/redhammer
+
+  - type: Create7zArchive

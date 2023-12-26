@@ -10,7 +10,7 @@ class OH58 : Helicopter
 	displayName="OH-58D Kiowa Warrior";
 	picture="\d4t_files\pics\ui\oh58_pic.paa";
 	icon="\d4t_files\pics\vehicles\oh58kw_icon.paa";
-	crew = "USA_HelicopterPilot";
+	crew = "SoldierWPilotHG";
 	nameSound="chopper";
 	accuracy = ACCURACY_OH58D;
 	gunnerUsesPilotView=1;

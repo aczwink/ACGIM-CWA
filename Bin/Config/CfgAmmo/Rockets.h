@@ -13,8 +13,8 @@ class RocketM72LAW : LAW
 	indirectHit = 15;
 	indirectHitRange = 4;
 	irLock = false;
-	soundHit[]={"\d4t_files\sounds\weapons\impacts\smaw_ground.wss",db+25,1.0};
-	soundFly[]={"\d4t_files\sounds\weapons\impacts\smaw_fly.ogg",db+0,1.0};
+	soundHit[]={"\sounds\smaw_ground.wss",db+25,1.0};
+	soundFly[]={"\sounds\smaw_fly.ogg",db+0,1.0};
 	minRange = 10;
 	minRangeProbab = 0.5;
 	midRange = 100;
@@ -49,15 +49,60 @@ class RocketM47Dragon : AA
 	SoundHitArmor1[]={"\d4t_files\sounds\weapons\handheld\fgm148_hit_arm1.wss","db70",1};
 	SoundHitArmor2[]={"\d4t_files\sounds\weapons\handheld\fgm148_hit_arm2.wss","db70",1};
 	SoundHitArmor3[]={"\d4t_files\sounds\weapons\handheld\fgm148_hit_arm3.wss","db70",1};
-	soundHit1[]={"\d4t_files\sounds\weapons\impacts\jav_ground.wss",100.999999,0.900000};
-	soundHit2[]={"\d4t_files\sounds\weapons\impacts\jav_ground.wss",100.999999,0.800000};
-	soundHit3[]={"\d4t_files\sounds\weapons\impacts\jav_ground.wss",100.999999,0.850000};
-	soundHitGround[]={"\d4t_files\sounds\weapons\impacts\Hellfire2.wss",80.000008,0.800000};
+	soundHit1[]={"\sounds\jav_ground.wss",100.999999,0.900000};
+	soundHit2[]={"\sounds\jav_ground.wss",100.999999,0.800000};
+	soundHit3[]={"\sounds\jav_ground.wss",100.999999,0.850000};
+	soundHitGround[]={"\sounds\Hellfire2.wss",80.000008,0.800000};
 	hitGround[]={"soundHitGround",1};
 	hitArmor[]={"soundHit2",0.333333,"soundHit3",0.333333,"soundHit1",0.333333};
 	hitBuilding[]={"soundHitGround",1};
 	hitMan[]={"soundHitGround",1};
 	soundFly[]={"\d4t_files\sounds\weapons\handheld\fgm148_fly.ogg","db18",1};
+};
+
+/*
+Sources:
+*/
+class RocketM136AT4 : CarlGustav
+{
+	model="\models\LSR_at4rocketF.p3d";
+	soundHit[]={"\sounds\smaw_ground.wss",db+25,1.0};
+	SoundHitArmor1[]={"\sounds\smaw_arm1.wss",db+25,1};
+	SoundHitArmor2[]={"\sounds\smaw_arm2.wss",db+25,1};
+	SoundHitArmor3[]={"\sounds\smaw_arm3.wss",db+25,1};
+	hitArmor[]={soundHitArmor1,0.33, soundHitArmor2,0.33, soundHitArmor3,0.33};
+	soundFly[]={"\sounds\smaw_fly.ogg",db+0,1.0};
+};
+
+/*
+Sources:
+*/
+class RocketFGM148 : AA
+{
+	model="\models\CBT_javR.p3d";
+	hit=1000;
+	indirectHit=500;
+	indirectHitRange=10;
+	ThrustTime=5000;
+	thrust=50;
+	initTime=0.6;
+	maneuvrability=4.4000001;
+	canLock="LockYes";
+	airLock=false;
+	irLock=true;
+	laserLock=true;
+	SoundHitArmor1[]={"\sounds\jav_arm1.wss","db30",1};
+	SoundHitArmor2[]={"\sounds\jav_arm2.wss","db30",1};
+	SoundHitArmor3[]={"\sounds\jav_arm3.wss","db30",1};
+	soundHit1[]={"\sounds\jav_ground.wss",101.0,0.9};
+	soundHit2[]={"\sounds\jav_ground.wss",101.0,0.8};
+	soundHit3[]={"\sounds\jav_ground.wss",101.0,0.85};
+	soundHitGround[]={"\sounds\Hellfire2.wss",80.0000076,0.8};
+	hitGround[]={"soundHitGround",1};
+	hitArmor[]={"soundHit2",0.333333,"soundHit3",0.333333,"soundHit1",0.333333};
+	hitBuilding[]={"soundHitGround",1};
+	hitMan[]={"soundHitGround",1};
+	soundFly[]={"\sounds\javelin_fly.ogg","db18",1};
 };
 
 /*
@@ -315,18 +360,18 @@ class RocketBGM71ETOW : RocketBGM71DTOW
 	indirectHit = INDIRECTHIT_BGM71ETOW;
 	indirectHitRange = INDIRECTHITRANGE_BGM71ETOW;
 	model="\d4t_files\models\neutral\fired\towa.p3d";
-	SoundHitArmor1[]={"\d4t_files\sounds\weapons\impacts\jav_arm1.wss","db30",1};
-	SoundHitArmor2[]={"\d4t_files\sounds\weapons\impacts\jav_arm2.wss","db30",1};
-	SoundHitArmor3[]={"\d4t_files\sounds\weapons\impacts\jav_arm3.wss","db30",1};
-	soundHit1[]={"\d4t_files\sounds\weapons\impacts\jav_ground.wss",101.0,0.9};
-	soundHit2[]={"\d4t_files\sounds\weapons\impacts\jav_ground.wss",101.0,0.8};
-	soundHit3[]={"\d4t_files\sounds\weapons\impacts\jav_ground.wss",101.0,0.85};
-	soundHitGround[]={"\d4t_files\sounds\weapons\impacts\Hellfire2.wss",80.0000076,0.8};
+	SoundHitArmor1[]={"\sounds\jav_arm1.wss","db30",1};
+	SoundHitArmor2[]={"\sounds\jav_arm2.wss","db30",1};
+	SoundHitArmor3[]={"\sounds\jav_arm3.wss","db30",1};
+	soundHit1[]={"\sounds\jav_ground.wss",101.0,0.9};
+	soundHit2[]={"\sounds\jav_ground.wss",101.0,0.8};
+	soundHit3[]={"\sounds\jav_ground.wss",101.0,0.85};
+	soundHitGround[]={"\sounds\Hellfire2.wss",80.0000076,0.8};
 	hitGround[]={"soundHitGround",1};
 	hitArmor[]={"soundHit2",0.333333,"soundHit3",0.333333,"soundHit1",0.333333};
 	hitBuilding[]={"soundHitGround",1};
 	hitMan[]={"soundHitGround",1};
-	soundFly[]={"\d4t_files\sounds\weapons\impacts\javelin_fly.ogg","db18",1};
+	soundFly[]={"\sounds\javelin_fly.ogg","db18",1};
 	soundEngine[]={"objects\noise","db-90",1};
 };
 

@@ -6,7 +6,7 @@ In service:1985-present
 class USA_M1A1 : Tank
 {
 	scope=2;
-	crew = "USA_Crew";
+	crew = "SoldierWCrew";
 	picture="iabrams";
 	side=1;
 	displayName="M1A1 Abrams";

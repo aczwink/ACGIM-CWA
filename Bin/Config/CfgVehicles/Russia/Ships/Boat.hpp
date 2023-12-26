@@ -1,9 +1,9 @@
-class Russia_Boat : SmallShip
+class BoatE : SmallShip
 {
 	displayName="$STR_DN_BOAT";
 	accuracy = ACCURACY_BOAT;
 	scope=2;
-	crew = "Russia_Soldier";
+	crew = "SoldierEB";
 	model="hrl";
 	picture="ihrl";
 	side=0;

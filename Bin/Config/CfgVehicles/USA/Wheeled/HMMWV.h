@@ -3,10 +3,10 @@ Sources:
 	http://en.wikipedia.org/wiki/HMMWV
 In service: 1984-present
 */
-class USA_HMMWV : Car
+class HMMWV : Car
 {
 	scope=2;
-	crew = "USA_Soldier";
+	crew = "SoldierWB";
 	picture="\d4t_files\pics\vehicles\hmmwv.paa";
 	maxspeed = 89;
 	side=1;
@@ -66,7 +66,7 @@ class USA_HMMWV : Car
 	};
 };
 
-class JeepMG : USA_HMMWV
+class USA_HMMWV_M2 : HMMWV
 {
 	displayName="HMMWV M2";
 	picture="\d4t_files\pics\vehicles\hmmwv_m2.paa";
@@ -186,7 +186,7 @@ class JeepMG : USA_HMMWV
 	class MGunClouds : WeaponCloudsMGun{};
 };
 
-class USA_HMMWV_Mk19 : JeepMG
+class USA_HMMWV_Mk19 : USA_HMMWV_M2
 {
 	displayName="HMMWV Mk 19";
 	picture="\sjc_images\vehicles\hmmwv_mk19.paa";
@@ -196,7 +196,7 @@ class USA_HMMWV_Mk19 : JeepMG
 	magazines[]={"Mk19","Mk19","Mk19","Mk19"};
 };
 
-class USA_HMMWV_TOW : JeepMG
+class USA_HMMWV_TOW : USA_HMMWV_M2
 {
 	gunnerOpticsModel="\sjc_optics\usa\hmmwv_tow_gunner.p3d";
 	displayName="HMMWV TOW";
@@ -315,11 +315,11 @@ class USA_HMMWV_TOW : JeepMG
 	};
 };
 
-class USA_HMMWV_Ambulance : USA_HMMWV
+class M113Ambul : HMMWV
 {
 	unloadInCombat = false;
 	picture="\d4t_files\pics\vehicles\hmmwv_ambulance.paa";
-	crew = "USA_Medic";
+	crew = "SoldierWMedic";
 	icon="Ambulance_move";
 	nameSound="ambulance";
 	attendant=1;

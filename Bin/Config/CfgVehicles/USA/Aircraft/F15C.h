@@ -6,7 +6,7 @@ In service: 1979-present
 class USA_F15C : Plane
 {
 	scope = SCOPE_PUBLIC;
-	crew="USA_AircraftPilot";
+	crew="SoldierWPilot";
 	side=1;
 	displayName="F-15C (USAF)";
 	picture = "\sjc_images\vehicles\f15pic.paa";

@@ -1,8 +1,5 @@
 //BMP
 #include "Config\CfgVehicles\Russia\Tracked\BMP.h"
-#ifdef ACGIM_SCENARIO_2007
-#include "Config\CfgVehicles\Russia\Tracked\BMP.h"
-#endif
 
 //MTLB
 #include "Config\CfgVehicles\Russia\Tracked\MTLBAmbulance.h"

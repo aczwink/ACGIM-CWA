@@ -8,7 +8,7 @@ Sources:
 		End is unknown because still in service.
 		Were all upgraded to T72B ?
 */
-class Russia_T72A : RussianTank
+class T72 : RussianTank
 {
 	scope=2;
 	side = SIDE_EAST;
@@ -29,7 +29,7 @@ class Russia_T72A : RussianTank
 	threat[] = {THREAT_T72A};
 	displayName="T-72A";
 	hiddenSelections[]={"n1","n2","n3","emb"};
-	crew = "Russia_Crew";
+	crew = "SoldierECrew";
 	ejectdeadcargo=1;
 	gunnerOpticsModel="\sjc_optics\russia\t72_gunner.p3d";
 	commanderOpticsModel="\sjc_optics\russia\t72_commander.p3d";

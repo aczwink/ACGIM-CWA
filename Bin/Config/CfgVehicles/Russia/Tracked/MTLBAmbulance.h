@@ -2,7 +2,7 @@
 Sources:
 	http://en.wikipedia.org/wiki/MT-LB
 */
-class Russia_MTLBAmbulance : Russia_BMP1
+class BMPAmbul : BMP
 {
 	displayName="MT-LB Ambulance";
 	icon="Ambulance_move";

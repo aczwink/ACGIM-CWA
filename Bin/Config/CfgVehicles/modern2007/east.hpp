@@ -1,27 +1,3 @@
-//---Infantry
-class Russia_Rifleman : Soldier
-{
-	displayName="Rifleman";
-	vehicleClass="Infantry";
-	scope=public;
-	model="\d4t_files\models\russia\infantry\russian_soldier.p3d";
-	moves="CfgMovesMC";
-	side=EAST;
-	cost=40000;
-	accuracy=0.7;
-	nightVision=1;
-	armor=3.5;
-	armorStructural=1.5;
-	armorHead=1.0;
-	armorBody=3.5;
-	armorHands=0.500000;
-	armorLegs=0.500000;
-	hiddenSelections[]={"medic"};
-	wounds[]={"d4t_tex\rs\leg_r.paa","d4t_tex\rs\leg_r_d.paa","d4t_tex\rs\leg_l.paa","d4t_tex\rs\leg_l_d.paa","d4t_tex\rs\arm_l.paa","d4t_tex\rs\arm_l_d.paa","d4t_tex\rs\arm_r.paa","d4t_tex\rs\arm_r_d.paa","d4t_tex\rs\6b9_bck.paa","d4t_tex\rs\6b9_bck_d.paa","d4t_tex\rs\6b9_frt.paa","d4t_tex\rs\6b9_frt_d.paa","d4t_tex\rs\vest2_bk.paa","d4t_tex\rs\vest2_bk_d.paa","d4t_tex\rs\vest2_frt.paa","d4t_tex\rs\vest2_frt_d.paa","d4t_tex\rs\back.paa","d4t_tex\rs\back_d.paa","d4t_tex\rs\chest.paa","d4t_tex\rs\chest_d.paa","d4t_tex\rs\cap_body.paa","d4t_tex\rs\cap_body_d.paa","d4t_tex\rs\kaska.paa","d4t_tex\rs\kaska_d.paa","d4t_tex\rs\kaska_paint.paa","d4t_tex\rs\kaska_paint_d.paa","d4t_tex\rs\kaskasetka.paa","d4t_tex\rs\kaskasetka_d.paa"};
-	weapons[]={ak74m, aps, Throw, Put};//aps is not finished, rgos
-	magazines[]={30rd545x39mag, 30rd545x39mag, 30rd545x39mag, 30rd545x39mag, 30rd545x39mag, 30rd545x39mag, 30rd545x39mag, "d4t_rgo","d4t_rgo","d4t_rgo", 20rd9x18mag, 20rd9x18mag, 20rd9x18mag, 20rd9x18mag};
-};
-
 	class SoldierEG:Russia_Rifleman
 		{
 		cost=50000;
@@ -46,11 +22,6 @@ class Russia_Rifleman : Soldier
 		weapons[]={"d4t_AK74","d4t_aps","Throw","Put"};
 		magazines[]={"d4t_AK74_mag","d4t_AK74_mag","d4t_AK74_mag","d4t_AK74_mag","d4t_aps_mag","d4t_aps_mag","d4t_aps_mag","d4t_aps_mag"};
 		nameSound="medic";
-		};
-
-	class SoldierENOG:Russia_Rifleman
-		{
-		scope=1;
 		};
 
 	class SoldierECrew:Russia_Rifleman
@@ -160,32 +131,6 @@ class Russia_Rifleman : Soldier
 		magazines[]={"d4t_AK74_mag","d4t_AK74_mag","d4t_AK74_mag","d4t_AK74_mag","d4t_AK74_mag","d4t_AK74_mag","d4t_rgo","d4t_rgo","d4t_rgo","SmokeShell","d4t_aps_mag","d4t_aps_mag","d4t_aps_mag","d4t_aps_mag"};
 		};
 
-	class GeneralE:Russia_Rifleman
-		{
-		nameSound="officer";
-		displayName="Officer";
-		scope=2;
-		model="mc vojake2_guba.p3d";
-		side=0;
-		accuracy=2.0;
-		cost=100000;
-		nightVision=1;
-		weapons[]={};
-		magazines[]={};
-		};
-
-	class Angelina:Russia_Rifleman
-		{
-		displayName="$STR_DN_ANGELINA";
-		scope=1;
-		model="angelina.p3d";
-		side=0;
-		accuracy=2.0;
-		cost=100000;
-		weapons[]={};
-		magazines[]={};
-		};
-
 	class SoldierESniper:Russia_Rifleman
 		{
 		nameSound="sniper";
@@ -239,18 +184,7 @@ class Russia_Rifleman : Soldier
 		weapons[]={"AK74SU","NVGoggles","Throw","Put","skorpion"};
 		magazines[]={"AK74","AK74","AK74","AK74","skorpionmag","skorpionmag","skorpionmag","skorpionmag","PipeBomb","PipeBomb","PipeBomb"};
 		};
-//---Air
-class ParachuteEast : ParachuteBase//TODO
-{
-	scope=2;
-	accuracy=0.5;
-	side=0;
-	crew="SoldierESaboteurPipe";
-	vehicleClass="Russia Air";
-};
-//---Cars
-//---Armored
-//---Misc
+
 
 	class UAZ:Car
 		{
@@ -2512,148 +2446,3 @@ class ParachuteEast : ParachuteBase//TODO
 				};
 			};
 		};
-
-	class AmmoBoxOUTEW:ReammoboxEast //TODO
-		{
-		model="hromada_beden";
-		scope=2;
-		accuracy=1000;
-		displayName="$STR_DN_OUT_AMMO_CRATES_WP_EAST";
-
-		class TransportMagazines
-			{
-
-			class _xx_AK74
-				{
-				magazine="AK74";
-				count=100;
-				};
-
-			class _xx_skorpionmag
-				{
-				magazine="skorpionmag";
-				count=100;
-				};
-
-			class _xx_tokarevmag
-				{
-				magazine="tokarevmag";
-				count=100;
-				};
-
-			class _xx_HandGrenade
-				{
-				magazine="HandGrenade";
-				count=30;
-				};
-			};
-
-		class TransportWeapons
-			{
-
-			class _xx_AK74
-				{
-				weapon="AK74";
-				count=50;
-				};
-
-			class _xx_skorpion
-				{
-				weapon="skorpion";
-				count=10;
-				};
-
-			class _xx_tokarev
-				{
-				weapon="tokarev";
-				count=10;
-				};
-			};
-		};
-
-	class Su25: Plane //TODO
-		{
-		scope=2;
-		crew = SoldierEPilot;
-		picture=\su25\isu25;
-
-		side=TEast;
-		displayName="SU-39";
-		accuracy=0.30;
-
-		driverAction = ManActA10Pilot;
-
-		maxSpeed = 800;
-
-		armor=24;
-		cost=20000000;
-		model="\su25\su25";
-		weapons[]={Ch29TLauncher, Rocket57x64, MachineGun30A10};
-		magazines[]={Ch29TLauncher, Rocket57x64, MachineGun30A10};
-		fov=0.5;
-
-		type=VAir;
-		//threat[] VSoft, VArmor, VAir 
-		threat[]={0.1, 1, 0.7};
-		vehicleClass="Russia Air";
-
-		class Reflectors
-		{
-			class Reflector
-			{
-				color[] = {0.9, 0.8, 0.8, 1.0};
-				ambient[] = {0.1, 0.1, 0.1, 1.0};
-				position = "L svetlo";
-				direction = "konec L svetla";
-				hitpoint = "L svetlo";
-				selection = "L svetlo";
-				size = 0.5;
-				brightness = 0.25;
-			};
-		};
-
-		class IndicatorAltRadar
-		{
-			// max for this indicator is 1000 feet (i.e. 304m)
-			// note: this is actualy Baro altitude (name is wrong)
-			selection = "alt";
-			axis = "osa_alt";
-			angle = -340;
-			min = 0;
-			max = 1000;
-		};
-		class IndicatorAltRadar2
-		{
-			// max for this indicator is 1000 feet (i.e. 304m)
-			// note: this is actualy Baro altitude (name is wrong)
-			selection = "alt2";
-			axis = "osa_alt2";
-			angle = -340;
-			min = 0;
-			max = 1000;
-		};
-		class IndicatorSpeed
-		{
-			selection = "mph";
-			axis = "osa_mph";
-			angle = -350;
-			min = 0;
-			max = 1000 / 3.6;
-		};
-		class IndicatorVertSpeed
-		{
-			selection = "vert_speed";
-			axis = "osa_vert_speed";
-			angle = -240;
-			min = -150;
-			max = 150;
-		};
-		class IndicatorVertSpeed2
-		{
-			selection = "vert_speed2";
-			axis = "osa_vert_speed2";
-			angle = -240;
-			min = -150;
-			max = 150;
-		};
-	};

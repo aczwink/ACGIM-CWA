@@ -1,4 +1,4 @@
-class T72Res : Russia_T72A
+class T72Res : T72
 {
 	access=2;
 	displayName="T-72A (Stolen)";

@@ -1,9 +1,8 @@
-class Russia_Soldier : Soldier
+class SoldierEB : Soldier
 {
 	displayName = "Soldier";
 	vehicleClass = "Infantry";
 	scope = SCOPE_PUBLIC;
-	model = "\d4t_files\models\russia\infantry\1985\ussr_soldier85.p3d";
 	moves = "CfgMovesMC";
 	side = SIDE_EAST;
 	cost = COST_SOLDIER;
@@ -14,7 +13,10 @@ class Russia_Soldier : Soldier
 	armorBody = 3.5;
 	armorHands = 0.5;
 	armorLegs = 0.5;
+
+#ifdef ACGIM_SCENARIO_1985
 	hiddenSelections[] = {"medic","svetlo","_AKmags1","_Backpack","_Armpatch_right","_Beret","_Cap","_Gpouch","_Helmcamo","_HelmF","_Holster","_PKpouch1","_PKpouch2","_Radiogear","_SVDmags","_Rpgpack","_Tuch","_Mapcase","_Lamp","_Shovel"};
+	model = "\d4t_files\models\russia\infantry\1985\ussr_soldier85.p3d";
 	wounds[] = {
 		"\d4t_tex\vdv85\6b9_back.paa","\d4t_tex\vdv85\6b9_back_d.paa",
 		"\d4t_tex\vdv85\6b9_front.paa","\d4t_tex\vdv85\6b9_front_d.paa",
@@ -26,9 +28,32 @@ class Russia_Soldier : Soldier
 	};
 	weapons[] = {"AK74", "Throw", "Put"};
 	magazines[] = {"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "RGO", "RGO", "RGO"};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	hiddenSelections[]={"medic"};
+	model = "\d4t_files\models\russia\infantry\russian_soldier.p3d";
+	wounds[] = {
+		"d4t_tex\rs\leg_r.paa","d4t_tex\rs\leg_r_d.paa",
+		"d4t_tex\rs\leg_l.paa","d4t_tex\rs\leg_l_d.paa",
+		"d4t_tex\rs\arm_l.paa","d4t_tex\rs\arm_l_d.paa",
+		"d4t_tex\rs\arm_r.paa","d4t_tex\rs\arm_r_d.paa",
+		"d4t_tex\rs\6b9_bck.paa","d4t_tex\rs\6b9_bck_d.paa",
+		"d4t_tex\rs\6b9_frt.paa","d4t_tex\rs\6b9_frt_d.paa",
+		"d4t_tex\rs\vest2_bk.paa","d4t_tex\rs\vest2_bk_d.paa",
+		"d4t_tex\rs\vest2_frt.paa","d4t_tex\rs\vest2_frt_d.paa",
+		"d4t_tex\rs\back.paa","d4t_tex\rs\back_d.paa",
+		"d4t_tex\rs\chest.paa","d4t_tex\rs\chest_d.paa",
+		"d4t_tex\rs\cap_body.paa","d4t_tex\rs\cap_body_d.paa",
+		"d4t_tex\rs\kaska.paa","d4t_tex\rs\kaska_d.paa",
+		"d4t_tex\rs\kaska_paint.paa","d4t_tex\rs\kaska_paint_d.paa",
+		"d4t_tex\rs\kaskasetka.paa","d4t_tex\rs\kaskasetka_d.paa"
+	};
+	weapons[]={"AK74M", "Throw", "Put"};
+	magazines[]={"AK74M", "AK74M", "AK74M", "AK74M", "AK74M", "AK74M", "AK74M", "RGO","RGO","RGO"};
+#endif
 };
 
-class Russia_Grenadier : Russia_Soldier
+class SoldierEG : SoldierEB
 {
 	cost = COST_GRENADIER;
 	accuracy = ACCURACY_GRENADIER;
@@ -39,7 +64,7 @@ class Russia_Grenadier : Russia_Soldier
 	threat[] = {THREAT_GRENADIER};
 };
 
-class Russia_Medic : Russia_Soldier
+class SoldierEMedic : SoldierEB
 {
 	accuracy = ACCURACY_MEDIC;
 	picture = "\misc\medik.paa";
@@ -54,7 +79,7 @@ class Russia_Medic : Russia_Soldier
 	threat[] = {THREAT_MEDIC};
 };
 
-class Russia_MachineGunner : Russia_Soldier
+class SoldierEMG : SoldierEB
 {
 	accuracy = ACCURACY_MACHINEGUNNER;
 	cost = COST_MACHINEGUNNER;
@@ -66,7 +91,7 @@ class Russia_MachineGunner : Russia_Soldier
 	threat[] = {THREAT_MACHINEGUNNER};
 };
 
-class Russia_LightATSoldier : Russia_Soldier
+class SoldierELAW : SoldierEB
 {
 	accuracy = ACCURACY_ATSOLDIER;
 	cost = COST_ATSOLDIER;
@@ -78,7 +103,7 @@ class Russia_LightATSoldier : Russia_Soldier
 	threat[] = {THREAT_ATSOLDIER};
 };
 
-class Russia_ATSoldier : Russia_LightATSoldier
+class SoldierEAT : SoldierELAW
 {
 	accuracy = ACCURACY_HATSOLDIER;
 	cost = COST_HATSOLDIER;
@@ -89,7 +114,7 @@ class Russia_ATSoldier : Russia_LightATSoldier
 	threat[] = {THREAT_HATSOLDIER};
 };
 
-class Russia_AASoldier : Russia_LightATSoldier
+class SoldierEAA : SoldierELAW
 {
 	accuracy = ACCURACY_AASOLDIER;
 	cost = COST_AASOLDIER;
@@ -100,7 +125,7 @@ class Russia_AASoldier : Russia_LightATSoldier
 	threat[] = {THREAT_AASOLDIER};
 };
 
-class Russia_Miner : Russia_Soldier
+class SoldierEMiner : SoldierEB
 {
 	accuracy = ACCURACY_MINER;
 	cost = COST_MINER;
@@ -113,7 +138,7 @@ class Russia_Miner : Russia_Soldier
 	threat[] = {THREAT_MINER};
 };
 
-class Russia_SquadLeader : Russia_Soldier
+class OfficerE : SoldierEB
 {
 	accuracy = ACCURACY_SQUADLEADER;
 	cost = COST_SQUADLEADER;
@@ -124,7 +149,7 @@ class Russia_SquadLeader : Russia_Soldier
 	magazines[] = {"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "RGO", "RGO", "RGO", "RDG1", "TokarevMag", "TokarevMag", "TokarevMag", "TokarevMag"};
 };
 
-class OfficerENight : Russia_SquadLeader
+class OfficerENight : OfficerE
 {
 	displayName = "Squad Leader (night eq.)";
 	picture = "\misc\medik.paa";

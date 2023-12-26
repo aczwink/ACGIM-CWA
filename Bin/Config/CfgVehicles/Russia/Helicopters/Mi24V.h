@@ -2,7 +2,7 @@
 Sources:
 	http://en.wikipedia.org/wiki/Mi-24
 */
-class Russia_Mi24 : Helicopter
+class Mi24 : Helicopter
 {
 	displayName = "Mi-24V Hind";
 	picture="\sjc_textures\mi24\picture.paa";

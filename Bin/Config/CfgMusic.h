@@ -127,6 +127,7 @@ class CfgMusic
 		name="$STR_CFG_MUSIC_FROST";
 		sound[]={"\Music\frost.ogg",1.0,1.0};
 	};
+
 	//Resistance
 	class 7thDarken
 	{
@@ -204,5 +205,12 @@ class CfgMusic
 	{
 		name="Resistance Track 10";
 		sound[]={"\O\Music\res10.ogg",1.0,1.0};
+	};
+
+	//
+	class RHS_Tinnitus
+	{
+		sound[]={"\sounds\ring.ogg",db+80,1};
+		name = "RHS Tinnitus";
 	};
 };

@@ -3,11 +3,11 @@ Sources:
 	http://en.wikipedia.org/wiki/M60_Patton
 In service: 1961-2005
 */
-class USA_M60A1 : Tank
+class M60 : Tank
 {
 	scope=2;
 	side=1;
-	crew = "USA_Crew";
+	crew = "SoldierWCrew";
 	displayName="M60A1";
 	picture="\d4t_files\pics\vehicles\m60.paa";
 	hiddenSelections[]={"SearchLight"};

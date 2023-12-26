@@ -4,10 +4,10 @@ http://en.wikipedia.org/wiki/M113
 In service: 1960-present
 */
 //maybe i can model the gunner protection to combats m113
-class USA_M113 : APC
+class M113 : APC
 {
 	scope=2;
-	crew = "USA_Crew";
+	crew = "SoldierWCrew";
 	picture="im113";
 	side=1;
 	displayName="M113 ACAV";

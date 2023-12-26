@@ -2,7 +2,7 @@
 Sources:
 	http://en.wikipedia.org/wiki/Mi-8MTV
 */
-class Mi8MTV : Helicopter
+class Mi17 : Helicopter
 {
 	scope = SCOPE_PUBLIC;
 	weapons[]={"PKMS", "UB32"};

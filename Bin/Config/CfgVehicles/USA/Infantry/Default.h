@@ -1,20 +1,22 @@
 //-Standard Infantry
-class USA_Soldier : Soldier
+class SoldierWB : Soldier
 {
 	scope = SCOPE_PUBLIC;
 	side = SIDE_WEST;
-	armorBody = 3.0; //This soldier wears a Ballistic vest
 	cost = COST_SOLDIER;
 	accuracy = ACCURACY_SOLDIER;
 	displayName = "Soldier";
 	threat[]={THREAT_SOLDIER};
 
+#ifdef ACGIM_SCENARIO_1985
+	armorBody = 3.0; //This soldier wears a Ballistic vest
+
 	model = "\d4t_files\models\us\infantry\1985\usa_soldier1985.p3d";
+	hiddenSelections[] = {"goou", "goostu", "googu", "good", "goostd", "googd", "medic", "mic", "holster"};
 
 	weapons[] = {WEAPON_REFERENCE(M16A2), "Throw", "Put"};
 	magazines[] = {WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "M67", "M67", "M67"};
 
-	hiddenSelections[] = {"goou", "goostu", "googu", "good", "goostd", "googd", "medic", "mic", "holster"};
 	wounds[] =
 	{
 		FACE_WOUNDS,
@@ -50,28 +52,73 @@ class USA_Soldier : Soldier
 		"\d4t_tex\usi85\chelS.paa", "\d4t_tex\usi85\chelSd.paa",
 		"\d4t_tex\usi85\chelT.paa", "\d4t_tex\usi85\chelTd.paa"
 	};
+#endif
+
+#ifdef ACGIM_SCENARIO_2007
+	//Protection got better over time
+	armor=5.0;
+	armorHead=2.0;
+	armorBody=6.5;
+
+	model="\d4t_files\models\us\infantry\army_soldier.p3d";//used odol explorer for this, if there are any bugs better to use textureswap
+	hiddenSelections[]={"medic"};
+
+	weapons[]={WEAPON_REFERENCE(M4Aimpoint),"Throw","Put"};
+	magazines[]={"M4","M4","M4","M4","M4","M4","M4","M67","M67","M67"};
+	wounds[]={
+		FACE_WOUNDS,
+
+		"\d4t_tex\usi2\aarmL.paa","\d4t_tex\usi2\aarmLd.paa",
+		"\d4t_tex\usi2\achs.paa","\d4t_tex\usi2\achsd.paa",
+		"\d4t_tex\usi2\acht.paa","\d4t_tex\usi2\achtd.paa",
+		"\d4t_tex\usi2\arml.paa","\d4t_tex\usi2\armld.paa",
+		"\d4t_tex\usi2\armr.paa","\d4t_tex\usi2\armrd.paa",
+		"\d4t_tex\usi2\babo.paa","\d4t_tex\usi2\babod.paa",
+		"\d4t_tex\usi2\bafo.paa","\d4t_tex\usi2\bafod.paa",
+		"\d4t_tex\usi2\bodyb.paa","\d4t_tex\usi2\bodybd.paa",
+		"\d4t_tex\usi2\bodyf.paa","\d4t_tex\usi2\bodyfd.paa",
+		"\d4t_tex\usi2\legl.paa","\d4t_tex\usi2\legld.paa",
+		"\d4t_tex\usi2\legr.paa","\d4t_tex\usi2\legrd.paa"
+	};
+#endif
 };
 
-class USA_Grenadier : USA_Soldier
+class SoldierWG : SoldierWB
 {
 	accuracy = ACCURACY_GRENADIER;
 	cost = COST_GRENADIER;
 	displayName="Grenadier";
+	threat[]={THREAT_GRENADIER};
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[]={WEAPON_REFERENCE(M16A2_M203), "Throw", "Put"};
 	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "M406HEFR", "M406HEFR", "M406HEFR", "M406HEFR"};
-	threat[]={THREAT_GRENADIER};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	weapons[]={"M4Aimpoint_M203","Throw","Put"};
+	magazines[]={"M4","M4","M4","M4","M4","M4","M406HEFR","M406HEFR","M406HEFR", "M406HEFR"};
+#endif
 };
 
-class SoldierWMortar : USA_Grenadier
+class SoldierWMortar : SoldierWG
 {
 	accuracy = 1.5;
+	threat[] = {1, 1, 0.1};
+
+#ifdef ACGIM_SCENARIO_1985
 	displayName = "$STR_DN_MORTAR";
 	weapons[] = {WEAPON_REFERENCE(M16A2), "Throw", "Put"};
 	magazines[] = {WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "Mortar", "Mortar", "Mortar"};
-	threat[] = {1, 1, 0.1};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	displayName="Machine Gunner";
+	nameSound="machineGunner";
+	weapons[]={"M240B","Throw","Put"};
+	magazines[]={"M240B","M240B","M240B","M240B","M240B"};
+#endif
 };
 
-class USA_Medic : USA_Soldier
+class SoldierWMedic : SoldierWB
 {
 	accuracy = ACCURACY_MEDIC;
 	cost = COST_MEDIC;
@@ -80,61 +127,104 @@ class USA_Medic : USA_Soldier
 	weaponSlots="1	 + 4 * 		256	 + 	4096	 + 	2	 + 4*	32";
 	nameSound="medic";
 	attendant=1;
-	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2)};
-	hiddenSelections[]={"goou", "goostu", "googu", "good", "goostd", "googd", "mic", "holster"};
 	threat[]={THREAT_MEDIC};
+
+#ifdef ACGIM_SCENARIO_1985
+	hiddenSelections[]={"goou", "goostu", "googu", "good", "goostd", "googd", "mic", "holster"};
+	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2)};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	hiddenSelections[]={};
+	magazines[]={"M4","M4","M4","M4"};
+#endif
 };
 
-class USA_MachineGunner : USA_Soldier
+class SoldierWMG : SoldierWB
 {
 	accuracy = ACCURACY_MACHINEGUNNER;
 	cost = COST_MACHINEGUNNER;
-	displayName="Machine Gunner";
 	nameSound="machineGunner";
+	threat[]={THREAT_MACHINEGUNNER};
+
+#ifdef ACGIM_SCENARIO_1985
+	displayName="Machine Gunner";
 	weapons[]={"M60", "Throw", "Put"};
 	magazines[]={"M60", "M60", "M60", "M60", "M60"};
-	threat[]={THREAT_MACHINEGUNNER};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	displayName = "Squad automatic rifleman";
+	weapons[]={WEAPON_REFERENCE(M249SAW),"Throw","Put"};
+	magazines[]={WEAPON_REFERENCE(M249SAW),WEAPON_REFERENCE(M249SAW),WEAPON_REFERENCE(M249SAW),WEAPON_REFERENCE(M249SAW),"M67","M67"};
+#endif
 };
 
-class USA_LightATSoldier : USA_Soldier
+class SoldierWLAW : SoldierWB
 {
 	accuracy = ACCURACY_ATSOLDIER;
 	cost = COST_ATSOLDIER;
 	displayName="AT Soldier";
 	nameSound="missileSoldier";
+	threat[]={THREAT_ATSOLDIER};
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M72LAW), "Throw", "Put"};
 	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M72LAW), WEAPON_REFERENCE(M72LAW)};
-	threat[]={THREAT_ATSOLDIER};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	weapons[]={WEAPON_REFERENCE(M4Aimpoint),"M136AT4","Throw","Put"};
+	magazines[]={"M4","M4","M4","M4","M4","M4","M136AT4","M136AT4"};
+#endif
 };
 
-class USA_ATSoldier : USA_LightATSoldier
+class SoldierWAT : SoldierWLAW
 {
 	accuracy = ACCURACY_HATSOLDIER;
 	cost = COST_HATSOLDIER;
 	displayName="AT Specialist";
+	threat[]={THREAT_HATSOLDIER};
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M47Dragon), "Throw", "Put"};
 	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M47Dragon)};
-	threat[]={THREAT_HATSOLDIER};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	weapons[]={WEAPON_REFERENCE(M4Aimpoint), "FGM148","Throw","Put"};
+	magazines[]={"M4","M4","M4","M4","FGM148"};
+#endif
 };
 
-class USA_AASoldier : USA_LightATSoldier
+class SoldierWAA : SoldierWLAW
 {
 	accuracy = ACCURACY_AASOLDIER;
 	cost = COST_AASOLDIER;
 	displayName="AA Soldier";
+	threat[]={THREAT_AASOLDIER};
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(FIM92Stinger), "Throw", "Put"};
 	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(FIM92Stinger)};
-	threat[]={THREAT_AASOLDIER};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	weapons[]={WEAPON_REFERENCE(M4Aimpoint),WEAPON_REFERENCE(FIM92Stinger),"Throw","Put"};
+	magazines[]={"M4","M4","M4","M4", WEAPON_REFERENCE(FIM92Stinger)};
+#endif
 };
 
-class USA_RadioOperator : USA_Soldier
+class USA_RadioOperator : SoldierWB
 {
 	accuracy = ACCURACY_RADIOOPERATOR;
 	cost = COST_RADIOOPERATOR;
 	displayName="Radio Operator";
+	threat[]={THREAT_RADIOOPERATOR};
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[]={WEAPON_REFERENCE(M16A2), "PRC119_SINCGARS", "Throw", "Put"};
 	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "M67", "M67", "M67"};
-	threat[]={THREAT_RADIOOPERATOR};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	weapons[]={WEAPON_REFERENCE(M4Aimpoint),"PRC117","Throw","Put"};
+	magazines[]={"M4","M4","M4","M4","M4","M4","M4","M67","M67","M67"};
+#endif
 
 	class UserActions
 	{
@@ -143,35 +233,54 @@ class USA_RadioOperator : USA_Soldier
 			displayName="Call Artillery";
 			position="pos driver";
 			radius=2.00000;
+#ifdef ACGIM_SCENARIO_1985
 			condition="(side this == west) && (this hasweapon ""PRC119_SINCGARS"") && alive this";
+#endif
+#ifdef ACGIM_SCENARIO_2007
+			condition="(side this == west) && (this hasweapon ""PRC117"") && alive this";
+#endif
 			statement= "[this, player] exec ""\acgim_scripts\Artillery\init.sqs""";
 		};
 	};
 };
 
-class USA_Miner : USA_Soldier
+class SoldierWMiner : SoldierWB
 {
 	accuracy = ACCURACY_MINER;
 	cost = COST_MINER;
 	displayName="Miner";
 	canDeactivateMines=1;
 	picture="\misc\sapper.paa";
+	threat[]={THREAT_MINER};
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[]={WEAPON_REFERENCE(M16A2), "Throw", "Put"};
 	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "Mine", "Mine", "Mine"};
-	threat[]={THREAT_MINER};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	weapons[]={WEAPON_REFERENCE(M4Aimpoint),"Throw","Put"};
+	magazines[]={"M4","M4","M4","M4","Mine","Mine","Mine"};
+#endif
 };
 
-class USA_SquadLeader : USA_Soldier
+class OfficerW : SoldierWB
 {
 	accuracy = ACCURACY_SQUADLEADER;
 	cost = COST_SQUADLEADER;
 	picture="\misc\frcky.paa";
 	displayName="Squad Leader";
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[]={WEAPON_REFERENCE(M16A2), "M1911", "Binocular", "Throw", "Put"};
 	magazines[]={WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), WEAPON_REFERENCE(M16A2), "M67", "M67", "ANM8", "M1911", "M1911", "M1911", "M1911"};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	weapons[]={"M4ACOG","M9","Binocular","Throw","Put"};
+	magazines[]={"M4","M4","M4","M4","M4","M4","M4","M67","M67","ANM8","M9","M9","M9","M9"};
+#endif
 };
 
-class OfficerWNight : USA_SquadLeader
+class OfficerWNight : OfficerW
 {
 	displayName="Squad Leader (Night)";
 	weapons[]={WEAPON_REFERENCE(M16A2_M203), "M1911", "Binocular", "Throw", "Put"};
@@ -179,11 +288,11 @@ class OfficerWNight : USA_SquadLeader
 };
 
 //-Parachute
-class USA_Parachute : ParachuteBase
+class ParachuteWest : ParachuteBase
 {
 	scope = SCOPE_PUBLIC;
 	side = SIDE_WEST;
-	crew = "USA_Soldier";
+	crew = "SoldierWB";
 	displayName="Paratrooper";
 	vehicleClass="Infantry";
 };

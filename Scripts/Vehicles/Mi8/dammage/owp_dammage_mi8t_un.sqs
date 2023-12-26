@@ -30,7 +30,7 @@ _damage = 0
 ? "owp_mi8_trigger_dammage_engines" in magazines _me : _me removemagazine "owp_mi8_trigger_dammage_engines"
 ? "owp_mi8_trigger_dammage_fuel" in magazines _me : _me removemagazine "owp_mi8_trigger_dammage_fuel"
 ? "owp_mi8_trigger_dammage_1engine" in magazines _me : _me removemagazine "owp_mi8_trigger_dammage_1engine"
-? "owp_mi8_trigger_dammage_2engine" in magazines _me : _me removemagazine "owp_mi8_trigger_dammage_2engine"
+;? "owp_mi8_trigger_dammage_2engine" in magazines _me : _me removemagazine "owp_mi8_trigger_dammage_2engine"
 ? "owp_mi8_trigger_dammage_transmission" in magazines _me : _me removemagazine "owp_mi8_trigger_dammage_transmission"
 ? "owp_mi8_trigger_dammage_cms" in magazines _me : _me removemagazine "owp_mi8_trigger_dammage_cms"
 goto "Control"

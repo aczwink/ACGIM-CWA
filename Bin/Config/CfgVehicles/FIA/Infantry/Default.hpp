@@ -79,6 +79,17 @@ class SoldierGAT : SoldierGLAW
 	threat[]={THREAT_HATSOLDIER};
 };
 
+class SoldierGAA : SoldierGAT
+{
+	accuracy = ACCURACY_AASOLDIER;
+	cost = COST_AASOLDIER;
+	displayName="AA Soldier";
+	model = "\sjc_models\fia\rebel7.p3d";
+	weapons[]={"AKM", "9K32Launcher", "Throw", "Put"};
+	magazines[]={"AKM", "AKM", "AKM", "AKM", "9K32Launcher"};
+	threat[]={THREAT_AASOLDIER};
+};
+
 class SoldierGMedic : SoldierGB
 {
 	accuracy = ACCURACY_MEDIC;
@@ -124,7 +135,7 @@ class OfficerG : SoldierGB
 	cost = COST_SQUADLEADER;
 	model = "\sjc_models\fia\rebel8.p3d";
 	picture="\misc\frcky.paa";
-	displayName = "Leader";
+	displayName = "Squad Leader";
 	weapons[]={"AKM", "tokarev", "Binocular", "Throw", "Put"};
 	magazines[]={"AKM", "AKM", "AKM", "AKM", "AKM", "AKM", "RGO", "RGO", "RGO", "RDG1", "tokarevmag", "tokarevmag", "tokarevmag", "tokarevmag"};
 };
@@ -135,4 +146,27 @@ class OfficerGNight : OfficerG
 	nightVision = 1;
 	weapons[] = {"AKMGP25", "Binocular", "NVGoggles", "Throw", "Put"};
 	magazines[] = {"AKM", "AKM", "AKM", "AKM", "AKM", "AKM", "RGO", "Flare", "Flare", "Flare"};
+};
+
+class OfficerGHG : OfficerG
+{
+	displayName = "Leader";
+	weapons[] = {"Binocular", "Throw", "Put", "cz75"};
+	magazines[] = {"cz75mag", "cz75mag", "cz75mag", "cz75mag"};
+};
+
+class Hunter : SoldierGB
+{
+	displayName = "Hunter";
+	model = "\sjc_models\fia\rebel9.p3d";
+	weapons[]={"Kozlice","Throw","Put"};
+	magazines[]={"KozliceShell","KozliceShell","KozliceShell","KozliceShell","KozliceShell","KozliceBall","KozliceBall","KozliceBall","KozliceBall","KozliceBall"};
+};
+
+class SoldierGSniper : SoldierGB
+{
+	displayName="Sniper";
+	model = "\sjc_models\fia\rebel10.p3d";
+	weapons[]={"HuntingRifle", "Ingram", "Binocular", "Throw", "Put"};
+	magazines[]={"HuntingRifleMag", "HuntingRifleMag", "HuntingRifleMag", "HuntingRifleMag", "HuntingRifleMag", "HuntingRifleMag", "RGO", "RGO", "RGO", "RDG1", "IngramMag", "IngramMag", "IngramMag", "IngramMag"};
 };
