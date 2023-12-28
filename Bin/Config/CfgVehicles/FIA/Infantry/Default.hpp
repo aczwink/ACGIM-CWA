@@ -159,7 +159,7 @@ class Hunter : SoldierGB
 {
 	displayName = "Hunter";
 	model = "\sjc_models\fia\rebel9.p3d";
-	weapons[]={"Kozlice","Throw","Put"};
+	weapons[]={"Kozlice", "Binocular", "Throw","Put"};
 	magazines[]={"KozliceShell","KozliceShell","KozliceShell","KozliceShell","KozliceShell","KozliceBall","KozliceBall","KozliceBall","KozliceBall","KozliceBall"};
 };
 

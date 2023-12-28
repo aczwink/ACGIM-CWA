@@ -102,36 +102,3 @@ class BMP : APC
 		killed = "(_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Veh_burner.sqs}";
 	};
 };
-
-class BMP2 : BMP
-{
-	access=2;
-	displayName = "BMP-2";
-	model="\d4t_files\models\russia\vehicles\bmp2.p3d";
-	weapons[]={"2A42", "PKT", "9M113Konkurs"};
-	magazines[]={"3UBR8", "3UOF8_340", "PKT", "9M113Konkurs"};
-	threat[]={THREAT_BMP2};
-	hiddenSelections[]={"cislo1","cislo2","cislo3","blatnik","plachta","brvno","znak1","sign","csla"};
-
-	class Turret
-	{
-		gunAxis="OsaHlavne";
-		turretAxis="OsaVeze";
-		soundServo[]={"Vehicles\gun_elevate",0.0316228,1.0};
-		gunBeg="usti hlavne";
-		gunEnd="konec hlavne";
-		body="OtocVez";
-		gun="OtocHlaven";
-		minElev=-4.5;
-		maxElev=60;
-		minTurn=-360;
-		maxTurn=360;
-	};
-
-	class EventHandlers
-	{
-		Init="_this exec {\d4t_files\FX\scripts\vehicles\bmp\randomnumber_rus.sqs}; _this exec {\d4t_files\FX\scripts\vehicles\bmp\bmp2_parts.sqs};";
-		hit = "_this exec {\SJC_Scripts\Events\ArmorHit.sqs}";
-		killed = "(_this select 0) exec {\acgim_scripts\nmod_effects\DKMM_RSC_Veh_burner.sqs}";
-	};
-};

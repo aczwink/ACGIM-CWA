@@ -1,14 +1,19 @@
-//BMP
+#ifdef ACGIM_SCENARIO_1985
 #include "Config\CfgVehicles\Russia\Tracked\BMP.h"
-
-//MTLB
+#endif
+#ifdef ACGIM_SCENARIO_2007
+#include "Config\CfgVehicles\Russia\Tracked\BMP3.hpp"
+#endif
+#include "Config\CfgVehicles\Russia\Tracked\BMP2.hpp"
 #include "Config\CfgVehicles\Russia\Tracked\MTLBAmbulance.h"
-
-//T-72
+#ifdef ACGIM_SCENARIO_1985
 #include "Config\CfgVehicles\Russia\Tracked\T72A.h"
-//TODO_2007: for 2007 this should better be the T-72B
-
 #include "Config\CfgVehicles\Russia\Tracked\T80B.hpp"
+#endif
+#ifdef ACGIM_SCENARIO_2007
+#include "Config\CfgVehicles\Russia\Tracked\T80UM.hpp"
+#include "Config\CfgVehicles\Russia\Tracked\T90.hpp"
+#endif
 
 //ZSU-234
 #include "Config\CfgVehicles\Russia\Tracked\ZSU234.hpp"

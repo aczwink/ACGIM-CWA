@@ -544,6 +544,7 @@ steps:
           - { sourceFileName: RHS_Weap/AK_Pics/w_AK74_GP25.paa, type: weapon, targetName: AK74GP25 }
           - { sourceFileName: "RHS_Weap/AK_Pics/m_30RD_5,45_MAG.paa", type: magazine, targetName: AK74M }
           - { sourceFileName: RHS_Weap/AK_Pics/w_AK74M.paa, type: weapon, targetName: AK74M }
+          - { sourceFileName: RHS_Weap/AK_Pics/w_AK74M_GP25.paa, type: weapon, targetName: AK74MGP25 }
           - { sourceFileName: "RHS_Weap/AK_Pics/m_30RD_7,62_MAG.paa", type: magazine, targetName: AKM }
           - { sourceFileName: RHS_Weap/AK_Pics/w_AKM.paa, type: weapon, targetName: AKM }
           - { sourceFileName: RHS_Weap/AK_Pics/w_AK74S.paa, type: weapon, targetName: AKS74 }

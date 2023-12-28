@@ -1206,11 +1206,4 @@ class XMS:M4
 	displayNameMagazine="$STR_DN_ADD_XMS_AMMO";
 	shortNameMagazine="$STR_DN_ADD_XMS";
 };
-
-
-#include "Config\CfgWeapons\d4t_primary.hpp"
-#include "Config\CfgWeapons\d4t_secondary.hpp"
-#include "Config\CfgWeapons\d4t_tertiary.hpp"
-#include "Config\CfgWeapons\d4t_air_weapons.hpp"
-#include "Config\CfgWeapons\d4t_infantry_magazines.hpp"
 };

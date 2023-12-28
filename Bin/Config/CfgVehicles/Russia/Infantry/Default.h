@@ -59,24 +59,41 @@ class SoldierEG : SoldierEB
 	accuracy = ACCURACY_GRENADIER;
 	displayName = "Grenadier";
 	hiddenSelections[] = {"medic","svetlo","_AKmags1","_Backpack","_Armpatch_right","_Beret","_Cap","_Helmcamo","_HelmF","_Holster","_MAGpouch1","_PKpouch1","_PKpouch2","_Radiogear","_Rpgpack","_SVDmags","_Tuch","_Mapcase","_Lamp","_Shovel"};
+	threat[] = {THREAT_GRENADIER};
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[] = {WEAPON_REFERENCE(AK74GP25), "Throw", "Put"};
 	magazines[] = {"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "VOG25", "VOG25", "VOG25", "VOG25"};
-	threat[] = {THREAT_GRENADIER};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	model="\ffur_ru\mt\ffur_ru_mg";
+	weapons[]={"AK74MGP25","Throw","Put"};
+	magazines[]={"AK74M","AK74M","AK74M","AK74M","GrenadeLauncher","GrenadeLauncher","GrenadeLauncher"};
+#endif
 };
 
 class SoldierEMedic : SoldierEB
 {
 	accuracy = ACCURACY_MEDIC;
 	picture = "\misc\medik.paa";
-	hiddenSelections[] = {"svetlo","_AKmags1","_Armpatch_right","_Beret","_Cap","_Gpouch","_Helmcamo","_HelmF","_Holster","_PKpouch1","_PKpouch2","_Radiogear","_Rpgpack","_SVDmags","_Tuch","_Mapcase","_Lamp","_Backpack","_Shovel"};
 	cost = COST_MEDIC;
 	displayName = "Medic";
 	weaponSlots = "1	 + 4 * 		256	 + 	4096	 + 	2	 + 4*	32";
 	attendant = 1;
-	weapons[] = {"AK74", "Throw", "Put"};
-	magazines[] = {"AK74", "AK74", "AK74", "AK74"};
 	nameSound = "medic";
 	threat[] = {THREAT_MEDIC};
+
+#ifdef ACGIM_SCENARIO_1985
+	hiddenSelections[] = {"svetlo","_AKmags1","_Armpatch_right","_Beret","_Cap","_Gpouch","_Helmcamo","_HelmF","_Holster","_PKpouch1","_PKpouch2","_Radiogear","_Rpgpack","_SVDmags","_Tuch","_Mapcase","_Lamp","_Backpack","_Shovel"};
+	weapons[] = {"AK74", "Throw", "Put"};
+	magazines[] = {"AK74", "AK74", "AK74", "AK74"};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	hiddenSelections[]={"medic"};
+	model="\ffur_ru\mt\ffur_ru_medic";
+	weapons[]={"AK74M","Throw","Put"};
+	magazines[]={"AK74M","AK74M","AK74M","AK74M"};
+#endif
 };
 
 class SoldierEMG : SoldierEB
@@ -89,6 +106,10 @@ class SoldierEMG : SoldierEB
 	weapons[] = {WEAPON_REFERENCE(PKM), "Throw", "Put"};
 	magazines[] = {WEAPON_REFERENCE(PKM), WEAPON_REFERENCE(PKM), WEAPON_REFERENCE(PKM), WEAPON_REFERENCE(PKM), WEAPON_REFERENCE(PKM)};
 	threat[] = {THREAT_MACHINEGUNNER};
+
+#ifdef ACGIM_SCENARIO_2007
+	model="\ffur_ru\mt\ffur_ru_mg";
+#endif
 };
 
 class SoldierELAW : SoldierEB
@@ -98,9 +119,17 @@ class SoldierELAW : SoldierEB
 	displayName = "AT Soldier";
 	nameSound = "missileSoldier";
 	hiddenSelections[] = {"medic","svetlo","_AKmags1","_Armpatch_right","_Backpack","_Beret","_Cap","_Gpouch","_Helmcamo","_HelmF","_Holster","_PKpouch1","_PKpouch2","_Radiogear","_SVDmags","_Tuch","_Mapcase","_Lamp","_Shovel"};
+	threat[] = {THREAT_ATSOLDIER};
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[] = {"AK74", "RPG18", "Throw", "Put"};
 	magazines[] = {"AK74", "AK74", "AK74", "AK74", "RPG18", "RPG18"};
-	threat[] = {THREAT_ATSOLDIER};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	model="\ffur_ru\mt\ffur_ru_rpg";
+	weapons[]={"AK74M",WEAPON_REFERENCE(RPG7V),"Throw","Put"};
+	magazines[]={"AK74M","AK74M","AK74M","AK74M",WEAPON_REFERENCE(RPG7V), WEAPON_REFERENCE(RPG7V), WEAPON_REFERENCE(RPG7V)};
+#endif
 };
 
 class SoldierEAT : SoldierELAW
@@ -109,9 +138,16 @@ class SoldierEAT : SoldierELAW
 	cost = COST_HATSOLDIER;
 	displayName = "AT Specialist";
 	hiddenSelections[] = {"medic","svetlo","_AKmags1","_Armpatch_right","_Backpack","_Beret","_Cap","_Gpouch","_HelmF","_Holster","_PKpouch1","_PKpouch2","_Radiogear","_SVDmags","_Rpgpack","_Tuch","_Mapcase","_Lamp","_Shovel"};
+	threat[] = {THREAT_HATSOLDIER};
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[] = {"AK74", WEAPON_REFERENCE(RPG7V), "Throw", "Put"};
 	magazines[] = {"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", WEAPON_REFERENCE(RPG7V), WEAPON_REFERENCE(RPG7V)};
-	threat[] = {THREAT_HATSOLDIER};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	weapons[]={"AK74M","RPG29","Throw","Put"};
+	magazines[]={"AK74M","AK74M","AK74M","AK74M","RPG29"};
+#endif
 };
 
 class SoldierEAA : SoldierELAW
@@ -120,9 +156,16 @@ class SoldierEAA : SoldierELAW
 	cost = COST_AASOLDIER;
 	displayName = "AA Soldier";
 	hiddenSelections[] = {"medic","svetlo","_AKmags1","_Armpatch_right","_Backpack","_Beret","_Cap","_Gpouch","_HelmF","_Holster","_PKpouch1","_PKpouch2","_Radiogear","_SVDmags","_Rpgpack","_Tuch","_Mapcase","_Lamp","_Shovel"};
+	threat[] = {THREAT_AASOLDIER};
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[] = {"AK74", "9K32Launcher", "Throw", "Put"};
 	magazines[] = {"AK74", "AK74", "AK74", "AK74", "9K32Launcher"};
-	threat[] = {THREAT_AASOLDIER};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	weapons[]={"AK74M","9K32Launcher","Throw","Put"};
+	magazines[]={"AK74M","AK74M","AK74M","AK74M","9K32Launcher"};
+#endif
 };
 
 class SoldierEMiner : SoldierEB
@@ -133,9 +176,16 @@ class SoldierEMiner : SoldierEB
 	hiddenSelections[] = {"medic","svetlo","_AKmags1","_Armpatch_right","_Beret","_Cap","_Gpouch","_HelmF","_Holster","_PKpouch1","_PKpouch2","_Radiogear","_Rpgpack","_SVDmags","_Tuch","_Mapcase","_Lamp","_Shovel"};
 	canDeactivateMines = 1;
 	picture = "\misc\sapper.paa";
+	threat[] = {THREAT_MINER};
+
+#ifdef ACGIM_SCENARIO_1985
 	weapons[] = {"AK74", "Throw", "Put"};
 	magazines[] = {"AK74", "AK74", "AK74", "AK74", "MineE", "MineE", "MineE"};
-	threat[] = {THREAT_MINER};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	weapons[]={"AK74M","Throw","Put"};
+	magazines[]={"AK74M","AK74M","AK74M","AK74M","MineE","MineE","MineE"};
+#endif
 };
 
 class OfficerE : SoldierEB
@@ -143,10 +193,19 @@ class OfficerE : SoldierEB
 	accuracy = ACCURACY_SQUADLEADER;
 	cost = COST_SQUADLEADER;
 	displayName = "Squad Leader";
-	hiddenSelections[] = {"medic","_AKmags1","_Armpatch_right","_Beret","_Bottle","_Cap","_Gpouch","_HelmF","_Helmcamo","_PKpouch1","_PKpouch2","_Radiogear","_Rpgpack","_Shovel","_SVDmags","_Tuch","_Backpack"};
 	picture = "\misc\frcky.paa";
+
+#ifdef ACGIM_SCENARIO_1985
+	hiddenSelections[] = {"medic","_AKmags1","_Armpatch_right","_Beret","_Bottle","_Cap","_Gpouch","_HelmF","_Helmcamo","_PKpouch1","_PKpouch2","_Radiogear","_Rpgpack","_Shovel","_SVDmags","_Tuch","_Backpack"};
 	weapons[] = {"AK74", "Tokarev", "Binocular", "Throw", "Put"};
 	magazines[] = {"AK74", "AK74", "AK74", "AK74", "AK74", "AK74", "RGO", "RGO", "RGO", "RDG1", "TokarevMag", "TokarevMag", "TokarevMag", "TokarevMag"};
+#endif
+#ifdef ACGIM_SCENARIO_2007
+	hiddenSelections[]={"helmcamo_net","rpgpack","_Backpack","Backpack"};
+	model="\ffur_ru\mt\ffur_ru_off";
+	weapons[]={"AK74M","Tokarev","Binocular","Throw","Put"};
+		magazines[]={"AK74M","AK74M","AK74M","AK74M","AK74M","AK74M","RGO","RGO","RGO","RDG1","TokarevMag","TokarevMag","TokarevMag","TokarevMag"};
+#endif
 };
 
 class OfficerENight : OfficerE

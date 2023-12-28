@@ -6,12 +6,18 @@
 #include "Config\CfgWeapons\USSR\Primary\PKM.h"
 #include "Config\CfgWeapons\USSR\Primary\RPD.h"
 #include "Config\CfgWeapons\USSR\Primary\SVDDragunov.h"
+#ifdef ACGIM_SCENARIO_2007
+#include "Config\CfgWeapons\USSR\Primary\V94.hpp"
+#endif
 //Secondary
 #include "Config\CfgWeapons\USSR\Secondary\9K32.h"
 #include "Config\CfgWeapons\USSR\Secondary\RPG2.h"
 #include "Config\CfgWeapons\USSR\Secondary\RPG7.h"
 #include "Config\CfgWeapons\USSR\Secondary\RPG16.h"
 #include "Config\CfgWeapons\USSR\Secondary\RPG18.h"
+#ifdef ACGIM_SCENARIO_2007
+#include "Config\CfgWeapons\USSR\Secondary\RPG29.hpp"
+#endif
 //Items
 #include "Config\CfgWeapons\USSR\Items\RGO.h"
 #include "Config\CfgWeapons\USSR\Items\VOG.h"

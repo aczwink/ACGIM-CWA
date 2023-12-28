@@ -131,6 +131,70 @@ class AKS74B : AKS74
 	};
 };
 
+class AKS74PSO1PBS3 : AK74
+{
+	picture="\RHS_Weap\AK_Pics\m_30RD_5,45_MAG.paa";
+	picture="\RHS_Weap\AK_Pics\w_AK74SB_PSO1.paa";
+	
+	scopeWeapon=2;
+	scopeMagazine=2;
+	displayName="AKS-74B PSO-1";
+	model="\RHS_Weap\AKS74\AKS74_PSO1_PBS3";
+	modelOptics="\RHS_Weap\AK_Optics\AK_OpticSD2";
+	optics=1;
+	opticsZoomMin=0.080000;
+	opticsZoomMax=0.080000;
+	opticsFlare=0;
+	count=30;
+	initSpeed=330;
+	distanceZoomMin=100;
+	distanceZoomMax=100;
+	displayNameMagazine="30rd 5.45x39 SD Magazine";
+	shortNameMagazine="30rd 5.45x39 SD Mag.";
+	drySound[]={"weapons\AK74Dry",0.010000,1};
+	reloadMagazineSound[]={"\RHS_Weap_Sounds\AK_Sounds\RHS_AK_load.wss",1.000000,1};
+	canDrop = 1;
+	magazines[]={"this"};
+	modes[]={"Single","FullAuto"};
+	
+	class Single
+	{
+		ammo="RHS_E545x39_30_BulletSilencedSingle";
+		multiplier=1;
+		burst=1;
+		displayName="5.45x39 SD Semi";
+		dispersion=0.000200;
+		sound[]={"\RHS_Weap_Sounds\AK_Sounds\RHS_AK_545_silenced_single.wss",1.000000,1.00};
+		soundContinuous=0;
+		reloadTime=0.100000;
+		ffCount=1;
+		recoil="RHS_E545x39_RifleRecoil";
+		autoFire=0;
+		aiRateOfFire=2;
+		aiRateOfFireDistance=100;
+		useAction=0;
+		useActionTitle="";
+	};
+	class FullAuto
+	{
+		ammo="RHS_E545x39_30_BulletSilencedSingle";
+		multiplier=1;
+		burst=1;
+		displayName="5.45x39 SD Auto";
+		dispersion=0.001000;
+		sound[]={"\RHS_Weap_Sounds\AK_Sounds\RHS_AK_545_silenced_single.wss",1.000000,1.00};
+		soundContinuous=0;
+		reloadTime=0.0667;
+		ffCount=30;
+		recoil="RHS_E545x39_RifleAutoRecoil";
+		autoFire=1;
+		aiRateOfFire=1;
+		aiRateOfFireDistance=80;
+		useAction=0;
+		useActionTitle="";
+	};
+};
+
 class AK74M : AK74	
 {
 	scopeMagazine=2;
@@ -139,4 +203,18 @@ class AK74M : AK74
 	shortNameMagazine="5.45x49mm Mag";
 	count=30;
 	model="\d4t_files\models\russia\weapons\ak74m.p3d";
+};
+
+class AK74MGP25 : AK74M
+{
+	scopeWeapon=2;
+	scopeMagazine=0;
+	weaponType=1;
+	displayName="AK-74M GP-25";
+	model="\RHS_Weap\AK74M\AK74M_GP25";
+	muzzles[]={"AK74_Muzzle","AK74GP25_Muzzle"};
+	canDrop = 1;
+
+	class AK74_Muzzle : AK74M {};
+	class AK74GP25_Muzzle : GP25{};
 };

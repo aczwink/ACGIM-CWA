@@ -55,12 +55,6 @@ class SoldierESaboteurCheat : SoldierEB
 	displayName="Cheating is not supported. This unit lost it's cheat effects.";
 };
 
-class SoldierESaboteurPipeHG : SoldierESaboteurPipe
-{
-	//TODO: could be another type of spets naz
-	scope = SCOPE_HIDDEN;
-};
-
 class T80Auto : T80
 {
 	scope = SCOPE_HIDDEN;
