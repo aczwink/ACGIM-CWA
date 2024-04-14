@@ -194,4 +194,19 @@ class rktf4Glass
 		"sjc_textures\f4\glass2.paa"
 	};
 	material = "#SpecularGlass";
-};	
+};
+
+class F16Shine
+{
+	textures[]=
+	{
+		"tex\f16_main.pac", "tex\f16_main_b.pac", "tex\f16_main_c.paa"
+	};
+	material = "#Metal";
+};
+
+class F16Glass
+{
+	textures[]={"tex\f16_window.paa"};
+	material=#SpecularGlass;
+};

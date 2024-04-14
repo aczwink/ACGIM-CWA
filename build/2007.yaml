@@ -21,6 +21,8 @@ source_integrity:
   SLX_Mod_1.1_Beta.rar: f8d559de4f9301db204cd2d84eb8f04f
   su25.rar: c689a95cb6a4efc872464cfdacc64544
   Unsung DemoII Alpha 1.0.rar: 3982c3d0263c3343adaf9d7321117268
+  Vit_Isr_F16_12B.rar: 4569ef69eafac4f8eb506c4204884489
+  Vit_Usa_F16.pbo: fd4a0351a7b1e4e846ebb49498b6c432 #exported file from Vit_Usa_F16_12.exe 129e0db30ec4e670471a8cb1a2e8217b
   wgl_texture_replacement_pack.rar: 7a5b7be150ee54148fb6ae12c6f2289a
 
 
@@ -179,6 +181,14 @@ steps:
           - { sourceFileName: DSL_a10/GLASS2.PAA, targetName: a10/glass2 }
           - { sourceFileName: DSL_a10/picgrey.paa, targetName: a10_pic }
           - { sourceFileName: DSL_a10/Stozek.pac, targetName: a10/stozek }
+
+      - type: Archive
+        sourceLocation: addons
+        name: f16-FIXED.zip
+        pbos:
+          - rktf16.pbo
+        files:
+          - { sourceFileName: rktf16/icon.paa, targetName: f16_icon }
 
       - type: Archive
         sourceLocation: addons
@@ -432,6 +442,28 @@ steps:
           - { sourceFileName: su25/su_kridlo2.pac, targetName: su25_kridlo2 }
           - { sourceFileName: su25/su_kridlokon.pac, targetName: su25_kridlokon }
           - { sourceFileName: su25/su_kridlospod.pac, targetName: su25_kridlospod }
+
+      - type: FileSystemPBO
+        sourceLocation: addons
+        pbo: Vit_Usa_F16.pbo
+        files:
+          - { sourceFileName: Vit_Usa_F16/fx/eng2.Wav, targetName: f16_eng2 }
+          - { sourceFileName: Vit_Isr_F16/pic.paa, targetName: f16_pic }
+
+      - type: Archive
+        sourceLocation: addons
+        name: Vit_Isr_F16_12B.rar
+        pbos:
+          - Vit_Isr_F16.pbo
+        files:
+          - { sourceFileName: Vit_Isr_F16/Sound/eng1.wav, targetName: f16_eng1 }
+          - { sourceFileName: Vit_Isr_F16/main.pac, targetName: f16_main }
+          - { sourceFileName: Vit_Isr_F16/main_b.pac, targetName: f16_main_b }
+          - { sourceFileName: Vit_Isr_F16/main_c.paa, targetName: f16_main_c }
+          - Vit_Isr_F16/Vit_Isr_F16c.p3d
+          - { sourceFileName: Vit_Isr_F16/window.paa, targetName: f16_window }
+          - { sourceFileName: Vit_Isr_F16/window_b.paa, targetName: f16_window_b }
+          - { sourceFileName: Vit_Isr_F16/window_c.paa, targetName: f16_window_c }
 
   - type: BuildDtaExt
     sourceLocation: source_equip

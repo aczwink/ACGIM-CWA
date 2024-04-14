@@ -45,3 +45,37 @@ class f4e : Vehicle
 {
 	sections[] = {"roundel", "bombA", "bombB", "bombC", "harmA", "harmB", "sp1", "sp2", "sp3", "sp4", "num1", "num2", "num3", "blu1", "blu2", "burn", "zasleh"};
 };
+
+class Vit_Isr_F16C : Default
+{
+	sectionsInherit="Vehicle";
+	sections[]=
+	{
+		"AIM1201",
+		"AIM1202",
+		"AIM91",
+		"AIM92",
+		"MAV1",
+		"MAV2",
+		"MAV3",
+		"MAV4",
+		"MAV5",
+		"MAV6",
+		"GBU1",
+		"GBU2",
+		"cislo",
+		"grupa",
+		"side",
+		"sektor",
+		"clan",
+		"podsvit pristroju",
+		"poskozeni",
+		"L svetlo",
+		"P svetlo",
+		"zasleh",
+		"sklo predni p",
+		"sklo predni l",
+		"vrtule staticka",
+		"vrtule blur"
+	};
+};

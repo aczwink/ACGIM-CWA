@@ -1,0 +1,97 @@
+
+_plane1 = _this select 0
+_player = player
+_amountDamage =0
+_vel = 1200
+_fuel =0
+_fuellow = fuel _plane1
+
+?(not alive _plane1): goto "exit"
+?(_fuellow<= 0.40 ): goto "exit"
+?(_amountdamage>= 0.75 and _amountdamage<= 1): goto "exit"
+goto "start"
+
+
+#start
+_plane1 vehiclechat "AfterBurner ON"
+
+_plane1 animate ["eng1", 1]
+_plane1 animate ["eng11", 1]
+_plane1 animate ["eng2", 1]
+_plane1 animate ["eng22", 1]
+_plane1 animate ["eng3", 1]
+_plane1 animate ["eng33", 1]
+_plane1 animate ["eng4", 1]
+_plane1 animate ["eng44", 1]
+_plane1 animate ["eng5", 1]
+_plane1 animate ["eng55", 1]
+_plane1 animate ["eng6", 1]
+_plane1 animate ["eng66", 1]
+_plane1 animate ["eng7", 1]
+_plane1 animate ["eng77", 1]
+[_plane1,2,2] exec "\acgim_scripts\Vehicles\F16\F16turbo_su.sqs"
+
+goto "loop"
+
+#loop
+?(_plane1 animationPhase "flammen" <=0.5): goto "off"
+
+
+?(speed _plane1 <= -5): goto "off"
+?(speed _plane1 >= _vel): goto "off"
+?(speed _plane1) < 20 : _factor = 3;goto "speed";
+?(speed _plane1) < 30 : _factor = 3;goto "speed";
+?(speed _plane1) < 40 : _factor = 3;goto "speed";
+?(speed _plane1) < 50 : _factor = 3;goto "speed";
+?(speed _plane1) < 100 : _factor = 3;goto "speed";
+?(speed _plane1) < 150 : _factor = 3;goto "speed";
+?(speed _plane1) < 200 : _factor = 3;goto "speed";
+?(speed _plane1) < 250 : _factor = 3;goto "speed";
+?(speed _plane1) < 300 : _factor = 3;goto "speed";
+?(speed _plane1) < 350 : _factor = 3;goto "speed";
+?(speed _plane1) < 450 : _factor = 3;goto "speed";
+?(speed _plane1) < 550 : _factor = 3;goto "speed";
+?(speed _plane1) < 650 : _factor = 3;goto "speed";
+?(speed _plane1) < 750 : _factor = 3;goto "speed";
+?(speed _plane1) < 900 : _factor = 3;goto "speed";
+?(speed _plane1) >= 1100 : _factor = 3;goto "speed";
+~0.03
+goto "speed"
+
+#speed
+;?((getpos _plane1 select 2) > 1):goto "morespeed";
+
+_plane1 setVelocity[(_factor*(sin getDir _plane1))+(velocity _plane1 select 0),(_factor*(cos getDir _plane1))+(velocity _plane1 select 1),(velocity _plane1 select 2)];
+~0.08
+goto "loop"
+
+
+
+#off
+_plane1 vehiclechat "AfterBurner OFF"
+~0.5
+_plane1 animate ["eng1", 0]
+_plane1 animate ["eng11", 0]
+_plane1 animate ["eng2", 0]
+_plane1 animate ["eng22", 0]
+_plane1 animate ["eng3", 0]
+_plane1 animate ["eng33", 0]
+_plane1 animate ["eng4", 0]
+_plane1 animate ["eng44", 0]
+_plane1 animate ["eng5", 0]
+_plane1 animate ["eng55", 0]
+_plane1 animate ["eng6", 0]
+_plane1 animate ["eng66", 0]
+_plane1 animate ["eng7", 0]
+_plane1 animate ["eng77", 0]
+
+goto "Exit"
+
+
+
+
+
+#exit
+exit
+
+

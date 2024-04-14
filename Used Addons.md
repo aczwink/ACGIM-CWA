@@ -2,6 +2,7 @@
 | Object                                                   | Addon                                                             | Author                                           |
 |----------------------------------------------------------|-------------------------------------------------------------------|--------------------------------------------------|
 | A-10                                                     | A-10A Thunderbolt II version 1.11                                 | Diesel                                           |
+| F-16                                                     | Israel Army F-16 Version 1.2 Beta, USAF F-16 V1.2, F16 fighter    | Vit, Footmunch                                   |
 | HMMWVs                                                   | COMBAT! HMMWV Pack 1.2.1                                          | COMBAT!                                          |
 | M60A1                                                    | INQ_M60 Version 1.1                                               | InQUisiToR                                       |
 | Mi-8MTV                                                  | Soviet Era Mi-8 helicopters (1970-1990). Version 1.0 High quality | OUR WEAPONS Project                              |

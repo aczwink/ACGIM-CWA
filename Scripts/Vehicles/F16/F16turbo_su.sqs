@@ -1,0 +1,18 @@
+
+_plane1 = _this select 0
+
+
+
+#loop
+?(_plane1 animationPhase "flammen" <=0.5): goto "exit"
+_plane1 say "f16_afterburner"
+~3
+goto "loop"
+
+
+
+
+#exit
+exit
+
+

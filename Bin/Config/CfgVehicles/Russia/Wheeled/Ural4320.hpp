@@ -185,12 +185,6 @@ class UralReammo : Ural
 			count = 3;
 		};
 
-		class m_RPG18
-		{
-			magazine = "RPG18";
-			count = 4;
-		};
-
 		class m_9K32Launcher
 		{
 			magazine = "9K32Launcher";
